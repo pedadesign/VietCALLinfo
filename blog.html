@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog – VietCALL</title>
+  <meta name="description" content="Tin tức, nghiên cứu và bài viết từ cộng đồng VietCALL.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar" role="navigation">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__brand">
+      <div class="navbar__logo-circle"><span>V</span></div>
+      <span class="navbar__name">VietCALL</span>
+    </a>
+    <ul class="navbar__links">
+      <li><a href="about.html" class="navbar__link" data-i18n="nav.about">Giới thiệu</a></li>
+      <li><a href="committee.html" class="navbar__link" data-i18n="nav.committee">Ban Lãnh đạo</a></li>
+      <li><a href="conferences.html" class="navbar__link" data-i18n="nav.conferences">Hội thảo</a></li>
+      <li><a href="resources.html" class="navbar__link" data-i18n="nav.resources">Tài nguyên</a></li>
+      <li><a href="blog.html" class="navbar__link navbar__link--active" data-i18n="nav.blog">Tin tức</a></li>
+      <li><a href="membership.html" class="navbar__link" data-i18n="nav.membership">Thành viên</a></li>
+      <li><a href="contact.html" class="navbar__link" data-i18n="nav.contact">Liên hệ</a></li>
+    </ul>
+    <div class="navbar__right">
+      <div class="lang-switcher">
+        <button class="lang-switcher__btn" aria-label="Chọn ngôn ngữ">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="lang-switcher__current">🇻🇳 VI</span>
+        </button>
+        <div class="lang-switcher__dropdown">
+          <button class="lang-switcher__option active" data-lang-code="vi">🇻🇳 Tiếng Việt</button>
+          <button class="lang-switcher__option" data-lang-code="en">🇺🇸 English</button>
+        </div>
+      </div>
+      <a href="membership.html" class="btn btn--primary btn--sm" data-i18n="nav.join">Tham gia ngay</a>
+    </div>
+    <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="navbar__mobile" id="mobileMenu">
+  <a href="about.html" data-i18n="nav.about">Giới thiệu</a>
+  <a href="committee.html" data-i18n="nav.committee">Ban Lãnh đạo</a>
+  <a href="conferences.html" data-i18n="nav.conferences">Hội thảo</a>
+  <a href="resources.html" data-i18n="nav.resources">Tài nguyên</a>
+  <a href="blog.html" data-i18n="nav.blog">Tin tức</a>
+  <a href="membership.html" data-i18n="nav.membership">Thành viên</a>
+  <a href="contact.html" data-i18n="nav.contact">Liên hệ</a>
+  <div class="mobile-cta"><a href="membership.html" class="btn btn--primary" style="width:100%;justify-content:center;" data-i18n="nav.join">Tham gia ngay</a></div>
+  <div class="mobile-lang">
+    <button class="lang-switcher__option active" data-lang-code="vi">🇻🇳 VI</button>
+    <button class="lang-switcher__option" data-lang-code="en">🇺🇸 EN</button>
+  </div>
+</div>
+
+<main class="page-top">
+
+<header class="page-hero animate-in">
+  <div class="container">
+    <span class="badge" data-i18n="blog.badge">Tin tức &amp; Nghiên cứu</span>
+    <h1 class="display-lg" data-i18n="blog.title">Blog VietCALL</h1>
+    <p data-i18n="blog.sub">Cập nhật những tin tức mới nhất, kết quả nghiên cứu và bài viết từ cộng đồng VietCALL.</p>
+  </div>
+</header>
+
+<!-- ── FEATURED POST ─────────────────────────────────────────── -->
+<section class="section bg-white animate-in">
+  <div class="container">
+    <!-- Featured large card -->
+    <div style="background:var(--white);border:1px solid var(--stone-100);border-radius:var(--radius-3xl);overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.05);margin-bottom:3rem;">
+      <div style="display:grid;" class="featured-post-grid">
+        <div style="aspect-ratio:16/9;overflow:hidden;">
+          <img src="https://picsum.photos/seed/blog-ai-featured/1200/675" alt="AI in Vietnamese Classrooms"
+               style="width:100%;height:100%;object-fit:cover;" loading="eager">
+        </div>
+        <div style="padding:2.5rem;">
+          <span style="display:inline-block;font-size:0.6875rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:1rem;" data-i18n="blog.cat_research">Nghiên cứu</span>
+          <h2 style="font-size:clamp(1.5rem,3vw,2rem);font-weight:700;color:var(--primary);margin-bottom:1rem;line-height:1.3;">
+            <span class="lang-block" data-lang="vi">Tương lai của AI trong lớp học Việt Nam</span>
+            <span class="lang-block" data-lang="en" style="display:none;">The Future of AI in Vietnamese Classrooms</span>
+          </h2>
+          <p style="color:var(--stone-600);line-height:1.75;margin-bottom:1.5rem;">
+            <span class="lang-block" data-lang="vi">Khám phá cách AI tạo sinh đang định hình lại việc học tiếng Việt như ngôn ngữ thứ hai. Các công cụ AI hiện đang được sử dụng để tạo lộ trình học tập cá nhân hóa, cung cấp phản hồi tức thì về phát âm, ngữ pháp và phong cách viết.</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Exploring how generative AI is reshaping the way students learn Vietnamese as a second language. AI tools are now being used to create personalized learning paths, providing students with instant feedback on their pronunciation, grammar, and writing style.</span>
+          </p>
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+            <div style="display:flex;align-items:center;gap:0.75rem;">
+              <div style="width:2.5rem;height:2.5rem;border-radius:50%;background:var(--stone-200);overflow:hidden;">
+                <img src="https://i.pravatar.cc/150?u=author1" alt="" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+              </div>
+              <div>
+                <p style="font-size:0.875rem;font-weight:600;color:var(--tertiary);">TS. Nguyễn Văn A</p>
+                <p style="font-size:0.75rem;color:var(--stone-400);">15/03/2026</p>
+              </div>
+            </div>
+            <a href="#" class="btn btn--primary btn--sm" data-i18n="blog.read_more">Đọc tiếp →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog grid -->
+    <div class="section-header">
+      <div class="section-header__left">
+        <h2 class="headline-md" style="color:var(--primary);">
+          <span class="lang-block" data-lang="vi">Bài viết mới nhất</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Latest Articles</span>
+        </h2>
+      </div>
+    </div>
+
+    <div class="blog-grid">
+
+      <div class="blog-card animate-in">
+        <div class="blog-card__image">
+          <img src="https://picsum.photos/seed/blog-conf2025/800/450" alt="VietCALL 2025 Highlights" loading="lazy">
+        </div>
+        <div class="blog-card__body">
+          <span class="blog-card__cat" data-i18n="blog.cat_events">Sự kiện</span>
+          <h3>
+            <span class="lang-block" data-lang="vi">VietCALL 2025: Những điểm nổi bật</span>
+            <span class="lang-block" data-lang="en" style="display:none;">VietCALL 2025 Highlights: A Success Story</span>
+          </h3>
+          <p>
+            <span class="lang-block" data-lang="vi">Nhìn lại những phiên thảo luận và diễn giả ấn tượng nhất từ hội thảo thường niên của chúng tôi năm 2025 tại TP. Hồ Chí Minh.</span>
+            <span class="lang-block" data-lang="en" style="display:none;">A look back at the most impactful sessions and speakers from our 2025 annual conference in Ho Chi Minh City.</span>
+          </p>
+          <div class="blog-card__footer">
+            <span class="blog-card__author">
+              <span class="lang-block" data-lang="vi">Ban Biên tập VietCALL</span>
+              <span class="lang-block" data-lang="en" style="display:none;">VietCALL Team</span>
+            </span>
+            <span class="blog-card__date">05/12/2025</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card animate-in" style="transition-delay:0.05s">
+        <div class="blog-card__image">
+          <img src="https://picsum.photos/seed/blog-grant2026/800/450" alt="Research Grant 2026" loading="lazy">
+        </div>
+        <div class="blog-card__body">
+          <span class="blog-card__cat" data-i18n="blog.cat_news">Tin tức</span>
+          <h3>
+            <span class="lang-block" data-lang="vi">Thông báo học bổng nghiên cứu VietCALL 2026</span>
+            <span class="lang-block" data-lang="en" style="display:none;">New Research Grant Announced for 2026</span>
+          </h3>
+          <p>
+            <span class="lang-block" data-lang="vi">VietCALL tự hào thông báo cơ hội tài trợ mới dành cho các nhà nghiên cứu trẻ trong lĩnh vực CALL tại Việt Nam.</span>
+            <span class="lang-block" data-lang="en" style="display:none;">VietCALL is proud to announce a new funding opportunity for early-career researchers in the field of CALL.</span>
+          </p>
+          <div class="blog-card__footer">
+            <span class="blog-card__author">
+              <span class="lang-block" data-lang="vi">Ban Tài trợ</span>
+              <span class="lang-block" data-lang="en" style="display:none;">Grant Committee</span>
+            </span>
+            <span class="blog-card__date">10/02/2026</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card animate-in" style="transition-delay:0.1s">
+        <div class="blog-card__image">
+          <img src="https://picsum.photos/seed/blog-gamify/800/450" alt="Gamification" loading="lazy">
+        </div>
+        <div class="blog-card__body">
+          <span class="blog-card__cat" data-i18n="blog.cat_pedagogy">Sư phạm</span>
+          <h3>
+            <span class="lang-block" data-lang="vi">Vai trò của trò chơi hóa trong học ngôn ngữ</span>
+            <span class="lang-block" data-lang="en" style="display:none;">The Role of Gamification in Language Learning</span>
+          </h3>
+          <p>
+            <span class="lang-block" data-lang="vi">Cách các yếu tố trò chơi đang tăng cường sự gắn kết của học sinh trong các khóa học tiếng Việt và tiếng Anh.</span>
+            <span class="lang-block" data-lang="en" style="display:none;">How game-based elements are increasing student engagement in Vietnamese and English language courses.</span>
+          </p>
+          <div class="blog-card__footer">
+            <span class="blog-card__author">TS. Lê Thị D</span>
+            <span class="blog-card__date">20/01/2026</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card animate-in" style="transition-delay:0.15s">
+        <div class="blog-card__image">
+          <img src="https://picsum.photos/seed/blog-vr/800/450" alt="VR in Language Learning" loading="lazy">
+        </div>
+        <div class="blog-card__body">
+          <span class="blog-card__cat" data-i18n="blog.cat_events">Sự kiện</span>
+          <h3>
+            <span class="lang-block" data-lang="vi">Webinar VietCALL: Tích hợp VR vào lớp học</span>
+            <span class="lang-block" data-lang="en" style="display:none;">VietCALL Webinar: Integrating VR in the Classroom</span>
+          </h3>
+          <p>
+            <span class="lang-block" data-lang="vi">Tóm tắt hội thảo trực tuyến của chúng tôi về tiềm năng của Thực tế Ảo trong các trải nghiệm ngôn ngữ nhập vai.</span>
+            <span class="lang-block" data-lang="en" style="display:none;">A summary of our recent webinar on the potential of Virtual Reality for immersive language experiences.</span>
+          </p>
+          <div class="blog-card__footer">
+            <span class="blog-card__author">
+              <span class="lang-block" data-lang="vi">Ban Kỹ thuật</span>
+              <span class="lang-block" data-lang="en" style="display:none;">Tech Committee</span>
+            </span>
+            <span class="blog-card__date">12/08/2025</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card animate-in" style="transition-delay:0.2s">
+        <div class="blog-card__image">
+          <img src="https://picsum.photos/seed/blog-mobile/800/450" alt="Mobile Learning" loading="lazy">
+        </div>
+        <div class="blog-card__body">
+          <span class="blog-card__cat" data-i18n="blog.cat_research">Nghiên cứu</span>
+          <h3>
+            <span class="lang-block" data-lang="vi">Cơ bản về học ngôn ngữ di động (MALL)</span>
+            <span class="lang-block" data-lang="en" style="display:none;">The Basics of Mobile Language Learning (MALL)</span>
+          </h3>
+          <p>
+            <span class="lang-block" data-lang="vi">Giới thiệu về Học ngôn ngữ hỗ trợ Di động, bao gồm nền tảng lý thuyết và các cơ hội thực tiễn trong giảng dạy.</span>
+            <span class="lang-block" data-lang="en" style="display:none;">An introduction to Mobile-Assisted Language Learning, covering its foundations and practical opportunities in teaching.</span>
+          </p>
+          <div class="blog-card__footer">
+            <span class="blog-card__author">
+              <span class="lang-block" data-lang="vi">Nhóm nghiên cứu VietCALL</span>
+              <span class="lang-block" data-lang="en" style="display:none;">VietCALL Research Team</span>
+            </span>
+            <span class="blog-card__date">10/05/2024</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card animate-in" style="transition-delay:0.25s">
+        <div class="blog-card__image">
+          <img src="https://picsum.photos/seed/blog-techstandards/800/450" alt="Technology Standards" loading="lazy">
+        </div>
+        <div class="blog-card__body">
+          <span class="blog-card__cat" data-i18n="blog.cat_research">Nghiên cứu</span>
+          <h3>
+            <span class="lang-block" data-lang="vi">Tiêu chuẩn Công nghệ cho Giáo viên EFL: Góc nhìn Toàn cầu</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Technology Standards for EFL Teachers: Global Insights</span>
+          </h3>
+          <p>
+            <span class="lang-block" data-lang="vi">Phân tích các tiêu chuẩn công nghệ cho giáo viên EFL từ góc nhìn quốc tế và hàm ý địa phương đối với giáo viên Việt Nam.</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Analysis of technology standards for EFL teachers from an international perspective and local implications for Vietnamese educators.</span>
+          </p>
+          <div class="blog-card__footer">
+            <span class="blog-card__author">
+              <span class="lang-block" data-lang="vi">Hội đồng chuyên gia</span>
+              <span class="lang-block" data-lang="en" style="display:none;">Expert Panel</span>
+            </span>
+            <span class="blog-card__date">20/03/2024</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── NEWSLETTER ────────────────────────────────────────────── -->
+<section class="section bg-primary animate-in">
+  <div class="container">
+    <div class="cta-section">
+      <span class="badge" style="background:rgba(255,255,255,0.15);color:#fff;" data-i18n="blog.newsletter_title">Nhận tin tức VietCALL</span>
+      <h2 class="headline-lg mt-4" style="color:#fff;" data-i18n="blog.newsletter_title">Nhận tin tức VietCALL</h2>
+      <p style="color:rgba(255,255,255,0.7);" data-i18n="blog.newsletter_desc">Đăng ký nhận bản tin để cập nhật nghiên cứu và sự kiện mới nhất.</p>
+      <div style="display:flex;gap:0.75rem;max-width:32rem;margin:0 auto;flex-wrap:wrap;justify-content:center;">
+        <input type="email" class="form-control" style="flex:1;min-width:16rem;border-color:rgba(255,255,255,0.2);background:rgba(255,255,255,0.1);color:#fff;"
+               data-i18n-placeholder="blog.newsletter_placeholder" placeholder="Địa chỉ email của bạn">
+        <button class="btn btn--secondary" data-i18n="blog.newsletter_btn">Đăng ký</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <span class="footer__brand">VietCALL</span>
+        <p class="footer__tagline" data-i18n="footer.tagline">Thúc đẩy Học ngôn ngữ có hỗ trợ Máy tính tại Việt Nam</p>
+      </div>
+      <div>
+        <p class="footer__col-title" data-i18n="footer.links">Liên kết nhanh</p>
+        <nav class="footer__nav-links">
+          <a href="about.html" class="footer__nav-link" data-i18n="nav.about">Giới thiệu</a>
+          <a href="committee.html" class="footer__nav-link" data-i18n="nav.committee">Ban Lãnh đạo</a>
+          <a href="conferences.html" class="footer__nav-link" data-i18n="nav.conferences">Hội thảo</a>
+          <a href="resources.html" class="footer__nav-link" data-i18n="nav.resources">Tài nguyên</a>
+          <a href="blog.html" class="footer__nav-link" data-i18n="nav.blog">Tin tức</a>
+          <a href="membership.html" class="footer__nav-link" data-i18n="nav.membership">Thành viên</a>
+          <a href="contact.html" class="footer__nav-link" data-i18n="nav.contact">Liên hệ</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer__col-title" data-i18n="footer.connect">Kết nối</p>
+        <div class="footer__social-links">
+          <a href="https://www.facebook.com/vietcall.edu.vn" class="footer__social-link" target="_blank" rel="noopener">📘 Facebook</a>
+          <a href="mailto:lanhuongnckh@gmail.com" class="footer__social-link">✉️ Email</a>
+          <a href="https://vietcall.edu.vn" class="footer__social-link" target="_blank" rel="noopener">🌐 vietcall.edu.vn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright" data-i18n="footer.copyright">© 2026 VietCALL. Bảo lưu mọi quyền.</p>
+      <div class="footer__bottom-links">
+        <a href="#" class="footer__bottom-link" data-i18n="footer.privacy">Chính sách bảo mật</a>
+        <a href="contact.html" class="footer__bottom-link" data-i18n="footer.contact">Liên hệ hỗ trợ</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  @media (min-width: 768px) {
+    .featured-post-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 1024px) {
+    .affiliated-grid { grid-template-columns: 1fr 1fr 1fr; }
+  }
+  input::placeholder { color: rgba(255,255,255,0.5); }
+</style>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -13,33 +13,33 @@ document.addEventListener('DOMContentLoaded', () => {
   // Scroll shadow
   window.addEventListener('scroll', () => {
     if (window.scrollY > 10) {
-      navbar.classList.add('navbar--scrolled');
+      navbar.classList.add('scrolled');
     } else {
-      navbar.classList.remove('navbar--scrolled');
+      navbar.classList.remove('scrolled');
     }
   }, { passive: true });
 
   // Hamburger toggle
   if (hamburger && mobileMenu) {
     hamburger.addEventListener('click', () => {
-      const isOpen = mobileMenu.classList.toggle('active');
-      hamburger.classList.toggle('active', isOpen);
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
       hamburger.setAttribute('aria-expanded', isOpen);
     });
 
     // Close on link click
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('open');
       });
     });
 
     // Close on outside click
     document.addEventListener('click', e => {
       if (!navbar.contains(e.target)) {
-        mobileMenu.classList.remove('active');
-        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('open');
       }
     });
   }

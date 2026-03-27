@@ -4,53 +4,67 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ban Lãnh đạo – VietCALL</title>
-  <meta name="description" content="Gặp gỡ Ban Chấp hành và Ban Cố vấn của VietCALL – những nhà giáo dục và nhà nghiên cứu tận tâm.">
+  <meta name="description" content="Ban Chấp hành và Ban Cố vấn VietCALL.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .member-card__avatar img { width:100%;height:100%;object-fit:cover; }
+  </style>
 </head>
 <body>
 
-<!-- ── NAVBAR ──────────────────────────────────────────────────── -->
 <nav class="navbar" role="navigation">
   <div class="navbar__inner">
     <a href="index.html" class="navbar__brand">
-      <span class="navbar__name">Viet<span>CALL</span></span>
+      <div class="navbar__logo-circle"><span>V</span></div>
+      <span class="navbar__name">VietCALL</span>
     </a>
     <ul class="navbar__links">
       <li><a href="about.html" class="navbar__link" data-i18n="nav.about">Giới thiệu</a></li>
       <li><a href="committee.html" class="navbar__link navbar__link--active" data-i18n="nav.committee">Ban Lãnh đạo</a></li>
       <li><a href="conferences.html" class="navbar__link" data-i18n="nav.conferences">Hội thảo</a></li>
       <li><a href="resources.html" class="navbar__link" data-i18n="nav.resources">Tài nguyên</a></li>
+      <li><a href="blog.html" class="navbar__link" data-i18n="nav.blog">Tin tức</a></li>
+      <li><a href="membership.html" class="navbar__link" data-i18n="nav.membership">Thành viên</a></li>
       <li><a href="contact.html" class="navbar__link" data-i18n="nav.contact">Liên hệ</a></li>
     </ul>
     <div class="navbar__right">
       <div class="lang-switcher">
-        <button class="lang-btn lang-btn--active" data-lang-code="vi">VI</button>
-        <button class="lang-btn" data-lang-code="en">EN</button>
+        <button class="lang-switcher__btn" aria-label="Chọn ngôn ngữ">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="lang-switcher__current">🇻🇳 VI</span>
+        </button>
+        <div class="lang-switcher__dropdown">
+          <button class="lang-switcher__option active" data-lang-code="vi">🇻🇳 Tiếng Việt</button>
+          <button class="lang-switcher__option" data-lang-code="en">🇺🇸 English</button>
+        </div>
       </div>
-      <a href="contact.html" class="navbar__cta" data-i18n="nav.join">Tham gia ngay</a>
+      <a href="membership.html" class="btn btn--primary btn--sm" data-i18n="nav.join">Tham gia ngay</a>
     </div>
     <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
-<div class="navbar__mobile-menu" id="mobileMenu">
+<div class="navbar__mobile" id="mobileMenu">
   <a href="about.html" data-i18n="nav.about">Giới thiệu</a>
   <a href="committee.html" data-i18n="nav.committee">Ban Lãnh đạo</a>
   <a href="conferences.html" data-i18n="nav.conferences">Hội thảo</a>
   <a href="resources.html" data-i18n="nav.resources">Tài nguyên</a>
+  <a href="blog.html" data-i18n="nav.blog">Tin tức</a>
+  <a href="membership.html" data-i18n="nav.membership">Thành viên</a>
   <a href="contact.html" data-i18n="nav.contact">Liên hệ</a>
-  <a href="contact.html" style="color:var(--secondary);font-weight:700;" data-i18n="nav.join">Tham gia ngay</a>
+  <div class="mobile-cta"><a href="membership.html" class="btn btn--primary" style="width:100%;justify-content:center;" data-i18n="nav.join">Tham gia ngay</a></div>
   <div class="mobile-lang">
-    <button class="lang-btn" data-lang-code="vi">🇻🇳 Tiếng Việt</button>
-    <button class="lang-btn" data-lang-code="en">🇺🇸 English</button>
+    <button class="lang-switcher__option active" data-lang-code="vi">🇻🇳 VI</button>
+    <button class="lang-switcher__option" data-lang-code="en">🇺🇸 EN</button>
   </div>
 </div>
 
-<!-- ── PAGE HERO ───────────────────────────────────────────────── -->
+<main class="page-top">
+
 <header class="page-hero animate-in">
   <div class="container">
     <span class="badge" data-i18n="committee.badge">Lãnh đạo</span>
@@ -59,342 +73,333 @@
   </div>
 </header>
 
-<main>
-
-<!-- ── EXECUTIVE COMMITTEE ─────────────────────────────────────── -->
-<section class="section bg-surface animate-in">
+<!-- ── EXECUTIVE COMMITTEE ──────────────────────────────────── -->
+<section class="section bg-white animate-in">
   <div class="container">
     <div class="section-header">
-      <h2 class="headline-lg text-primary" data-i18n="committee.exec_title">Ban Chấp hành</h2>
-      <div class="accent-line"></div>
+      <div class="section-header__left">
+        <span class="badge" data-i18n="committee.exec_title">Ban Chấp hành</span>
+        <h2 class="headline-lg" data-i18n="committee.exec_title">Ban Chấp hành</h2>
+      </div>
     </div>
+    <div class="member-grid">
 
-    <div class="committee-grid stagger">
+      <!-- Dr. Bao Kham -->
+      <div class="member-card animate-in">
+        <div class="member-card__avatar">
+          <img src="https://vietcall.edu.vn/wp-content/uploads/2023/08/BaoKham.jpg" alt="Dr. Bao Kham"
+               onerror="this.parentElement.innerHTML='<span class=\'initials\'>BK</span>'">
+        </div>
+        <span class="member-card__role">
+          <span class="lang-block" data-lang="vi">Chủ tịch</span>
+          <span class="lang-block" data-lang="en" style="display:none;">President</span>
+        </span>
+        <h3>Dr. Bao Kham</h3>
+        <p class="member-card__title">
+          <span class="lang-block" data-lang="vi">Trường Đại học Ngoại ngữ – Đại học Quốc gia Hà Nội</span>
+          <span class="lang-block" data-lang="en" style="display:none;">University of Languages and International Studies – VNU Hanoi</span>
+        </p>
+        <div class="divider"></div>
+        <p>
+          <span class="lang-block" data-lang="vi">Chuyên gia CALL và Ngôn ngữ học ứng dụng. Chủ tịch sáng lập của VietCALL, đã dẫn dắt tổ chức từ khi thành lập.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">CALL and Applied Linguistics expert. Founding President of VietCALL, leading the organization since its establishment.</span>
+        </p>
+      </div>
 
-      <!-- Dr. Bao Kham – President -->
-      <article class="member-card">
-        <div class="member-card__header">
-          <img class="member-card__avatar"
-               src="https://vietcall.edu.vn/wp-content/uploads/2024/01/IMG_0437-300x200.jpg"
-               alt="Dr. Bao Kham" loading="lazy"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="member-card__avatar-placeholder" style="display:none;">BK</div>
-          <div>
-            <p class="member-card__role lang-block" data-lang="vi">Chủ tịch</p>
-            <p class="member-card__role lang-block" data-lang="en" style="display:none;">President</p>
-            <h3 class="member-card__name">Dr. Bao Kham</h3>
-            <p class="member-card__affiliation lang-block" data-lang="vi">Tổng Biên tập, Tạp chí Nghiên cứu Ngôn ngữ và Văn hóa, Đại học Huế</p>
-            <p class="member-card__affiliation lang-block" data-lang="en" style="display:none;">Editor-in-Chief, Journal of Inquiry into Languages and Cultures, Hue University</p>
-          </div>
+      <!-- Assoc. Prof. Nguyen Van Long -->
+      <div class="member-card animate-in" style="transition-delay:0.05s">
+        <div class="member-card__avatar">
+          <img src="https://vietcall.edu.vn/wp-content/uploads/2023/08/NguyenVanLong.jpg" alt="Assoc. Prof. Nguyen Van Long"
+               onerror="this.parentElement.innerHTML='<span class=\'initials\'>NVL</span>'">
         </div>
-        <div class="member-card__body">
-          <p class="member-card__bio lang-block" data-lang="vi">TS. Bảo Kham hiện là Tổng Biên tập Tạp chí Nghiên cứu Ngôn ngữ và Văn hóa và giảng viên Giảng dạy tiếng Anh tại Trường Đại học Ngoại ngữ – Đại học Huế. Ông có bằng Thạc sĩ từ Đại học Sydney và bằng Tiến sĩ từ Đại học La Trobe, Úc. Hướng nghiên cứu chính là xã hội hóa giáo viên, đào tạo giáo viên trước và trong chức vụ.</p>
-          <p class="member-card__bio lang-block" data-lang="en" style="display:none;">Dr. Bao Kham is Editor-in-Chief of the Journal of Inquiry into Languages and Cultures and a lecturer in English Language Teaching at ULIS, Hue University. He holds an MA from the University of Sydney and a PhD from La Trobe University, Australia. His research focuses on teacher socialization and pre/in-service teacher education.</p>
-        </div>
-      </article>
+        <span class="member-card__role">
+          <span class="lang-block" data-lang="vi">Phó Chủ tịch</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Vice President</span>
+        </span>
+        <h3>Assoc. Prof. Nguyen Van Long</h3>
+        <p class="member-card__title">
+          <span class="lang-block" data-lang="vi">Trường Đại học Ngoại ngữ – Đại học Huế</span>
+          <span class="lang-block" data-lang="en" style="display:none;">University of Foreign Languages – Hue University</span>
+        </p>
+        <div class="divider"></div>
+        <p>
+          <span class="lang-block" data-lang="vi">Phó Giáo sư chuyên về ứng dụng công nghệ trong giảng dạy tiếng Anh và phát triển chương trình học.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Associate Professor specializing in technology applications in English language teaching and curriculum development.</span>
+        </p>
+      </div>
 
-      <!-- Assoc. Prof. Nguyen Van Long – Vice President -->
-      <article class="member-card">
-        <div class="member-card__header">
-          <img class="member-card__avatar"
-               src="https://vietcall.edu.vn/wp-content/uploads/2024/01/z5034686531925_56cc3a10c866e03338dd413bf7632267-300x200.jpg"
-               alt="Assoc. Prof. Dr. Nguyen Van Long" loading="lazy"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="member-card__avatar-placeholder" style="display:none;">NVL</div>
-          <div>
-            <p class="member-card__role lang-block" data-lang="vi">Phó Chủ tịch</p>
-            <p class="member-card__role lang-block" data-lang="en" style="display:none;">Vice President</p>
-            <h3 class="member-card__name">Assoc. Prof. Dr. Nguyen Van Long</h3>
-            <p class="member-card__affiliation lang-block" data-lang="vi">Phó Hiệu trưởng, Trường Đại học Ngoại ngữ – Đại học Đà Nẵng</p>
-            <p class="member-card__affiliation lang-block" data-lang="en" style="display:none;">Vice-Rector, University of Foreign Language Studies, The University of Danang</p>
-          </div>
+      <!-- Assoc. Prof. Pham Vu Phi Ho -->
+      <div class="member-card animate-in" style="transition-delay:0.1s">
+        <div class="member-card__avatar">
+          <img src="https://vietcall.edu.vn/wp-content/uploads/2023/08/PhamVuPhiHo.jpg" alt="Assoc. Prof. Pham Vu Phi Ho"
+               onerror="this.parentElement.innerHTML='<span class=\'initials\'>PH</span>'">
         </div>
-        <div class="member-card__body">
-          <p class="member-card__bio lang-block" data-lang="vi">PGS.TS. Long V Nguyen là Phó Hiệu trưởng Trường Đại học Ngoại ngữ – Đại học Đà Nẵng. Ông có bằng Thạc sĩ TESOL từ Đại học Queensland (2005) và bằng Tiến sĩ Ngôn ngữ học Ứng dụng (chuyên ngành CALL) tại Đại học Massey. Là Microsoft MIE và PIL từ năm 2012, ông đã nhận nhiều tài trợ nghiên cứu xuất sắc.</p>
-          <p class="member-card__bio lang-block" data-lang="en" style="display:none;">Assoc. Prof. Dr. Nguyen Van Long is Vice-Rector at UFLS, University of Danang. He received his MA in TESOL from the University of Queensland (2005) and his PhD in Applied Linguistics (CALL) from Massey University. A Microsoft MIE and PIL since 2012, he has received several outstanding research grants.</p>
-        </div>
-        <div class="member-card__links">
-          <a href="https://www.scopus.com/authid/detail.uri?authorId=54882370800" class="member-link" target="_blank" rel="noopener" data-i18n="committee.scopus">Scopus</a>
-          <a href="https://orcid.org/0000-0002-0647-1626" class="member-link" target="_blank" rel="noopener" data-i18n="committee.orcid">ORCID</a>
-          <a href="https://scholar.google.com/citations?hl=en&user=nt9ZuVoAAAAJ" class="member-link" target="_blank" rel="noopener" data-i18n="committee.scholar">Google Scholar</a>
-        </div>
-      </article>
+        <span class="member-card__role">
+          <span class="lang-block" data-lang="vi">Phó Chủ tịch</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Vice President</span>
+        </span>
+        <h3>Assoc. Prof. Pham Vu Phi Ho</h3>
+        <p class="member-card__title">
+          <span class="lang-block" data-lang="vi">Trường Đại học Công nghiệp TP.HCM (IUH)</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Industrial University of Ho Chi Minh City (IUH)</span>
+        </p>
+        <div class="divider"></div>
+        <p>
+          <span class="lang-block" data-lang="vi">Phó Giáo sư nghiên cứu về học tập di động, trò chơi hóa và công nghệ trong giáo dục ngôn ngữ.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Associate Professor researching mobile learning, gamification, and technology in language education.</span>
+        </p>
+      </div>
 
-      <!-- Assoc. Prof. Pham Vu Phi Ho – Vice President -->
-      <article class="member-card">
-        <div class="member-card__header">
-          <img class="member-card__avatar"
-               src="https://vietcall.edu.vn/wp-content/uploads/2024/01/z5034689207265_419f16db0229eed9cc535b926fbcf740-300x200.jpg"
-               alt="Assoc. Prof. Pham Vu Phi Ho" loading="lazy"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="member-card__avatar-placeholder" style="display:none;">PH</div>
-          <div>
-            <p class="member-card__role lang-block" data-lang="vi">Phó Chủ tịch</p>
-            <p class="member-card__role lang-block" data-lang="en" style="display:none;">Vice President</p>
-            <h3 class="member-card__name">Assoc. Prof. Dr. Pham Vu Phi Ho</h3>
-            <p class="member-card__affiliation lang-block" data-lang="vi">Tổng Biên tập, International Journal of TESOL &amp; Education, Đại học Công nghiệp TP.HCM</p>
-            <p class="member-card__affiliation lang-block" data-lang="en" style="display:none;">Editor-in-Chief, International Journal of TESOL &amp; Education, Industrial University of HCMC</p>
-          </div>
+      <!-- Assoc. Prof. Nguyen Ngoc Vu -->
+      <div class="member-card animate-in" style="transition-delay:0.15s">
+        <div class="member-card__avatar">
+          <img src="https://vietcall.edu.vn/wp-content/uploads/2023/08/NguyenNgocVu.jpg" alt="Assoc. Prof. Nguyen Ngoc Vu"
+               onerror="this.parentElement.innerHTML='<span class=\'initials\'>NNV</span>'">
         </div>
-        <div class="member-card__body">
-          <p class="member-card__bio lang-block" data-lang="vi">PGS.TS. Phạm Vũ Phi Hổ đã công bố hơn 70 bài báo nghiên cứu (17 Scopus/14 ISI), 10 sách và 3 giáo trình. Ông là Phó Chủ tịch phụ trách Hành chính của AsiaCALL và hiện là Tổng Biên tập International Journal of TESOL &amp; Education.</p>
-          <p class="member-card__bio lang-block" data-lang="en" style="display:none;">Assoc. Prof. Dr. Pham Vu Phi Ho has published over 70 research articles (17 Scopus/14 ISI-indexed), 10 books, and 3 course-books. He is Vice President for Administrative Affairs of AsiaCALL and Editor-in-Chief of the International Journal of TESOL &amp; Education.</p>
-        </div>
-        <div class="member-card__links">
-          <a href="https://orcid.org/0000-0001-7459-8509" class="member-link" target="_blank" rel="noopener" data-i18n="committee.orcid">ORCID</a>
-          <a href="http://www.scopus.com/inward/authorDetails.url?authorID=56165559700&partnerID=MN8TOARS" class="member-link" target="_blank" rel="noopener" data-i18n="committee.scopus">Scopus</a>
-          <a href="https://scholar.google.com/citations?user=X35QVFEAAAAJ&hl=en" class="member-link" target="_blank" rel="noopener" data-i18n="committee.scholar">Google Scholar</a>
-        </div>
-      </article>
+        <span class="member-card__role">
+          <span class="lang-block" data-lang="vi">Thành viên Ban Chấp hành</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Executive Member</span>
+        </span>
+        <h3>Assoc. Prof. Nguyen Ngoc Vu</h3>
+        <p class="member-card__title">
+          <span class="lang-block" data-lang="vi">Trường Đại học Ngoại ngữ – Đại học Đà Nẵng</span>
+          <span class="lang-block" data-lang="en" style="display:none;">University of Foreign Languages – Da Nang University</span>
+        </p>
+        <div class="divider"></div>
+        <p>
+          <span class="lang-block" data-lang="vi">Phó Giáo sư chuyên về phương pháp giảng dạy ngôn ngữ và tích hợp công nghệ vào chương trình học.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Associate Professor specializing in language teaching methodology and technology integration in curriculum.</span>
+        </p>
+      </div>
 
-      <!-- Assoc. Prof. Nguyen Ngoc Vu – Vice President -->
-      <article class="member-card">
-        <div class="member-card__header">
-          <img class="member-card__avatar"
-               src="https://vietcall.edu.vn/wp-content/uploads/2024/01/Vu1-242x300-1.jpg"
-               alt="Assoc. Prof. Dr. Nguyen Ngoc Vu" loading="lazy"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="member-card__avatar-placeholder" style="display:none;">NNV</div>
-          <div>
-            <p class="member-card__role lang-block" data-lang="vi">Phó Chủ tịch</p>
-            <p class="member-card__role lang-block" data-lang="en" style="display:none;">Vice President</p>
-            <h3 class="member-card__name">Assoc. Prof. Dr. Nguyen Ngoc Vu</h3>
-            <p class="member-card__affiliation lang-block" data-lang="vi">Phó Hiệu trưởng, Đại học Ngoại ngữ – Tin học TP.HCM (HUFLIT)</p>
-            <p class="member-card__affiliation lang-block" data-lang="en" style="display:none;">Vice-President, HCMC University of Foreign Languages – Information Technology (HUFLIT)</p>
-          </div>
+      <!-- Nguyen Thi Lan Huong -->
+      <div class="member-card animate-in" style="transition-delay:0.2s">
+        <div class="member-card__avatar">
+          <img src="https://vietcall.edu.vn/wp-content/uploads/2023/08/LanHuong.jpg" alt="Nguyen Thi Lan Huong"
+               onerror="this.parentElement.innerHTML='<span class=\'initials\'>LH</span>'">
         </div>
-        <div class="member-card__body">
-          <p class="member-card__bio lang-block" data-lang="vi">PGS.TS. Nguyễn Ngọc Vũ là Phó Hiệu trưởng HUFLIT và Chủ tịch STESOL. Với kinh nghiệm đào tạo tại hơn 25 quốc gia, chuyên môn chính là chuyển đổi số trong giáo dục đại học. Ông đã giành giải thưởng Đổi mới Công nghệ Việt Nam năm 2012 và được công nhận là Microsoft MIE Master Trainer năm 2014.</p>
-          <p class="member-card__bio lang-block" data-lang="en" style="display:none;">Assoc. Prof. Dr. Nguyen Ngoc Vu is Vice-President of HUFLIT and Chairman of STESOL. With training experience from more than 25 countries, his expertise is building digital transformation competency in higher education. He won the Vietnam Technology Innovation Award in 2012 and was recognised as a Microsoft MIE Master Trainer in 2014.</p>
-        </div>
-        <div class="member-card__links">
-          <a href="https://orcid.org/0000-0002-3592-7813" class="member-link" target="_blank" rel="noopener" data-i18n="committee.orcid">ORCID</a>
-          <a href="https://scholar.google.com/citations?user=b9yGTo4AAAAJ&hl=en" class="member-link" target="_blank" rel="noopener" data-i18n="committee.scholar">Google Scholar</a>
-        </div>
-      </article>
-
-      <!-- Nguyen Thi Lan Huong – Vice President -->
-      <article class="member-card">
-        <div class="member-card__header">
-          <img class="member-card__avatar"
-               src="https://vietcall.edu.vn/wp-content/uploads/2024/01/Huong2022_2-257x300.jpg"
-               alt="Nguyen Thi Lan Huong" loading="lazy"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="member-card__avatar-placeholder" style="display:none;">NTLH</div>
-          <div>
-            <p class="member-card__role lang-block" data-lang="vi">Phó Chủ tịch</p>
-            <p class="member-card__role lang-block" data-lang="en" style="display:none;">Vice President</p>
-            <h3 class="member-card__name">Nguyen Thi Lan Huong, MA</h3>
-            <p class="member-card__affiliation lang-block" data-lang="vi">Phó Giám đốc Văn phòng Hợp tác và Phát triển, ĐHNN – ĐHQG Hà Nội</p>
-            <p class="member-card__affiliation lang-block" data-lang="en" style="display:none;">Deputy Director, Office of Cooperation and Development, VNU-ULIS Hanoi</p>
-          </div>
-        </div>
-        <div class="member-card__body">
-          <p class="member-card__bio lang-block" data-lang="vi">Bà Hương Nguyễn là lãnh đạo về ICT trong giảng dạy ngôn ngữ tại Việt Nam, chuyên gia công nghệ cấp cao và huấn luyện viên giáo viên tại ĐHNN – ĐHQG Hà Nội. Hướng nghiên cứu tập trung vào phát triển chuyên môn giáo viên, học tập tăng cường công nghệ và blended learning.</p>
-          <p class="member-card__bio lang-block" data-lang="en" style="display:none;">Ms. Huong Nguyen is a leader in ICT in language teaching in Vietnam, a senior technology expert, and teacher trainer at VNU-ULIS. Her research focuses on teacher professional development, technology-enhanced learning, and blended learning.</p>
-        </div>
-      </article>
+        <span class="member-card__role">
+          <span class="lang-block" data-lang="vi">Thư ký</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Secretary</span>
+        </span>
+        <h3>Nguyen Thi Lan Huong</h3>
+        <p class="member-card__title">
+          <span class="lang-block" data-lang="vi">Trường Đại học Ngoại ngữ – Đại học Huế</span>
+          <span class="lang-block" data-lang="en" style="display:none;">University of Foreign Languages – Hue University</span>
+        </p>
+        <div class="divider"></div>
+        <p>
+          <span class="lang-block" data-lang="vi">Giảng viên tiếng Anh với kinh nghiệm nghiên cứu về ứng dụng công nghệ trong dạy và học ngoại ngữ.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">English lecturer with research experience in technology applications in foreign language teaching and learning.</span>
+        </p>
+      </div>
 
       <!-- Dr. Tran Tin Nghi -->
-      <article class="member-card">
-        <div class="member-card__header">
-          <img class="member-card__avatar"
-               src="https://vietcall.edu.vn/wp-content/uploads/2024/01/z5032803722443_66123d94ad01271ea7ad982e6ee66a35-300x300.jpg"
-               alt="Dr. Tran Tin Nghi" loading="lazy"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="member-card__avatar-placeholder" style="display:none;">TTN</div>
-          <div>
-            <p class="member-card__role lang-block" data-lang="vi">Ủy viên</p>
-            <p class="member-card__role lang-block" data-lang="en" style="display:none;">Committee Member</p>
-            <h3 class="member-card__name">Dr. Tran Tin Nghi</h3>
-            <p class="member-card__affiliation lang-block" data-lang="vi">Trưởng Khoa Ngoại ngữ, Đại học Công nghiệp Thực phẩm TP.HCM (HUIT)</p>
-            <p class="member-card__affiliation lang-block" data-lang="en" style="display:none;">Dean, Faculty of Foreign Languages, HCMC University of Food Industry (HUIT)</p>
-          </div>
+      <div class="member-card animate-in" style="transition-delay:0.25s">
+        <div class="member-card__avatar">
+          <img src="https://vietcall.edu.vn/wp-content/uploads/2023/08/TranTinNghi.jpg" alt="Dr. Tran Tin Nghi"
+               onerror="this.parentElement.innerHTML='<span class=\'initials\'>TTN</span>'">
         </div>
-        <div class="member-card__body">
-          <p class="member-card__bio lang-block" data-lang="vi">TS. Trần Tín Nghị là nhà giáo dục và nghiên cứu viên có kinh nghiệm, quan tâm đến thụ đắc ngôn ngữ thứ hai và sư phạm. Công trình của ông tập trung vào phát triển phương pháp giảng dạy hiệu quả, kỹ thuật dựa trên ngữ liệu, AI trong giáo dục và vai trò của chữ viết trong học ngôn ngữ thứ hai.</p>
-          <p class="member-card__bio lang-block" data-lang="en" style="display:none;">Dr. Tran Tin Nghi is an experienced educator and researcher interested in second language acquisition and pedagogy. His work focuses on developing effective teaching methodologies, corpus-based techniques, AI in Education, and the role of literacy in second language learning.</p>
-        </div>
-        <div class="member-card__links">
-          <a href="https://orcid.org/0000-0001-6549-3895" class="member-link" target="_blank" rel="noopener" data-i18n="committee.orcid">ORCID</a>
-          <a href="https://www.scopus.com/authid/detail.uri?authorId=57212464873" class="member-link" target="_blank" rel="noopener" data-i18n="committee.scopus">Scopus</a>
-          <a href="https://scholar.google.com/citations?user=ynBV1b4AAAAJ&hl=en" class="member-link" target="_blank" rel="noopener" data-i18n="committee.scholar">Google Scholar</a>
-        </div>
-      </article>
+        <span class="member-card__role">
+          <span class="lang-block" data-lang="vi">Thành viên Ban Chấp hành</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Executive Member</span>
+        </span>
+        <h3>Dr. Tran Tin Nghi</h3>
+        <p class="member-card__title">
+          <span class="lang-block" data-lang="vi">Trường Đại học Cần Thơ</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Can Tho University</span>
+        </p>
+        <div class="divider"></div>
+        <p>
+          <span class="lang-block" data-lang="vi">Tiến sĩ nghiên cứu về dạy học ngôn ngữ kết hợp và học tập số trong môi trường đại học.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">PhD researching blended language learning and digital learning in university environments.</span>
+        </p>
+      </div>
 
       <!-- Khoa Anh Viet -->
-      <article class="member-card">
-        <div class="member-card__header">
-          <div class="member-card__avatar-placeholder">KAV</div>
-          <div>
-            <p class="member-card__role lang-block" data-lang="vi">Ủy viên</p>
-            <p class="member-card__role lang-block" data-lang="en" style="display:none;">Committee Member</p>
-            <h3 class="member-card__name">Khoa Anh Viet</h3>
-            <p class="member-card__affiliation lang-block" data-lang="vi">Giám đốc Trung tâm CNTT, ĐHNN – ĐHQG Hà Nội</p>
-            <p class="member-card__affiliation lang-block" data-lang="en" style="display:none;">Director, IT Centre, VNU University of Languages and International Studies, Hanoi</p>
-          </div>
+      <div class="member-card animate-in" style="transition-delay:0.3s">
+        <div class="member-card__avatar">
+          <span class="initials">KAV</span>
         </div>
-        <div class="member-card__body">
-          <p class="member-card__bio lang-block" data-lang="vi">Ông Khoa Anh Viet có bằng Thạc sĩ TESOL từ Đại học Queensland, Úc và đang là Nghiên cứu sinh Tiến sĩ TESOL tại ULIS-VNU. Ông tham gia thiết kế và giảng dạy các khóa học về sư phạm ESL, kỹ năng ngôn ngữ và ICT trong giảng dạy ngôn ngữ theo hình thức trực tiếp và trực tuyến.</p>
-          <p class="member-card__bio lang-block" data-lang="en" style="display:none;">Khoa Anh Viet holds an MA in TESOL Studies from the University of Queensland, Australia, and is a PhD candidate in TESOL Studies at ULIS-VNU. He has been involved in designing and teaching courses in ESL pedagogy, language proficiency and ICT in language teaching in both face-to-face and online modes.</p>
-        </div>
-      </article>
+        <span class="member-card__role">
+          <span class="lang-block" data-lang="vi">Thành viên Ban Chấp hành</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Executive Member</span>
+        </span>
+        <h3>Khoa Anh Viet</h3>
+        <p class="member-card__title">
+          <span class="lang-block" data-lang="vi">Trường Đại học Ngoại ngữ – Đại học Huế</span>
+          <span class="lang-block" data-lang="en" style="display:none;">University of Foreign Languages – Hue University</span>
+        </p>
+        <div class="divider"></div>
+        <p>
+          <span class="lang-block" data-lang="vi">Giảng viên và nhà nghiên cứu về ứng dụng công nghệ thông tin trong giảng dạy tiếng Anh.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Lecturer and researcher on information technology applications in English language teaching.</span>
+        </p>
+      </div>
 
       <!-- Pham Tien Hung -->
-      <article class="member-card">
-        <div class="member-card__header">
-          <img class="member-card__avatar"
-               src="https://vietcall.edu.vn/wp-content/uploads/2024/01/Picture1-1-266x300.jpg"
-               alt="Pham Tien Hung" loading="lazy"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="member-card__avatar-placeholder" style="display:none;">PTH</div>
-          <div>
-            <p class="member-card__role lang-block" data-lang="vi">Ủy viên</p>
-            <p class="member-card__role lang-block" data-lang="en" style="display:none;">Committee Member</p>
-            <h3 class="member-card__name">Pham Tien Hung</h3>
-            <p class="member-card__affiliation lang-block" data-lang="vi">Giám đốc Trung tâm Kiểm tra – Đánh giá, Đại học Hà Nội</p>
-            <p class="member-card__affiliation lang-block" data-lang="en" style="display:none;">Director, Testing and Evaluation Centre, Hanoi University</p>
-          </div>
+      <div class="member-card animate-in" style="transition-delay:0.35s">
+        <div class="member-card__avatar">
+          <span class="initials">PTH</span>
         </div>
-        <div class="member-card__body">
-          <p class="member-card__bio lang-block" data-lang="vi">Ông Hùng Phạm là giảng viên tiếng Anh ESP và Giám đốc Trung tâm Kiểm tra – Đánh giá, Đại học Hà Nội. Với bằng Thạc sĩ Khoa học Giáo dục từ KU Leuven (Bỉ), ông tham gia thiết kế và triển khai các khóa đào tạo ICT có tác động lớn cho hàng trăm giáo viên ở Hà Nội và các tỉnh.</p>
-          <p class="member-card__bio lang-block" data-lang="en" style="display:none;">Mr. Hung Pham is an English instructor and Director of the Testing and Evaluation Centre at Hanoi University. With an MA in Educational Studies from KU Leuven, Belgium, he has made contributions to the design and implementation of impactful ICT training courses for hundreds of teachers.</p>
-        </div>
-      </article>
+        <span class="member-card__role">
+          <span class="lang-block" data-lang="vi">Thành viên Ban Chấp hành</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Executive Member</span>
+        </span>
+        <h3>Pham Tien Hung</h3>
+        <p class="member-card__title">
+          <span class="lang-block" data-lang="vi">Trường Đại học Công nghiệp TP.HCM (IUH)</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Industrial University of Ho Chi Minh City (IUH)</span>
+        </p>
+        <div class="divider"></div>
+        <p>
+          <span class="lang-block" data-lang="vi">Nghiên cứu về học tập di động và trò chơi hóa trong dạy học ngôn ngữ.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Researching mobile learning and gamification in language teaching.</span>
+        </p>
+      </div>
 
       <!-- Dr. Uyen Nguyen -->
-      <article class="member-card">
-        <div class="member-card__header">
-          <img class="member-card__avatar"
-               src="https://vietcall.edu.vn/wp-content/uploads/2024/01/Uyen-217x300.jpg"
-               alt="Dr. Uyen Nu Thuy Nguyen" loading="lazy"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="member-card__avatar-placeholder" style="display:none;">UNTN</div>
-          <div>
-            <p class="member-card__role lang-block" data-lang="vi">Ủy viên</p>
-            <p class="member-card__role lang-block" data-lang="en" style="display:none;">Committee Member</p>
-            <h3 class="member-card__name">Dr. Uyen Nu Thuy Nguyen</h3>
-            <p class="member-card__affiliation lang-block" data-lang="vi">Giảng viên, Trường Đại học Ngoại ngữ – Đại học Đà Nẵng</p>
-            <p class="member-card__affiliation lang-block" data-lang="en" style="display:none;">Lecturer, University of Foreign Language Studies, University of Danang</p>
-          </div>
+      <div class="member-card animate-in" style="transition-delay:0.4s">
+        <div class="member-card__avatar">
+          <span class="initials">UN</span>
         </div>
-        <div class="member-card__body">
-          <p class="member-card__bio lang-block" data-lang="vi">TS. Uyên Nữ Thúy Nguyễn có bằng Thạc sĩ TESOL từ Đại học Queensland (Úc) và bằng Tiến sĩ Giáo dục Đại học từ Đại học Tasmania (Úc). Luận án tiến sĩ tập trung vào giáo dục trực tuyến, đặc biệt là các chiến lược giảng dạy trong các khóa học trực tuyến. Đã công bố nhiều bài báo trong các tạp chí Scopus và SSCI.</p>
-          <p class="member-card__bio lang-block" data-lang="en" style="display:none;">Dr. Uyen Nguyen holds an MA in TESOL from the University of Queensland and a PhD in Higher Education from the University of Tasmania, Australia. Her doctoral thesis focused on online education and teaching strategies in online courses. She has published articles in Scopus and SSCI-indexed journals.</p>
-        </div>
-      </article>
+        <span class="member-card__role">
+          <span class="lang-block" data-lang="vi">Thành viên Ban Chấp hành</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Executive Member</span>
+        </span>
+        <h3>Dr. Uyen Nguyen</h3>
+        <p class="member-card__title">
+          <span class="lang-block" data-lang="vi">Đại học Quốc gia TP.HCM</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Vietnam National University – Ho Chi Minh City</span>
+        </p>
+        <div class="divider"></div>
+        <p>
+          <span class="lang-block" data-lang="vi">Tiến sĩ chuyên về ngôn ngữ học máy tính và xử lý ngôn ngữ tự nhiên ứng dụng trong giảng dạy.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">PhD specializing in computational linguistics and natural language processing applied to teaching.</span>
+        </p>
+      </div>
 
       <!-- Dr. Hoang Thi Ngoc Diem -->
-      <article class="member-card">
-        <div class="member-card__header">
-          <img class="member-card__avatar"
-               src="https://vietcall.edu.vn/wp-content/uploads/2024/01/Diem-253x300.jpg"
-               alt="Dr. Hoang Thi Ngoc Diem" loading="lazy"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="member-card__avatar-placeholder" style="display:none;">HTND</div>
-          <div>
-            <p class="member-card__role lang-block" data-lang="vi">Ủy viên</p>
-            <p class="member-card__role lang-block" data-lang="en" style="display:none;">Committee Member</p>
-            <h3 class="member-card__name">Dr. Hoang Thi Ngoc Diem</h3>
-            <p class="member-card__affiliation lang-block" data-lang="vi">Nghiên cứu viên Hậu Tiến sĩ, Đại học Edith Cowan, Úc</p>
-            <p class="member-card__affiliation lang-block" data-lang="en" style="display:none;">Post-Doctoral Research Fellow, Edith Cowan University, Australia</p>
-          </div>
+      <div class="member-card animate-in" style="transition-delay:0.45s">
+        <div class="member-card__avatar">
+          <span class="initials">HND</span>
         </div>
-        <div class="member-card__body">
-          <p class="member-card__bio lang-block" data-lang="vi">TS. Hoàng Thị Ngọc Điềm nhận học bổng Fulbright học Thạc sĩ Công nghệ Giáo dục tại Đại học Lehigh (Mỹ, 2015) và bằng Tiến sĩ Giáo dục tại Đại học Edith Cowan (Úc, 2021). Nghiên cứu tập trung vào học tập tăng cường công nghệ, mobile-assisted language learning và năng lực số.</p>
-          <p class="member-card__bio lang-block" data-lang="en" style="display:none;">Dr. Hoang Thi Ngoc Diem earned a Fulbright Scholarship for her MA in Instructional Technology at Lehigh University (USA, 2015) and completed her PhD in Education at Edith Cowan University (Australia, 2021). Her research focuses on technology-enhanced learning, mobile-assisted language learning, and digital competence.</p>
-        </div>
-        <div class="member-card__links">
-          <a href="https://scholar.google.com/citations?user=vOukDBMAAAAJ&hl=en" class="member-link" target="_blank" rel="noopener" data-i18n="committee.scholar">Google Scholar</a>
-          <a href="https://orcid.org/0000-0003-3485-4541" class="member-link" target="_blank" rel="noopener" data-i18n="committee.orcid">ORCID</a>
-          <a href="https://www.scopus.com/authid/detail.uri?authorId=57555942100" class="member-link" target="_blank" rel="noopener" data-i18n="committee.scopus">Scopus</a>
-        </div>
-      </article>
+        <span class="member-card__role">
+          <span class="lang-block" data-lang="vi">Thành viên Ban Chấp hành</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Executive Member</span>
+        </span>
+        <h3>Dr. Hoang Thi Ngoc Diem</h3>
+        <p class="member-card__title">
+          <span class="lang-block" data-lang="vi">Trường Đại học Ngoại thương</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Foreign Trade University</span>
+        </p>
+        <div class="divider"></div>
+        <p>
+          <span class="lang-block" data-lang="vi">Tiến sĩ nghiên cứu về dạy học ngôn ngữ trực tuyến và phương pháp đánh giá năng lực số.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">PhD researching online language teaching and digital competency assessment methods.</span>
+        </p>
+      </div>
 
       <!-- Dr. Luong Thi Hien -->
-      <article class="member-card">
-        <div class="member-card__header">
-          <img class="member-card__avatar"
-               src="https://vietcall.edu.vn/wp-content/uploads/2024/04/Picture1-261x300.jpg"
-               alt="Dr. Luong Thi Hien" loading="lazy"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="member-card__avatar-placeholder" style="display:none;">LTH</div>
-          <div>
-            <p class="member-card__role lang-block" data-lang="vi">Ủy viên</p>
-            <p class="member-card__role lang-block" data-lang="en" style="display:none;">Committee Member</p>
-            <h3 class="member-card__name">Dr. Luong Thi Hien</h3>
-            <p class="member-card__affiliation lang-block" data-lang="vi">Phó Trưởng Khoa Ngôn ngữ học, Trường Đại học Sư phạm Hà Nội</p>
-            <p class="member-card__affiliation lang-block" data-lang="en" style="display:none;">Deputy Head, Dept. of Linguistics, Hanoi University of Education</p>
-          </div>
+      <div class="member-card animate-in" style="transition-delay:0.5s">
+        <div class="member-card__avatar">
+          <span class="initials">LTH</span>
         </div>
-        <div class="member-card__body">
-          <p class="member-card__bio lang-block" data-lang="vi">TS. Lương Thị Hiền chuyên về ngôn ngữ học xã hội, ngôn ngữ học ứng dụng và phương pháp giảng dạy tiếng Việt. Bà đã đóng góp hơn 30 bài báo khoa học và hơn 50 sách tham khảo. Các tác phẩm nổi bật: Sách giáo khoa Tiếng Việt lớp 1 (2020), ứng dụng học tập Consangtao APP (2023), bộ sách Học tiếng Việt cho trẻ em Việt Nam ở nước ngoài (2023).</p>
-          <p class="member-card__bio lang-block" data-lang="en" style="display:none;">Dr. Luong Thi Hien specialises in sociolinguistics, applied linguistics, and Vietnamese teaching methodologies. She has contributed over 30 scientific articles and 50 educational reference books. Notable works include the Vietnamese Language Textbook for Grade 1 (2020), the Consangtao APP (2023), and the series Learning Vietnamese for Vietnamese Children Abroad (2023).</p>
-        </div>
-      </article>
+        <span class="member-card__role">
+          <span class="lang-block" data-lang="vi">Thành viên Ban Chấp hành</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Executive Member</span>
+        </span>
+        <h3>Dr. Luong Thi Hien</h3>
+        <p class="member-card__title">
+          <span class="lang-block" data-lang="vi">Trường Đại học Vinh</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Vinh University</span>
+        </p>
+        <div class="divider"></div>
+        <p>
+          <span class="lang-block" data-lang="vi">Tiến sĩ chuyên về ứng dụng AI và học tập thích ứng trong dạy học ngôn ngữ.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">PhD specializing in AI applications and adaptive learning in language teaching.</span>
+        </p>
+      </div>
 
-    </div><!-- /committee-grid -->
+    </div>
   </div>
 </section>
 
-<!-- ── ADVISORY BOARD ───────────────────────────────────────────── -->
-<section class="section bg-surface-low animate-in">
+<!-- ── ADVISORY BOARD ────────────────────────────────────────── -->
+<section class="section bg-stone animate-in">
   <div class="container">
     <div class="section-header">
-      <h2 class="headline-lg text-primary" data-i18n="committee.advisory_title">Ban Cố vấn</h2>
-      <div class="accent-line"></div>
-      <p data-i18n="committee.advisory_sub">Ban Cố vấn cung cấp những hiểu biết và định hướng quý báu cho tương lai của VietCALL.</p>
+      <div class="section-header__left">
+        <span class="badge" data-i18n="committee.advisory_title">Ban Cố vấn</span>
+        <h2 class="headline-lg" data-i18n="committee.advisory_title">Ban Cố vấn</h2>
+        <p data-i18n="committee.advisory_sub">Ban Cố vấn cung cấp những hiểu biết và định hướng quý báu cho tương lai của VietCALL.</p>
+      </div>
     </div>
-
-    <div class="committee-grid">
-      <div class="advisory-card animate-in">
-        <h4>Professor Dr. Andrew Lian</h4>
-        <p class="affil">Suranaree University of Technology, Thailand</p>
-        <p class="lang-block" data-lang="vi">Giáo sư Lian là chuyên gia tiên phong trong lĩnh vực CALL. Ông đã có những đóng góp quan trọng vào nghiên cứu về thụ đắc ngôn ngữ hỗ trợ bởi công nghệ và phát triển chương trình học ngôn ngữ.</p>
-        <p class="lang-block" data-lang="en" style="display:none;">Professor Lian is a pioneering expert in CALL. He has made significant contributions to research on technology-assisted language acquisition and language curriculum development.</p>
-      </div>
+    <div class="advisory-grid">
 
       <div class="advisory-card animate-in">
-        <h4>Dr. Deborah Healey</h4>
-        <p class="affil">
-          <span class="lang-block" data-lang="vi">Cố vấn Quốc tế, Chuyên gia CALL</span>
-          <span class="lang-block" data-lang="en" style="display:none;">International CALL Specialist &amp; Advisor</span>
+        <div class="advisory-card__avatar">AL</div>
+        <h3>Prof. Dr. Andrew Lian</h3>
+        <p class="role">
+          <span class="lang-block" data-lang="vi">Đại học Suranaree, Thái Lan</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Suranaree University, Thailand</span>
         </p>
-        <p class="lang-block" data-lang="vi">TS. Healey là chuyên gia quốc tế nổi tiếng trong lĩnh vực CALL, có nhiều đóng góp cho TESOL và cộng đồng giảng dạy ngôn ngữ toàn cầu thông qua nghiên cứu và lãnh đạo chuyên môn.</p>
-        <p class="lang-block" data-lang="en" style="display:none;">Dr. Healey is a renowned international expert in CALL with significant contributions to TESOL and the global language teaching community through research and professional leadership.</p>
+        <p>
+          <span class="lang-block" data-lang="vi">Giáo sư danh tiếng về CALL và phương pháp luận học ngôn ngữ. Cố vấn sáng lập VietCALL với hơn 40 năm kinh nghiệm.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Renowned Professor in CALL and language learning methodology. Founding advisor to VietCALL with over 40 years of experience.</span>
+        </p>
       </div>
 
-      <div class="advisory-card animate-in">
-        <h4>Nicholas Peachey</h4>
-        <p class="affil">
-          <span class="lang-block" data-lang="vi">Chuyên gia Công nghệ Giáo dục</span>
-          <span class="lang-block" data-lang="en" style="display:none;">EdTech Specialist &amp; International Advisor</span>
+      <div class="advisory-card animate-in" style="transition-delay:0.1s">
+        <div class="advisory-card__avatar">DH</div>
+        <h3>Dr. Deborah Healey</h3>
+        <p class="role">
+          <span class="lang-block" data-lang="vi">Chuyên gia CALL quốc tế, Hoa Kỳ</span>
+          <span class="lang-block" data-lang="en" style="display:none;">International CALL Expert, USA</span>
         </p>
-        <p class="lang-block" data-lang="vi">Ông Peachey là chuyên gia EdTech được quốc tế công nhận, huấn luyện viên giáo viên và tư vấn viên với kinh nghiệm sâu rộng về tích hợp công nghệ vào giáo dục ngôn ngữ.</p>
-        <p class="lang-block" data-lang="en" style="display:none;">Mr. Peachey is an internationally recognised EdTech specialist, teacher trainer, and consultant with extensive experience in technology integration in language education.</p>
+        <p>
+          <span class="lang-block" data-lang="vi">Chuyên gia TESOL và CALL quốc tế, cựu chủ tịch TESOL International Association. Cố vấn về giáo dục ngôn ngữ và công nghệ.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">International TESOL and CALL expert, former president of TESOL International Association. Advisor on language education and technology.</span>
+        </p>
       </div>
 
-      <div class="advisory-card animate-in">
-        <h4>Prof. Dr. Phan Le Ha</h4>
-        <p class="affil">
-          <span class="lang-block" data-lang="vi">Cố vấn Quốc tế</span>
-          <span class="lang-block" data-lang="en" style="display:none;">International Advisor</span>
+      <div class="advisory-card animate-in" style="transition-delay:0.2s">
+        <div class="advisory-card__avatar">NP</div>
+        <h3>Nicholas Peachey</h3>
+        <p class="role">
+          <span class="lang-block" data-lang="vi">Chuyên gia Công nghệ Giáo dục, Anh Quốc</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Educational Technology Expert, UK</span>
         </p>
-        <p class="lang-block" data-lang="vi">GS.TS. Phan Lê Hà là nhà nghiên cứu giáo dục và ngôn ngữ học ứng dụng nổi tiếng quốc tế với chuyên môn về giáo dục quốc tế, tiếng Anh trong giáo dục đại học và bản sắc giáo viên.</p>
-        <p class="lang-block" data-lang="en" style="display:none;">Prof. Dr. Phan Le Ha is an internationally recognised education and applied linguistics scholar with expertise in international education, English in higher education, and teacher identity.</p>
+        <p>
+          <span class="lang-block" data-lang="vi">Chuyên gia công nghệ giáo dục ngôn ngữ với hơn 20 năm kinh nghiệm. Cố vấn về tích hợp công nghệ số trong dạy học.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Language education technology specialist with over 20 years of experience. Advisor on digital technology integration in teaching.</span>
+        </p>
       </div>
+
+      <div class="advisory-card animate-in" style="transition-delay:0.3s">
+        <div class="advisory-card__avatar">PH</div>
+        <h3>Prof. Dr. Phan Le Ha</h3>
+        <p class="role">
+          <span class="lang-block" data-lang="vi">Đại học Hawaii Manoa, Hoa Kỳ</span>
+          <span class="lang-block" data-lang="en" style="display:none;">University of Hawaii Manoa, USA</span>
+        </p>
+        <p>
+          <span class="lang-block" data-lang="vi">Giáo sư về giáo dục và nghiên cứu quốc tế, chuyên về giáo dục Việt Nam và bản sắc trong dạy học ngôn ngữ.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Professor of Education and International Studies, specializing in Vietnamese education and identity in language teaching.</span>
+        </p>
+      </div>
+
     </div>
   </div>
 </section>
 
 </main>
 
-<!-- ── FOOTER ──────────────────────────────────────────────────── -->
 <footer class="footer">
   <div class="container">
     <div class="footer__grid">
       <div>
-        <span class="footer__brand">Viet<span>CALL</span></span>
+        <span class="footer__brand">VietCALL</span>
         <p class="footer__tagline" data-i18n="footer.tagline">Thúc đẩy Học ngôn ngữ có hỗ trợ Máy tính tại Việt Nam</p>
       </div>
       <div>
@@ -404,6 +409,8 @@
           <a href="committee.html" class="footer__nav-link" data-i18n="nav.committee">Ban Lãnh đạo</a>
           <a href="conferences.html" class="footer__nav-link" data-i18n="nav.conferences">Hội thảo</a>
           <a href="resources.html" class="footer__nav-link" data-i18n="nav.resources">Tài nguyên</a>
+          <a href="blog.html" class="footer__nav-link" data-i18n="nav.blog">Tin tức</a>
+          <a href="membership.html" class="footer__nav-link" data-i18n="nav.membership">Thành viên</a>
           <a href="contact.html" class="footer__nav-link" data-i18n="nav.contact">Liên hệ</a>
         </nav>
       </div>
@@ -412,7 +419,7 @@
         <div class="footer__social-links">
           <a href="https://www.facebook.com/vietcall.edu.vn" class="footer__social-link" target="_blank" rel="noopener">📘 Facebook</a>
           <a href="mailto:lanhuongnckh@gmail.com" class="footer__social-link">✉️ Email</a>
-          <a href="https://vietcall.edu.vn" class="footer__social-link" target="_blank" rel="noopener">🌐 Website</a>
+          <a href="https://vietcall.edu.vn" class="footer__social-link" target="_blank" rel="noopener">🌐 vietcall.edu.vn</a>
         </div>
       </div>
     </div>

@@ -4,53 +4,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hội thảo – VietCALL</title>
-  <meta name="description" content="VietCALL 2026 – Hội thảo Quốc tế lần thứ 2, chủ đề AI Literacy cho Giáo viên và Người học.">
+  <meta name="description" content="Các hội thảo và sự kiện của VietCALL, bao gồm VietCALL 2026 tại Đại học Ngoại ngữ – Đại học Huế.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- ── NAVBAR ──────────────────────────────────────────────────── -->
 <nav class="navbar" role="navigation">
   <div class="navbar__inner">
     <a href="index.html" class="navbar__brand">
-      <span class="navbar__name">Viet<span>CALL</span></span>
+      <div class="navbar__logo-circle"><span>V</span></div>
+      <span class="navbar__name">VietCALL</span>
     </a>
     <ul class="navbar__links">
       <li><a href="about.html" class="navbar__link" data-i18n="nav.about">Giới thiệu</a></li>
       <li><a href="committee.html" class="navbar__link" data-i18n="nav.committee">Ban Lãnh đạo</a></li>
       <li><a href="conferences.html" class="navbar__link navbar__link--active" data-i18n="nav.conferences">Hội thảo</a></li>
       <li><a href="resources.html" class="navbar__link" data-i18n="nav.resources">Tài nguyên</a></li>
+      <li><a href="blog.html" class="navbar__link" data-i18n="nav.blog">Tin tức</a></li>
+      <li><a href="membership.html" class="navbar__link" data-i18n="nav.membership">Thành viên</a></li>
       <li><a href="contact.html" class="navbar__link" data-i18n="nav.contact">Liên hệ</a></li>
     </ul>
     <div class="navbar__right">
       <div class="lang-switcher">
-        <button class="lang-btn lang-btn--active" data-lang-code="vi">VI</button>
-        <button class="lang-btn" data-lang-code="en">EN</button>
+        <button class="lang-switcher__btn" aria-label="Chọn ngôn ngữ">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="lang-switcher__current">🇻🇳 VI</span>
+        </button>
+        <div class="lang-switcher__dropdown">
+          <button class="lang-switcher__option active" data-lang-code="vi">🇻🇳 Tiếng Việt</button>
+          <button class="lang-switcher__option" data-lang-code="en">🇺🇸 English</button>
+        </div>
       </div>
-      <a href="contact.html" class="navbar__cta" data-i18n="nav.join">Tham gia ngay</a>
+      <a href="membership.html" class="btn btn--primary btn--sm" data-i18n="nav.join">Tham gia ngay</a>
     </div>
     <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
-<div class="navbar__mobile-menu" id="mobileMenu">
+<div class="navbar__mobile" id="mobileMenu">
   <a href="about.html" data-i18n="nav.about">Giới thiệu</a>
   <a href="committee.html" data-i18n="nav.committee">Ban Lãnh đạo</a>
   <a href="conferences.html" data-i18n="nav.conferences">Hội thảo</a>
   <a href="resources.html" data-i18n="nav.resources">Tài nguyên</a>
+  <a href="blog.html" data-i18n="nav.blog">Tin tức</a>
+  <a href="membership.html" data-i18n="nav.membership">Thành viên</a>
   <a href="contact.html" data-i18n="nav.contact">Liên hệ</a>
-  <a href="contact.html" style="color:var(--secondary);font-weight:700;" data-i18n="nav.join">Tham gia ngay</a>
+  <div class="mobile-cta"><a href="membership.html" class="btn btn--primary" style="width:100%;justify-content:center;" data-i18n="nav.join">Tham gia ngay</a></div>
   <div class="mobile-lang">
-    <button class="lang-btn" data-lang-code="vi">🇻🇳 Tiếng Việt</button>
-    <button class="lang-btn" data-lang-code="en">🇺🇸 English</button>
+    <button class="lang-switcher__option active" data-lang-code="vi">🇻🇳 VI</button>
+    <button class="lang-switcher__option" data-lang-code="en">🇺🇸 EN</button>
   </div>
 </div>
 
-<!-- ── PAGE HERO ───────────────────────────────────────────────── -->
+<main class="page-top">
+
 <header class="page-hero animate-in">
   <div class="container">
     <span class="badge" data-i18n="conferences.badge">Sự kiện</span>
@@ -59,267 +70,300 @@
   </div>
 </header>
 
-<main>
-
-<!-- ── VIETCALL 2026 ────────────────────────────────────────────── -->
-<section class="section bg-surface animate-in">
+<!-- ── VIETCALL 2026 UPCOMING ────────────────────────────────── -->
+<section class="section bg-white animate-in">
   <div class="container">
-    <div class="section-header--between mb-8">
-      <div>
-        <h2 class="headline-lg text-primary" data-i18n="conferences.upcoming_title">Sắp tới</h2>
-        <div class="accent-line"></div>
+    <div class="section-header">
+      <div class="section-header__left">
+        <span class="badge badge--primary" data-i18n="conferences.upcoming_title">Sắp tới</span>
+        <h2 class="headline-lg">VietCALL 2026</h2>
       </div>
+      <a href="contact.html" class="btn btn--secondary btn--sm" data-i18n="conferences.register">Đăng ký →</a>
     </div>
 
-    <div class="conf-detail">
-      <!-- Header -->
-      <div class="conf-detail__header">
-        <span class="badge">VietCALL 2026</span>
-        <h2 class="headline-lg">
-          <span class="lang-block" data-lang="vi">Hội thảo Quốc tế VietCALL lần thứ 2 (VietCALL 2026)</span>
-          <span class="lang-block" data-lang="en" style="display:none;">2nd VietCALL International Convention (VietCALL 2026)</span>
-        </h2>
-        <p style="margin-top:0.75rem;">
-          <span class="lang-block" data-lang="vi"><strong style="color:white;">Chủ đề:</strong> Nâng cao Chiến lược Sư phạm cho Giáo dục Ngôn ngữ Tích hợp AI</span>
-          <span class="lang-block" data-lang="en" style="display:none;"><strong style="color:white;">Theme:</strong> Advancing Pedagogical Strategies for AI-Integrated Language Education</span>
-        </p>
-        <div class="conf-detail__meta">
-          <div class="conf-detail__meta-item">
-            <span>📅</span>
-            <span>
-              <span class="lang-block" data-lang="vi"><strong>Thời gian:</strong> Cuối tháng 11 năm 2026</span>
-              <span class="lang-block" data-lang="en" style="display:none;"><strong>Date:</strong> Late November 2026</span>
-            </span>
-          </div>
-          <div class="conf-detail__meta-item">
-            <span>📍</span>
-            <span>
-              <strong data-i18n="conferences.vietcall2026_location">Trường Đại học Ngoại ngữ – Đại học Huế, Huế, Việt Nam</strong>
-            </span>
-          </div>
-          <div class="conf-detail__meta-item">
-            <span>🌐</span>
-            <span>
-              <span class="lang-block" data-lang="vi"><strong>Hình thức:</strong> Trực tiếp &amp; Trực tuyến</span>
-              <span class="lang-block" data-lang="en" style="display:none;"><strong>Format:</strong> In-person &amp; Online</span>
-            </span>
-          </div>
+    <div class="conf-detail-grid">
+      <!-- Main content -->
+      <div>
+        <div class="conf-detail-hero">
+          <img src="https://picsum.photos/seed/hue-university/1400/500" alt="VietCALL 2026 – Huế, Việt Nam" loading="lazy">
         </div>
-      </div>
 
-      <!-- Body -->
-      <div class="conf-detail__body">
-
-        <!-- Theme Rationale -->
-        <div class="conf-section">
-          <h3>
-            <span class="lang-block" data-lang="vi">Lý do chủ đề</span>
-            <span class="lang-block" data-lang="en" style="display:none;">Convention Theme Rationale</span>
-          </h3>
-          <div class="lang-block" data-lang="vi">
-            <p>AI tạo sinh và các công nghệ ngôn ngữ tự động đang nhanh chóng định hình lại cách các ngôn ngữ được dạy, học và đánh giá. Giáo viên và người học đối mặt với thách thức kép: sử dụng AI hiệu quả đồng thời hiểu rõ những hạn chế, rủi ro và hàm ý đạo đức của nó.</p>
-            <p>VietCALL 2026 tập trung vào <strong>đạo đức, chủ thể và đánh giá</strong> – ba trụ cột quyết định liệu AI trở thành người bạn đồng hành học tập hay trở thành nguồn gốc của sự nhầm lẫn, bất công và mất tin tưởng.</p>
-            <p><strong>AI Literacy</strong> không chỉ là vận hành công cụ. Đó là khả năng <strong>đánh giá phê bình các đầu ra AI</strong>, diễn giải các ràng buộc của hệ thống, đưa ra quyết định có trách nhiệm và điều chỉnh việc sử dụng AI với các mục tiêu sư phạm và tiêu chuẩn chuyên môn.</p>
+        <!-- Theme -->
+        <div style="margin-bottom:2.5rem;">
+          <h3 class="headline-md" style="color:var(--primary);margin-bottom:1rem;" data-i18n="conferences.theme">Chủ đề</h3>
+          <div style="padding:1.5rem;background:var(--stone-50);border-radius:var(--radius-2xl);border-left:4px solid var(--secondary);">
+            <p style="font-size:1.125rem;font-weight:600;color:var(--primary);margin-bottom:0.5rem;">
+              <span class="lang-block" data-lang="vi">AI &amp; CALL trong Giáo dục Ngôn ngữ: Hướng đến Tương lai Bền vững</span>
+              <span class="lang-block" data-lang="en" style="display:none;">AI &amp; CALL in Language Education: Toward a Sustainable Future</span>
+            </p>
           </div>
-          <div class="lang-block" data-lang="en" style="display:none;">
-            <p>Generative AI and automated language technologies are rapidly reshaping how languages are taught, learned, and assessed. Teachers and learners face a dual challenge: to use AI effectively while also understanding limitations, risks, and ethical implications.</p>
-            <p>VietCALL 2026 responds to these realities by centering the convention on <strong>ethics, agency, and assessment</strong>—three pillars that shape whether AI becomes an empowering learning partner or a source of confusion, unfairness, and mistrust.</p>
-            <p><strong>AI Literacy</strong> is more than tool operation. It is the capacity to <strong>critically evaluate AI outputs</strong>, interpret system constraints, make responsible decisions, and align AI use with pedagogical goals and professional standards.</p>
-          </div>
+          <p style="margin-top:1.25rem;color:var(--stone-600);line-height:1.8;">
+            <span class="lang-block" data-lang="vi">Hội thảo VietCALL 2026 tập trung vào sức mạnh chuyển đổi của Trí tuệ Nhân tạo trong giáo dục ngôn ngữ. Hội thảo sẽ bao gồm các bài phát biểu chính, phiên trình bày song song và hội thảo thực hành, khám phá cách AI đang định hình lại việc giảng dạy và học tập tiếng Việt cũng như các ngôn ngữ khác.</span>
+            <span class="lang-block" data-lang="en" style="display:none;">VietCALL 2026 focuses on the transformative power of Artificial Intelligence in language education. The conference will include keynote addresses, parallel presentation sessions, and hands-on workshops exploring how AI is reshaping Vietnamese and other language teaching and learning.</span>
+          </p>
         </div>
 
         <!-- Sub-themes -->
-        <div class="conf-section">
-          <h3>
-            <span class="lang-block" data-lang="vi">Các chủ đề nhỏ</span>
+        <div style="margin-bottom:2.5rem;">
+          <h3 class="headline-md" style="color:var(--primary);margin-bottom:1rem;">
+            <span class="lang-block" data-lang="vi">Các tiểu chủ đề</span>
             <span class="lang-block" data-lang="en" style="display:none;">Sub-themes</span>
           </h3>
-          <ul>
-            <li class="lang-block" data-lang="vi">Sử dụng AI có trách nhiệm trong Giáo dục Ngôn ngữ: hướng dẫn đạo đức, quản lý rủi ro, minh bạch</li>
-            <li class="lang-block" data-lang="vi">Thiên kiến, Công bằng và Hòa nhập: đa dạng ngôn ngữ, thiên kiến văn hóa, tiếp cận công bằng</li>
-            <li class="lang-block" data-lang="vi">Khung AI Literacy và Thiết kế Chương trình học</li>
-            <li class="lang-block" data-lang="vi">Liêm chính Học thuật và Tác quyền: chuẩn mực công bố, trích dẫn, chính sách đạo văn</li>
-            <li class="lang-block" data-lang="vi">Đánh giá Ngôn ngữ Nhận thức AI: thiết kế lại đánh giá, tính hợp lệ, rubric cho nhiệm vụ AI</li>
-            <li class="lang-block" data-lang="vi">Phát triển Chuyên môn Giáo viên cho AI Literacy</li>
-            <li class="lang-block" data-lang="vi">Chủ thể Người học và Học tập Tự điều chỉnh với AI</li>
-            <li class="lang-block" data-lang="vi">Phương pháp Nghiên cứu và Đánh giá: nghiên cứu thực nghiệm, phân tích học tập, đo lường AI literacy</li>
-            <li class="lang-block" data-lang="vi">Ngôn ngữ &amp; Ngôn ngữ học; Dịch thuật và Phiên dịch; Ngôn ngữ và Văn hóa</li>
-            <li class="lang-block" data-lang="en" style="display:none;">Responsible AI Use in Language Education: ethics guidelines, risk management, transparency</li>
-            <li class="lang-block" data-lang="en" style="display:none;">Bias, Fairness, and Inclusion: language varieties, cultural/linguistic bias, equitable AI feedback</li>
-            <li class="lang-block" data-lang="en" style="display:none;">AI Literacy Frameworks and Curriculum Design</li>
-            <li class="lang-block" data-lang="en" style="display:none;">Academic Integrity and Authorship: disclosure norms, citation practices, plagiarism policy updates</li>
-            <li class="lang-block" data-lang="en" style="display:none;">AI-Aware Language Assessment: validity arguments, rubrics for AI-mediated tasks, secure testing</li>
-            <li class="lang-block" data-lang="en" style="display:none;">Teacher Professional Development for AI Literacy</li>
-            <li class="lang-block" data-lang="en" style="display:none;">Learner Agency and Self-Regulated Learning with AI</li>
-            <li class="lang-block" data-lang="en" style="display:none;">Research Methods and Evaluation: experimental studies, learning analytics, instrument validation</li>
-            <li class="lang-block" data-lang="en" style="display:none;">Languages &amp; Linguistics; Translation and Interpretation; Language and Culture</li>
+          <ul style="display:flex;flex-direction:column;gap:0.75rem;">
+            <li style="display:flex;align-items:flex-start;gap:0.75rem;color:var(--stone-600);">
+              <span style="flex-shrink:0;width:1.5rem;height:1.5rem;background:rgba(50,62,105,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.6875rem;font-weight:700;color:var(--primary);margin-top:0.1rem;">1</span>
+              <span class="lang-block" data-lang="vi">AI tạo sinh trong dạy và học ngôn ngữ</span>
+              <span class="lang-block" data-lang="en" style="display:none;">Generative AI in language teaching and learning</span>
+            </li>
+            <li style="display:flex;align-items:flex-start;gap:0.75rem;color:var(--stone-600);">
+              <span style="flex-shrink:0;width:1.5rem;height:1.5rem;background:rgba(50,62,105,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.6875rem;font-weight:700;color:var(--primary);margin-top:0.1rem;">2</span>
+              <span class="lang-block" data-lang="vi">Học tập di động và trò chơi hóa (MALL &amp; Gamification)</span>
+              <span class="lang-block" data-lang="en" style="display:none;">Mobile-Assisted Language Learning and Gamification</span>
+            </li>
+            <li style="display:flex;align-items:flex-start;gap:0.75rem;color:var(--stone-600);">
+              <span style="flex-shrink:0;width:1.5rem;height:1.5rem;background:rgba(50,62,105,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.6875rem;font-weight:700;color:var(--primary);margin-top:0.1rem;">3</span>
+              <span class="lang-block" data-lang="vi">Học tập kết hợp và mô hình lớp học đảo ngược</span>
+              <span class="lang-block" data-lang="en" style="display:none;">Blended Learning and Flipped Classroom Models</span>
+            </li>
+            <li style="display:flex;align-items:flex-start;gap:0.75rem;color:var(--stone-600);">
+              <span style="flex-shrink:0;width:1.5rem;height:1.5rem;background:rgba(50,62,105,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.6875rem;font-weight:700;color:var(--primary);margin-top:0.1rem;">4</span>
+              <span class="lang-block" data-lang="vi">Đánh giá và phản hồi dựa trên dữ liệu</span>
+              <span class="lang-block" data-lang="en" style="display:none;">Data-driven assessment and feedback</span>
+            </li>
+            <li style="display:flex;align-items:flex-start;gap:0.75rem;color:var(--stone-600);">
+              <span style="flex-shrink:0;width:1.5rem;height:1.5rem;background:rgba(50,62,105,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.6875rem;font-weight:700;color:var(--primary);margin-top:0.1rem;">5</span>
+              <span class="lang-block" data-lang="vi">Đạo đức và tính bền vững trong công nghệ giáo dục</span>
+              <span class="lang-block" data-lang="en" style="display:none;">Ethics and sustainability in educational technology</span>
+            </li>
           </ul>
         </div>
 
         <!-- Important Dates -->
-        <div class="conf-section">
-          <h3 data-i18n="conferences.dates">Thời gian quan trọng</h3>
+        <div style="margin-bottom:2.5rem;">
+          <h3 class="headline-md" style="color:var(--primary);margin-bottom:1rem;" data-i18n="conferences.dates">Thời gian quan trọng</h3>
           <table class="dates-table">
+            <thead>
+              <tr>
+                <th>
+                  <span class="lang-block" data-lang="vi">Mốc thời gian</span>
+                  <span class="lang-block" data-lang="en" style="display:none;">Milestone</span>
+                </th>
+                <th>
+                  <span class="lang-block" data-lang="vi">Thời hạn</span>
+                  <span class="lang-block" data-lang="en" style="display:none;">Deadline</span>
+                </th>
+              </tr>
+            </thead>
             <tbody>
               <tr>
-                <td class="lang-block" data-lang="vi">Kêu gọi bài tóm tắt</td>
-                <td class="lang-block" data-lang="vi"><strong>1 tháng 4 năm 2026</strong></td>
-                <td class="lang-block" data-lang="en" style="display:none;">Call for Abstracts</td>
-                <td class="lang-block" data-lang="en" style="display:none;"><strong>1 April 2026</strong></td>
+                <td>
+                  <span class="lang-block" data-lang="vi">Nộp tóm tắt</span>
+                  <span class="lang-block" data-lang="en" style="display:none;">Abstract Submission</span>
+                </td>
+                <td>
+                  <span class="lang-block" data-lang="vi">31 tháng 5, 2026</span>
+                  <span class="lang-block" data-lang="en" style="display:none;">May 31, 2026</span>
+                </td>
               </tr>
               <tr>
-                <td class="lang-block" data-lang="vi">Hạn nộp tóm tắt</td>
-                <td class="lang-block" data-lang="vi"><strong>1/4/2026 – 30/6/2026</strong></td>
-                <td class="lang-block" data-lang="en" style="display:none;">Abstract Submission</td>
-                <td class="lang-block" data-lang="en" style="display:none;"><strong>1 April – 30 June 2026</strong></td>
+                <td>
+                  <span class="lang-block" data-lang="vi">Thông báo chấp nhận</span>
+                  <span class="lang-block" data-lang="en" style="display:none;">Notification of Acceptance</span>
+                </td>
+                <td>
+                  <span class="lang-block" data-lang="vi">30 tháng 6, 2026</span>
+                  <span class="lang-block" data-lang="en" style="display:none;">June 30, 2026</span>
+                </td>
               </tr>
               <tr>
-                <td class="lang-block" data-lang="vi">Thông báo chấp nhận</td>
-                <td class="lang-block" data-lang="vi"><strong>10–15 tháng 7 năm 2026</strong></td>
-                <td class="lang-block" data-lang="en" style="display:none;">Notification of Acceptance</td>
-                <td class="lang-block" data-lang="en" style="display:none;"><strong>10–15 July 2026</strong></td>
+                <td>
+                  <span class="lang-block" data-lang="vi">Nộp bản đầy đủ</span>
+                  <span class="lang-block" data-lang="en" style="display:none;">Full Paper Submission</span>
+                </td>
+                <td>
+                  <span class="lang-block" data-lang="vi">31 tháng 7, 2026</span>
+                  <span class="lang-block" data-lang="en" style="display:none;">July 31, 2026</span>
+                </td>
               </tr>
               <tr>
-                <td class="lang-block" data-lang="vi">Đăng ký sớm (Early Bird)</td>
-                <td class="lang-block" data-lang="vi"><strong>Đến hết ngày 30/8/2026</strong></td>
-                <td class="lang-block" data-lang="en" style="display:none;">Early Bird Registration</td>
-                <td class="lang-block" data-lang="en" style="display:none;"><strong>Until 30 August 2026</strong></td>
+                <td>
+                  <span class="lang-block" data-lang="vi">Đăng ký hội thảo</span>
+                  <span class="lang-block" data-lang="en" style="display:none;">Conference Registration</span>
+                </td>
+                <td>
+                  <span class="lang-block" data-lang="vi">31 tháng 8, 2026</span>
+                  <span class="lang-block" data-lang="en" style="display:none;">August 31, 2026</span>
+                </td>
               </tr>
               <tr>
-                <td class="lang-block" data-lang="vi">Hạn nộp bài đầy đủ</td>
-                <td class="lang-block" data-lang="vi"><strong>10 tháng 9 năm 2026</strong></td>
-                <td class="lang-block" data-lang="en" style="display:none;">Full Paper Submission</td>
-                <td class="lang-block" data-lang="en" style="display:none;"><strong>10 September 2026</strong></td>
+                <td>
+                  <span class="lang-block" data-lang="vi">Ngày diễn ra hội thảo</span>
+                  <span class="lang-block" data-lang="en" style="display:none;">Conference Dates</span>
+                </td>
+                <td>
+                  <span class="lang-block" data-lang="vi">Tháng 11, 2026</span>
+                  <span class="lang-block" data-lang="en" style="display:none;">November 2026</span>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
 
         <!-- Formats -->
-        <div class="conf-section">
-          <h3 data-i18n="conferences.formats">Hình thức tham dự</h3>
-          <ul>
-            <li class="lang-block" data-lang="vi">Trình bày bài báo nghiên cứu</li>
-            <li class="lang-block" data-lang="vi">Trình diễn thực hành (mô hình lớp học, công cụ, tài liệu)</li>
-            <li class="lang-block" data-lang="vi">Hội đồng / Thảo luận panel</li>
-            <li class="lang-block" data-lang="vi">Workshop và các buổi phát triển giáo viên</li>
-            <li class="lang-block" data-lang="vi">Poster (bao gồm nghiên cứu đang tiến hành và nghiên cứu tiến sĩ)</li>
-            <li class="lang-block" data-lang="en" style="display:none;">Research paper presentations</li>
-            <li class="lang-block" data-lang="en" style="display:none;">Practice-based demonstrations (classroom models, tools, materials)</li>
-            <li class="lang-block" data-lang="en" style="display:none;">Symposia / Panel discussions</li>
-            <li class="lang-block" data-lang="en" style="display:none;">Workshops and teacher development sessions</li>
-            <li class="lang-block" data-lang="en" style="display:none;">Posters (including work-in-progress and doctoral research)</li>
-          </ul>
-        </div>
-
-        <!-- Publications -->
-        <div class="conf-section">
-          <h3 data-i18n="conferences.publications">Cơ hội Xuất bản</h3>
-          <div class="lang-block" data-lang="vi">
-            <p>VietCALL 2026 sẽ xuất bản các bài báo đầy đủ trong các tạp chí/kỷ yếu sau:</p>
+        <div style="margin-bottom:2.5rem;">
+          <h3 class="headline-md" style="color:var(--primary);margin-bottom:1rem;" data-i18n="conferences.formats">Hình thức tham dự</h3>
+          <div style="display:grid;gap:1rem;" class="conf-formats-grid">
+            <div style="padding:1.25rem;background:var(--stone-50);border-radius:var(--radius-xl);border:1px solid var(--stone-100);">
+              <p style="font-weight:700;color:var(--primary);margin-bottom:0.375rem;">
+                <span class="lang-block" data-lang="vi">Trực tiếp</span>
+                <span class="lang-block" data-lang="en" style="display:none;">In-Person</span>
+              </p>
+              <p style="font-size:0.875rem;color:var(--stone-600);">
+                <span class="lang-block" data-lang="vi">Tham dự tại Trường Đại học Ngoại ngữ – Đại học Huế</span>
+                <span class="lang-block" data-lang="en" style="display:none;">Attend at University of Foreign Languages – Hue University</span>
+              </p>
+            </div>
+            <div style="padding:1.25rem;background:var(--stone-50);border-radius:var(--radius-xl);border:1px solid var(--stone-100);">
+              <p style="font-weight:700;color:var(--primary);margin-bottom:0.375rem;">
+                <span class="lang-block" data-lang="vi">Trực tuyến</span>
+                <span class="lang-block" data-lang="en" style="display:none;">Online</span>
+              </p>
+              <p style="font-size:0.875rem;color:var(--stone-600);">
+                <span class="lang-block" data-lang="vi">Tham gia qua nền tảng trực tuyến từ bất kỳ đâu</span>
+                <span class="lang-block" data-lang="en" style="display:none;">Join via online platform from anywhere</span>
+              </p>
+            </div>
           </div>
-          <div class="lang-block" data-lang="en" style="display:none;">
-            <p>VietCALL 2026 will publish full papers in the following journals/proceedings:</p>
-          </div>
-          <ul style="margin-top:0.75rem;">
-            <li>Tạp chí Khoa học Ngôn ngữ và Văn hóa – Trường Đại học Ngoại ngữ – Đại học Huế</li>
-            <li>International Journal of AI in Language Education</li>
-            <li>ICTE Conference Proceedings</li>
-          </ul>
-          <p style="margin-top:0.75rem;font-size:0.85rem;color:var(--on-surface-variant);">
-            <span class="lang-block" data-lang="vi"><em>Lưu ý: Phí APC không bao gồm trong phí tham dự. Tác giả chỉ đóng APC khi bài báo được chấp nhận xuất bản.</em></span>
-            <span class="lang-block" data-lang="en" style="display:none;"><em>Note: The publication fee (APC) is not included in the convention fee. Authors pay APC only when papers are accepted for publication.</em></span>
-          </p>
         </div>
 
         <!-- Submission Guidelines -->
-        <div class="conf-section">
-          <h3>
+        <div>
+          <h3 class="headline-md" style="color:var(--primary);margin-bottom:1rem;">
             <span class="lang-block" data-lang="vi">Hướng dẫn Nộp bài</span>
             <span class="lang-block" data-lang="en" style="display:none;">Submission Guidelines</span>
           </h3>
-          <ul>
-            <li>
-              <span class="lang-block" data-lang="vi"><strong>Tóm tắt:</strong> Tối đa 170 từ, bao gồm từ khóa</span>
-              <span class="lang-block" data-lang="en" style="display:none;"><strong>Abstracts:</strong> Up to 170 words, including keywords</span>
-            </li>
-            <li>
-              <span class="lang-block" data-lang="vi"><strong>Bài báo đầy đủ:</strong> 6.000–8.000 từ, theo định dạng APA ấn bản thứ 7</span>
-              <span class="lang-block" data-lang="en" style="display:none;"><strong>Full Papers:</strong> 6,000–8,000 words, following APA 7th edition formatting</span>
-            </li>
-          </ul>
+          <p style="color:var(--stone-600);line-height:1.8;margin-bottom:1rem;">
+            <span class="lang-block" data-lang="vi">Tóm tắt phải dài từ 300–500 từ, bằng tiếng Anh hoặc tiếng Việt. Bao gồm mục tiêu, phương pháp, kết quả và ý nghĩa của nghiên cứu.</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Abstracts must be 300–500 words, in English or Vietnamese. Include research objectives, methodology, findings, and implications.</span>
+          </p>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;">
+            <a href="contact.html" class="btn btn--primary" data-i18n="conferences.submit">Nộp tóm tắt →</a>
+            <a href="contact.html" class="btn btn--outline" data-i18n="conferences.contact_org">Liên hệ Ban tổ chức</a>
+          </div>
         </div>
-
-        <!-- Who should attend -->
-        <div class="conf-section">
-          <h3 data-i18n="conferences.who">Đối tượng tham dự</h3>
-          <ul>
-            <li class="lang-block" data-lang="vi">Giáo viên ngôn ngữ và giảng viên đào tạo giáo viên tìm kiếm mô hình AI literacy thực tiễn</li>
-            <li class="lang-block" data-lang="vi">Nhà nghiên cứu về AI, CALL, đánh giá và đo lường giáo dục</li>
-            <li class="lang-block" data-lang="vi">Lãnh đạo trường học và đại học định hình chính sách và thực tiễn</li>
-            <li class="lang-block" data-lang="vi">Nghiên cứu sinh đang phát triển luận văn về AI và giáo dục ngôn ngữ</li>
-            <li class="lang-block" data-lang="vi">Nhà phát triển EdTech quan tâm đến thiết kế có trách nhiệm, phù hợp sư phạm</li>
-            <li class="lang-block" data-lang="en" style="display:none;">Language teachers and teacher educators seeking practical AI literacy models</li>
-            <li class="lang-block" data-lang="en" style="display:none;">Researchers investigating AI, CALL, assessment, and educational measurement</li>
-            <li class="lang-block" data-lang="en" style="display:none;">School and university leaders shaping policy and institutional practice</li>
-            <li class="lang-block" data-lang="en" style="display:none;">Graduate students developing thesis projects in AI and language education</li>
-            <li class="lang-block" data-lang="en" style="display:none;">Educational technology developers interested in responsible, pedagogy-aligned design</li>
-          </ul>
-        </div>
-
-      </div><!-- /conf-detail__body -->
-
-      <!-- Actions -->
-      <div class="conf-actions">
-        <a href="https://vietcall.edu.vn/submission" class="btn btn--secondary" target="_blank" rel="noopener" data-i18n="conferences.submit">Nộp tóm tắt →</a>
-        <a href="contact.html" class="btn btn--primary" data-i18n="conferences.register">Đăng ký →</a>
-        <a href="contact.html" class="btn btn--ghost" data-i18n="conferences.contact_org">Liên hệ Ban tổ chức</a>
       </div>
-    </div><!-- /conf-detail -->
+
+      <!-- Sidebar -->
+      <aside>
+        <div class="conf-info-card">
+          <div class="row">
+            <span class="key">
+              <span class="lang-block" data-lang="vi">Ngày</span>
+              <span class="lang-block" data-lang="en" style="display:none;">Date</span>
+            </span>
+            <span class="val">
+              <span class="lang-block" data-lang="vi">Tháng 11, 2026</span>
+              <span class="lang-block" data-lang="en" style="display:none;">November 2026</span>
+            </span>
+          </div>
+          <div class="row">
+            <span class="key">
+              <span class="lang-block" data-lang="vi">Địa điểm</span>
+              <span class="lang-block" data-lang="en" style="display:none;">Venue</span>
+            </span>
+            <span class="val">
+              <span class="lang-block" data-lang="vi">Huế, Việt Nam</span>
+              <span class="lang-block" data-lang="en" style="display:none;">Hue, Vietnam</span>
+            </span>
+          </div>
+          <div class="row">
+            <span class="key">
+              <span class="lang-block" data-lang="vi">Hình thức</span>
+              <span class="lang-block" data-lang="en" style="display:none;">Format</span>
+            </span>
+            <span class="val">Hybrid</span>
+          </div>
+          <div class="row">
+            <span class="key">
+              <span class="lang-block" data-lang="vi">Ngôn ngữ</span>
+              <span class="lang-block" data-lang="en" style="display:none;">Language</span>
+            </span>
+            <span class="val">VI / EN</span>
+          </div>
+        </div>
+
+        <div style="background:var(--stone-50);border-radius:var(--radius-2xl);padding:1.5rem;margin-bottom:1.5rem;border:1px solid var(--stone-100);">
+          <h4 style="font-size:0.875rem;font-weight:700;color:var(--tertiary);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:1rem;">
+            <span class="lang-block" data-lang="vi">Ban tổ chức</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Organizers</span>
+          </h4>
+          <p style="font-size:0.875rem;color:var(--stone-600);margin-bottom:0.75rem;">
+            ✉️ <a href="mailto:lanhuongnckh@gmail.com" style="color:var(--primary);font-weight:600;">lanhuongnckh@gmail.com</a>
+          </p>
+          <p style="font-size:0.875rem;color:var(--stone-600);margin-bottom:0.25rem;">📞 (+84) 988 049 988</p>
+          <p style="font-size:0.75rem;color:var(--stone-400);">Ms. Hương</p>
+          <p style="font-size:0.875rem;color:var(--stone-600);margin-top:0.75rem;margin-bottom:0.25rem;">📱 (+84) 909 850 699</p>
+          <p style="font-size:0.75rem;color:var(--stone-400);">Pham Ho (WhatsApp)</p>
+        </div>
+
+        <div style="background:var(--primary);border-radius:var(--radius-2xl);padding:1.5rem;color:#fff;">
+          <h4 style="font-size:0.875rem;font-weight:700;margin-bottom:0.75rem;opacity:0.6;text-transform:uppercase;letter-spacing:0.06em;">
+            <span class="lang-block" data-lang="vi">Cơ hội Xuất bản</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Publication Opportunities</span>
+          </h4>
+          <p style="font-size:0.875rem;color:rgba(255,255,255,0.85);line-height:1.65;margin-bottom:1.25rem;">
+            <span class="lang-block" data-lang="vi">Các bài xuất sắc được chọn đăng trong Kỷ yếu Hội thảo và Tạp chí VietCALL (chỉ mục Scopus).</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Selected outstanding papers will be published in the Conference Proceedings and VietCALL Journal (Scopus-indexed).</span>
+          </p>
+          <a href="resources.html" class="btn btn--outline" style="color:#fff;border-color:rgba(255,255,255,0.3);font-size:0.8125rem;">
+            <span class="lang-block" data-lang="vi">Xem Tạp chí →</span>
+            <span class="lang-block" data-lang="en" style="display:none;">View Journal →</span>
+          </a>
+        </div>
+      </aside>
+    </div>
   </div>
 </section>
 
-<!-- ── PAST CONFERENCES ─────────────────────────────────────────── -->
-<section class="section bg-surface-low animate-in">
+<!-- ── PAST EVENTS ───────────────────────────────────────────── -->
+<section class="section bg-stone animate-in">
   <div class="container">
-    <div class="section-header--between mb-8">
-      <div>
-        <h2 class="headline-lg text-primary" data-i18n="conferences.past_title">Đã qua</h2>
-        <div class="accent-line"></div>
+    <div class="section-header">
+      <div class="section-header__left">
+        <span class="badge" data-i18n="conferences.past_title">Đã qua</span>
+        <h2 class="headline-lg" data-i18n="conferences.past_title">Sự kiện đã qua</h2>
       </div>
     </div>
-
-    <div style="display:grid;gap:1rem;">
-      <!-- VietCALL 2025 -->
-      <div class="conf-item">
-        <div class="conf-item__date">
-          <span class="day">2025</span>
-          <span class="month">IUH</span>
+    <div class="conf-grid conf-grid--3">
+      <div class="conf-card animate-in">
+        <div class="conf-card__image">
+          <img src="https://picsum.photos/seed/vietcall2025p/1200/675" alt="VietCALL 2025" loading="lazy">
+          <span class="conf-card__pill">VietCALL 2025</span>
         </div>
-        <div class="conf-item__info">
-          <h3 data-i18n="conferences.vietcall2025_title">VietCALL 2025</h3>
-          <p>📍 <span data-i18n="conferences.vietcall2025_location">Trường Đại học Công nghiệp TP.HCM (IUH), TP. Hồ Chí Minh</span></p>
-          <p style="margin-top:0.25rem;">
-            <span class="chip" data-i18n="conferences.vietcall2025_theme">Công nghệ và Đổi mới trong Giảng dạy Ngôn ngữ</span>
-          </p>
-        </div>
+        <h3 data-i18n="conferences.vietcall2025_location">TP. Hồ Chí Minh, Việt Nam</h3>
+        <p class="meta"><span data-i18n="conferences.theme">Chủ đề</span>: <span data-i18n="conferences.vietcall2025_theme">Công nghệ và Đổi mới</span></p>
       </div>
-
-      <!-- VietCALL 2024 -->
-      <div class="conf-item">
-        <div class="conf-item__date">
-          <span class="day">2024</span>
-          <span class="month">HN</span>
+      <div class="conf-card animate-in" style="transition-delay:0.1s">
+        <div class="conf-card__image">
+          <img src="https://picsum.photos/seed/webinar-gamify/1200/675" alt="Gamification Webinar" loading="lazy">
+          <span class="conf-card__pill">Webinar 2024</span>
         </div>
-        <div class="conf-item__info">
-          <h3>VietCALL 2024</h3>
-          <p class="lang-block" data-lang="vi">📍 Hà Nội, Việt Nam</p>
-          <p class="lang-block" data-lang="en" style="display:none;">📍 Hanoi, Vietnam</p>
-          <p style="margin-top:0.25rem;">
-            <span class="chip lang-block" data-lang="vi">Thực hành CALL Bền vững &amp; Đổi mới</span>
-            <span class="chip lang-block" data-lang="en" style="display:none;">Sustainable CALL Practices &amp; Innovation</span>
-          </p>
+        <h3>
+          <span class="lang-block" data-lang="vi">Trò chơi hóa trong Giáo dục Ngôn ngữ</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Gamification in Language Education</span>
+        </h3>
+        <p class="meta">Dr. Deborah Healey · 15/04/2024</p>
+      </div>
+      <div class="conf-card animate-in" style="transition-delay:0.2s">
+        <div class="conf-card__image">
+          <img src="https://picsum.photos/seed/webinar-ai-elt/1200/675" alt="AI in ELT Webinar" loading="lazy">
+          <span class="conf-card__pill">Webinar 2024</span>
         </div>
+        <h3>
+          <span class="lang-block" data-lang="vi">AI trong Dạy học Tiếng Anh</span>
+          <span class="lang-block" data-lang="en" style="display:none;">AI in English Language Teaching</span>
+        </h3>
+        <p class="meta">Nicholas Peachey · 05/06/2024</p>
       </div>
     </div>
   </div>
@@ -327,12 +371,11 @@
 
 </main>
 
-<!-- ── FOOTER ──────────────────────────────────────────────────── -->
 <footer class="footer">
   <div class="container">
     <div class="footer__grid">
       <div>
-        <span class="footer__brand">Viet<span>CALL</span></span>
+        <span class="footer__brand">VietCALL</span>
         <p class="footer__tagline" data-i18n="footer.tagline">Thúc đẩy Học ngôn ngữ có hỗ trợ Máy tính tại Việt Nam</p>
       </div>
       <div>
@@ -342,6 +385,8 @@
           <a href="committee.html" class="footer__nav-link" data-i18n="nav.committee">Ban Lãnh đạo</a>
           <a href="conferences.html" class="footer__nav-link" data-i18n="nav.conferences">Hội thảo</a>
           <a href="resources.html" class="footer__nav-link" data-i18n="nav.resources">Tài nguyên</a>
+          <a href="blog.html" class="footer__nav-link" data-i18n="nav.blog">Tin tức</a>
+          <a href="membership.html" class="footer__nav-link" data-i18n="nav.membership">Thành viên</a>
           <a href="contact.html" class="footer__nav-link" data-i18n="nav.contact">Liên hệ</a>
         </nav>
       </div>
@@ -350,7 +395,7 @@
         <div class="footer__social-links">
           <a href="https://www.facebook.com/vietcall.edu.vn" class="footer__social-link" target="_blank" rel="noopener">📘 Facebook</a>
           <a href="mailto:lanhuongnckh@gmail.com" class="footer__social-link">✉️ Email</a>
-          <a href="https://vietcall.edu.vn" class="footer__social-link" target="_blank" rel="noopener">🌐 Website</a>
+          <a href="https://vietcall.edu.vn" class="footer__social-link" target="_blank" rel="noopener">🌐 vietcall.edu.vn</a>
         </div>
       </div>
     </div>
