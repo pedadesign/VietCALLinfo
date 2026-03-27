@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VietCALL – Học Ngôn ngữ có hỗ trợ Máy tính</title>
+  <meta name="description" content="VietCALL – Tổ chức tiên phong trong nghiên cứu và ứng dụng công nghệ vào dạy học ngôn ngữ tại Việt Nam.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ── NAVBAR ──────────────────────────────────────────────────── -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__brand" aria-label="VietCALL home">
+      <span class="navbar__name">Viet<span>CALL</span></span>
+    </a>
+
+    <ul class="navbar__links" role="list">
+      <li><a href="about.html" class="navbar__link" data-i18n="nav.about">Giới thiệu</a></li>
+      <li><a href="committee.html" class="navbar__link" data-i18n="nav.committee">Ban Lãnh đạo</a></li>
+      <li><a href="conferences.html" class="navbar__link" data-i18n="nav.conferences">Hội thảo</a></li>
+      <li><a href="resources.html" class="navbar__link" data-i18n="nav.resources">Tài nguyên</a></li>
+      <li><a href="contact.html" class="navbar__link" data-i18n="nav.contact">Liên hệ</a></li>
+    </ul>
+
+    <div class="navbar__right">
+      <div class="lang-switcher" role="group" aria-label="Language selector">
+        <button class="lang-btn lang-btn--active" data-lang-code="vi" aria-label="Tiếng Việt">VI</button>
+        <button class="lang-btn" data-lang-code="en" aria-label="English">EN</button>
+      </div>
+      <a href="contact.html" class="navbar__cta" data-i18n="nav.join">Tham gia ngay</a>
+    </div>
+
+    <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="navbar__mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile menu">
+  <a href="about.html" data-i18n="nav.about">Giới thiệu</a>
+  <a href="committee.html" data-i18n="nav.committee">Ban Lãnh đạo</a>
+  <a href="conferences.html" data-i18n="nav.conferences">Hội thảo</a>
+  <a href="resources.html" data-i18n="nav.resources">Tài nguyên</a>
+  <a href="contact.html" data-i18n="nav.contact">Liên hệ</a>
+  <a href="contact.html" style="color:var(--secondary);font-weight:700;" data-i18n="nav.join">Tham gia ngay</a>
+  <div class="mobile-lang">
+    <button class="lang-btn" data-lang-code="vi">🇻🇳 Tiếng Việt</button>
+    <button class="lang-btn" data-lang-code="en">🇺🇸 English</button>
+  </div>
+</div>
+
+<!-- ── HERO ────────────────────────────────────────────────────── -->
+<section class="hero bg-surface animate-in" aria-labelledby="hero-title">
+  <div class="hero__bg-glow" aria-hidden="true"></div>
+  <div class="hero__bg-glow2" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero__grid">
+      <div>
+        <span class="badge" data-i18n="home.badge">Tiên phong trong Giáo dục Ngôn ngữ</span>
+        <h1 id="hero-title" class="hero__title" data-i18n="home.title">
+          Tiên phong <em>Dạy học Ngôn ngữ</em> cùng Công nghệ.
+        </h1>
+        <p class="hero__description" data-i18n="home.desc">
+          VietCALL dẫn đầu trong nghiên cứu và đổi mới, giúp các nhà giáo dục và người học nắm bắt công nghệ kỹ thuật số tiên tiến để đạt được sự xuất sắc trong giáo dục ngôn ngữ.
+        </p>
+        <div class="hero__actions">
+          <a href="about.html" class="btn btn--primary" data-i18n="home.btn_explore">Khám phá nghiên cứu</a>
+          <a href="conferences.html" class="btn btn--ghost" data-i18n="home.btn_learn">Tìm hiểu thêm →</a>
+        </div>
+      </div>
+
+      <div class="hero__visual" aria-hidden="true">
+        <div class="hero__image-glow"></div>
+        <div class="hero__image-card">
+          <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&h=750&fit=crop" alt="VietCALL Conference" loading="lazy">
+          <div class="hero__image-tag">VietCALL 2026 — Huế, Việt Nam</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS ───────────────────────────────────────────────────── -->
+<div class="stats-bar animate-in" aria-label="Statistics">
+  <div class="container">
+    <div class="stats-bar__grid stagger">
+      <div class="stat-item">
+        <div class="stat-item__number"><span data-target="500">0</span><span class="stat-item__suffix">+</span></div>
+        <div class="stat-item__label" data-i18n="home.stats_members">Thành viên</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item__number"><span data-target="14">0</span></div>
+        <div class="stat-item__label" data-i18n="home.stats_conferences">Hội thảo</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item__number"><span data-target="200">0</span><span class="stat-item__suffix">+</span></div>
+        <div class="stat-item__label" data-i18n="home.stats_publications">Ấn phẩm</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item__number"><span data-target="20">0</span><span class="stat-item__suffix">+</span></div>
+        <div class="stat-item__label" data-i18n="home.stats_countries">Quốc gia</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── MISSION / BENTO ─────────────────────────────────────────── -->
+<section class="section--lg bg-surface-low animate-in" aria-labelledby="mission-title">
+  <div class="container">
+    <div class="section-header">
+      <span class="badge" data-i18n="home.mission_badge">Sứ mệnh & Giá trị</span>
+      <h2 id="mission-title" class="headline-lg mt-4" data-i18n="home.mission_title">Tiên phong trong lĩnh vực CALL</h2>
+      <p data-i18n="home.mission_sub">Khám phá giao điểm giữa ngôn ngữ học, sư phạm và đổi mới kỹ thuật số.</p>
+    </div>
+
+    <div class="bento">
+      <!-- Primary card -->
+      <div class="bento__primary">
+        <div class="icon-lg" aria-hidden="true">🤖</div>
+        <h3 data-i18n="home.bento_ai_title">AI Tạo sinh trong Sư phạm</h3>
+        <p data-i18n="home.bento_ai_desc">Nghiên cứu cách các mô hình ngôn ngữ lớn và AI tạo sinh định hình lại giảng dạy ngôn ngữ, tạo ra lộ trình học tập cá nhân hóa và phương pháp đánh giá tiên tiến.</p>
+        <a href="conferences.html" class="btn btn--white btn--sm" data-i18n="home.bento_ai_btn">Xem hướng nghiên cứu</a>
+      </div>
+
+      <!-- Secondary card -->
+      <div class="bento__secondary animate-in">
+        <div class="bento__secondary-header">
+          <div>
+            <div style="font-size:2rem;" aria-hidden="true">🌐</div>
+            <h4 data-i18n="home.bento_literacy_title">Kỹ năng số Đa ngôn ngữ</h4>
+          </div>
+          <span class="chip" data-i18n="home.bento_literacy_sub">Dự án đang triển khai</span>
+        </div>
+        <p data-i18n="home.bento_literacy_desc">Xây dựng khung kỹ năng số trong bối cảnh đa ngôn ngữ, thu hẹp khoảng cách văn hóa và ngôn ngữ trong lớp học ảo.</p>
+      </div>
+
+      <!-- Tertiary cards -->
+      <div class="bento__tertiary bg-tertiary text-on-primary animate-in" style="color:white;">
+        <div aria-hidden="true">🏫</div>
+        <h4 data-i18n="home.bento_blend_title">Mô hình Học tập Kết hợp</h4>
+        <p style="color:rgba(255,255,255,0.75);font-size:0.8rem;" data-i18n="home.bento_blend_desc">Kết hợp dạy học đồng bộ và bất đồng bộ.</p>
+      </div>
+
+      <div class="bento__tertiary bg-surface-high animate-in">
+        <div aria-hidden="true">📊</div>
+        <h4 class="text-primary" data-i18n="home.bento_data_title">Đánh giá Dựa trên Dữ liệu</h4>
+        <p style="font-size:0.8rem;" class="text-on-surface-var" data-i18n="home.bento_data_desc">Phân tích học tập để dự đoán kết quả tốt hơn.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── UPCOMING CONFERENCES ────────────────────────────────────── -->
+<section class="section bg-surface animate-in" aria-labelledby="conf-home-title">
+  <div class="container">
+    <div class="section-header--between">
+      <div>
+        <h2 id="conf-home-title" class="headline-lg text-primary" data-i18n="home.conf_title">Hội thảo Sắp tới</h2>
+        <div class="accent-line"></div>
+      </div>
+      <a href="conferences.html" style="color:var(--secondary);font-weight:700;" data-i18n="home.conf_view_all">Xem tất cả sự kiện →</a>
+    </div>
+
+    <div style="display:grid;gap:1rem;">
+      <div class="conf-item">
+        <div class="conf-item__date" aria-hidden="true">
+          <span class="day">TBD</span>
+          <span class="month">NOV 2026</span>
+        </div>
+        <div class="conf-item__info">
+          <h3>VietCALL 2026 – 2nd International Convention</h3>
+          <p>📍 Trường Đại học Ngoại ngữ – Đại học Huế, Huế, Việt Nam</p>
+          <p style="margin-top:0.25rem;">
+            <span class="chip">Hạn nộp tóm tắt: 30/06/2026</span>
+          </p>
+        </div>
+        <a href="conferences.html" class="conf-item__action" data-i18n="conferences.submit">Nộp tóm tắt →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RECENT PUBLICATIONS ─────────────────────────────────────── -->
+<section class="section publications animate-in" aria-labelledby="pub-home-title">
+  <div class="container">
+    <div class="publications__grid">
+      <div>
+        <h2 id="pub-home-title" class="headline-lg">
+          <span data-i18n="home.pub_title">Ấn phẩm Gần đây</span>
+        </h2>
+        <p style="color:var(--primary-fixed-dim);margin:1rem 0 2rem;line-height:1.75;" data-i18n="home.pub_sub">Nghiên cứu được bình duyệt thúc đẩy lĩnh vực học ngôn ngữ có hỗ trợ máy tính.</p>
+
+        <div style="margin-bottom:2rem;">
+          <div class="pub-item">
+            <span class="label">International Journal of TESOL &amp; Education</span>
+            <h4>AI Literacy in Language Education: Frameworks and Practices</h4>
+            <p class="author">Assoc. Prof. Dr. Pham Vu Phi Ho et al. (2025)</p>
+          </div>
+          <div class="pub-item">
+            <span class="label">Journal of Inquiry into Languages and Cultures</span>
+            <h4>Mobile-Assisted Language Learning in Vietnamese University Contexts</h4>
+            <p class="author">Dr. Bao Kham, Dr. Tran Tin Nghi (2024)</p>
+          </div>
+          <div class="pub-item">
+            <span class="label">AsiaCALL Online Journal</span>
+            <h4>Generative AI for Formative Assessment in EFL Classrooms</h4>
+            <p class="author">Assoc. Prof. Dr. Nguyen Van Long et al. (2024)</p>
+          </div>
+        </div>
+
+        <a href="resources.html" class="btn btn--white" data-i18n="home.pub_access">Truy cập toàn bộ lưu trữ</a>
+      </div>
+
+      <div class="publications__images" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=600&fit=crop" alt="Academic journal" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1507842217343-583b8cb8d966?w=400&h=300&fit=crop" alt="Research publication" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1432821596592-e2c18b78144f?w=400&h=300&fit=crop" alt="Academic library" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── JOIN CTA ────────────────────────────────────────────────── -->
+<section class="section bg-surface-low animate-in" aria-labelledby="join-title">
+  <div class="container">
+    <div class="member-cta">
+      <span class="badge badge--red" aria-hidden="true">VietCALL</span>
+      <h2 id="join-title" class="headline-lg mt-4" data-i18n="home.join_title">Trở thành Thành viên</h2>
+      <p data-i18n="home.join_desc">Tham gia cộng đồng chuyên gia toàn cầu. Tiếp cận tài liệu độc quyền, sự kiện kết nối và hỗ trợ nghiên cứu.</p>
+      <div class="member-cta__actions">
+        <a href="contact.html" class="btn btn--secondary" data-i18n="home.join_btn">Tham gia VietCALL ngay</a>
+        <a href="about.html" class="btn btn--outline" data-i18n="home.join_benefits">Xem quyền lợi</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────────────────────── -->
+<footer class="footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <span class="footer__brand">Viet<span>CALL</span></span>
+        <p class="footer__tagline" data-i18n="footer.tagline">Thúc đẩy Học ngôn ngữ có hỗ trợ Máy tính tại Việt Nam</p>
+      </div>
+      <div>
+        <p class="footer__col-title" data-i18n="footer.links">Liên kết nhanh</p>
+        <nav class="footer__nav-links" aria-label="Footer navigation">
+          <a href="about.html" class="footer__nav-link" data-i18n="nav.about">Giới thiệu</a>
+          <a href="committee.html" class="footer__nav-link" data-i18n="nav.committee">Ban Lãnh đạo</a>
+          <a href="conferences.html" class="footer__nav-link" data-i18n="nav.conferences">Hội thảo</a>
+          <a href="resources.html" class="footer__nav-link" data-i18n="nav.resources">Tài nguyên</a>
+          <a href="contact.html" class="footer__nav-link" data-i18n="nav.contact">Liên hệ</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer__col-title" data-i18n="footer.connect">Kết nối</p>
+        <div class="footer__social-links">
+          <a href="https://www.facebook.com/vietcall.edu.vn" class="footer__social-link" target="_blank" rel="noopener">📘 Facebook</a>
+          <a href="mailto:lanhuongnckh@gmail.com" class="footer__social-link">✉️ Email</a>
+          <a href="https://vietcall.edu.vn" class="footer__social-link" target="_blank" rel="noopener">🌐 Website</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copyright" data-i18n="footer.copyright">© 2026 VietCALL. Bảo lưu mọi quyền.</p>
+      <div class="footer__bottom-links">
+        <a href="#" class="footer__bottom-link" data-i18n="footer.privacy">Chính sách bảo mật</a>
+        <a href="contact.html" class="footer__bottom-link" data-i18n="footer.contact">Liên hệ hỗ trợ</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

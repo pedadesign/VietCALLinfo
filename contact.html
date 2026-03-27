@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liên hệ – VietCALL</title>
+  <meta name="description" content="Liên hệ VietCALL để hỏi về thành viên, hội thảo hoặc hợp tác nghiên cứu.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ── NAVBAR ──────────────────────────────────────────────────── -->
+<nav class="navbar" role="navigation">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__brand">
+      <span class="navbar__name">Viet<span>CALL</span></span>
+    </a>
+    <ul class="navbar__links">
+      <li><a href="about.html" class="navbar__link" data-i18n="nav.about">Giới thiệu</a></li>
+      <li><a href="committee.html" class="navbar__link" data-i18n="nav.committee">Ban Lãnh đạo</a></li>
+      <li><a href="conferences.html" class="navbar__link" data-i18n="nav.conferences">Hội thảo</a></li>
+      <li><a href="resources.html" class="navbar__link" data-i18n="nav.resources">Tài nguyên</a></li>
+      <li><a href="contact.html" class="navbar__link navbar__link--active" data-i18n="nav.contact">Liên hệ</a></li>
+    </ul>
+    <div class="navbar__right">
+      <div class="lang-switcher">
+        <button class="lang-btn lang-btn--active" data-lang-code="vi">VI</button>
+        <button class="lang-btn" data-lang-code="en">EN</button>
+      </div>
+      <a href="contact.html" class="navbar__cta" data-i18n="nav.join">Tham gia ngay</a>
+    </div>
+    <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="navbar__mobile-menu" id="mobileMenu">
+  <a href="about.html" data-i18n="nav.about">Giới thiệu</a>
+  <a href="committee.html" data-i18n="nav.committee">Ban Lãnh đạo</a>
+  <a href="conferences.html" data-i18n="nav.conferences">Hội thảo</a>
+  <a href="resources.html" data-i18n="nav.resources">Tài nguyên</a>
+  <a href="contact.html" data-i18n="nav.contact">Liên hệ</a>
+  <a href="contact.html" style="color:var(--secondary);font-weight:700;" data-i18n="nav.join">Tham gia ngay</a>
+  <div class="mobile-lang">
+    <button class="lang-btn" data-lang-code="vi">🇻🇳 Tiếng Việt</button>
+    <button class="lang-btn" data-lang-code="en">🇺🇸 English</button>
+  </div>
+</div>
+
+<!-- ── PAGE HERO ───────────────────────────────────────────────── -->
+<header class="page-hero animate-in">
+  <div class="container">
+    <span class="badge" data-i18n="contact.badge">Liên hệ</span>
+    <h1 class="display-lg" data-i18n="contact.title">Kết nối với chúng tôi</h1>
+    <p data-i18n="contact.sub">Chúng tôi luôn sẵn sàng lắng nghe bạn. Hãy liên hệ để hỏi về thành viên, hội thảo hoặc hợp tác.</p>
+  </div>
+</header>
+
+<main>
+<section class="section bg-surface animate-in">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Info card -->
+      <div>
+        <div class="contact-info-card">
+          <h3 class="lang-block" data-lang="vi">Thông tin liên hệ</h3>
+          <h3 class="lang-block" data-lang="en" style="display:none;">Contact Information</h3>
+
+          <div class="contact-info-item">
+            <p class="label" data-i18n="contact.email_label">Email</p>
+            <a href="mailto:lanhuongnckh@gmail.com">lanhuongnckh@gmail.com</a>
+          </div>
+
+          <div class="contact-info-item">
+            <p class="label" data-i18n="contact.phone_label">Điện thoại</p>
+            <a href="tel:+84988049988">(+84) 988 049 988</a>
+            <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin-top:0.25rem;">Ms. Huong</p>
+          </div>
+
+          <div class="contact-info-item">
+            <p class="label" data-i18n="contact.whatsapp_label">WhatsApp</p>
+            <a href="https://wa.me/84909850699">(+84) 909 850 699</a>
+            <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin-top:0.25rem;">Pham Ho</p>
+          </div>
+
+          <div class="contact-info-item">
+            <p class="label" data-i18n="contact.address_label">Địa chỉ</p>
+            <p data-i18n="contact.address_val">Việt Nam</p>
+          </div>
+
+          <div class="contact-info-item">
+            <p class="label" data-i18n="contact.social_label">Mạng xã hội</p>
+            <a href="https://www.facebook.com/vietcall.edu.vn" target="_blank" rel="noopener" style="display:block;margin-bottom:0.5rem;">📘 Facebook</a>
+            <a href="https://vietcall.edu.vn" target="_blank" rel="noopener" style="display:block;">🌐 vietcall.edu.vn</a>
+          </div>
+        </div>
+
+        <!-- Membership registration card -->
+        <div style="background:var(--surface-container-lowest);border-radius:var(--r-2xl);padding:var(--sp-8);margin-top:var(--sp-6);border-top:3px solid var(--secondary);">
+          <h4 class="text-primary mb-4" data-i18n="contact.register_title">Đăng ký Thành viên</h4>
+          <p style="font-size:0.875rem;color:var(--on-surface-variant);margin-bottom:1.5rem;line-height:1.65;" data-i18n="contact.register_desc">Điền vào mẫu đăng ký để tham gia cộng đồng VietCALL.</p>
+          <a href="https://vietcall.edu.vn/register/" class="btn btn--secondary btn--sm" target="_blank" rel="noopener" data-i18n="contact.register_btn">Đăng ký ngay →</a>
+        </div>
+      </div>
+
+      <!-- Contact form -->
+      <div class="contact-form-card">
+        <h3 class="lang-block" data-lang="vi">Gửi tin nhắn</h3>
+        <h3 class="lang-block" data-lang="en" style="display:none;">Send a Message</h3>
+
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name" data-i18n="contact.name_placeholder">Họ và tên</label>
+              <input type="text" id="name" name="name" class="form-control"
+                     data-i18n-placeholder="contact.name_placeholder" placeholder="Họ và tên" required>
+            </div>
+            <div class="form-group">
+              <label for="email" data-i18n="contact.email_label">Email</label>
+              <input type="email" id="email" name="email" class="form-control"
+                     data-i18n-placeholder="contact.email_placeholder" placeholder="Địa chỉ email" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="subject" data-i18n="contact.subject_placeholder">Chủ đề</label>
+            <input type="text" id="subject" name="subject" class="form-control"
+                   data-i18n-placeholder="contact.subject_placeholder" placeholder="Chủ đề">
+          </div>
+
+          <div class="form-group">
+            <label for="message" data-i18n="contact.message_placeholder">Tin nhắn</label>
+            <textarea id="message" name="message" class="form-control"
+                      data-i18n-placeholder="contact.message_placeholder" placeholder="Tin nhắn của bạn..." rows="6" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--secondary" style="width:100%;" data-i18n="contact.send_btn">Gửi tin nhắn</button>
+          <p class="form-note" data-i18n="contact.form_note">Chúng tôi sẽ phản hồi trong vòng 2 ngày làm việc.</p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── VietCALL 2026 CONTACT INFO ──────────────────────────────── -->
+<section class="section bg-surface-low animate-in">
+  <div class="container">
+    <div class="member-cta">
+      <span class="badge">VietCALL 2026</span>
+      <h2 class="headline-lg mt-4">
+        <span class="lang-block" data-lang="vi">Liên hệ Ban tổ chức VietCALL 2026</span>
+        <span class="lang-block" data-lang="en" style="display:none;">Contact VietCALL 2026 Organizers</span>
+      </h2>
+      <p>
+        <span class="lang-block" data-lang="vi">Để biết thêm thông tin về hội thảo VietCALL 2026, vui lòng liên hệ trực tiếp với ban tổ chức.</span>
+        <span class="lang-block" data-lang="en" style="display:none;">For further information about VietCALL 2026, please contact the organizers directly.</span>
+      </p>
+      <div class="member-cta__actions" style="flex-direction:column;align-items:center;gap:0.5rem;font-size:0.95rem;color:var(--on-surface-variant);">
+        <p>✉️ <a href="mailto:lanhuongnckh@gmail.com" style="color:var(--secondary);font-weight:700;">lanhuongnckh@gmail.com</a>
+          &nbsp;—&nbsp;
+          <span class="lang-block" data-lang="vi">Ms. Hương (Điện thoại: +84 988 049 988)</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Ms. Huong (Tel: +84 988 049 988)</span>
+        </p>
+        <p>📱 WhatsApp: <a href="https://wa.me/84909850699" style="color:var(--secondary);font-weight:700;">+84 909 850 699</a>
+          &nbsp;—&nbsp; Pham Ho</p>
+        <div style="margin-top:1rem;">
+          <a href="conferences.html" class="btn btn--primary btn--sm">
+            <span class="lang-block" data-lang="vi">Xem chi tiết VietCALL 2026 →</span>
+            <span class="lang-block" data-lang="en" style="display:none;">View VietCALL 2026 details →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ── FOOTER ──────────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <span class="footer__brand">Viet<span>CALL</span></span>
+        <p class="footer__tagline" data-i18n="footer.tagline">Thúc đẩy Học ngôn ngữ có hỗ trợ Máy tính tại Việt Nam</p>
+      </div>
+      <div>
+        <p class="footer__col-title" data-i18n="footer.links">Liên kết nhanh</p>
+        <nav class="footer__nav-links">
+          <a href="about.html" class="footer__nav-link" data-i18n="nav.about">Giới thiệu</a>
+          <a href="committee.html" class="footer__nav-link" data-i18n="nav.committee">Ban Lãnh đạo</a>
+          <a href="conferences.html" class="footer__nav-link" data-i18n="nav.conferences">Hội thảo</a>
+          <a href="resources.html" class="footer__nav-link" data-i18n="nav.resources">Tài nguyên</a>
+          <a href="contact.html" class="footer__nav-link" data-i18n="nav.contact">Liên hệ</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer__col-title" data-i18n="footer.connect">Kết nối</p>
+        <div class="footer__social-links">
+          <a href="https://www.facebook.com/vietcall.edu.vn" class="footer__social-link" target="_blank" rel="noopener">📘 Facebook</a>
+          <a href="mailto:lanhuongnckh@gmail.com" class="footer__social-link">✉️ Email</a>
+          <a href="https://vietcall.edu.vn" class="footer__social-link" target="_blank" rel="noopener">🌐 Website</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright" data-i18n="footer.copyright">© 2026 VietCALL. Bảo lưu mọi quyền.</p>
+      <div class="footer__bottom-links">
+        <a href="#" class="footer__bottom-link" data-i18n="footer.privacy">Chính sách bảo mật</a>
+        <a href="contact.html" class="footer__bottom-link" data-i18n="footer.contact">Liên hệ hỗ trợ</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
