@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "VietCALL Static Site",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "4000"],
+      "port": 4000,
+      "cwd": "/Users/huyphung/VietCALLinfo"
+    }
+  ]
+}
