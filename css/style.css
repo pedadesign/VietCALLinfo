@@ -716,7 +716,7 @@ h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; line-height: 1.15;
   margin-bottom: 0.75rem;
   transition: color 0.2s ease;
 }
-.resource-card:hover h3 { color: var(--secondary); }
+.resource-card:hover h3 { color: #fff; }
 .resource-card p {
   font-size: 0.875rem;
   color: rgba(255,255,255,0.6);
