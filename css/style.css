@@ -1572,7 +1572,9 @@ textarea.form-control { resize: vertical; min-height: 8rem; }
   color: var(--stone-900);
   margin-bottom: 0.5rem;
   font-family: 'Inter', sans-serif;
+  transition: color 0.2s ease;
 }
+.resource-card:hover h3 { color: var(--secondary); }
 .resource-card p {
   font-size: 0.875rem;
   color: var(--stone-500);
