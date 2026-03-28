@@ -1632,23 +1632,57 @@ textarea.form-control { resize: vertical; min-height: 8rem; }
   .objectives-grid { grid-template-columns: repeat(4, 1fr); }
 }
 .objective-card {
-  background: var(--stone-50);
+  background: #fff;
   border-radius: var(--radius-xl);
-  padding: 1.5rem;
+  padding: 1.75rem 1.5rem;
   border: 1px solid var(--stone-100);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.objective-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: 0;
+}
+.objective-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(26,36,94,0.15);
+  border-color: transparent;
+}
+.objective-card:hover::before {
+  opacity: 1;
 }
 .objective-card__num {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--stone-200);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--secondary);
   font-family: 'Playfair Display', serif;
-  margin-bottom: 0.875rem;
+  margin-bottom: 0.75rem;
   line-height: 1;
+  position: relative;
+  z-index: 1;
+  transition: color 0.25s ease;
+}
+.objective-card:hover .objective-card__num {
+  color: rgba(255,255,255,0.5);
 }
 .objective-card p {
-  font-size: 0.875rem;
-  color: var(--stone-600);
-  line-height: 1.6;
+  font-size: 0.9rem;
+  color: var(--stone-700);
+  line-height: 1.65;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+  transition: color 0.25s ease;
+}
+.objective-card:hover p {
+  color: #fff;
 }
 
 /* ── Member Cards ────────────────────────────────────────── */
