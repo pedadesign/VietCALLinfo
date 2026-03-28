@@ -427,10 +427,12 @@
         <div class="sidebar-newsletter">
           <h4 data-i18n="blog.newsletter_title">Đăng ký Bản tin VietCALL</h4>
           <p data-i18n="blog.newsletter_desc">Nhận thông tin về nghiên cứu, sự kiện và hoạt động mới nhất của VietCALL.</p>
-          <form class="sidebar-newsletter-form" onsubmit="return false;">
-            <input type="email" data-i18n-placeholder="blog.newsletter_placeholder" placeholder="Địa chỉ email của bạn">
+          <form id="newsletterForm" class="sidebar-newsletter-form" action="https://formspree.io/f/mkopodrj" method="POST">
+            <input type="hidden" name="_subject" value="New VietCALL Newsletter Subscription">
+            <input type="email" name="email" id="newsletter-email" data-i18n-placeholder="blog.newsletter_placeholder" placeholder="Địa chỉ email của bạn" required>
             <button type="submit" class="btn btn--secondary btn--sm" data-i18n="blog.newsletter_btn">Đăng ký</button>
           </form>
+          <p id="newsletterMsg" style="display:none;font-size:0.8125rem;margin-top:0.5rem;color:var(--primary);font-weight:600;"></p>
         </div>
         <!-- Join CTA -->
         <div class="sidebar-block" style="background:var(--stone-900);border-color:transparent;">

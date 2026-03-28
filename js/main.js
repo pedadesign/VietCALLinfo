@@ -150,6 +150,47 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ─── Newsletter form → Formspree ─────────────────────────────────────────
+  const newsletterForm = document.getElementById('newsletterForm');
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', async e => {
+      e.preventDefault();
+      const btn = newsletterForm.querySelector('button[type="submit"]');
+      const msg = document.getElementById('newsletterMsg');
+      const lang = localStorage.getItem('vc_lang') || 'vi';
+      const email = document.getElementById('newsletter-email');
+
+      if (!email.value.trim()) { email.classList.add('is-invalid'); return; }
+      email.classList.remove('is-invalid');
+
+      btn.disabled = true;
+      btn.textContent = lang === 'vi' ? '…' : '…';
+
+      try {
+        const res = await fetch(newsletterForm.action, {
+          method: 'POST',
+          body: new FormData(newsletterForm),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          newsletterForm.style.display = 'none';
+          if (msg) {
+            msg.textContent = lang === 'vi' ? '✓ Đăng ký thành công!' : '✓ Subscribed successfully!';
+            msg.style.display = 'block';
+          }
+        } else {
+          btn.disabled = false;
+          btn.textContent = lang === 'vi' ? 'Thử lại' : 'Try again';
+          alert(lang === 'vi' ? 'Có lỗi xảy ra. Vui lòng thử lại.' : 'Something went wrong. Please try again.');
+        }
+      } catch {
+        btn.disabled = false;
+        btn.textContent = lang === 'vi' ? 'Thử lại' : 'Try again';
+        alert(lang === 'vi' ? 'Không thể kết nối. Kiểm tra mạng và thử lại.' : 'Could not connect. Check your network and try again.');
+      }
+    });
+  }
+
   // ─── Membership form → Formspree ─────────────────────────────────────────
   const membershipForm = document.getElementById('membershipForm');
   if (membershipForm) {
