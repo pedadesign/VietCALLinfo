@@ -684,17 +684,18 @@ h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; line-height: 1.15;
 @media (min-width: 640px)  { .resource-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1024px) { .resource-grid { grid-template-columns: repeat(4, 1fr); } }
 
-.resource-card {
+/* ── Resource cards – dark background (index .resource-grid) ── */
+.resource-grid .resource-card {
   padding: 2rem;
   border-radius: var(--radius-3xl);
   border: 1px solid rgba(255,255,255,0.1);
   transition: background 0.2s ease, border-color 0.2s ease;
 }
-.resource-card:hover {
+.resource-grid .resource-card:hover {
   background: rgba(255,255,255,0.1);
   border-color: rgba(255,255,255,0.25);
 }
-.resource-card__icon {
+.resource-grid .resource-card__icon {
   width: 3rem; height: 3rem;
   background: rgba(255,255,255,0.1);
   border-radius: var(--radius-xl);
@@ -702,30 +703,30 @@ h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; line-height: 1.15;
   margin-bottom: 1.25rem;
   transition: background 0.2s ease;
 }
-.resource-card:hover .resource-card__icon { background: rgba(255,255,255,0.25); }
-.resource-card__icon svg {
+.resource-grid .resource-card:hover .resource-card__icon { background: rgba(255,255,255,0.25); }
+.resource-grid .resource-card__icon svg {
   width: 1.5rem; height: 1.5rem;
   stroke: rgba(255,255,255,0.7);
   transition: stroke 0.2s ease;
 }
-.resource-card:hover .resource-card__icon svg { stroke: #fff; }
-.resource-card h3 {
+.resource-grid .resource-card:hover .resource-card__icon svg { stroke: #fff; }
+.resource-grid .resource-card h3 {
   font-size: 1.125rem;
   font-weight: 700;
   color: #fff;
   margin-bottom: 0.75rem;
   transition: color 0.2s ease;
 }
-.resource-card:hover h3 { color: #fff; }
-.resource-card p {
+.resource-grid .resource-card:hover h3 { color: #fff; }
+.resource-grid .resource-card p {
   font-size: 0.875rem;
   color: rgba(255,255,255,0.6);
   line-height: 1.6;
   margin-bottom: 1.25rem;
   transition: color 0.2s ease;
 }
-.resource-card:hover p { color: rgba(255,255,255,0.9); }
-.resource-card__link {
+.resource-grid .resource-card:hover p { color: rgba(255,255,255,0.9); }
+.resource-grid .resource-card__link {
   font-size: 0.8125rem;
   font-weight: 700;
   color: rgba(255,255,255,0.55);
@@ -734,7 +735,7 @@ h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; line-height: 1.15;
   gap: 0.375rem;
   transition: color 0.15s ease;
 }
-.resource-card:hover .resource-card__link { color: #fff; }
+.resource-grid .resource-card:hover .resource-card__link { color: #fff; }
 
 /* ── Blog cards ─────────────────────────────────────────────── */
 .blog-grid {
@@ -1551,22 +1552,23 @@ textarea.form-control { resize: vertical; min-height: 8rem; }
 @media (min-width: 1024px) {
   .resources-grid { grid-template-columns: repeat(4, 1fr); }
 }
-.resource-card {
+/* ── Resource cards – light background (resources .resources-grid) ── */
+.resources-grid .resource-card {
   background: var(--white);
   border: 1px solid var(--stone-200);
   border-radius: var(--radius-xl);
   padding: 1.75rem 1.5rem;
   transition: box-shadow 0.2s, transform 0.2s;
 }
-.resource-card:hover {
+.resources-grid .resource-card:hover {
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
   transform: translateY(-2px);
 }
-.resource-card__icon {
+.resources-grid .resource-card__icon {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
-.resource-card h3 {
+.resources-grid .resource-card h3 {
   font-size: 1rem;
   font-weight: 700;
   color: var(--stone-900);
@@ -1574,15 +1576,15 @@ textarea.form-control { resize: vertical; min-height: 8rem; }
   font-family: 'Inter', sans-serif;
   transition: color 0.2s ease;
 }
-.resource-card:hover h3 { color: var(--secondary); }
-.resource-card p {
+.resources-grid .resource-card:hover h3 { color: var(--secondary); }
+.resources-grid .resource-card p {
   font-size: 0.875rem;
   color: var(--stone-500);
   line-height: 1.65;
   margin-bottom: 1.25rem;
   transition: color 0.2s ease;
 }
-.resource-card:hover p { color: #323e69; }
+.resources-grid .resource-card:hover p { color: #323e69; }
 .resource-link {
   font-size: 0.875rem;
   font-weight: 600;
