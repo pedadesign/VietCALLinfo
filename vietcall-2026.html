@@ -145,15 +145,38 @@
       <li><a href="membership.html" class="navbar__link" data-i18n="nav.membership">Thành viên</a></li>
       <li><a href="contact.html" class="navbar__link" data-i18n="nav.contact">Liên Lạc</a></li>
     </ul>
-    <div class="navbar__actions">
-      <button class="lang-toggle" id="langToggle" aria-label="Switch language">EN</button>
+    <div class="navbar__right">
+      <div class="lang-switcher">
+        <button class="lang-switcher__btn" aria-label="Chọn ngôn ngữ">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="lang-switcher__current">🇻🇳 VI</span>
+        </button>
+        <div class="lang-switcher__dropdown">
+          <button class="lang-switcher__option active" data-lang-code="vi">🇻🇳 Tiếng Việt</button>
+          <button class="lang-switcher__option" data-lang-code="en">🇺🇸 English</button>
+        </div>
+      </div>
       <a href="membership.html" class="btn btn--primary btn--sm" data-i18n="nav.join">Tham gia ngay</a>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
     </div>
+
+    <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+<div class="navbar__mobile" id="mobileMenu">
+  <a href="about.html" data-i18n="nav.about">Giới thiệu</a>
+  <a href="conferences.html" data-i18n="nav.events">Sự kiện</a>
+  <a href="blog.html" data-i18n="nav.blog">Bài Viết</a>
+  <a href="resources.html" data-i18n="nav.resources">Tài Nguyên</a>
+  <a href="membership.html" data-i18n="nav.membership">Thành viên</a>
+  <a href="contact.html" data-i18n="nav.contact">Liên Lạc</a>
+  <div class="mobile-cta"><a href="membership.html" class="btn btn--primary" style="width:100%;justify-content:center;" data-i18n="nav.join">Tham gia ngay</a></div>
+  <div class="mobile-lang">
+    <button class="lang-switcher__option active" data-lang-code="vi">🇻🇳 VI</button>
+    <button class="lang-switcher__option" data-lang-code="en">🇺🇸 EN</button>
+  </div>
+</div>
 
 <!-- ── HERO ───────────────────────────────────────────────────── -->
 <section class="conf-hero">
