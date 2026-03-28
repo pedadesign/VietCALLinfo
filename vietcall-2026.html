@@ -128,6 +128,217 @@
       .two-col { grid-template-columns: 1fr !important; }
       .timeline-item { grid-template-columns: 6rem 1.5rem 1fr; }
     }
+
+    /* ── Hero Enhancements ──────────────────────────────────── */
+    @keyframes heroFadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(7px); }
+    }
+    @keyframes goldPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(249,199,79,0.55); }
+      60%       { box-shadow: 0 0 0 10px rgba(249,199,79,0); }
+    }
+
+    .conf-hero__bg { opacity: 0.52; }
+
+    .conf-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(14,20,54,0.97) 0%,
+        rgba(14,20,54,0.62) 45%,
+        rgba(0,0,0,0.18) 100%
+      );
+      z-index: 1;
+    }
+    .conf-hero__body { z-index: 2; }
+
+    .conf-hero__badge  { animation: heroFadeUp 0.65s 0.05s ease both; }
+    .conf-hero__title  { animation: heroFadeUp 0.7s  0.18s ease both; }
+    .conf-hero__theme  { animation: heroFadeUp 0.7s  0.3s  ease both; }
+    .conf-hero__meta   { animation: heroFadeUp 0.7s  0.42s ease both; }
+    .conf-hero__actions{ animation: heroFadeUp 0.7s  0.54s ease both; }
+    .conf-hero__urgency{ animation: heroFadeUp 0.7s  0.66s ease both; }
+
+    .conf-hero__urgency {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.625rem;
+      margin-top: 1.5rem;
+    }
+    .conf-urgency-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.3rem 0.875rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+    .conf-urgency-chip--gold {
+      background: rgba(249,199,79,0.18);
+      border: 1px solid rgba(249,199,79,0.5);
+      color: #f9c74f;
+    }
+    .conf-urgency-chip--white {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.22);
+      color: rgba(255,255,255,0.82);
+    }
+
+    .conf-scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.375rem;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.6875rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: heroFadeUp 1s 1s ease both;
+      animation: scrollBounce 2s 1.2s ease infinite;
+    }
+    .conf-scroll-indicator svg { width: 1.25rem; height: 1.25rem; }
+
+    /* ── Pillar Cards ───────────────────────────────────────── */
+    .pillar-card {
+      border-radius: var(--radius-2xl);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
+    }
+    .pillar-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.28s ease;
+    }
+    .pillar-card:hover { transform: translateY(-7px); box-shadow: 0 20px 48px rgba(0,0,0,0.14); }
+    .pillar-card:hover::before { opacity: 1; }
+    .pillar-card__icon { font-size: 2.25rem; margin-bottom: 0.875rem; position: relative; z-index: 1; transition: transform 0.28s ease; }
+    .pillar-card:hover .pillar-card__icon { transform: scale(1.2) rotate(-3deg); }
+    .pillar-card h3 { position: relative; z-index: 1; font-size: 1.125rem; font-weight: 700; margin-bottom: 0.625rem; transition: color 0.28s ease; }
+    .pillar-card p  { position: relative; z-index: 1; font-size: 0.9375rem; line-height: 1.7; transition: color 0.28s ease; }
+    .pillar-card:hover h3,
+    .pillar-card:hover p { color: #fff; }
+    .pillar-card--ethics  { background: var(--white); border-top: 4px solid #2d6a4f; }
+    .pillar-card--ethics::before  { background: linear-gradient(135deg,#1a4731 0%,#2d6a4f 100%); }
+    .pillar-card--agency  { background: var(--white); border-top: 4px solid var(--primary); }
+    .pillar-card--agency::before  { background: linear-gradient(135deg,#1a245e 0%,#2d3a8c 100%); }
+    .pillar-card--assessment { background: var(--white); border-top: 4px solid #c0392b; }
+    .pillar-card--assessment::before { background: linear-gradient(135deg,#7a1200 0%,#c0392b 100%); }
+    .pillar-card--ethics h3  { color: #2d6a4f; }
+    .pillar-card--agency h3  { color: var(--primary); }
+    .pillar-card--assessment h3 { color: #c0392b; }
+
+    /* ── Sub-theme Cards ────────────────────────────────────── */
+    .subtheme-card { transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
+    .subtheme-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(50,62,105,0.1); border-left-color: var(--secondary); }
+    .subtheme-card:hover h4 { color: var(--secondary); transition: color 0.2s; }
+
+    /* ── Timeline — gold pulsing next deadline ──────────────── */
+    .timeline-item--next .timeline-item__dot {
+      background: #d4a017;
+      width: 0.875rem; height: 0.875rem;
+      margin-top: 0.2rem;
+      animation: goldPulse 2s ease infinite;
+    }
+    .timeline-item--next .timeline-item__date  { color: #b58a00; font-weight: 700; }
+    .timeline-item--next .timeline-item__label { color: var(--stone-900); font-weight: 700; font-size: 1rem; }
+
+    /* ── About stats strip ──────────────────────────────────── */
+    .conf-stats-strip {
+      display: flex;
+      flex-wrap: wrap;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      margin-top: 2.5rem;
+      border: 1px solid var(--stone-100);
+    }
+    .conf-stats-strip__item {
+      flex: 1; min-width: 8rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--stone-50);
+      border-right: 1px solid var(--stone-100);
+      text-align: center;
+    }
+    .conf-stats-strip__item:last-child { border-right: none; }
+    .conf-stats-strip__num {
+      display: block;
+      font-size: 1.75rem; font-weight: 800;
+      color: var(--primary);
+      font-family: 'Playfair Display', serif;
+      line-height: 1; margin-bottom: 0.25rem;
+    }
+    .conf-stats-strip__label {
+      font-size: 0.72rem; color: var(--stone-500);
+      font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+    }
+
+    /* ── Contact / Final CTA ─────────────────────────────────── */
+    .conf-contact-wrap {
+      position: relative;
+      padding: 5rem 0;
+      background: linear-gradient(150deg, #0f1738 0%, #2d3a8c 50%, #7a1200 100%);
+      background-size: 200% 200%;
+      animation: gradientShift 8s ease infinite;
+      overflow: hidden;
+    }
+    .conf-contact-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+    .conf-contact-deco {
+      position: absolute;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: rgba(255,255,255,0.04);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .conf-contact-deco--tl { top: -1rem; left: 1rem; font-size: clamp(7rem,15vw,13rem); }
+    .conf-contact-deco--br { bottom: -2rem; right: 1rem; font-size: clamp(5rem,10vw,9rem); font-style: italic; }
+    .conf-abstract-cta {
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto 3.5rem;
+    }
+    .conf-abstract-cta h2 {
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      font-family: 'Playfair Display', serif;
+      color: #fff;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.875rem;
+    }
+    .conf-abstract-cta h2 em { font-style: italic; color: #f9c74f; }
+    .conf-abstract-cta p {
+      color: rgba(255,255,255,0.72);
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 1.75rem;
+    }
+    .btn--gold-pulse { animation: goldPulse 2.2s ease-out infinite; }
   </style>
 </head>
 <body>
@@ -233,7 +444,32 @@
         </a>
       </div>
 
+      <!-- Urgency chips -->
+      <div class="conf-hero__urgency">
+        <span class="conf-urgency-chip conf-urgency-chip--gold">
+          📅 <span class="lang-block" data-lang="vi">Mở nhận tóm tắt: 1/4/2026</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Call opens: 1 Apr 2026</span>
+        </span>
+        <span class="conf-urgency-chip conf-urgency-chip--gold">
+          ⏳ <span class="lang-block" data-lang="vi">Hạn nộp: 30/6/2026</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Deadline: 30 Jun 2026</span>
+        </span>
+        <span class="conf-urgency-chip conf-urgency-chip--white">
+          🌐 <span class="lang-block" data-lang="vi">Trực tiếp &amp; Trực tuyến</span>
+          <span class="lang-block" data-lang="en" style="display:none;">In-person &amp; Online</span>
+        </span>
+        <span class="conf-urgency-chip conf-urgency-chip--white">
+          🎓 <span class="lang-block" data-lang="vi">Miễn phí cho thành viên VietCALL</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Free for VietCALL members</span>
+        </span>
+      </div>
+
     </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="conf-scroll-indicator">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
   </div>
 </section>
 
@@ -261,6 +497,45 @@
         <span class="lang-block" data-lang="vi">AI tạo sinh và các công nghệ ngôn ngữ tự động đang nhanh chóng định hình lại cách dạy, học và đánh giá ngôn ngữ. VietCALL 2026 phản hồi thực tế này bằng cách đặt trọng tâm chương trình hội thảo vào <strong>đạo đức</strong>, <strong>chủ thể</strong> và <strong>đánh giá</strong> — ba trụ cột quyết định liệu AI có trở thành người bạn đồng hành học tập hay là nguồn gây nhầm lẫn và bất công.</span>
         <span class="lang-block" data-lang="en" style="display:none;">Generative AI and automated language technologies are rapidly reshaping how languages are taught, learned, and assessed. VietCALL 2026 responds to these realities by centering its programme on <strong>ethics</strong>, <strong>agency</strong>, and <strong>assessment</strong> — three pillars that determine whether AI becomes an empowering learning partner or a source of confusion and unfairness.</span>
       </p>
+
+      <!-- 2025 success stats strip -->
+      <div class="conf-stats-strip">
+        <div class="conf-stats-strip__item">
+          <span class="conf-stats-strip__num">1st</span>
+          <span class="conf-stats-strip__label">
+            <span class="lang-block" data-lang="vi">Hội thảo 2025</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Convention 2025</span>
+          </span>
+        </div>
+        <div class="conf-stats-strip__item">
+          <span class="conf-stats-strip__num">5+</span>
+          <span class="conf-stats-strip__label">
+            <span class="lang-block" data-lang="vi">Quốc gia</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Countries</span>
+          </span>
+        </div>
+        <div class="conf-stats-strip__item">
+          <span class="conf-stats-strip__num">100+</span>
+          <span class="conf-stats-strip__label">
+            <span class="lang-block" data-lang="vi">Người tham dự</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Attendees</span>
+          </span>
+        </div>
+        <div class="conf-stats-strip__item">
+          <span class="conf-stats-strip__num">20+</span>
+          <span class="conf-stats-strip__label">
+            <span class="lang-block" data-lang="vi">Bài trình bày</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Presentations</span>
+          </span>
+        </div>
+        <div class="conf-stats-strip__item">
+          <span class="conf-stats-strip__num">IUH</span>
+          <span class="conf-stats-strip__label">
+            <span class="lang-block" data-lang="vi">TP. Hồ Chí Minh</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Ho Chi Minh City</span>
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -270,37 +545,37 @@
   <div class="container">
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:1.5rem;">
 
-      <div style="background:var(--white);border-radius:var(--radius-2xl);padding:2rem;border-top:4px solid #2d6a4f;">
-        <div style="font-size:2rem;margin-bottom:0.875rem;">⚖️</div>
-        <h3 style="font-size:1.125rem;font-weight:700;color:var(--stone-900);margin-bottom:0.625rem;">
+      <div class="pillar-card pillar-card--ethics">
+        <div class="pillar-card__icon">⚖️</div>
+        <h3>
           <span class="lang-block" data-lang="vi">Đạo đức</span>
           <span class="lang-block" data-lang="en" style="display:none;">Ethics</span>
         </h3>
-        <p style="font-size:0.9375rem;color:var(--stone-600);line-height:1.7;">
+        <p style="color:var(--stone-600);">
           <span class="lang-block" data-lang="vi">Sử dụng AI có trách nhiệm và minh bạch; bảo vệ quyền riêng tư và dữ liệu; sự đồng thuận; trách nhiệm giải trình; ranh giới phù hợp trong thực hành lớp học và nghiên cứu.</span>
           <span class="lang-block" data-lang="en" style="display:none;">Responsible and transparent AI use; privacy and data protection; consent; accountability; and appropriate boundaries for classroom and research practice.</span>
         </p>
       </div>
 
-      <div style="background:var(--white);border-radius:var(--radius-2xl);padding:2rem;border-top:4px solid var(--primary);">
-        <div style="font-size:2rem;margin-bottom:0.875rem;">🧭</div>
-        <h3 style="font-size:1.125rem;font-weight:700;color:var(--stone-900);margin-bottom:0.625rem;">
+      <div class="pillar-card pillar-card--agency">
+        <div class="pillar-card__icon">🧭</div>
+        <h3>
           <span class="lang-block" data-lang="vi">Chủ thể</span>
           <span class="lang-block" data-lang="en" style="display:none;">Agency</span>
         </h3>
-        <p style="font-size:0.9375rem;color:var(--stone-600);line-height:1.7;">
+        <p style="color:var(--stone-600);">
           <span class="lang-block" data-lang="vi">Ra quyết định của giáo viên và người học; tự chủ; phán xét có phê phán; và khả năng lựa chọn khi nào — và khi nào không — nên dựa vào AI.</span>
           <span class="lang-block" data-lang="en" style="display:none;">Teacher and learner decision-making; autonomy; critical judgment; and the ability to choose when — and when not — to rely on AI.</span>
         </p>
       </div>
 
-      <div style="background:var(--white);border-radius:var(--radius-2xl);padding:2rem;border-top:4px solid #c0392b;">
-        <div style="font-size:2rem;margin-bottom:0.875rem;">📊</div>
-        <h3 style="font-size:1.125rem;font-weight:700;color:var(--stone-900);margin-bottom:0.625rem;">
+      <div class="pillar-card pillar-card--assessment">
+        <div class="pillar-card__icon">📊</div>
+        <h3>
           <span class="lang-block" data-lang="vi">Đánh giá</span>
           <span class="lang-block" data-lang="en" style="display:none;">Assessment</span>
         </h3>
-        <p style="font-size:0.9375rem;color:var(--stone-600);line-height:1.7;">
+        <p style="color:var(--stone-600);">
           <span class="lang-block" data-lang="vi">Tính công bằng, giá trị, độ tin cậy và tính toàn vẹn trong thời đại AI vừa có thể hỗ trợ việc học vừa có thể làm ảnh hưởng đến bằng chứng học tập.</span>
           <span class="lang-block" data-lang="en" style="display:none;">Fairness, validity, reliability, and integrity in an era where AI can both support learning and compromise evidence of learning.</span>
         </p>
@@ -455,7 +730,7 @@
           </div>
         </div>
 
-        <div class="timeline-item">
+        <div class="timeline-item timeline-item--next">
           <div class="timeline-item__date">30/6/2026</div>
           <div class="timeline-item__line"><div class="timeline-item__dot"></div><div class="timeline-item__connector"></div></div>
           <div class="timeline-item__body">
@@ -867,19 +1142,45 @@
 </section>
 
 <!-- ── CONTACT ────────────────────────────────────────────────── -->
-<section style="padding:4rem 0;background:var(--primary);">
+<section class="conf-contact-wrap">
+  <span class="conf-contact-deco conf-contact-deco--tl">H</span>
+  <span class="conf-contact-deco conf-contact-deco--br">uế</span>
   <div class="container">
-    <div style="max-width:36rem;margin-bottom:2rem;">
-      <div class="conf-hero__badge" style="margin-bottom:1rem;">
-        <span class="lang-block" data-lang="vi">Liên lạc</span>
-        <span class="lang-block" data-lang="en" style="display:none;">Contact</span>
-      </div>
-      <h2 style="font-size:clamp(1.375rem,3vw,2rem);font-weight:700;color:#fff;margin-bottom:0.5rem;font-family:'Playfair Display',serif;">
-        <span class="lang-block" data-lang="vi">Liên lạc với Chúng tôi</span>
-        <span class="lang-block" data-lang="en" style="display:none;">Get in Touch</span>
+
+    <!-- Abstract submission CTA -->
+    <div class="conf-abstract-cta">
+      <span class="conf-urgency-chip conf-urgency-chip--gold" style="margin-bottom:1.25rem;display:inline-flex;">
+        📅 <span class="lang-block" data-lang="vi">Nhận tóm tắt từ 1/4/2026</span>
+        <span class="lang-block" data-lang="en" style="display:none;">Abstracts open from 1 Apr 2026</span>
+      </span>
+      <h2>
+        <span class="lang-block" data-lang="vi">Sẵn sàng <em>chia sẻ nghiên cứu</em> của bạn?</span>
+        <span class="lang-block" data-lang="en" style="display:none;">Ready to <em>share your research</em>?</span>
       </h2>
-      <p style="color:rgba(255,255,255,0.7);font-size:0.9375rem;">
-        <span class="lang-block" data-lang="vi">Để biết thêm thông tin, vui lòng liên hệ ban tổ chức hội thảo.</span>
+      <p>
+        <span class="lang-block" data-lang="vi">Nộp tóm tắt của bạn và trở thành một phần của diễn đàn CALL hàng đầu tại Việt Nam. Hạn chót: 30/6/2026.</span>
+        <span class="lang-block" data-lang="en" style="display:none;">Submit your abstract and become part of Vietnam's leading CALL forum. Deadline: 30 June 2026.</span>
+      </p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="https://vietcall.edu.vn/submission" target="_blank" rel="noopener" class="btn btn--gold btn--gold-pulse" style="font-size:1rem;padding:0.875rem 2rem;">
+          <span class="lang-block" data-lang="vi">Nộp Tóm tắt →</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Submit Abstract →</span>
+        </a>
+        <a href="#dates" class="btn btn--ghost" style="font-size:1rem;padding:0.875rem 2rem;">
+          <span class="lang-block" data-lang="vi">Xem ngày quan trọng</span>
+          <span class="lang-block" data-lang="en" style="display:none;">View Key Dates</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Contact cards -->
+    <div style="max-width:36rem;margin-bottom:1.5rem;position:relative;z-index:1;">
+      <div class="conf-hero__badge" style="margin-bottom:1rem;">
+        <span class="lang-block" data-lang="vi">Liên lạc Ban tổ chức</span>
+        <span class="lang-block" data-lang="en" style="display:none;">Contact Organizers</span>
+      </div>
+      <p style="color:rgba(255,255,255,0.65);font-size:0.9375rem;">
+        <span class="lang-block" data-lang="vi">Để biết thêm thông tin, vui lòng liên lạc ban tổ chức hội thảo.</span>
         <span class="lang-block" data-lang="en" style="display:none;">For further information, please contact the conference organizers.</span>
       </p>
     </div>
@@ -930,6 +1231,7 @@
 </section>
 
 <footer class="footer">
+
   <div class="container">
     <div class="footer__grid">
       <div>
