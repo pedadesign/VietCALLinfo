@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VietCALL 2026 – 2nd International Convention</title>
+  <meta name="description" content="The 2nd VietCALL International Convention 2026 — AI Literacy for Teachers and Learners: Ethics, Agency, and Assessment. Hue University, Vietnam, November 2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── Page-specific styles ── */
+    .conf-hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background: var(--primary);
+    }
+    .conf-hero__bg {
+      position: absolute;
+      inset: 0;
+      background: url('assets/events/vietcall-2026/pexels-hotruong-6215199.jpg') center/cover no-repeat;
+      opacity: 0.38;
+    }
+    .conf-hero__body {
+      position: relative;
+      z-index: 2;
+      padding: 5rem 0 4rem;
+      width: 100%;
+    }
+    .conf-hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.375rem 0.875rem;
+      border-radius: 999px;
+      margin-bottom: 1.5rem;
+    }
+    .conf-hero__title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.75rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+    .conf-hero__title em { color: #f9c74f; font-style: normal; }
+    .conf-hero__theme {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: rgba(255,255,255,0.85);
+      font-style: italic;
+      margin-bottom: 2rem;
+      max-width: 44rem;
+      font-family: 'Playfair Display', serif;
+    }
+    .conf-hero__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .conf-hero__meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.9);
+      font-size: 0.9375rem;
+      font-weight: 500;
+    }
+    .conf-hero__meta-item svg { width: 1.125rem; height: 1.125rem; flex-shrink: 0; }
+    .conf-hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn--gold {
+      background: #f9c74f;
+      color: #1a1a2e;
+      font-weight: 700;
+      border: none;
+    }
+    .btn--gold:hover { background: #f3b829; }
+    .btn--ghost {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+    .btn--ghost:hover { background: rgba(255,255,255,0.25); }
+
+    /* Timeline */
+    .timeline { display: flex; flex-direction: column; gap: 0; }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 9rem 2rem 1fr;
+      gap: 0 1rem;
+      align-items: start;
+    }
+    .timeline-item__date {
+      text-align: right;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--primary);
+      padding-top: 0.2rem;
+    }
+    .timeline-item__line {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .timeline-item__dot {
+      width: 0.625rem; height: 0.625rem;
+      border-radius: 50%;
+      background: var(--primary);
+      flex-shrink: 0;
+      margin-top: 0.3rem;
+    }
+    .timeline-item__connector {
+      width: 2px;
+      flex: 1;
+      background: var(--stone-200);
+      min-height: 2.5rem;
+    }
+    .timeline-item:last-child .timeline-item__connector { display: none; }
+    .timeline-item__body { padding-bottom: 1.5rem; }
+    .timeline-item__label {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--stone-900);
+    }
+    .timeline-item__detail {
+      font-size: 0.8125rem;
+      color: var(--stone-500);
+      margin-top: 0.125rem;
+    }
+    .timeline-item--highlight .timeline-item__dot { background: #c0392b; width: 0.875rem; height: 0.875rem; margin-top: 0.2rem; }
+    .timeline-item--highlight .timeline-item__date { color: #c0392b; font-size: 0.875rem; }
+    .timeline-item--highlight .timeline-item__label { color: #c0392b; font-size: 1rem; }
+
+    /* Sub-theme pills */
+    .subtheme-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+      gap: 1rem;
+    }
+    .subtheme-card {
+      background: var(--white);
+      border: 1px solid var(--stone-200);
+      border-radius: var(--radius-xl);
+      padding: 1.25rem 1.5rem;
+      border-left: 3px solid var(--primary);
+      transition: box-shadow 0.2s;
+    }
+    .subtheme-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+    .subtheme-card h4 {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--stone-900);
+      margin-bottom: 0;
+    }
+
+    /* Format cards */
+    .format-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+      gap: 1rem;
+    }
+    .format-card {
+      background: var(--white);
+      border: 1px solid var(--stone-200);
+      border-radius: var(--radius-xl);
+      padding: 1.5rem 1.25rem;
+      text-align: center;
+    }
+    .format-card__icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .format-card__label { font-size: 0.875rem; font-weight: 600; color: var(--stone-800); }
+
+    /* Publication cards */
+    .pub-grid { display: flex; flex-direction: column; gap: 0.875rem; }
+    .pub-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      background: var(--white);
+      border: 1px solid var(--stone-200);
+      border-radius: var(--radius-xl);
+      padding: 1.25rem 1.5rem;
+    }
+    .pub-row__num {
+      width: 2rem; height: 2rem; flex-shrink: 0;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8125rem; font-weight: 700;
+    }
+    .pub-row__name { font-size: 0.9375rem; font-weight: 600; color: var(--stone-900); }
+    .pub-row__note { font-size: 0.8125rem; color: var(--stone-500); margin-top: 0.125rem; }
+
+    /* Audience */
+    .audience-list { display: flex; flex-direction: column; gap: 0.625rem; }
+    .audience-item {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      background: var(--white);
+      border: 1px solid var(--stone-200);
+      border-radius: var(--radius-xl);
+      padding: 1rem 1.25rem;
+    }
+    .audience-item__icon { font-size: 1.375rem; flex-shrink: 0; }
+    .audience-item__text { font-size: 0.9375rem; color: var(--stone-700); }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+      gap: 1rem;
+    }
+    .contact-card {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: var(--radius-xl);
+      padding: 1.5rem;
+      color: #fff;
+    }
+    .contact-card__label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 0.5rem;
+    }
+    .contact-card__value {
+      font-size: 1rem;
+      color: #fff;
+      font-weight: 500;
+    }
+    .contact-card__value a { color: #f9c74f; text-decoration: none; }
+    .contact-card__value a:hover { text-decoration: underline; }
+
+    /* Section helpers */
+    .section-pill {
+      display: inline-block;
+      background: rgba(50,62,105,0.08);
+      color: var(--primary);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.875rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+    .placeholder-box {
+      background: var(--stone-50);
+      border: 2px dashed var(--stone-200);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem;
+      text-align: center;
+      color: var(--stone-400);
+    }
+    .placeholder-box p { font-size: 0.9375rem; margin: 0; }
+
+    @media (max-width: 600px) {
+      .timeline-item { grid-template-columns: 6rem 1.5rem 1fr; }
+      .conf-hero__meta { gap: 0.875rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" role="navigation">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__brand">
+      <img src="assets/brand/VietC@LL-Logo-Transparent.png" alt="VietCALL" class="navbar__logo-img">
+    </a>
+    <ul class="navbar__links">
+      <li><a href="about.html" class="navbar__link" data-i18n="nav.about">Giới thiệu</a></li>
+      <li><a href="conferences.html" class="navbar__link navbar__link--active" data-i18n="nav.events">Sự kiện</a></li>
+      <li><a href="blog.html" class="navbar__link" data-i18n="nav.blog">Bài Viết</a></li>
+      <li><a href="resources.html" class="navbar__link" data-i18n="nav.resources">Tài Nguyên</a></li>
+      <li><a href="membership.html" class="navbar__link" data-i18n="nav.membership">Thành viên</a></li>
+      <li><a href="contact.html" class="navbar__link" data-i18n="nav.contact">Liên Lạc</a></li>
+    </ul>
+    <div class="navbar__actions">
+      <button class="lang-toggle" id="langToggle" aria-label="Switch language">EN</button>
+      <a href="membership.html" class="btn btn--primary btn--sm" data-i18n="nav.join">Tham gia ngay</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ───────────────────────────────────────────────────── -->
+<section class="conf-hero">
+  <div class="conf-hero__bg"></div>
+  <div class="conf-hero__body">
+    <div class="container">
+      <span class="conf-hero__badge">🎓 VietCALL 2026 · 2nd International Convention</span>
+      <h1 class="conf-hero__title">
+        AI Literacy for<br>Teachers &amp; Learners:<br>
+        <em>Ethics, Agency &amp; Assessment</em>
+      </h1>
+      <p class="conf-hero__theme">
+        Advancing Pedagogical Strategies for AI-Integrated Language Education
+      </p>
+      <div class="conf-hero__meta">
+        <div class="conf-hero__meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Late November 2026 (exact date TBA)
+        </div>
+        <div class="conf-hero__meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Hue University · Hue City, Vietnam
+        </div>
+        <div class="conf-hero__meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          In-person &amp; Hybrid
+        </div>
+      </div>
+      <div class="conf-hero__actions">
+        <a href="#cfp" class="btn btn--gold">Submit Abstract</a>
+        <a href="#dates" class="btn btn--ghost">Key Dates</a>
+        <a href="conferences.html" class="btn btn--ghost">← All Events</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT THE CONVENTION ──────────────────────────────────── -->
+<section style="padding:4rem 0;background:var(--white);">
+  <div class="container">
+    <div style="max-width:52rem;">
+      <span class="section-pill">About</span>
+      <h2 style="font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;color:var(--stone-900);margin-bottom:1.25rem;font-family:'Playfair Display',serif;">
+        The 2nd VietCALL International Convention
+      </h2>
+      <p style="font-size:1.0625rem;color:var(--stone-600);line-height:1.8;margin-bottom:1rem;">
+        The Vietnamese Association of Computer-Assisted Language Learning (VietCALL) is pleased to announce <strong>VietCALL 2026</strong>, hosted by the <strong>University of Foreign Languages and International Studies, Hue University</strong>, Hue City, Vietnam, in late November 2026.
+      </p>
+      <p style="font-size:1.0625rem;color:var(--stone-600);line-height:1.8;margin-bottom:1rem;">
+        VietCALL 2026 will serve as a forum for researchers, teacher educators, school leaders, practitioners, graduate students, and edtech partners to exchange evidence-based insights and classroom-ready practices on AI literacy — a priority that now shapes language teaching worldwide.
+      </p>
+      <p style="font-size:1.0625rem;color:var(--stone-600);line-height:1.8;">
+        Generative AI and automated language technologies are rapidly reshaping how languages are taught, learned, and assessed. VietCALL 2026 responds to these realities by centering its programme on <strong>ethics</strong>, <strong>agency</strong>, and <strong>assessment</strong> — three pillars that shape whether AI becomes an empowering learning partner or a source of confusion, unfairness, and mistrust.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ── THREE PILLARS ─────────────────────────────────────────── -->
+<section style="padding:3rem 0;background:var(--stone-50);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:1.5rem;">
+
+      <div style="background:var(--white);border-radius:var(--radius-2xl);padding:2rem;border-top:4px solid #2d6a4f;">
+        <div style="font-size:2rem;margin-bottom:0.875rem;">⚖️</div>
+        <h3 style="font-size:1.125rem;font-weight:700;color:var(--stone-900);margin-bottom:0.625rem;">Ethics</h3>
+        <p style="font-size:0.9375rem;color:var(--stone-600);line-height:1.7;">Responsible and transparent AI use; privacy and data protection; consent; accountability; and appropriate boundaries for classroom and research practice.</p>
+      </div>
+
+      <div style="background:var(--white);border-radius:var(--radius-2xl);padding:2rem;border-top:4px solid var(--primary);">
+        <div style="font-size:2rem;margin-bottom:0.875rem;">🧭</div>
+        <h3 style="font-size:1.125rem;font-weight:700;color:var(--stone-900);margin-bottom:0.625rem;">Agency</h3>
+        <p style="font-size:0.9375rem;color:var(--stone-600);line-height:1.7;">Teacher and learner decision-making; autonomy; critical judgment; and the ability to choose when — and when not — to rely on AI.</p>
+      </div>
+
+      <div style="background:var(--white);border-radius:var(--radius-2xl);padding:2rem;border-top:4px solid #c0392b;">
+        <div style="font-size:2rem;margin-bottom:0.875rem;">📊</div>
+        <h3 style="font-size:1.125rem;font-weight:700;color:var(--stone-900);margin-bottom:0.625rem;">Assessment</h3>
+        <p style="font-size:0.9375rem;color:var(--stone-600);line-height:1.7;">Fairness, validity, reliability, and integrity in an era where AI can both support learning and compromise evidence of learning.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── SUB-THEMES ─────────────────────────────────────────────── -->
+<section style="padding:4rem 0;background:var(--white);">
+  <div class="container">
+    <span class="section-pill">Sub-themes</span>
+    <h2 style="font-size:clamp(1.375rem,3vw,2rem);font-weight:700;color:var(--stone-900);margin-bottom:0.5rem;font-family:'Playfair Display',serif;">Topics &amp; Research Areas</h2>
+    <p style="color:var(--stone-500);font-size:0.9375rem;margin-bottom:2rem;">Sub-themes include but are not limited to:</p>
+    <div class="subtheme-grid">
+      <div class="subtheme-card"><h4>Responsible AI Use in Language Education</h4><p style="font-size:0.8125rem;color:var(--stone-500);margin-top:0.375rem;line-height:1.5;">Ethics guidelines, risk management, transparency, and stakeholder communication.</p></div>
+      <div class="subtheme-card"><h4>Bias, Fairness &amp; Inclusion</h4><p style="font-size:0.8125rem;color:var(--stone-500);margin-top:0.375rem;line-height:1.5;">Language varieties, cultural/linguistic bias, disability access, and equitable AI-supported feedback.</p></div>
+      <div class="subtheme-card"><h4>AI Literacy Frameworks &amp; Curriculum Design</h4><p style="font-size:0.8125rem;color:var(--stone-500);margin-top:0.375rem;line-height:1.5;">Learning outcomes, progression models, integration into TESOL/Applied Linguistics curricula.</p></div>
+      <div class="subtheme-card"><h4>Academic Integrity &amp; Authorship</h4><p style="font-size:0.8125rem;color:var(--stone-500);margin-top:0.375rem;line-height:1.5;">Disclosure norms, citation practices, plagiarism policy updates, AI writing governance.</p></div>
+      <div class="subtheme-card"><h4>AI-Aware Language Assessment</h4><p style="font-size:0.8125rem;color:var(--stone-500);margin-top:0.375rem;line-height:1.5;">Assessment redesign, validity arguments, rubrics for AI-mediated tasks, and secure testing.</p></div>
+      <div class="subtheme-card"><h4>Teacher Professional Development for AI Literacy</h4><p style="font-size:0.8125rem;color:var(--stone-500);margin-top:0.375rem;line-height:1.5;">Competencies, training models, mentoring systems, institutional capacity building.</p></div>
+      <div class="subtheme-card"><h4>Learner Agency &amp; Self-Regulated Learning</h4><p style="font-size:0.8125rem;color:var(--stone-500);margin-top:0.375rem;line-height:1.5;">Metacognitive prompting, reflection protocols, and responsible AI use habits.</p></div>
+      <div class="subtheme-card"><h4>Research Methods &amp; Evaluation</h4><p style="font-size:0.8125rem;color:var(--stone-500);margin-top:0.375rem;line-height:1.5;">Mixed methods, learning analytics, instrument validation, and measurement of AI literacy.</p></div>
+      <div class="subtheme-card"><h4>Languages, Linguistics &amp; Culture</h4><p style="font-size:0.8125rem;color:var(--stone-500);margin-top:0.375rem;line-height:1.5;">Translation, interpretation, cross-cultural communication, and language diversity.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── IMPORTANT DATES ────────────────────────────────────────── -->
+<section id="dates" style="padding:4rem 0;background:var(--stone-50);">
+  <div class="container">
+    <span class="section-pill">Important Dates</span>
+    <h2 style="font-size:clamp(1.375rem,3vw,2rem);font-weight:700;color:var(--stone-900);margin-bottom:2rem;font-family:'Playfair Display',serif;">Key Deadlines</h2>
+    <div style="max-width:40rem;">
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-item__date">1 Apr 2026</div>
+          <div class="timeline-item__line"><div class="timeline-item__dot"></div><div class="timeline-item__connector"></div></div>
+          <div class="timeline-item__body">
+            <div class="timeline-item__label">Call for Papers Opens</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-item__date">30 Jun 2026</div>
+          <div class="timeline-item__line"><div class="timeline-item__dot"></div><div class="timeline-item__connector"></div></div>
+          <div class="timeline-item__body">
+            <div class="timeline-item__label">Abstract Submission Deadline</div>
+            <div class="timeline-item__detail">Submit via <a href="https://vietcall.edu.vn/submission" target="_blank" rel="noopener" style="color:var(--primary);">vietcall.edu.vn/submission</a></div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-item__date">10–15 Jul 2026</div>
+          <div class="timeline-item__line"><div class="timeline-item__dot"></div><div class="timeline-item__connector"></div></div>
+          <div class="timeline-item__body">
+            <div class="timeline-item__label">Notification of Acceptance</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-item__date">30 Aug 2026</div>
+          <div class="timeline-item__line"><div class="timeline-item__dot"></div><div class="timeline-item__connector"></div></div>
+          <div class="timeline-item__body">
+            <div class="timeline-item__label">Early Bird Registration Closes</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-item__date">10 Sep 2026</div>
+          <div class="timeline-item__line"><div class="timeline-item__dot"></div><div class="timeline-item__connector"></div></div>
+          <div class="timeline-item__body">
+            <div class="timeline-item__label">Full Paper Submission</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-item__date">5 Sep 2026</div>
+          <div class="timeline-item__line"><div class="timeline-item__dot"></div><div class="timeline-item__connector"></div></div>
+          <div class="timeline-item__body">
+            <div class="timeline-item__label">Registration Deadline</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-item__date">10 Oct 2026</div>
+          <div class="timeline-item__line"><div class="timeline-item__dot"></div><div class="timeline-item__connector"></div></div>
+          <div class="timeline-item__body">
+            <div class="timeline-item__label">PowerPoint Submission</div>
+          </div>
+        </div>
+
+        <div class="timeline-item timeline-item--highlight">
+          <div class="timeline-item__date">Nov 2026</div>
+          <div class="timeline-item__line"><div class="timeline-item__dot"></div><div class="timeline-item__connector"></div></div>
+          <div class="timeline-item__body">
+            <div class="timeline-item__label">🎓 VietCALL 2026 Convention</div>
+            <div class="timeline-item__detail">Hue University, Hue City, Vietnam (exact date TBA)</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── KEYNOTE SPEAKERS ───────────────────────────────────────── -->
+<section style="padding:4rem 0;background:var(--white);">
+  <div class="container">
+    <span class="section-pill">Keynote Speakers</span>
+    <h2 style="font-size:clamp(1.375rem,3vw,2rem);font-weight:700;color:var(--stone-900);margin-bottom:2rem;font-family:'Playfair Display',serif;">Distinguished Speakers</h2>
+    <div class="placeholder-box">
+      <div style="font-size:2.5rem;margin-bottom:0.75rem;">🎤</div>
+      <p style="color:var(--stone-500);font-size:0.9375rem;">Keynote speaker announcements coming soon.<br>Follow VietCALL on social media for updates.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROGRAMME / AGENDA ─────────────────────────────────────── -->
+<section style="padding:4rem 0;background:var(--stone-50);">
+  <div class="container">
+    <span class="section-pill">Programme</span>
+    <h2 style="font-size:clamp(1.375rem,3vw,2rem);font-weight:700;color:var(--stone-900);margin-bottom:2rem;font-family:'Playfair Display',serif;">Conference Schedule</h2>
+    <div class="placeholder-box">
+      <div style="font-size:2.5rem;margin-bottom:0.75rem;">📅</div>
+      <p style="color:var(--stone-500);font-size:0.9375rem;">The full programme will be published after the notification of acceptance (July 2026).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FORMATS ────────────────────────────────────────────────── -->
+<section style="padding:4rem 0;background:var(--white);">
+  <div class="container">
+    <span class="section-pill">Formats &amp; Participation</span>
+    <h2 style="font-size:clamp(1.375rem,3vw,2rem);font-weight:700;color:var(--stone-900);margin-bottom:2rem;font-family:'Playfair Display',serif;">Presentation Formats</h2>
+    <div class="format-grid">
+      <div class="format-card">
+        <div class="format-card__icon">📄</div>
+        <div class="format-card__label">Research Paper Presentations</div>
+      </div>
+      <div class="format-card">
+        <div class="format-card__icon">🛠️</div>
+        <div class="format-card__label">Practice-based Demonstrations</div>
+      </div>
+      <div class="format-card">
+        <div class="format-card__icon">💬</div>
+        <div class="format-card__label">Symposia &amp; Panel Discussions</div>
+      </div>
+      <div class="format-card">
+        <div class="format-card__icon">🎓</div>
+        <div class="format-card__label">Workshops &amp; Teacher Development Sessions</div>
+      </div>
+      <div class="format-card">
+        <div class="format-card__icon">📌</div>
+        <div class="format-card__label">Posters (incl. Doctoral Research)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CALL FOR PAPERS ────────────────────────────────────────── -->
+<section id="cfp" style="padding:4rem 0;background:var(--stone-50);">
+  <div class="container">
+    <span class="section-pill">Call for Papers</span>
+    <h2 style="font-size:clamp(1.375rem,3vw,2rem);font-weight:700;color:var(--stone-900);margin-bottom:1.25rem;font-family:'Playfair Display',serif;">Submit Your Work</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;">
+
+      <div>
+        <p style="font-size:0.9375rem;color:var(--stone-600);line-height:1.8;margin-bottom:1.5rem;">
+          VietCALL 2026 invites educators, linguists, researchers, technologists, and policymakers to submit proposals addressing <strong>AI Literacy for Teachers and Learners: Ethics, Agency, and Assessment</strong>. We welcome submissions on responsible AI use, bias and fairness, academic integrity, AI-aware assessment design, and frameworks for developing and measuring AI literacy across contexts.
+        </p>
+        <div style="background:var(--white);border:1px solid var(--stone-200);border-radius:var(--radius-xl);padding:1.5rem;margin-bottom:1rem;">
+          <h4 style="font-size:0.9375rem;font-weight:700;color:var(--stone-900);margin-bottom:0.875rem;">Submission Guidelines</h4>
+          <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.625rem;">
+            <li style="display:flex;gap:0.625rem;font-size:0.875rem;color:var(--stone-600);">
+              <span style="color:var(--primary);font-weight:700;">📝</span>
+              <span><strong>Abstracts:</strong> Up to 170 words, including keywords</span>
+            </li>
+            <li style="display:flex;gap:0.625rem;font-size:0.875rem;color:var(--stone-600);">
+              <span style="color:var(--primary);font-weight:700;">📄</span>
+              <span><strong>Full Papers:</strong> 6,000–8,000 words, APA 7th edition</span>
+            </li>
+            <li style="display:flex;gap:0.625rem;font-size:0.875rem;color:var(--stone-600);">
+              <span style="color:var(--primary);font-weight:700;">🌐</span>
+              <span><strong>Languages:</strong> English or Vietnamese</span>
+            </li>
+          </ul>
+        </div>
+        <a href="https://vietcall.edu.vn/submission" target="_blank" rel="noopener" class="btn btn--primary" style="display:inline-flex;">Submit via Portal →</a>
+      </div>
+
+      <div>
+        <div style="background:var(--primary);border-radius:var(--radius-2xl);padding:2rem;color:#fff;">
+          <h4 style="font-size:1.0625rem;font-weight:700;color:#fff;margin-bottom:1rem;font-family:'Playfair Display',serif;">Registration</h4>
+          <div class="placeholder-box" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);padding:1.5rem;">
+            <p style="color:rgba(255,255,255,0.75);font-size:0.875rem;">Registration fees and portal will be announced after the Call for Papers opens (April 2026).<br><br>Early Bird Registration closes <strong style="color:#f9c74f;">30 August 2026</strong>.</p>
+          </div>
+          <p style="font-size:0.8125rem;color:rgba(255,255,255,0.6);margin-top:1rem;line-height:1.6;">
+            ℹ️ Publication fees are <strong style="color:#fff;">not included</strong> in the Convention fee. APC applies only upon acceptance.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── PUBLICATION OPPORTUNITIES ─────────────────────────────── -->
+<section style="padding:4rem 0;background:var(--white);">
+  <div class="container">
+    <span class="section-pill">Publication</span>
+    <h2 style="font-size:clamp(1.375rem,3vw,2rem);font-weight:700;color:var(--stone-900);margin-bottom:2rem;font-family:'Playfair Display',serif;">Publication Opportunities</h2>
+    <p style="color:var(--stone-500);font-size:0.9375rem;margin-bottom:1.5rem;">Accepted full papers will be considered for publication in:</p>
+    <div class="pub-grid" style="max-width:48rem;">
+      <div class="pub-row">
+        <div class="pub-row__num">1</div>
+        <div>
+          <div class="pub-row__name">Tạp chí Khoa học Ngôn ngữ và Văn hóa</div>
+          <div class="pub-row__note">Trường Đại học Ngoại ngữ – Đại học Huế</div>
+        </div>
+      </div>
+      <div class="pub-row">
+        <div class="pub-row__num">2</div>
+        <div>
+          <div class="pub-row__name">International Journal of AI in Language Education</div>
+          <div class="pub-row__note">Peer-reviewed international journal</div>
+        </div>
+      </div>
+      <div class="pub-row">
+        <div class="pub-row__num">3</div>
+        <div>
+          <div class="pub-row__name">ICTE Conference Proceedings</div>
+          <div class="pub-row__note"><a href="https://i-cte.org/proceedings/index.php/ictep/issue/view/9" target="_blank" rel="noopener" style="color:var(--primary);">View VietCALL 2025 Proceedings →</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHO SHOULD ATTEND ──────────────────────────────────────── -->
+<section style="padding:4rem 0;background:var(--stone-50);">
+  <div class="container">
+    <span class="section-pill">Who Should Attend</span>
+    <h2 style="font-size:clamp(1.375rem,3vw,2rem);font-weight:700;color:var(--stone-900);margin-bottom:2rem;font-family:'Playfair Display',serif;">VietCALL 2026 is for You</h2>
+    <div class="audience-list" style="max-width:48rem;">
+      <div class="audience-item">
+        <div class="audience-item__icon">👩‍🏫</div>
+        <div class="audience-item__text">Language teachers and teacher educators seeking practical AI literacy models</div>
+      </div>
+      <div class="audience-item">
+        <div class="audience-item__icon">🔬</div>
+        <div class="audience-item__text">Researchers investigating AI, CALL, assessment, and educational measurement</div>
+      </div>
+      <div class="audience-item">
+        <div class="audience-item__icon">🏛️</div>
+        <div class="audience-item__text">School and university leaders shaping policy and institutional AI practice</div>
+      </div>
+      <div class="audience-item">
+        <div class="audience-item__icon">🎓</div>
+        <div class="audience-item__text">Graduate students developing thesis and dissertation projects in AI and language education</div>
+      </div>
+      <div class="audience-item">
+        <div class="audience-item__icon">💡</div>
+        <div class="audience-item__text">Educational technology developers interested in responsible, pedagogy-aligned design</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── VENUE & TRAVEL ─────────────────────────────────────────── -->
+<section style="padding:4rem 0;background:var(--white);">
+  <div class="container">
+    <span class="section-pill">Venue &amp; Travel</span>
+    <h2 style="font-size:clamp(1.375rem,3vw,2rem);font-weight:700;color:var(--stone-900);margin-bottom:1.25rem;font-family:'Playfair Display',serif;">Getting to Hue</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;">
+      <div>
+        <div style="background:var(--stone-50);border-radius:var(--radius-xl);padding:1.5rem;margin-bottom:1rem;">
+          <h4 style="font-size:0.9375rem;font-weight:700;color:var(--stone-900);margin-bottom:0.5rem;">📍 Venue</h4>
+          <p style="font-size:0.9375rem;color:var(--stone-600);line-height:1.7;">University of Foreign Languages and International Studies<br>Hue University<br>Hue City, Vietnam</p>
+        </div>
+        <div class="placeholder-box">
+          <p>Hotel recommendations and travel information will be published closer to the event date.</p>
+        </div>
+      </div>
+      <div class="placeholder-box" style="min-height:14rem;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+        <div style="font-size:2.5rem;margin-bottom:0.75rem;">🗺️</div>
+        <p>Interactive map coming soon</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ────────────────────────────────────────────────── -->
+<section style="padding:4rem 0;background:var(--primary);">
+  <div class="container">
+    <div style="max-width:36rem;margin-bottom:2rem;">
+      <span class="conf-hero__badge" style="margin-bottom:1rem;">Contact</span>
+      <h2 style="font-size:clamp(1.375rem,3vw,2rem);font-weight:700;color:#fff;margin-bottom:0.5rem;font-family:'Playfair Display',serif;">Get in Touch</h2>
+      <p style="color:rgba(255,255,255,0.7);font-size:0.9375rem;">For further information, please contact the conference organizers.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-card__label">📧 Email</div>
+        <div class="contact-card__value"><a href="mailto:lanhuongnckh@gmail.com">lanhuongnckh@gmail.com</a><br><small style="color:rgba(255,255,255,0.6);">Ms. Huong (Conference Secretary)</small></div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card__label">📞 Phone / WhatsApp</div>
+        <div class="contact-card__value">
+          <a href="tel:+84988049988">(+84) 988 049 988</a> <small style="color:rgba(255,255,255,0.6);">— Ms. Huong</small><br>
+          <a href="https://wa.me/84909850699" target="_blank" rel="noopener">(+84) 909 850 699</a> <small style="color:rgba(255,255,255,0.6);">— Pham Ho (WhatsApp)</small>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card__label">🌐 Submission Portal</div>
+        <div class="contact-card__value"><a href="https://vietcall.edu.vn/submission" target="_blank" rel="noopener">vietcall.edu.vn/submission</a></div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card__label">🔔 Stay Updated</div>
+        <div class="contact-card__value"><a href="https://www.facebook.com/vietcall.edu.vn" target="_blank" rel="noopener">Follow VietCALL on Facebook →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <span class="footer__brand">VietCALL</span>
+        <p class="footer__tagline" data-i18n="footer.tagline">Thúc đẩy đổi mới dạy-học ngôn ngữ cùng công nghệ tại Việt Nam và khu vực.</p>
+        <div class="footer__social-links">
+          <a href="#" class="footer__social-link" target="_blank" rel="noopener" title="Facebook Page">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="footer__social-link" target="_blank" rel="noopener" title="Facebook Group">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </a>
+          <a href="#" class="footer__social-link" target="_blank" rel="noopener" title="Zalo Group">
+            <svg viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="1" width="22" height="22" rx="5" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="12" y="16.5" text-anchor="middle" font-size="11" font-weight="700" font-family="Arial,sans-serif" fill="currentColor">Zalo</text></svg>
+          </a>
+          <a href="#" class="footer__social-link" target="_blank" rel="noopener" title="YouTube Channel">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title" data-i18n="footer.links">Liên kết nhanh</p>
+        <nav class="footer__nav-links">
+          <a href="about.html" class="footer__nav-link" data-i18n="nav.about">Giới thiệu</a>
+          <a href="conferences.html" class="footer__nav-link" data-i18n="nav.events">Sự kiện</a>
+          <a href="blog.html" class="footer__nav-link" data-i18n="nav.blog">Bài Viết</a>
+          <a href="resources.html" class="footer__nav-link" data-i18n="nav.resources">Tài Nguyên</a>
+          <a href="membership.html" class="footer__nav-link" data-i18n="nav.membership">Thành viên</a>
+          <a href="contact.html" class="footer__nav-link" data-i18n="nav.contact">Liên Lạc</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer__col-title" data-i18n="footer.connect">Kết nối</p>
+        <p style="font-size:0.875rem;color:rgba(255,255,255,0.55);line-height:1.6;">
+          📧 <a href="mailto:lanhuongnckh@gmail.com" style="color:rgba(255,255,255,0.75);">lanhuongnckh@gmail.com</a><br>
+          🌐 <a href="https://vietcall.edu.vn" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.75);">vietcall.edu.vn</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright" data-i18n="footer.copyright">© 2026 VietCALL. Bảo lưu mọi quyền.</p>
+      <div class="footer__bottom-links">
+        <a href="#" class="footer__bottom-link" data-i18n="footer.privacy">Chính sách bảo mật</a>
+        <a href="contact.html" class="footer__bottom-link" data-i18n="footer.contact">Liên hệ hỗ trợ</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
