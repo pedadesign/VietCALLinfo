@@ -1143,7 +1143,9 @@ textarea.form-control { resize: vertical; min-height: 8rem; }
   font-size: 0.875rem;
   line-height: 1.65;
   color: rgba(255,255,255,0.5);
-  max-width: 24rem;
+  max-width: 18rem;
+  margin-top: 0.75rem;
+  text-wrap: balance;
 }
 .footer__col-title {
   font-size: 0.6875rem;
