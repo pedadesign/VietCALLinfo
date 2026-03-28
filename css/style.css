@@ -1154,9 +1154,9 @@ textarea.form-control { resize: vertical; min-height: 8rem; }
   margin-bottom: 1.25rem;
 }
 .footer__nav-links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.625rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem 1.5rem;
 }
 .footer__nav-link {
   font-size: 0.875rem;
