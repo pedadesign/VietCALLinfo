@@ -15,15 +15,13 @@
 <nav class="navbar" role="navigation">
   <div class="navbar__inner">
     <a href="index.html" class="navbar__brand">
-      <div class="navbar__logo-circle"><span>V</span></div>
-      <span class="navbar__name">VietCALL</span>
+      <img src="assets/brand/VietC@LL-Logo-Transparent.png" alt="VietCALL" class="navbar__logo-img">
     </a>
     <ul class="navbar__links">
       <li><a href="about.html" class="navbar__link navbar__link--active" data-i18n="nav.about">Giới thiệu</a></li>
-      <li><a href="committee.html" class="navbar__link" data-i18n="nav.committee">Ban Lãnh đạo</a></li>
-      <li><a href="conferences.html" class="navbar__link" data-i18n="nav.conferences">Hội thảo</a></li>
-      <li><a href="resources.html" class="navbar__link" data-i18n="nav.resources">Tài nguyên</a></li>
+      <li><a href="conferences.html" class="navbar__link" data-i18n="nav.events">Sự kiện</a></li>
       <li><a href="blog.html" class="navbar__link" data-i18n="nav.blog">Tin tức</a></li>
+      <li><a href="resources.html" class="navbar__link" data-i18n="nav.resources">Tài liệu</a></li>
       <li><a href="membership.html" class="navbar__link" data-i18n="nav.membership">Thành viên</a></li>
       <li><a href="contact.html" class="navbar__link" data-i18n="nav.contact">Liên hệ</a></li>
     </ul>
@@ -47,10 +45,9 @@
 </nav>
 <div class="navbar__mobile" id="mobileMenu">
   <a href="about.html" data-i18n="nav.about">Giới thiệu</a>
-  <a href="committee.html" data-i18n="nav.committee">Ban Lãnh đạo</a>
-  <a href="conferences.html" data-i18n="nav.conferences">Hội thảo</a>
-  <a href="resources.html" data-i18n="nav.resources">Tài nguyên</a>
+  <a href="conferences.html" data-i18n="nav.events">Sự kiện</a>
   <a href="blog.html" data-i18n="nav.blog">Tin tức</a>
+  <a href="resources.html" data-i18n="nav.resources">Tài liệu</a>
   <a href="membership.html" data-i18n="nav.membership">Thành viên</a>
   <a href="contact.html" data-i18n="nav.contact">Liên hệ</a>
   <div class="mobile-cta"><a href="membership.html" class="btn btn--primary" style="width:100%;justify-content:center;" data-i18n="nav.join">Tham gia ngay</a></div>
@@ -62,159 +59,371 @@
 
 <main class="page-top">
 
-<!-- ── PAGE HERO ──────────────────────────────────────────────── -->
-<header class="page-hero animate-in">
+<!-- ── PAGE TITLE ─────────────────────────────────────────────── -->
+<div class="pg-title" style="padding:3.5rem 0 2.5rem;">
   <div class="container">
-    <span class="badge" data-i18n="about.badge">Về chúng tôi</span>
-    <h1 class="display-lg" data-i18n="about.title">VietCALL là gì?</h1>
-    <p data-i18n="about.intro">Chào mừng đến với VietCALL – nơi đổi mới gặp gỡ giáo dục và việc học ngôn ngữ vượt qua ranh giới truyền thống.</p>
+    <h1 class="pg-title__h" data-i18n="about.title">Giới thiệu VietCALL</h1>
+    <p class="pg-title__sub" data-i18n="about.intro">VietCALL là cộng đồng học thuật hàng đầu về Học ngôn ngữ có hỗ trợ Máy tính tại Việt Nam.</p>
   </div>
-</header>
+</div>
 
-<!-- ── MAIN CONTENT ──────────────────────────────────────────── -->
-<section class="section bg-white animate-in">
+<!-- ── VietCALL LÀ GÌ? ────────────────────────────────────────── -->
+<section style="padding:4rem 0;background:var(--white);">
   <div class="container">
-    <div class="about-page-grid">
-
-      <!-- Left: Main text -->
+    <div class="section-label" data-i18n="about.title">Giới thiệu VietCALL</div>
+    <div style="display:grid;gap:3rem;align-items:center;" class="about-intro-grid">
+      <!-- Text left -->
       <div>
-        <!-- Mission -->
-        <div style="margin-bottom:3rem;">
-          <span class="badge" style="margin-bottom:1rem;" data-i18n="about.mission_title">Sứ mệnh</span>
-          <h2 class="headline-md" style="color:var(--primary);margin-bottom:1rem;">
-            <span class="lang-block" data-lang="vi">Thúc đẩy Học ngôn ngữ có hỗ trợ Máy tính tại Việt Nam</span>
-            <span class="lang-block" data-lang="en" style="display:none;">Advancing Computer-Assisted Language Learning in Vietnam</span>
-          </h2>
-          <p style="color:var(--stone-600);line-height:1.8;margin-bottom:1rem;">
-            <span class="lang-block" data-lang="vi">VietCALL – Hiệp hội Học ngôn ngữ có hỗ trợ Máy tính Việt Nam – là một tổ chức phi lợi nhuận dành riêng cho giáo viên, nhà nghiên cứu và các chuyên gia trong lĩnh vực công nghệ giáo dục ngôn ngữ. Sứ mệnh của chúng tôi là thúc đẩy và phát triển giáo dục ngôn ngữ bằng cách tận dụng sức mạnh của công nghệ.</span>
-            <span class="lang-block" data-lang="en" style="display:none;">VietCALL – the Vietnamese Association of Computer-Assisted Language Learning – is a non-profit organization dedicated to teachers, researchers, and professionals in the field of language education technology. Our mission is to promote and develop language education by harnessing the power of technology.</span>
-          </p>
-          <p style="color:var(--stone-600);line-height:1.8;">
-            <span class="lang-block" data-lang="vi">Chúng tôi cung cấp một nền tảng cho các học giả, nhà giáo dục và người đam mê để chia sẻ kiến thức, hợp tác trong các dự án nghiên cứu và áp dụng công nghệ tiên tiến nhất vào lĩnh vực giảng dạy ngôn ngữ.</span>
-            <span class="lang-block" data-lang="en" style="display:none;">We provide a platform for scholars, educators, and enthusiasts to share knowledge, collaborate on research projects, and apply the latest technologies to language teaching.</span>
-          </p>
-        </div>
-
-        <!-- Vision -->
-        <div style="margin-bottom:3rem;padding:2rem;background:var(--stone-50);border-radius:var(--radius-3xl);border-left:4px solid var(--primary);">
-          <span class="badge badge--primary" style="margin-bottom:1rem;" data-i18n="about.vision_title">Tầm nhìn</span>
-          <p style="color:var(--stone-700);line-height:1.8;font-size:1.0625rem;">
-            <span class="lang-block" data-lang="vi">VietCALL nhìn nhận một tương lai nơi mọi người học ngôn ngữ ở Việt Nam đều có thể tiếp cận và hưởng lợi từ những công nghệ tiên tiến và phương pháp giảng dạy đổi mới nhất, thúc đẩy một cộng đồng học tập đa dạng, hòa nhập và toàn cầu hóa.</span>
-            <span class="lang-block" data-lang="en" style="display:none;">VietCALL envisions a future where every language learner in Vietnam can access and benefit from the most advanced technologies and innovative teaching methods, fostering a diverse, inclusive, and globalized learning community.</span>
-          </p>
-        </div>
-
-        <!-- Research -->
-        <div style="margin-bottom:3rem;">
-          <span class="badge" style="margin-bottom:1rem;" data-i18n="about.research_title">Cam kết Nghiên cứu &amp; Đổi mới</span>
-          <h3 class="headline-md" style="color:var(--primary);margin-bottom:1rem;">
-            <span class="lang-block" data-lang="vi">Tiên phong trong nghiên cứu CALL</span>
-            <span class="lang-block" data-lang="en" style="display:none;">Pioneering CALL Research</span>
-          </h3>
-          <p style="color:var(--stone-600);line-height:1.8;margin-bottom:1rem;">
-            <span class="lang-block" data-lang="vi">VietCALL cam kết thúc đẩy nghiên cứu và đổi mới trong lĩnh vực học ngôn ngữ có hỗ trợ máy tính. Thông qua các hội thảo, tạp chí và hợp tác với các tổ chức quốc tế, VietCALL đóng góp cho cơ sở kiến thức toàn cầu về Giáo dục Ngôn ngữ có Hỗ trợ Máy tính (CALL), đồng thời đảm bảo rằng nghiên cứu này tiếp cận và có tác động đến các nhà giáo dục và người học Việt Nam.</span>
-            <span class="lang-block" data-lang="en" style="display:none;">VietCALL is committed to advancing research and innovation in computer-assisted language learning. Through conferences, journals, and collaborations with international organizations, VietCALL contributes to the global knowledge base of CALL, while ensuring this research reaches and impacts Vietnamese educators and learners.</span>
-          </p>
-          <p style="color:var(--stone-600);line-height:1.8;">
-            <span class="lang-block" data-lang="vi">Chúng tôi hợp tác với các cơ sở giáo dục và tổ chức trên toàn thế giới để tổ chức các hội thảo quốc tế hàng năm, xuất bản nghiên cứu chất lượng cao và cung cấp nguồn tài nguyên cho các nhà giáo dục ngôn ngữ tiên tiến.</span>
-            <span class="lang-block" data-lang="en" style="display:none;">We collaborate with educational institutions and organizations worldwide to organize annual international conferences, publish high-quality research, and provide resources for forward-thinking language educators.</span>
-          </p>
-        </div>
-
-        <!-- Global Collaboration -->
-        <div style="margin-bottom:3rem;">
-          <span class="badge" style="margin-bottom:1rem;" data-i18n="about.global_title">Hợp tác Toàn cầu</span>
-          <h3 class="headline-md" style="color:var(--primary);margin-bottom:1rem;">
-            <span class="lang-block" data-lang="vi">Kết nối với thế giới</span>
-            <span class="lang-block" data-lang="en" style="display:none;">Connecting with the World</span>
-          </h3>
-          <p style="color:var(--stone-600);line-height:1.8;margin-bottom:1rem;">
-            <span class="lang-block" data-lang="vi">VietCALL tự hào là thành viên của mạng lưới CALL toàn cầu, hợp tác với các tổ chức CALL tại các quốc gia như AsiaCALL, APACALL, EUROCALL và nhiều tổ chức uy tín khác. Những mối quan hệ đối tác này cho phép chúng tôi mang lại trải nghiệm và kiến thức quốc tế cho cộng đồng giáo dục Việt Nam.</span>
-            <span class="lang-block" data-lang="en" style="display:none;">VietCALL is proud to be part of the global CALL network, collaborating with CALL organizations in countries such as AsiaCALL, APACALL, EUROCALL, and many other prestigious organizations. These partnerships allow us to bring international experiences and knowledge to the Vietnamese educational community.</span>
-          </p>
-        </div>
-
-        <!-- Empowering -->
-        <div style="margin-bottom:2rem;">
-          <span class="badge" style="margin-bottom:1rem;" data-i18n="about.empower_title">Thúc đẩy Nhà nghiên cứu Việt Nam</span>
-          <p style="color:var(--stone-600);line-height:1.8;">
-            <span class="lang-block" data-lang="vi">VietCALL chú trọng việc hỗ trợ và phát triển các nhà nghiên cứu Việt Nam trong lĩnh vực CALL. Chúng tôi cung cấp các cơ hội để các nhà nghiên cứu, đặc biệt là những người mới bước vào lĩnh vực, có thể trình bày công việc của mình, nhận phản hồi từ các chuyên gia và kết nối với cộng đồng quốc tế. Qua việc nuôi dưỡng tài năng và khích lệ sự đổi mới, VietCALL đặt mục tiêu tăng cường sự hiện diện và ảnh hưởng của nghiên cứu Việt Nam trong cộng đồng CALL toàn cầu.</span>
-            <span class="lang-block" data-lang="en" style="display:none;">VietCALL focuses on supporting and developing Vietnamese researchers in the field of CALL. We provide opportunities for researchers, especially those new to the field, to present their work, receive feedback from experts, and connect with the international community. By nurturing talent and encouraging innovation, VietCALL aims to strengthen the presence and impact of Vietnamese research in the global CALL community.</span>
+        <h2 style="font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;color:var(--primary);margin-bottom:1.25rem;font-family:'Playfair Display',serif;">
+          <span class="lang-block" data-lang="vi">Tiên phong trong lĩnh vực CALL tại Việt Nam</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Pioneering CALL Research in Vietnam</span>
+        </h2>
+        <p style="color:var(--stone-600);line-height:1.8;margin-bottom:1rem;">
+          <span class="lang-block" data-lang="vi">VietCALL – Phân hội nghiên cứu ứng dụng CNTT trong dạy-học ngôn ngữ – là tiểu ban chuyên môn trực thuộc Hội Ngôn ngữ học Việt Nam. Hiệp hội quy tụ các giảng viên, nhà nghiên cứu và chuyên gia trong lĩnh vực công nghệ giáo dục ngôn ngữ, với sứ mệnh thúc đẩy và phát triển giảng dạy ngôn ngữ thông qua công nghệ.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">VietCALL — the Vietnamese Association of Computer-Assisted Language Learning — is a professional sub-association of the Vietnam Linguistics Association. It brings together lecturers, researchers, and specialists in language education technology, with a mission to advance language teaching and learning through the principled integration of technology.</span>
+        </p>
+        <p style="color:var(--stone-600);line-height:1.8;margin-bottom:1.25rem;">
+          <span class="lang-block" data-lang="vi">VietCALL tạo nền tảng để các học giả và nhà giáo dục chia sẻ kiến thức, hợp tác nghiên cứu và ứng dụng công nghệ mới nhất vào giảng dạy ngôn ngữ. Hiệp hội là thành viên tích cực của mạng lưới CALL quốc tế, hợp tác chặt chẽ với AsiaCALL, APACALL, EUROCALL và các tổ chức uy tín khác trên thế giới.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">VietCALL provides a platform for scholars and educators to share knowledge, collaborate on research, and apply the latest technologies to language teaching. The association is an active member of the global CALL network, maintaining close ties with AsiaCALL, APACALL, EUROCALL, and other leading international organisations.</span>
+        </p>
+        <div style="padding:1.25rem 1.5rem;background:var(--stone-50);border-radius:var(--radius-xl);border-left:3px solid var(--primary);">
+          <p style="font-size:0.9375rem;color:var(--stone-700);line-height:1.75;font-style:italic;">
+            <span class="lang-block" data-lang="vi">VietCALL hướng tới tương lai nơi mọi người học ngôn ngữ tại Việt Nam đều được tiếp cận công nghệ tiên tiến và phương pháp giảng dạy đổi mới, nhằm phát huy tối đa tiềm năng học tập của mình.</span>
+            <span class="lang-block" data-lang="en" style="display:none;">VietCALL envisions a future in which every language learner in Vietnam has access to advanced technologies and evidence-informed teaching approaches that unlock their full learning potential.</span>
           </p>
         </div>
       </div>
+      <!-- Image right -->
+      <div style="border-radius:var(--radius-2xl);overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,var(--primary) 0%,#4a5a9e 100%);display:flex;align-items:center;justify-content:center;font-size:4rem;">
+        🎓
+      </div>
+    </div>
+  </div>
+</section>
 
-      <!-- Right: Sidebar -->
-      <aside>
-        <div class="about-sidebar-card">
-          <h4>
-            <span class="lang-block" data-lang="vi">Thông tin tổ chức</span>
-            <span class="lang-block" data-lang="en" style="display:none;">Organization Info</span>
-          </h4>
-          <p style="margin-bottom:0.5rem;"><strong style="color:var(--primary);">VietCALL</strong></p>
-          <p>
-            <span class="lang-block" data-lang="vi">Hiệp hội Học ngôn ngữ có hỗ trợ Máy tính Việt Nam</span>
-            <span class="lang-block" data-lang="en" style="display:none;">Vietnamese Association for Computer-Assisted Language Learning</span>
-          </p>
-        </div>
+<style>
+@media (min-width: 768px) {
+  .about-intro-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
 
-        <div class="about-sidebar-card">
-          <h4>
-            <span class="lang-block" data-lang="vi">Liên kết nhanh</span>
-            <span class="lang-block" data-lang="en" style="display:none;">Quick Links</span>
-          </h4>
-          <nav style="display:flex;flex-direction:column;gap:0.5rem;">
-            <a href="committee.html" data-i18n="nav.committee">Ban Lãnh đạo</a>
-            <a href="conferences.html" data-i18n="nav.conferences">Hội thảo</a>
-            <a href="membership.html" data-i18n="nav.membership">Thành viên</a>
-            <a href="contact.html" data-i18n="nav.contact">Liên hệ</a>
-          </nav>
-        </div>
+<!-- ── CORE OBJECTIVES ─────────────────────────────────────────── -->
+<section style="padding:4rem 0;background:var(--stone-50);">
+  <div class="container">
+    <div class="section-label" data-i18n="about.objectives_label">Mục tiêu cốt lõi</div>
+    <h2 style="font-size:clamp(1.375rem,3vw,2rem);font-weight:700;color:var(--stone-900);margin-bottom:2rem;font-family:'Playfair Display',serif;">
+      <span class="lang-block" data-lang="vi">Mục tiêu cốt lõi</span>
+      <span class="lang-block" data-lang="en" style="display:none;">Core Objectives</span>
+    </h2>
+    <div class="objectives-grid">
+      <div class="objective-card">
+        <div class="objective-card__num">01</div>
+        <p>
+          <span class="lang-block" data-lang="vi">Thúc đẩy nghiên cứu CALL đối với tiếng Việt và các ngoại ngữ được giảng dạy tại Việt Nam</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Advance CALL research concerning Vietnamese and foreign languages taught in Vietnam</span>
+        </p>
+      </div>
+      <div class="objective-card">
+        <div class="objective-card__num">02</div>
+        <p>
+          <span class="lang-block" data-lang="vi">Tổ chức hội thảo khoa học quốc tế thường niên về công nghệ trong giáo dục ngôn ngữ</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Organise annual international scholarly conferences on technology in language education</span>
+        </p>
+      </div>
+      <div class="objective-card">
+        <div class="objective-card__num">03</div>
+        <p>
+          <span class="lang-block" data-lang="vi">Xây dựng quan hệ hợp tác với các mạng lưới CALL khu vực và quốc tế</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Build collaborative partnerships with regional and international CALL networks</span>
+        </p>
+      </div>
+      <div class="objective-card">
+        <div class="objective-card__num">04</div>
+        <p>
+          <span class="lang-block" data-lang="vi">Cung cấp tài nguyên và học liệu chất lượng cao hỗ trợ giảng viên ngôn ngữ</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Provide high-quality resources and learning materials in support of language educators</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <div class="about-sidebar-card">
-          <h4>
-            <span class="lang-block" data-lang="vi">Video Giới thiệu</span>
-            <span class="lang-block" data-lang="en" style="display:none;">Introduction Video</span>
-          </h4>
-          <div class="video-wrap" style="margin-top:0.75rem;">
-            <iframe src="https://www.youtube.com/embed/UEcl9khqwos" title="VietCALL Introduction" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-          </div>
-        </div>
+<!-- ── BAN CHẤP HÀNH ──────────────────────────────────────────── -->
+<section style="padding:4rem 0;background:var(--white);">
+  <div class="container">
+    <div class="section-label" data-i18n="committee.exec_label">Ban Lãnh đạo</div>
+    <h2 style="font-size:clamp(1.375rem,3vw,2rem);font-weight:700;color:var(--stone-900);margin-bottom:0.5rem;font-family:'Playfair Display',serif;" data-i18n="committee.exec_title">Ban Chấp Hành</h2>
+    <p style="color:var(--stone-500);font-size:0.9375rem;margin-bottom:2rem;">
+      <span class="lang-block" data-lang="vi">Nhiệm kỳ 2024–2026</span>
+      <span class="lang-block" data-lang="en" style="display:none;">Term 2024–2026</span>
+    </p>
+    <div class="members-grid">
 
-        <div class="about-sidebar-card">
-          <h4>
-            <span class="lang-block" data-lang="vi">Tham gia VietCALL</span>
-            <span class="lang-block" data-lang="en" style="display:none;">Join VietCALL</span>
-          </h4>
-          <p style="margin-bottom:1rem;">
-            <span class="lang-block" data-lang="vi">Trở thành thành viên để kết nối với cộng đồng CALL toàn cầu.</span>
-            <span class="lang-block" data-lang="en" style="display:none;">Become a member to connect with the global CALL community.</span>
-          </p>
-          <a href="membership.html" class="btn btn--primary btn--sm" data-i18n="nav.join">Tham gia ngay</a>
+      <!-- Dr. Bảo Khâm — President -->
+      <div class="member-card">
+        <img src="assets/avatars/Dr.BaoKham.jpg" alt="Dr. Bảo Khâm" loading="lazy">
+        <div class="member-card__name">
+          <span class="lang-block" data-lang="vi">TS. Bảo Khâm</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Dr. Bao Kham</span>
         </div>
-      </aside>
+        <div class="member-card__role">
+          <span class="lang-block" data-lang="vi">Chủ tịch</span>
+          <span class="lang-block" data-lang="en" style="display:none;">President</span>
+        </div>
+        <div style="font-size:0.75rem;color:var(--stone-400);margin-top:0.375rem;line-height:1.4;">
+          <span class="lang-block" data-lang="vi">Tổng Biên tập Tạp chí Nghiên cứu Ngôn ngữ và Văn hóa, Đại học Huế</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Editor-in-Chief, Journal of Inquiry into Languages and Cultures, Hue University</span>
+        </div>
+      </div>
+
+      <!-- Assoc. Prof. Dr. Nguyễn Văn Long — Vice President -->
+      <div class="member-card">
+        <img src="assets/avatars/Dr.Long.jpg" alt="PGS. TS. Nguyễn Văn Long" loading="lazy">
+        <div class="member-card__name">
+          <span class="lang-block" data-lang="vi">PGS. TS. Nguyễn Văn Long</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Assoc. Prof. Dr. Nguyen Van Long</span>
+        </div>
+        <div class="member-card__role">
+          <span class="lang-block" data-lang="vi">Phó Chủ tịch</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Vice President</span>
+        </div>
+        <div style="font-size:0.75rem;color:var(--stone-400);margin-top:0.375rem;line-height:1.4;">
+          <span class="lang-block" data-lang="vi">Hiệu trưởng Trường ĐH Ngoại ngữ, Đại học Đà Nẵng</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Rector, University of Foreign Language Studies, University of Danang</span>
+        </div>
+      </div>
+
+      <!-- Assoc. Prof. Phạm Vũ Phi Hổ — Vice President -->
+      <div class="member-card">
+        <img src="assets/avatars/Dr.PhamHo.jpg" alt="PGS. Phạm Vũ Phi Hổ" loading="lazy">
+        <div class="member-card__name">
+          <span class="lang-block" data-lang="vi">PGS. Phạm Vũ Phi Hổ</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Assoc. Prof. Pham Vu Phi Ho</span>
+        </div>
+        <div class="member-card__role">
+          <span class="lang-block" data-lang="vi">Phó Chủ tịch</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Vice President</span>
+        </div>
+        <div style="font-size:0.75rem;color:var(--stone-400);margin-top:0.375rem;line-height:1.4;">
+          <span class="lang-block" data-lang="vi">Tổng Biên tập Tạp chí Quốc tế TESOL &amp; Education, ĐH Công nghiệp TP.HCM</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Editor-in-Chief, International Journal of TESOL &amp; Education, Industrial University of HCMC</span>
+        </div>
+      </div>
+
+      <!-- Assoc. Prof. Dr. Nguyễn Ngọc Vũ — Vice President -->
+      <div class="member-card">
+        <img src="assets/avatars/Dr.NgocVu.jpg" alt="PGS. TS. Nguyễn Ngọc Vũ" loading="lazy">
+        <div class="member-card__name">
+          <span class="lang-block" data-lang="vi">PGS. TS. Nguyễn Ngọc Vũ</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Assoc. Prof. Dr. Nguyen Ngoc Vu</span>
+        </div>
+        <div class="member-card__role">
+          <span class="lang-block" data-lang="vi">Phó Chủ tịch</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Vice President</span>
+        </div>
+        <div style="font-size:0.75rem;color:var(--stone-400);margin-top:0.375rem;line-height:1.4;">
+          <span class="lang-block" data-lang="vi">Phó Hiệu trưởng, Đại học Ngoại ngữ – Tin học TP.HCM (HUFLIT)</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Vice President, HCMC University of Foreign Languages – Information Technology (HUFLIT)</span>
+        </div>
+      </div>
+
+      <!-- Nguyễn Thị Lan Hương, MA — Vice President -->
+      <div class="member-card">
+        <img src="assets/avatars/LanHuong.jpg" alt="ThS. Nguyễn Thị Lan Hương" loading="lazy">
+        <div class="member-card__name">
+          <span class="lang-block" data-lang="vi">ThS. Nguyễn Thị Lan Hương</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Nguyen Thi Lan Huong, MA</span>
+        </div>
+        <div class="member-card__role">
+          <span class="lang-block" data-lang="vi">Phó Chủ tịch</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Vice President</span>
+        </div>
+        <div style="font-size:0.75rem;color:var(--stone-400);margin-top:0.375rem;line-height:1.4;">
+          <span class="lang-block" data-lang="vi">Phó Giám đốc Phòng Hợp tác &amp; Phát triển, VNU ULIS; Phó Giám đốc Ban Thư ký VietTESOL</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Vice-Director, Office of Cooperation &amp; Development, VNU ULIS; Deputy Director, VietTESOL Secretariat</span>
+        </div>
+      </div>
+
+      <!-- TS. Trần Tín Nghĩa — Executive Member -->
+      <div class="member-card">
+        <img src="assets/avatars/TinNghi.jpg" alt="TS. Trần Tín Nghĩa" loading="lazy">
+        <div class="member-card__name">
+          <span class="lang-block" data-lang="vi">TS. Trần Tín Nghĩa</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Dr. Tran Tin Nghi</span>
+        </div>
+        <div class="member-card__role">
+          <span class="lang-block" data-lang="vi">Ủy viên</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Executive Member</span>
+        </div>
+        <div style="font-size:0.75rem;color:var(--stone-400);margin-top:0.375rem;line-height:1.4;">
+          <span class="lang-block" data-lang="vi">Trưởng Khoa Ngoại ngữ, ĐH Công nghiệp TP.HCM (HUIT)</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Dean, Faculty of Foreign Languages, HCMC University of Industry and Trade (HUIT)</span>
+        </div>
+      </div>
+
+      <!-- Khoa Anh Việt — Executive Member -->
+      <div class="member-card">
+        <img src="assets/avatars/KhoaAnhViet.jpg" alt="Khoa Anh Việt" loading="lazy">
+        <div class="member-card__name">
+          <span class="lang-block" data-lang="vi">Khoa Anh Việt</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Khoa Anh Viet</span>
+        </div>
+        <div class="member-card__role">
+          <span class="lang-block" data-lang="vi">Ủy viên</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Executive Member</span>
+        </div>
+        <div style="font-size:0.75rem;color:var(--stone-400);margin-top:0.375rem;line-height:1.4;">
+          <span class="lang-block" data-lang="vi">Nguyên Giám đốc Trung tâm ICT, VNU ULIS Hà Nội</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Former Director, ICT Centre, VNU ULIS Hanoi</span>
+        </div>
+      </div>
+
+      <!-- Phạm Tiến Hùng — Executive Member -->
+      <div class="member-card">
+        <img src="assets/avatars/PhamTienHung.jpg" alt="Phạm Tiến Hùng" loading="lazy">
+        <div class="member-card__name">
+          <span class="lang-block" data-lang="vi">Phạm Tiến Hùng</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Pham Tien Hung</span>
+        </div>
+        <div class="member-card__role">
+          <span class="lang-block" data-lang="vi">Ủy viên</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Executive Member</span>
+        </div>
+        <div style="font-size:0.75rem;color:var(--stone-400);margin-top:0.375rem;line-height:1.4;">
+          <span class="lang-block" data-lang="vi">Giám đốc Trung tâm Khảo thí và Đánh giá, Đại học Hà Nội</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Director, Testing and Evaluation Centre, Hanoi University</span>
+        </div>
+      </div>
+
+      <!-- TS. Nguyễn Uyên Nữ Thủy — Executive Member -->
+      <div class="member-card">
+        <img src="assets/avatars/UyenNu.jpg" alt="TS. Nguyễn Uyên Nữ Thủy" loading="lazy">
+        <div class="member-card__name">
+          <span class="lang-block" data-lang="vi">TS. Nguyễn Uyên Nữ Thủy</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Dr. Uyen Nu Thuy Nguyen</span>
+        </div>
+        <div class="member-card__role">
+          <span class="lang-block" data-lang="vi">Ủy viên</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Executive Member</span>
+        </div>
+        <div style="font-size:0.75rem;color:var(--stone-400);margin-top:0.375rem;line-height:1.4;">
+          <span class="lang-block" data-lang="vi">Trường ĐH Ngoại ngữ, Đại học Đà Nẵng</span>
+          <span class="lang-block" data-lang="en" style="display:none;">University of Foreign Language Studies, University of Danang</span>
+        </div>
+      </div>
+
+      <!-- TS. Hoàng Thị Ngọc Diệm — Executive Member -->
+      <div class="member-card">
+        <img src="assets/avatars/NgocDiem.jpg" alt="TS. Hoàng Thị Ngọc Diệm" loading="lazy">
+        <div class="member-card__name">
+          <span class="lang-block" data-lang="vi">TS. Hoàng Thị Ngọc Diệm</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Dr. Hoang Thi Ngoc Diem</span>
+        </div>
+        <div class="member-card__role">
+          <span class="lang-block" data-lang="vi">Ủy viên</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Executive Member</span>
+        </div>
+        <div style="font-size:0.75rem;color:var(--stone-400);margin-top:0.375rem;line-height:1.4;">
+          <span class="lang-block" data-lang="vi">Đại học Thái Nguyên</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Thai Nguyen University</span>
+        </div>
+      </div>
+
+      <!-- TS. Lương Thị Hiền — Executive Member -->
+      <div class="member-card">
+        <img src="assets/avatars/HienLuong.jpg" alt="TS. Lương Thị Hiền" loading="lazy">
+        <div class="member-card__name">
+          <span class="lang-block" data-lang="vi">TS. Lương Thị Hiền</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Dr. Luong Thi Hien</span>
+        </div>
+        <div class="member-card__role">
+          <span class="lang-block" data-lang="vi">Ủy viên</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Executive Member</span>
+        </div>
+        <div style="font-size:0.75rem;color:var(--stone-400);margin-top:0.375rem;line-height:1.4;">
+          <span class="lang-block" data-lang="vi">Đại học Sư phạm Hà Nội</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Hanoi University of Education</span>
+        </div>
+      </div>
 
     </div>
   </div>
 </section>
 
-<!-- ── ORG STRUCTURE CTA ──────────────────────────────────────── -->
-<section class="section bg-stone animate-in">
+<!-- ── BAN CỐ VẤN ─────────────────────────────────────────────── -->
+<section style="padding:4rem 0;background:var(--stone-50);">
   <div class="container">
-    <div class="cta-section">
-      <span class="badge" data-i18n="about.org_title">Cơ cấu Tổ chức</span>
-      <h2 class="headline-lg mt-4">
-        <span class="lang-block" data-lang="vi">Gặp gỡ Ban Lãnh đạo VietCALL</span>
-        <span class="lang-block" data-lang="en" style="display:none;">Meet the VietCALL Leadership</span>
-      </h2>
-      <p>
-        <span class="lang-block" data-lang="vi">VietCALL được dẫn dắt bởi các nhà giáo dục và nhà nghiên cứu tận tâm từ các trường đại học hàng đầu Việt Nam và quốc tế.</span>
-        <span class="lang-block" data-lang="en" style="display:none;">VietCALL is led by dedicated educators and researchers from leading universities in Vietnam and internationally.</span>
-      </p>
-      <div class="btn-group">
-        <a href="committee.html" class="btn btn--primary" data-i18n="nav.committee">Ban Lãnh đạo</a>
-        <a href="contact.html" class="btn btn--outline" data-i18n="nav.contact">Liên hệ</a>
+    <div class="section-label" data-i18n="committee.advisory_label">Ban Cố vấn</div>
+    <h2 style="font-size:clamp(1.375rem,3vw,2rem);font-weight:700;color:var(--stone-900);margin-bottom:0.5rem;font-family:'Playfair Display',serif;" data-i18n="committee.advisory_title">Ban Cố vấn</h2>
+    <p style="color:var(--stone-500);font-size:0.9375rem;margin-bottom:2rem;" data-i18n="committee.advisory_sub">Ban Cố vấn quốc tế cung cấp định hướng chiến lược và chuyên môn cho VietCALL.</p>
+    <div class="advisory-grid">
+
+      <!-- Prof. Dr. Andrew Lian -->
+      <div class="advisory-card">
+        <img src="assets/avatars/AndrewLian.jpg" alt="Prof. Dr. Andrew Lian" loading="lazy" style="width:3.5rem;height:3.5rem;border-radius:50%;object-fit:cover;margin:0 auto 0.875rem;display:block;border:2px solid rgba(255,255,255,0.3);">
+        <div class="advisory-card__name">Prof. Dr. Andrew Lian</div>
+        <div class="advisory-card__role">
+          <span class="lang-block" data-lang="vi">Cố vấn Quốc tế</span>
+          <span class="lang-block" data-lang="en" style="display:none;">International Advisor</span>
+        </div>
+        <div style="font-size:0.72rem;color:rgba(255,255,255,0.6);margin-top:0.375rem;line-height:1.4;">
+          <span class="lang-block" data-lang="vi">Đại học Công nghệ Suranaree; Chủ tịch AsiaCALL; Chủ tịch ICTE</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Suranaree University of Technology; President, AsiaCALL; President, ICTE</span>
+        </div>
       </div>
+
+      <!-- Dr. Hoàng Ngọc Tuệ -->
+      <div class="advisory-card">
+        <img src="assets/avatars/NgocTue.jpg" alt="Dr. Hoàng Ngọc Tuệ" loading="lazy" style="width:3.5rem;height:3.5rem;border-radius:50%;object-fit:cover;margin:0 auto 0.875rem;display:block;border:2px solid rgba(255,255,255,0.3);">
+        <div class="advisory-card__name">
+          <span class="lang-block" data-lang="vi">TS. Hoàng Ngọc Tuệ</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Dr. Hoang Ngoc Tue</span>
+        </div>
+        <div class="advisory-card__role">
+          <span class="lang-block" data-lang="vi">Cố vấn</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Advisor</span>
+        </div>
+        <div style="font-size:0.72rem;color:rgba(255,255,255,0.6);margin-top:0.375rem;line-height:1.4;">
+          <span class="lang-block" data-lang="vi">Hiệu trưởng Khoa Ngôn ngữ và Du lịch, Đại học Công nghiệp Hà Nội</span>
+          <span class="lang-block" data-lang="en" style="display:none;">President, School of Languages and Tourism, Hanoi University of Industry</span>
+        </div>
+      </div>
+
+      <!-- Dr. Nguyễn Xuân Hồng -->
+      <div class="advisory-card">
+        <img src="assets/avatars/NguyenXuanHong.png" alt="Dr. Nguyễn Xuân Hồng" loading="lazy" style="width:3.5rem;height:3.5rem;border-radius:50%;object-fit:cover;margin:0 auto 0.875rem;display:block;border:2px solid rgba(255,255,255,0.3);">
+        <div class="advisory-card__name">
+          <span class="lang-block" data-lang="vi">TS. Nguyễn Xuân Hồng</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Dr. Nguyen Xuan Hong</span>
+        </div>
+        <div class="advisory-card__role">
+          <span class="lang-block" data-lang="vi">Cố vấn</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Advisor</span>
+        </div>
+        <div style="font-size:0.72rem;color:rgba(255,255,255,0.6);margin-top:0.375rem;line-height:1.4;">
+          <span class="lang-block" data-lang="vi">Phó Hiệu trưởng, Đại học Công nghiệp TP.HCM</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Vice President, Industrial University of Ho Chi Minh City</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── JOIN CTA ───────────────────────────────────────────────── -->
+<section style="padding:4rem 0;background:var(--primary);">
+  <div class="container" style="text-align:center;">
+    <h2 style="font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;color:#fff;margin-bottom:1rem;font-family:'Playfair Display',serif;">
+      <span class="lang-block" data-lang="vi">Tham gia cộng đồng VietCALL</span>
+      <span class="lang-block" data-lang="en" style="display:none;">Join the VietCALL Community</span>
+    </h2>
+    <p style="color:rgba(255,255,255,0.75);font-size:1rem;max-width:38rem;margin:0 auto 2rem;">
+      <span class="lang-block" data-lang="vi">Kết nối với hơn 1.200 nhà giáo dục và nhà nghiên cứu trong lĩnh vực CALL tại Việt Nam và quốc tế.</span>
+      <span class="lang-block" data-lang="en" style="display:none;">Connect with over 1,200 educators and researchers in CALL across Vietnam and internationally.</span>
+    </p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="membership.html" class="btn btn--secondary" data-i18n="nav.join">Tham gia ngay</a>
+      <a href="contact.html" class="btn btn--outline" style="color:#fff;border-color:rgba(255,255,255,0.35);" data-i18n="nav.contact">Liên hệ</a>
     </div>
   </div>
 </section>
@@ -227,26 +436,43 @@
       <div>
         <span class="footer__brand">VietCALL</span>
         <p class="footer__tagline" data-i18n="footer.tagline">Thúc đẩy Học ngôn ngữ có hỗ trợ Máy tính tại Việt Nam</p>
+        <div class="footer__social-links">
+          <!-- Facebook Page -->
+          <a href="#" class="footer__social-link" target="_blank" rel="noopener" title="Facebook Page">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <!-- Facebook Group -->
+          <a href="#" class="footer__social-link" target="_blank" rel="noopener" title="Facebook Group">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </a>
+          <!-- Zalo Group -->
+          <a href="#" class="footer__social-link" target="_blank" rel="noopener" title="Zalo Group">
+            <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="currentColor" opacity="0"/><text x="12" y="16.5" text-anchor="middle" font-size="11" font-weight="700" font-family="Arial,sans-serif" fill="currentColor">Zalo</text><rect x="1" y="1" width="22" height="22" rx="5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          </a>
+          <!-- YouTube Channel -->
+          <a href="#" class="footer__social-link" target="_blank" rel="noopener" title="YouTube Channel">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+          </a>
+        </div>
       </div>
       <div>
         <p class="footer__col-title" data-i18n="footer.links">Liên kết nhanh</p>
         <nav class="footer__nav-links">
           <a href="about.html" class="footer__nav-link" data-i18n="nav.about">Giới thiệu</a>
-          <a href="committee.html" class="footer__nav-link" data-i18n="nav.committee">Ban Lãnh đạo</a>
-          <a href="conferences.html" class="footer__nav-link" data-i18n="nav.conferences">Hội thảo</a>
-          <a href="resources.html" class="footer__nav-link" data-i18n="nav.resources">Tài nguyên</a>
+          <a href="conferences.html" class="footer__nav-link" data-i18n="nav.events">Sự kiện</a>
           <a href="blog.html" class="footer__nav-link" data-i18n="nav.blog">Tin tức</a>
+          <a href="resources.html" class="footer__nav-link" data-i18n="nav.resources">Tài liệu</a>
           <a href="membership.html" class="footer__nav-link" data-i18n="nav.membership">Thành viên</a>
           <a href="contact.html" class="footer__nav-link" data-i18n="nav.contact">Liên hệ</a>
         </nav>
       </div>
       <div>
-        <p class="footer__col-title" data-i18n="footer.connect">Kết nối</p>
-        <div class="footer__social-links">
-          <a href="https://www.facebook.com/vietcall.edu.vn" class="footer__social-link" target="_blank" rel="noopener">📘 Facebook</a>
-          <a href="mailto:lanhuongnckh@gmail.com" class="footer__social-link">✉️ Email</a>
-          <a href="https://vietcall.edu.vn" class="footer__social-link" target="_blank" rel="noopener">🌐 vietcall.edu.vn</a>
-        </div>
+        <p class="footer__col-title" data-i18n="footer.newsletter">Bản tin</p>
+        <p style="font-size:0.875rem;color:rgba(255,255,255,0.6);margin-bottom:1rem;" data-i18n="footer.newsletter_desc">Cập nhật nghiên cứu và sự kiện mới nhất.</p>
+        <form style="display:flex;gap:0.5rem;" onsubmit="return false;">
+          <input type="email" placeholder="Email" style="flex:1;padding:0.625rem 0.875rem;border-radius:var(--radius-full);border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:#fff;font-size:0.875rem;font-family:inherit;" data-i18n-placeholder="footer.email_placeholder">
+          <button type="submit" class="btn btn--secondary btn--sm">→</button>
+        </form>
       </div>
     </div>
     <div class="footer__bottom">

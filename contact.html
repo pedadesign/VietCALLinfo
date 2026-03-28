@@ -15,15 +15,13 @@
 <nav class="navbar" role="navigation">
   <div class="navbar__inner">
     <a href="index.html" class="navbar__brand">
-      <div class="navbar__logo-circle"><span>V</span></div>
-      <span class="navbar__name">VietCALL</span>
+      <img src="assets/brand/VietC@LL-Logo-Transparent.png" alt="VietCALL" class="navbar__logo-img">
     </a>
     <ul class="navbar__links">
       <li><a href="about.html" class="navbar__link" data-i18n="nav.about">Giới thiệu</a></li>
-      <li><a href="committee.html" class="navbar__link" data-i18n="nav.committee">Ban Lãnh đạo</a></li>
-      <li><a href="conferences.html" class="navbar__link" data-i18n="nav.conferences">Hội thảo</a></li>
-      <li><a href="resources.html" class="navbar__link" data-i18n="nav.resources">Tài nguyên</a></li>
+      <li><a href="conferences.html" class="navbar__link" data-i18n="nav.events">Sự kiện</a></li>
       <li><a href="blog.html" class="navbar__link" data-i18n="nav.blog">Tin tức</a></li>
+      <li><a href="resources.html" class="navbar__link" data-i18n="nav.resources">Tài liệu</a></li>
       <li><a href="membership.html" class="navbar__link" data-i18n="nav.membership">Thành viên</a></li>
       <li><a href="contact.html" class="navbar__link navbar__link--active" data-i18n="nav.contact">Liên hệ</a></li>
     </ul>
@@ -47,10 +45,9 @@
 </nav>
 <div class="navbar__mobile" id="mobileMenu">
   <a href="about.html" data-i18n="nav.about">Giới thiệu</a>
-  <a href="committee.html" data-i18n="nav.committee">Ban Lãnh đạo</a>
-  <a href="conferences.html" data-i18n="nav.conferences">Hội thảo</a>
-  <a href="resources.html" data-i18n="nav.resources">Tài nguyên</a>
+  <a href="conferences.html" data-i18n="nav.events">Sự kiện</a>
   <a href="blog.html" data-i18n="nav.blog">Tin tức</a>
+  <a href="resources.html" data-i18n="nav.resources">Tài liệu</a>
   <a href="membership.html" data-i18n="nav.membership">Thành viên</a>
   <a href="contact.html" data-i18n="nav.contact">Liên hệ</a>
   <div class="mobile-cta"><a href="membership.html" class="btn btn--primary" style="width:100%;justify-content:center;" data-i18n="nav.join">Tham gia ngay</a></div>
@@ -65,8 +62,8 @@
 <header class="page-hero animate-in">
   <div class="container">
     <span class="badge" data-i18n="contact.badge">Liên hệ</span>
-    <h1 class="display-lg" data-i18n="contact.title">Kết nối với chúng tôi</h1>
-    <p data-i18n="contact.sub">Chúng tôi luôn sẵn sàng lắng nghe bạn. Hãy liên hệ để hỏi về thành viên, hội thảo hoặc hợp tác.</p>
+    <h1 class="display-lg" data-i18n="contact.title">Liên hệ VietCALL</h1>
+    <p data-i18n="contact.sub">Chúng tôi sẵn sàng giải đáp mọi thắc mắc về thành viên, hội thảo hoặc hợp tác nghiên cứu.</p>
   </div>
 </header>
 
@@ -113,8 +110,8 @@
         <!-- Membership card -->
         <div style="background:var(--stone-50);border-radius:var(--radius-2xl);padding:1.75rem;margin-top:1.5rem;border-top:3px solid var(--secondary);">
           <h4 style="font-size:1rem;font-weight:700;color:var(--primary);margin-bottom:0.75rem;" data-i18n="contact.register_title">Đăng ký Thành viên</h4>
-          <p style="font-size:0.875rem;color:var(--stone-600);margin-bottom:1.25rem;line-height:1.65;" data-i18n="contact.register_desc">Điền vào mẫu đăng ký để tham gia cộng đồng VietCALL.</p>
-          <a href="https://vietcall.edu.vn/register/" class="btn btn--secondary btn--sm" target="_blank" rel="noopener" data-i18n="contact.register_btn">Đăng ký ngay →</a>
+          <p style="font-size:0.875rem;color:var(--stone-600);margin-bottom:1.25rem;line-height:1.65;" data-i18n="contact.register_desc">Truy cập trang đăng ký chính thức để trở thành thành viên VietCALL.</p>
+          <a href="https://vietcall.edu.vn/register/" class="btn btn--secondary btn--sm" target="_blank" rel="noopener" data-i18n="contact.register_btn">Đăng ký thành viên →</a>
         </div>
       </div>
 
@@ -165,8 +162,8 @@
         <span class="lang-block" data-lang="en" style="display:none;">Contact VietCALL 2026 Organizers</span>
       </h2>
       <p>
-        <span class="lang-block" data-lang="vi">Để biết thêm thông tin về hội thảo VietCALL 2026, vui lòng liên hệ trực tiếp với ban tổ chức.</span>
-        <span class="lang-block" data-lang="en" style="display:none;">For further information about VietCALL 2026, please contact the organizers directly.</span>
+        <span class="lang-block" data-lang="vi">Để biết thêm thông tin về Hội thảo VietCALL 2026, vui lòng liên hệ trực tiếp với Ban tổ chức qua các địa chỉ dưới đây.</span>
+        <span class="lang-block" data-lang="en" style="display:none;">For further information about the VietCALL 2026 Conference, please contact the Organising Committee directly via the details below.</span>
       </p>
       <div style="display:flex;flex-direction:column;gap:0.5rem;align-items:center;margin-bottom:1.5rem;">
         <p style="font-size:0.9375rem;color:var(--stone-600);">
@@ -198,26 +195,43 @@
       <div>
         <span class="footer__brand">VietCALL</span>
         <p class="footer__tagline" data-i18n="footer.tagline">Thúc đẩy Học ngôn ngữ có hỗ trợ Máy tính tại Việt Nam</p>
+        <div class="footer__social-links">
+          <!-- Facebook Page -->
+          <a href="#" class="footer__social-link" target="_blank" rel="noopener" title="Facebook Page">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <!-- Facebook Group -->
+          <a href="#" class="footer__social-link" target="_blank" rel="noopener" title="Facebook Group">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </a>
+          <!-- Zalo Group -->
+          <a href="#" class="footer__social-link" target="_blank" rel="noopener" title="Zalo Group">
+            <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="currentColor" opacity="0"/><text x="12" y="16.5" text-anchor="middle" font-size="11" font-weight="700" font-family="Arial,sans-serif" fill="currentColor">Zalo</text><rect x="1" y="1" width="22" height="22" rx="5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          </a>
+          <!-- YouTube Channel -->
+          <a href="#" class="footer__social-link" target="_blank" rel="noopener" title="YouTube Channel">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+          </a>
+        </div>
       </div>
       <div>
         <p class="footer__col-title" data-i18n="footer.links">Liên kết nhanh</p>
         <nav class="footer__nav-links">
           <a href="about.html" class="footer__nav-link" data-i18n="nav.about">Giới thiệu</a>
-          <a href="committee.html" class="footer__nav-link" data-i18n="nav.committee">Ban Lãnh đạo</a>
-          <a href="conferences.html" class="footer__nav-link" data-i18n="nav.conferences">Hội thảo</a>
-          <a href="resources.html" class="footer__nav-link" data-i18n="nav.resources">Tài nguyên</a>
+          <a href="conferences.html" class="footer__nav-link" data-i18n="nav.events">Sự kiện</a>
           <a href="blog.html" class="footer__nav-link" data-i18n="nav.blog">Tin tức</a>
+          <a href="resources.html" class="footer__nav-link" data-i18n="nav.resources">Tài liệu</a>
           <a href="membership.html" class="footer__nav-link" data-i18n="nav.membership">Thành viên</a>
           <a href="contact.html" class="footer__nav-link" data-i18n="nav.contact">Liên hệ</a>
         </nav>
       </div>
       <div>
-        <p class="footer__col-title" data-i18n="footer.connect">Kết nối</p>
-        <div class="footer__social-links">
-          <a href="https://www.facebook.com/vietcall.edu.vn" class="footer__social-link" target="_blank" rel="noopener">📘 Facebook</a>
-          <a href="mailto:lanhuongnckh@gmail.com" class="footer__social-link">✉️ Email</a>
-          <a href="https://vietcall.edu.vn" class="footer__social-link" target="_blank" rel="noopener">🌐 vietcall.edu.vn</a>
-        </div>
+        <p class="footer__col-title" data-i18n="footer.newsletter">Bản tin</p>
+        <p style="font-size:0.875rem;color:rgba(255,255,255,0.6);margin-bottom:1rem;" data-i18n="footer.newsletter_desc">Cập nhật nghiên cứu và sự kiện mới nhất.</p>
+        <form style="display:flex;gap:0.5rem;" onsubmit="return false;">
+          <input type="email" placeholder="Email" style="flex:1;padding:0.625rem 0.875rem;border-radius:var(--radius-full);border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:#fff;font-size:0.875rem;font-family:inherit;">
+          <button type="submit" class="btn btn--secondary btn--sm">→</button>
+        </form>
       </div>
     </div>
     <div class="footer__bottom">

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tài nguyên – VietCALL</title>
-  <meta name="description" content="Tài nguyên và ấn phẩm nghiên cứu của VietCALL.">
+  <title>Tài liệu – VietCALL</title>
+  <meta name="description" content="Tài liệu và ấn phẩm nghiên cứu của VietCALL.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -15,15 +15,13 @@
 <nav class="navbar" role="navigation">
   <div class="navbar__inner">
     <a href="index.html" class="navbar__brand">
-      <div class="navbar__logo-circle"><span>V</span></div>
-      <span class="navbar__name">VietCALL</span>
+      <img src="assets/brand/VietC@LL-Logo-Transparent.png" alt="VietCALL" class="navbar__logo-img">
     </a>
     <ul class="navbar__links">
       <li><a href="about.html" class="navbar__link" data-i18n="nav.about">Giới thiệu</a></li>
-      <li><a href="committee.html" class="navbar__link" data-i18n="nav.committee">Ban Lãnh đạo</a></li>
-      <li><a href="conferences.html" class="navbar__link" data-i18n="nav.conferences">Hội thảo</a></li>
-      <li><a href="resources.html" class="navbar__link navbar__link--active" data-i18n="nav.resources">Tài nguyên</a></li>
+      <li><a href="conferences.html" class="navbar__link" data-i18n="nav.events">Sự kiện</a></li>
       <li><a href="blog.html" class="navbar__link" data-i18n="nav.blog">Tin tức</a></li>
+      <li><a href="resources.html" class="navbar__link navbar__link--active" data-i18n="nav.resources">Tài liệu</a></li>
       <li><a href="membership.html" class="navbar__link" data-i18n="nav.membership">Thành viên</a></li>
       <li><a href="contact.html" class="navbar__link" data-i18n="nav.contact">Liên hệ</a></li>
     </ul>
@@ -47,10 +45,9 @@
 </nav>
 <div class="navbar__mobile" id="mobileMenu">
   <a href="about.html" data-i18n="nav.about">Giới thiệu</a>
-  <a href="committee.html" data-i18n="nav.committee">Ban Lãnh đạo</a>
-  <a href="conferences.html" data-i18n="nav.conferences">Hội thảo</a>
-  <a href="resources.html" data-i18n="nav.resources">Tài nguyên</a>
+  <a href="conferences.html" data-i18n="nav.events">Sự kiện</a>
   <a href="blog.html" data-i18n="nav.blog">Tin tức</a>
+  <a href="resources.html" data-i18n="nav.resources">Tài liệu</a>
   <a href="membership.html" data-i18n="nav.membership">Thành viên</a>
   <a href="contact.html" data-i18n="nav.contact">Liên hệ</a>
   <div class="mobile-cta"><a href="membership.html" class="btn btn--primary" style="width:100%;justify-content:center;" data-i18n="nav.join">Tham gia ngay</a></div>
@@ -62,66 +59,84 @@
 
 <main class="page-top">
 
-<header class="page-hero animate-in">
+<!-- ── PAGE TITLE ─────────────────────────────────────────────── -->
+<div class="pg-title" style="padding:3.5rem 0 2.5rem;">
   <div class="container">
-    <span class="badge" data-i18n="resources.badge">Học liệu</span>
-    <h1 class="display-lg" data-i18n="resources.title">Tài nguyên &amp; Ấn phẩm</h1>
-    <p data-i18n="resources.sub">Truy cập bộ sưu tập các bài báo nghiên cứu, tài liệu giảng dạy và công cụ học tập được tuyển chọn.</p>
+    <h1 class="pg-title__h" data-i18n="resources.title">Tài nguyên &amp; Ấn phẩm</h1>
+    <p class="pg-title__sub" data-i18n="resources.sub">Truy cập bộ sưu tập các công trình nghiên cứu, tài liệu giảng dạy và công cụ học tập được tuyển chọn.</p>
   </div>
-</header>
+</div>
 
-<!-- ── RESOURCE CARDS ────────────────────────────────────────── -->
-<section class="section bg-primary animate-in">
+<!-- ── RESOURCE CARDS ─────────────────────────────────────────── -->
+<section style="padding:4rem 0;background:var(--stone-50);">
   <div class="container">
-    <div class="resource-grid">
+    <div class="section-label" data-i18n="resources.collections_label">Bộ sưu tập</div>
+    <h2 style="font-size:clamp(1.375rem,3vw,2rem);font-weight:700;color:var(--stone-900);margin-bottom:2rem;font-family:'Playfair Display',serif;" data-i18n="resources.collections_title">Tài liệu VietCALL</h2>
+
+    <div class="resources-grid">
+
+      <!-- Dự án của VietCALL -->
       <div class="resource-card">
-        <div class="resource-card__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-        </div>
-        <h3 data-i18n="resources.journal_title">Tạp chí VietCALL</h3>
-        <p data-i18n="resources.journal_desc">Tạp chí học thuật bình duyệt, xuất bản các nghiên cứu mới nhất về CALL và công nghệ trong giảng dạy ngôn ngữ.</p>
-        <a href="https://vietcall.edu.vn" class="resource-card__link" target="_blank" rel="noopener" data-i18n="resources.access">Truy cập →</a>
+        <div class="resource-card__icon">📖</div>
+        <h3 data-i18n="resources.journal_title">Dự án của VietCALL</h3>
+        <p data-i18n="resources.journal_desc">VietCALL triển khai các dự án nghiên cứu và thực hành nhằm thúc đẩy ứng dụng công nghệ trong dạy-học ngôn ngữ tại Việt Nam và khu vực.</p>
+        <a href="https://vietcall.edu.vn" class="resource-link" target="_blank" rel="noopener" data-i18n="resources.access">Truy cập →</a>
       </div>
+
+      <!-- Kỷ yếu Hội thảo -->
       <div class="resource-card">
-        <div class="resource-card__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-        </div>
+        <div class="resource-card__icon">📋</div>
         <h3 data-i18n="resources.proc_title">Kỷ yếu Hội thảo</h3>
-        <p data-i18n="resources.proc_desc">Truy cập các bài tham luận từ các hội thảo quốc tế trước đây của VietCALL.</p>
-        <a href="https://vietcall.edu.vn" class="resource-card__link" target="_blank" rel="noopener" data-i18n="resources.access">Truy cập →</a>
+        <p data-i18n="resources.proc_desc">Tuyển tập bài tham luận từ các hội thảo quốc tế VietCALL, lưu trữ theo từng năm.</p>
+        <a href="https://vietcall.edu.vn" class="resource-link" target="_blank" rel="noopener" data-i18n="resources.access">Truy cập →</a>
       </div>
+
+      <!-- Công cụ Giảng dạy -->
       <div class="resource-card">
-        <div class="resource-card__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-        </div>
+        <div class="resource-card__icon">🛠️</div>
         <h3 data-i18n="resources.tools_title">Công cụ Giảng dạy</h3>
-        <p data-i18n="resources.tools_desc">Tài liệu và hướng dẫn thực hành cho giáo viên ngôn ngữ hiện đại.</p>
-        <span class="resource-card__link" data-i18n="resources.coming_soon" style="cursor:default;">Sắp có</span>
+        <p data-i18n="resources.tools_desc">Tài liệu và hướng dẫn thực hành dành cho giảng viên ngôn ngữ ứng dụng công nghệ trong giảng dạy.</p>
+        <a href="contact.html" class="resource-link" data-i18n="resources.access">Truy cập →</a>
       </div>
+
+      <!-- Tài nguyên Mở -->
       <div class="resource-card">
-        <div class="resource-card__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        </div>
+        <div class="resource-card__icon">🌐</div>
         <h3 data-i18n="resources.open_title">Tài nguyên Mở</h3>
-        <p data-i18n="resources.open_desc">Học liệu mở và công cụ miễn phí cho cộng đồng ngôn ngữ.</p>
-        <span class="resource-card__link" data-i18n="resources.coming_soon" style="cursor:default;">Sắp có</span>
+        <p data-i18n="resources.open_desc">Học liệu mở và công cụ miễn phí dành cho cộng đồng giáo dục ngôn ngữ.</p>
+        <a href="contact.html" class="resource-link" data-i18n="resources.access">Truy cập →</a>
       </div>
+
+    </div>
+
+    <!-- Request Card -->
+    <div class="request-card">
+      <div>
+        <h3>
+          <span class="lang-block" data-lang="vi">Không tìm thấy tài liệu bạn cần?</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Can't find what you're looking for?</span>
+        </h3>
+        <p>
+          <span class="lang-block" data-lang="vi">Liên hệ với chúng tôi để được hỗ trợ tìm kiếm tài nguyên phù hợp với nhu cầu nghiên cứu và giảng dạy của bạn.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Contact us for assistance in locating resources relevant to your research or teaching needs.</span>
+        </p>
+      </div>
+      <a href="contact.html" class="btn btn--secondary">
+        <span class="lang-block" data-lang="vi">Liên hệ →</span>
+        <span class="lang-block" data-lang="en" style="display:none;">Get in Touch →</span>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ── FEATURED PUBLICATIONS ────────────────────────────────── -->
-<section class="section bg-white animate-in">
+<!-- ── FEATURED PUBLICATIONS ──────────────────────────────────── -->
+<section style="padding:4rem 0;background:var(--white);">
   <div class="container">
-    <div class="section-header">
-      <div class="section-header__left">
-        <span class="badge" data-i18n="home.res_badge">Tài nguyên</span>
-        <h2 class="headline-lg">
-          <span class="lang-block" data-lang="vi">Ấn phẩm Nổi bật</span>
-          <span class="lang-block" data-lang="en" style="display:none;">Featured Publications</span>
-        </h2>
-      </div>
-    </div>
+    <div class="section-label" data-i18n="resources.featured_label">Ấn phẩm nổi bật</div>
+    <h2 style="font-size:clamp(1.375rem,3vw,2rem);font-weight:700;color:var(--stone-900);margin-bottom:2rem;font-family:'Playfair Display',serif;">
+      <span class="lang-block" data-lang="vi">Ấn phẩm Nổi bật</span>
+      <span class="lang-block" data-lang="en" style="display:none;">Featured Publications</span>
+    </h2>
     <div class="pub-list">
       <div class="pub-item">
         <div class="pub-item__num">1</div>
@@ -169,47 +184,51 @@
   </div>
 </section>
 
-<!-- ── AFFILIATED JOURNALS ───────────────────────────────────── -->
-<section class="section bg-stone animate-in">
+<!-- ── AFFILIATED JOURNALS ────────────────────────────────────── -->
+<section style="padding:4rem 0;background:var(--stone-50);">
   <div class="container">
-    <div class="section-header">
-      <div class="section-header__left">
-        <span class="badge" data-i18n="resources.affiliated_title">Tạp chí Liên kết</span>
-        <h2 class="headline-lg" data-i18n="resources.affiliated_title">Tạp chí Liên kết</h2>
-        <p data-i18n="resources.affiliated_sub">VietCALL hợp tác với các tạp chí quốc tế uy tín trong lĩnh vực CALL.</p>
-      </div>
-    </div>
-    <div style="display:grid;gap:1.5rem;" class="affiliated-grid">
-      <div style="background:var(--white);border:1px solid var(--stone-100);border-radius:var(--radius-2xl);padding:1.75rem;display:flex;gap:1.5rem;align-items:center;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 8px 24px rgba(0,0,0,0.06)'" onmouseout="this.style.boxShadow=''">
-        <div style="flex-shrink:0;width:3.5rem;height:3.5rem;background:rgba(50,62,105,0.08);border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.75rem;color:var(--primary);text-align:center;line-height:1.3;">IJTE&amp;E</div>
+    <div class="section-label" data-i18n="resources.affiliated_label">Tạp chí liên kết</div>
+    <h2 style="font-size:clamp(1.375rem,3vw,2rem);font-weight:700;color:var(--stone-900);margin-bottom:0.5rem;font-family:'Playfair Display',serif;" data-i18n="resources.affiliated_title">Tạp chí Liên kết</h2>
+    <p style="color:var(--stone-500);font-size:0.9375rem;margin-bottom:2rem;" data-i18n="resources.affiliated_sub">VietCALL hợp tác với các tạp chí quốc tế uy tín trong lĩnh vực CALL.</p>
+
+    <div style="display:grid;gap:1.25rem;">
+
+      <!-- IJTE&E -->
+      <div style="background:var(--white);border:1px solid var(--stone-200);border-radius:var(--radius-xl);padding:1.75rem;display:flex;gap:1.5rem;align-items:center;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
+        <div style="flex-shrink:0;width:3.5rem;height:3.5rem;background:rgba(50,62,105,0.08);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.6875rem;color:var(--primary);text-align:center;line-height:1.3;padding:0.25rem;">IJTE&amp;E</div>
         <div>
           <h4 style="font-size:1rem;font-weight:700;color:var(--primary);margin-bottom:0.25rem;font-family:'Inter',sans-serif;">International Journal of Technology in Education &amp; Elearning</h4>
           <p style="font-size:0.8125rem;color:var(--stone-500);">
-            <span class="lang-block" data-lang="vi">Tạp chí quốc tế về Công nghệ trong Giáo dục và Học trực tuyến</span>
-            <span class="lang-block" data-lang="en" style="display:none;">International peer-reviewed journal on technology in education</span>
+            <span class="lang-block" data-lang="vi">Tạp chí quốc tế bình duyệt về công nghệ trong giáo dục và học tập trực tuyến</span>
+            <span class="lang-block" data-lang="en" style="display:none;">International peer-reviewed journal on educational technology and e-learning</span>
           </p>
         </div>
       </div>
-      <div style="background:var(--white);border:1px solid var(--stone-100);border-radius:var(--radius-2xl);padding:1.75rem;display:flex;gap:1.5rem;align-items:center;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 8px 24px rgba(0,0,0,0.06)'" onmouseout="this.style.boxShadow=''">
-        <div style="flex-shrink:0;width:3.5rem;height:3.5rem;background:rgba(50,62,105,0.08);border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.75rem;color:var(--primary);text-align:center;line-height:1.3;">Asia<br>CALL</div>
+
+      <!-- AsiaCALL -->
+      <div style="background:var(--white);border:1px solid var(--stone-200);border-radius:var(--radius-xl);padding:1.75rem;display:flex;gap:1.5rem;align-items:center;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
+        <div style="flex-shrink:0;width:3.5rem;height:3.5rem;background:rgba(50,62,105,0.08);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.6875rem;color:var(--primary);text-align:center;line-height:1.3;padding:0.25rem;">Asia<br>CALL</div>
         <div>
           <h4 style="font-size:1rem;font-weight:700;color:var(--primary);margin-bottom:0.25rem;font-family:'Inter',sans-serif;">AsiaCALL Online Journal</h4>
           <p style="font-size:0.8125rem;color:var(--stone-500);">
-            <span class="lang-block" data-lang="vi">Tạp chí trực tuyến của Hiệp hội CALL Châu Á</span>
-            <span class="lang-block" data-lang="en" style="display:none;">Online journal of the Asian CALL Association</span>
+            <span class="lang-block" data-lang="vi">Tạp chí học thuật trực tuyến của Hiệp hội CALL Châu Á, chuyên về nghiên cứu CALL trong bối cảnh châu Á</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Open-access scholarly journal of the Asian CALL Association, focusing on CALL research in Asian contexts</span>
           </p>
         </div>
       </div>
-      <div style="background:var(--white);border:1px solid var(--stone-100);border-radius:var(--radius-2xl);padding:1.75rem;display:flex;gap:1.5rem;align-items:center;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 8px 24px rgba(0,0,0,0.06)'" onmouseout="this.style.boxShadow=''">
-        <div style="flex-shrink:0;width:3.5rem;height:3.5rem;background:rgba(50,62,105,0.08);border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.75rem;color:var(--primary);text-align:center;line-height:1.3;">JILC</div>
+
+      <!-- JILC -->
+      <div style="background:var(--white);border:1px solid var(--stone-200);border-radius:var(--radius-xl);padding:1.75rem;display:flex;gap:1.5rem;align-items:center;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow=''">
+        <div style="flex-shrink:0;width:3.5rem;height:3.5rem;background:rgba(50,62,105,0.08);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.6875rem;color:var(--primary);text-align:center;line-height:1.3;padding:0.25rem;">JILC</div>
         <div>
           <h4 style="font-size:1rem;font-weight:700;color:var(--primary);margin-bottom:0.25rem;font-family:'Inter',sans-serif;">Journal of Intercultural and Leveraged CALL</h4>
           <p style="font-size:0.8125rem;color:var(--stone-500);">
-            <span class="lang-block" data-lang="vi">Tạp chí về Học ngôn ngữ Giao văn hóa và CALL</span>
-            <span class="lang-block" data-lang="en" style="display:none;">Journal focused on intercultural language learning and CALL</span>
+            <span class="lang-block" data-lang="vi">Tạp chí bình duyệt về học ngôn ngữ giao văn hóa và ứng dụng công nghệ trong dạy học ngôn ngữ</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Peer-reviewed journal on intercultural language learning and technology-enhanced language teaching</span>
           </p>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -222,26 +241,43 @@
       <div>
         <span class="footer__brand">VietCALL</span>
         <p class="footer__tagline" data-i18n="footer.tagline">Thúc đẩy Học ngôn ngữ có hỗ trợ Máy tính tại Việt Nam</p>
+        <div class="footer__social-links">
+          <!-- Facebook Page -->
+          <a href="#" class="footer__social-link" target="_blank" rel="noopener" title="Facebook Page">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <!-- Facebook Group -->
+          <a href="#" class="footer__social-link" target="_blank" rel="noopener" title="Facebook Group">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </a>
+          <!-- Zalo Group -->
+          <a href="#" class="footer__social-link" target="_blank" rel="noopener" title="Zalo Group">
+            <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="currentColor" opacity="0"/><text x="12" y="16.5" text-anchor="middle" font-size="11" font-weight="700" font-family="Arial,sans-serif" fill="currentColor">Zalo</text><rect x="1" y="1" width="22" height="22" rx="5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          </a>
+          <!-- YouTube Channel -->
+          <a href="#" class="footer__social-link" target="_blank" rel="noopener" title="YouTube Channel">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+          </a>
+        </div>
       </div>
       <div>
         <p class="footer__col-title" data-i18n="footer.links">Liên kết nhanh</p>
         <nav class="footer__nav-links">
           <a href="about.html" class="footer__nav-link" data-i18n="nav.about">Giới thiệu</a>
-          <a href="committee.html" class="footer__nav-link" data-i18n="nav.committee">Ban Lãnh đạo</a>
-          <a href="conferences.html" class="footer__nav-link" data-i18n="nav.conferences">Hội thảo</a>
-          <a href="resources.html" class="footer__nav-link" data-i18n="nav.resources">Tài nguyên</a>
+          <a href="conferences.html" class="footer__nav-link" data-i18n="nav.events">Sự kiện</a>
           <a href="blog.html" class="footer__nav-link" data-i18n="nav.blog">Tin tức</a>
+          <a href="resources.html" class="footer__nav-link" data-i18n="nav.resources">Tài liệu</a>
           <a href="membership.html" class="footer__nav-link" data-i18n="nav.membership">Thành viên</a>
           <a href="contact.html" class="footer__nav-link" data-i18n="nav.contact">Liên hệ</a>
         </nav>
       </div>
       <div>
-        <p class="footer__col-title" data-i18n="footer.connect">Kết nối</p>
-        <div class="footer__social-links">
-          <a href="https://www.facebook.com/vietcall.edu.vn" class="footer__social-link" target="_blank" rel="noopener">📘 Facebook</a>
-          <a href="mailto:lanhuongnckh@gmail.com" class="footer__social-link">✉️ Email</a>
-          <a href="https://vietcall.edu.vn" class="footer__social-link" target="_blank" rel="noopener">🌐 vietcall.edu.vn</a>
-        </div>
+        <p class="footer__col-title" data-i18n="footer.newsletter">Bản tin</p>
+        <p style="font-size:0.875rem;color:rgba(255,255,255,0.6);margin-bottom:1rem;" data-i18n="footer.newsletter_desc">Cập nhật nghiên cứu và sự kiện mới nhất.</p>
+        <form style="display:flex;gap:0.5rem;" onsubmit="return false;">
+          <input type="email" placeholder="Email" style="flex:1;padding:0.625rem 0.875rem;border-radius:var(--radius-full);border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:#fff;font-size:0.875rem;font-family:inherit;" data-i18n-placeholder="footer.email_placeholder">
+          <button type="submit" class="btn btn--secondary btn--sm">→</button>
+        </form>
       </div>
     </div>
     <div class="footer__bottom">

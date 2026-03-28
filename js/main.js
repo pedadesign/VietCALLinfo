@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
         current = target;
         clearInterval(timer);
       }
-      el.textContent = Math.floor(current).toLocaleString();
+      el.textContent = Math.floor(current).toLocaleString() + (el.dataset.suffix || '');
     }, step);
   }
 

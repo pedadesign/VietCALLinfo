@@ -3,27 +3,243 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog – VietCALL</title>
+  <title>Tin tức – VietCALL</title>
   <meta name="description" content="Tin tức, nghiên cứu và bài viết từ cộng đồng VietCALL.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── Blog two-column layout ───────────────────────────── */
+    .pg-title {
+      padding: 3.5rem 0 2.5rem;
+      background: var(--stone-50);
+      border-bottom: 1px solid var(--stone-100);
+    }
+    .pg-title__h {
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      font-family: 'Playfair Display', serif;
+    }
+    .pg-title__sub {
+      font-size: 1.0625rem;
+      color: var(--stone-500);
+    }
+
+    .blog-section {
+      padding: 3rem 0 4rem;
+      background: #fff;
+    }
+    .blog-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    @media (min-width: 1024px) {
+      .blog-layout {
+        grid-template-columns: 1fr 320px;
+        align-items: start;
+      }
+    }
+
+    /* ── Blog list items ─────────────────────────────────── */
+    .blog-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .blog-list-item {
+      display: flex;
+      gap: 1.25rem;
+      background: var(--stone-50);
+      border: 1px solid var(--stone-100);
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .blog-list-item:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      border-color: var(--secondary);
+    }
+    .blog-list-item__img {
+      flex-shrink: 0;
+      width: 120px;
+      min-height: 110px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--tertiary) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      overflow: hidden;
+      position: relative;
+    }
+    .blog-list-item__img img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @media (min-width: 600px) {
+      .blog-list-item__img { width: 160px; }
+    }
+    .blog-list-item__body {
+      flex: 1;
+      padding: 1rem 1.25rem 1rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .blog-list-item__cat {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--secondary);
+      background: rgba(var(--secondary-rgb, 210,135,60), 0.08);
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      display: inline-block;
+      width: fit-content;
+    }
+    .blog-list-item__title {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.4;
+      margin-top: 0.25rem;
+    }
+    .blog-list-item:hover .blog-list-item__title {
+      color: var(--secondary);
+    }
+    .blog-list-item__excerpt {
+      font-size: 0.8125rem;
+      color: var(--stone-500);
+      line-height: 1.55;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .blog-list-item__meta {
+      font-size: 0.75rem;
+      color: var(--stone-400);
+      margin-top: auto;
+      padding-top: 0.5rem;
+    }
+
+    /* ── Sidebar ─────────────────────────────────────────── */
+    .blog-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      position: sticky;
+      top: 5rem;
+    }
+    .sidebar-block {
+      background: var(--stone-50);
+      border: 1px solid var(--stone-100);
+      border-radius: var(--radius-2xl);
+      padding: 1.25rem;
+    }
+    .sidebar-block__title {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.875rem;
+    }
+    .sidebar-search {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #fff;
+      border: 1px solid var(--stone-200);
+      border-radius: var(--radius-full);
+      padding: 0.5rem 0.875rem;
+    }
+    .sidebar-search input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 0.875rem;
+      background: transparent;
+      font-family: inherit;
+      color: var(--stone-700);
+    }
+    .cat-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .cat-chip {
+      padding: 0.3125rem 0.875rem;
+      border-radius: 999px;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      border: 1px solid var(--stone-200);
+      background: #fff;
+      color: var(--stone-600);
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .cat-chip.active,
+    .cat-chip:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+    .sidebar-newsletter {
+      background: var(--primary);
+      color: #fff;
+      border-radius: var(--radius-2xl);
+      padding: 1.5rem;
+    }
+    .sidebar-newsletter h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .sidebar-newsletter p {
+      font-size: 0.8125rem;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 1rem;
+      line-height: 1.55;
+    }
+    .sidebar-newsletter-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .sidebar-newsletter-form input {
+      padding: 0.625rem 0.875rem;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      font-size: 0.875rem;
+      font-family: inherit;
+    }
+    .sidebar-newsletter-form input::placeholder {
+      color: rgba(255,255,255,0.5);
+    }
+  </style>
 </head>
 <body>
 
 <nav class="navbar" role="navigation">
   <div class="navbar__inner">
     <a href="index.html" class="navbar__brand">
-      <div class="navbar__logo-circle"><span>V</span></div>
-      <span class="navbar__name">VietCALL</span>
+      <img src="assets/brand/VietC@LL-Logo-Transparent.png" alt="VietCALL" class="navbar__logo-img">
     </a>
     <ul class="navbar__links">
       <li><a href="about.html" class="navbar__link" data-i18n="nav.about">Giới thiệu</a></li>
-      <li><a href="committee.html" class="navbar__link" data-i18n="nav.committee">Ban Lãnh đạo</a></li>
-      <li><a href="conferences.html" class="navbar__link" data-i18n="nav.conferences">Hội thảo</a></li>
-      <li><a href="resources.html" class="navbar__link" data-i18n="nav.resources">Tài nguyên</a></li>
+      <li><a href="conferences.html" class="navbar__link" data-i18n="nav.events">Sự kiện</a></li>
       <li><a href="blog.html" class="navbar__link navbar__link--active" data-i18n="nav.blog">Tin tức</a></li>
+      <li><a href="resources.html" class="navbar__link" data-i18n="nav.resources">Tài liệu</a></li>
       <li><a href="membership.html" class="navbar__link" data-i18n="nav.membership">Thành viên</a></li>
       <li><a href="contact.html" class="navbar__link" data-i18n="nav.contact">Liên hệ</a></li>
     </ul>
@@ -47,10 +263,9 @@
 </nav>
 <div class="navbar__mobile" id="mobileMenu">
   <a href="about.html" data-i18n="nav.about">Giới thiệu</a>
-  <a href="committee.html" data-i18n="nav.committee">Ban Lãnh đạo</a>
-  <a href="conferences.html" data-i18n="nav.conferences">Hội thảo</a>
-  <a href="resources.html" data-i18n="nav.resources">Tài nguyên</a>
+  <a href="conferences.html" data-i18n="nav.events">Sự kiện</a>
   <a href="blog.html" data-i18n="nav.blog">Tin tức</a>
+  <a href="resources.html" data-i18n="nav.resources">Tài liệu</a>
   <a href="membership.html" data-i18n="nav.membership">Thành viên</a>
   <a href="contact.html" data-i18n="nav.contact">Liên hệ</a>
   <div class="mobile-cta"><a href="membership.html" class="btn btn--primary" style="width:100%;justify-content:center;" data-i18n="nav.join">Tham gia ngay</a></div>
@@ -60,226 +275,185 @@
   </div>
 </div>
 
-<main class="page-top">
+<div class="page-top">
 
-<header class="page-hero animate-in">
+<div class="pg-title">
   <div class="container">
-    <span class="badge" data-i18n="blog.badge">Tin tức &amp; Nghiên cứu</span>
-    <h1 class="display-lg" data-i18n="blog.title">Blog VietCALL</h1>
-    <p data-i18n="blog.sub">Cập nhật những tin tức mới nhất, kết quả nghiên cứu và bài viết từ cộng đồng VietCALL.</p>
+    <h1 class="pg-title__h" data-i18n="blog.title">Blog VietCALL</h1>
+    <p class="pg-title__sub" data-i18n="blog.sub">Cập nhật nghiên cứu mới nhất, tin tức sự kiện và bài viết chuyên môn từ cộng đồng VietCALL.</p>
   </div>
-</header>
+</div>
 
-<!-- ── FEATURED POST ─────────────────────────────────────────── -->
-<section class="section bg-white animate-in">
+<section class="blog-section">
   <div class="container">
-    <!-- Featured large card -->
-    <div style="background:var(--white);border:1px solid var(--stone-100);border-radius:var(--radius-3xl);overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.05);margin-bottom:3rem;">
-      <div style="display:grid;" class="featured-post-grid">
-        <div style="aspect-ratio:16/9;overflow:hidden;">
-          <img src="https://picsum.photos/seed/blog-ai-featured/1200/675" alt="AI in Vietnamese Classrooms"
-               style="width:100%;height:100%;object-fit:cover;" loading="eager">
-        </div>
-        <div style="padding:2.5rem;">
-          <span style="display:inline-block;font-size:0.6875rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--secondary);margin-bottom:1rem;" data-i18n="blog.cat_research">Nghiên cứu</span>
-          <h2 style="font-size:clamp(1.5rem,3vw,2rem);font-weight:700;color:var(--primary);margin-bottom:1rem;line-height:1.3;">
-            <span class="lang-block" data-lang="vi">Tương lai của AI trong lớp học Việt Nam</span>
-            <span class="lang-block" data-lang="en" style="display:none;">The Future of AI in Vietnamese Classrooms</span>
-          </h2>
-          <p style="color:var(--stone-600);line-height:1.75;margin-bottom:1.5rem;">
-            <span class="lang-block" data-lang="vi">Khám phá cách AI tạo sinh đang định hình lại việc học tiếng Việt như ngôn ngữ thứ hai. Các công cụ AI hiện đang được sử dụng để tạo lộ trình học tập cá nhân hóa, cung cấp phản hồi tức thì về phát âm, ngữ pháp và phong cách viết.</span>
-            <span class="lang-block" data-lang="en" style="display:none;">Exploring how generative AI is reshaping the way students learn Vietnamese as a second language. AI tools are now being used to create personalized learning paths, providing students with instant feedback on their pronunciation, grammar, and writing style.</span>
-          </p>
-          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
-            <div style="display:flex;align-items:center;gap:0.75rem;">
-              <div style="width:2.5rem;height:2.5rem;border-radius:50%;background:var(--stone-200);overflow:hidden;">
-                <img src="https://i.pravatar.cc/150?u=author1" alt="" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
-              </div>
-              <div>
-                <p style="font-size:0.875rem;font-weight:600;color:var(--tertiary);">TS. Nguyễn Văn A</p>
-                <p style="font-size:0.75rem;color:var(--stone-400);">15/03/2026</p>
-              </div>
-            </div>
-            <a href="#" class="btn btn--primary btn--sm" data-i18n="blog.read_more">Đọc tiếp →</a>
+    <div class="blog-layout">
+
+      <!-- ── Left: post list ── -->
+      <div class="blog-list">
+
+
+
+        <a href="posts/blog-webinar-technology-standards-for-efl-teachers-global-insights-and-local-implications.html" class="blog-list-item" data-cat="tin-tuc">
+          <div class="blog-list-item__img">
+            <img src="posts/blog-webinar-technology-standards-for-efl-teachers-global-insights-and-local-implications.jpg" alt="Webinar: Tiêu chuẩn công nghệ cho giáo viên EFL" loading="lazy" onerror="this.style.display='none'">
+            💻
+          </div>
+          <div class="blog-list-item__body">
+            <span class="blog-list-item__cat">Tin tức</span>
+            <div class="blog-list-item__title">Webinar: Tiêu chuẩn công nghệ cho giáo viên EFL – Góc nhìn toàn cầu và hàm ý địa phương</div>
+            <div class="blog-list-item__excerpt">Khám phá các tiêu chuẩn công nghệ dành cho giáo viên tiếng Anh và những hàm ý quan trọng đối với bối cảnh Việt Nam.</div>
+            <div class="blog-list-item__meta">10/11/2025 · VietCALL</div>
+          </div>
+        </a>
+
+        <a href="posts/blog-vietcall-international-convention-2025-empowering-language-education-in-the-age-of-ai.html" class="blog-list-item" data-cat="hoi-thao">
+          <div class="blog-list-item__img">
+            <img src="posts/blog-vietcall-international-convention-2025-empowering-language-education-in-the-age-of-ai.jpg" alt="VietCALL 2025 – Trao quyền cho giáo dục ngôn ngữ trong kỷ nguyên AI" loading="lazy" onerror="this.style.display='none'">
+            🎓
+          </div>
+          <div class="blog-list-item__body">
+            <span class="blog-list-item__cat">Hội thảo</span>
+            <div class="blog-list-item__title">VietCALL 2025 – Trao quyền cho giáo dục ngôn ngữ trong kỷ nguyên AI</div>
+            <div class="blog-list-item__excerpt">Hội nghị quốc tế VietCALL 2025 tập trung vào việc ứng dụng AI trong giáo dục ngôn ngữ và những cơ hội mới cho giáo viên.</div>
+            <div class="blog-list-item__meta">22/10/2025 · Ban Tổ chức VietCALL 2025</div>
+          </div>
+        </a>
+
+
+        <a href="posts/blog-webinar-series-gamification-opportunities-and-challenges-in-language-education-by-dr-deborah-healey.html" class="blog-list-item" data-cat="webinar">
+          <div class="blog-list-item__img">
+            <img src="posts/blog-webinar-series-gamification-opportunities-and-challenges-in-language-education-by-dr-deborah-healey.jpg" alt="Webinar: Gamification trong giáo dục ngôn ngữ" loading="lazy" onerror="this.style.display='none'">
+            🎮
+          </div>
+          <div class="blog-list-item__body">
+            <span class="blog-list-item__cat">Webinar</span>
+            <div class="blog-list-item__title">Webinar: Gamification – Cơ hội và thách thức trong giáo dục ngôn ngữ (Dr. Deborah Healey)</div>
+            <div class="blog-list-item__excerpt">TS. Deborah Healey chia sẻ về cơ hội và thách thức khi áp dụng gamification trong dạy học ngôn ngữ.</div>
+            <div class="blog-list-item__meta">09/09/2025 · Dr. Deborah Healey</div>
+          </div>
+        </a>
+
+        <a href="posts/blog-webinar-the-basics-of-mobile-language-learning-foundations-and-opportunities.html" class="blog-list-item" data-cat="webinar">
+          <div class="blog-list-item__img">
+            <img src="posts/blog-webinar-the-basics-of-mobile-language-learning-foundations-and-opportunities.jpg" alt="Webinar: Học ngôn ngữ trên di động" loading="lazy" onerror="this.style.display='none'">
+            📱
+          </div>
+          <div class="blog-list-item__body">
+            <span class="blog-list-item__cat">Webinar</span>
+            <div class="blog-list-item__title">Webinar: Cơ bản về học ngôn ngữ trên thiết bị di động – Nền tảng và cơ hội</div>
+            <div class="blog-list-item__excerpt">Tổng quan về học ngôn ngữ qua di động (MALL): nền tảng lý thuyết và các cơ hội ứng dụng thực tiễn.</div>
+            <div class="blog-list-item__meta">02/08/2025 · VietCALL</div>
+          </div>
+        </a>
+
+        <a href="posts/blog-exciting-webinar-series-with-nicholas-peachey-empowering-teachers-through-ai-in-english-language-teaching.html" class="blog-list-item" data-cat="webinar">
+          <div class="blog-list-item__img">
+            <img src="posts/blog-exciting-webinar-series-with-nicholas-peachey-empowering-teachers-through-ai-in-english-language-teaching.jpg" alt="Webinar: AI trong dạy học tiếng Anh với Nicholas Peachey" loading="lazy" onerror="this.style.display='none'">
+            🤖
+          </div>
+          <div class="blog-list-item__body">
+            <span class="blog-list-item__cat">Webinar</span>
+            <div class="blog-list-item__title">Webinar: Trao quyền cho giáo viên qua AI trong dạy học tiếng Anh – Nicholas Peachey</div>
+            <div class="blog-list-item__excerpt">Nicholas Peachey hướng dẫn giáo viên tiếng Anh cách khai thác AI để nâng cao hiệu quả giảng dạy.</div>
+            <div class="blog-list-item__meta">06/05/2025 · Nicholas Peachey</div>
+          </div>
+        </a>
+
+
+
+
+
+
+
+
+        <a href="posts/blog-embracing-ai-in-english-language-teaching.html" class="blog-list-item" data-cat="workshop">
+          <div class="blog-list-item__img">
+            <img src="posts/blog-embracing-ai-in-english-language-teaching.jpg" alt="Ứng dụng AI trong dạy học tiếng Anh" loading="lazy" onerror="this.style.display='none'">
+            🧠
+          </div>
+          <div class="blog-list-item__body">
+            <span class="blog-list-item__cat">Workshop</span>
+            <div class="blog-list-item__title">Ứng dụng AI trong dạy học tiếng Anh</div>
+            <div class="blog-list-item__excerpt">Workshop thực hành về cách giáo viên tiếng Anh có thể tích hợp AI vào lớp học một cách hiệu quả.</div>
+            <div class="blog-list-item__meta">01/08/2024 · VietCALL</div>
+          </div>
+        </a>
+
+
+
+
+
+
+
+        <a href="posts/blog-vietcall-navigating-the-frontiers-of-language-education-in-the-ai-era.html" class="blog-list-item" data-cat="all">
+          <div class="blog-list-item__img">
+            <img src="posts/blog-vietcall-navigating-the-frontiers-of-language-education-in-the-ai-era.jpg" alt="VietCALL: Dẫn đầu trong kỷ nguyên AI" loading="lazy" onerror="this.style.display='none'">
+            🚀
+          </div>
+          <div class="blog-list-item__body">
+            <span class="blog-list-item__cat">Bài viết</span>
+            <div class="blog-list-item__title">VietCALL: Dẫn đầu các xu hướng giáo dục ngôn ngữ trong kỷ nguyên AI</div>
+            <div class="blog-list-item__excerpt">Bài viết giới thiệu tầm nhìn và sứ mệnh của VietCALL trong việc tiên phong ứng dụng AI vào giáo dục ngôn ngữ tại Việt Nam.</div>
+            <div class="blog-list-item__meta">01/01/2024 · VietCALL</div>
+          </div>
+        </a>
+
+      </div><!-- /.blog-list -->
+
+      <!-- ── Right: sidebar ── -->
+      <aside class="blog-sidebar">
+        <!-- Search -->
+        <div class="sidebar-block">
+          <div class="sidebar-block__title">🔍 Tìm kiếm</div>
+          <div class="sidebar-search">
+            <span style="color:var(--stone-400);">🔍</span>
+            <input type="search" placeholder="Tìm bài viết..." id="blogSearch">
           </div>
         </div>
-      </div>
-    </div>
-
-    <!-- Blog grid -->
-    <div class="section-header">
-      <div class="section-header__left">
-        <h2 class="headline-md" style="color:var(--primary);">
-          <span class="lang-block" data-lang="vi">Bài viết mới nhất</span>
-          <span class="lang-block" data-lang="en" style="display:none;">Latest Articles</span>
-        </h2>
-      </div>
-    </div>
-
-    <div class="blog-grid">
-
-      <div class="blog-card animate-in">
-        <div class="blog-card__image">
-          <img src="https://picsum.photos/seed/blog-conf2025/800/450" alt="VietCALL 2025 Highlights" loading="lazy">
-        </div>
-        <div class="blog-card__body">
-          <span class="blog-card__cat" data-i18n="blog.cat_events">Sự kiện</span>
-          <h3>
-            <span class="lang-block" data-lang="vi">VietCALL 2025: Những điểm nổi bật</span>
-            <span class="lang-block" data-lang="en" style="display:none;">VietCALL 2025 Highlights: A Success Story</span>
-          </h3>
-          <p>
-            <span class="lang-block" data-lang="vi">Nhìn lại những phiên thảo luận và diễn giả ấn tượng nhất từ hội thảo thường niên của chúng tôi năm 2025 tại TP. Hồ Chí Minh.</span>
-            <span class="lang-block" data-lang="en" style="display:none;">A look back at the most impactful sessions and speakers from our 2025 annual conference in Ho Chi Minh City.</span>
-          </p>
-          <div class="blog-card__footer">
-            <span class="blog-card__author">
-              <span class="lang-block" data-lang="vi">Ban Biên tập VietCALL</span>
-              <span class="lang-block" data-lang="en" style="display:none;">VietCALL Team</span>
-            </span>
-            <span class="blog-card__date">05/12/2025</span>
+        <!-- Categories -->
+        <div class="sidebar-block">
+          <div class="sidebar-block__title">🏷️ Chuyên mục</div>
+          <div class="cat-chips">
+            <button class="cat-chip active" data-cat="all">Tất cả</button>
+            <button class="cat-chip" data-cat="hoi-thao">Hội thảo</button>
+            <button class="cat-chip" data-cat="webinar">Webinar</button>
+            <button class="cat-chip" data-cat="hop-tac">Hợp tác</button>
+            <button class="cat-chip" data-cat="workshop">Workshop</button>
+            <button class="cat-chip" data-cat="tin-tuc">Tin tức</button>
+            <button class="cat-chip" data-cat="cong-nghe">Công nghệ</button>
           </div>
         </div>
-      </div>
-
-      <div class="blog-card animate-in" style="transition-delay:0.05s">
-        <div class="blog-card__image">
-          <img src="https://picsum.photos/seed/blog-grant2026/800/450" alt="Research Grant 2026" loading="lazy">
+        <!-- Newsletter -->
+        <div class="sidebar-newsletter">
+          <h4 data-i18n="blog.newsletter_title">Đăng ký Bản tin VietCALL</h4>
+          <p data-i18n="blog.newsletter_desc">Nhận thông tin về nghiên cứu, sự kiện và hoạt động mới nhất của VietCALL.</p>
+          <form class="sidebar-newsletter-form" onsubmit="return false;">
+            <input type="email" data-i18n-placeholder="blog.newsletter_placeholder" placeholder="Địa chỉ email của bạn">
+            <button type="submit" class="btn btn--secondary btn--sm" data-i18n="blog.newsletter_btn">Đăng ký</button>
+          </form>
         </div>
-        <div class="blog-card__body">
-          <span class="blog-card__cat" data-i18n="blog.cat_news">Tin tức</span>
-          <h3>
-            <span class="lang-block" data-lang="vi">Thông báo học bổng nghiên cứu VietCALL 2026</span>
-            <span class="lang-block" data-lang="en" style="display:none;">New Research Grant Announced for 2026</span>
-          </h3>
-          <p>
-            <span class="lang-block" data-lang="vi">VietCALL tự hào thông báo cơ hội tài trợ mới dành cho các nhà nghiên cứu trẻ trong lĩnh vực CALL tại Việt Nam.</span>
-            <span class="lang-block" data-lang="en" style="display:none;">VietCALL is proud to announce a new funding opportunity for early-career researchers in the field of CALL.</span>
+        <!-- Join CTA -->
+        <div class="sidebar-block" style="background:var(--stone-900);border-color:transparent;">
+          <p style="font-size:0.875rem;font-weight:700;color:#fff;margin-bottom:0.375rem;">
+            <span class="lang-block" data-lang="vi">Tham gia VietCALL</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Join VietCALL</span>
           </p>
-          <div class="blog-card__footer">
-            <span class="blog-card__author">
-              <span class="lang-block" data-lang="vi">Ban Tài trợ</span>
-              <span class="lang-block" data-lang="en" style="display:none;">Grant Committee</span>
-            </span>
-            <span class="blog-card__date">10/02/2026</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="blog-card animate-in" style="transition-delay:0.1s">
-        <div class="blog-card__image">
-          <img src="https://picsum.photos/seed/blog-gamify/800/450" alt="Gamification" loading="lazy">
-        </div>
-        <div class="blog-card__body">
-          <span class="blog-card__cat" data-i18n="blog.cat_pedagogy">Sư phạm</span>
-          <h3>
-            <span class="lang-block" data-lang="vi">Vai trò của trò chơi hóa trong học ngôn ngữ</span>
-            <span class="lang-block" data-lang="en" style="display:none;">The Role of Gamification in Language Learning</span>
-          </h3>
-          <p>
-            <span class="lang-block" data-lang="vi">Cách các yếu tố trò chơi đang tăng cường sự gắn kết của học sinh trong các khóa học tiếng Việt và tiếng Anh.</span>
-            <span class="lang-block" data-lang="en" style="display:none;">How game-based elements are increasing student engagement in Vietnamese and English language courses.</span>
+          <p style="font-size:0.8125rem;color:rgba(255,255,255,0.6);margin-bottom:1rem;">
+            <span class="lang-block" data-lang="vi">Cộng đồng nghiên cứu CALL hàng đầu tại Việt Nam.</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Vietnam's leading CALL research community.</span>
           </p>
-          <div class="blog-card__footer">
-            <span class="blog-card__author">TS. Lê Thị D</span>
-            <span class="blog-card__date">20/01/2026</span>
-          </div>
+          <a href="membership.html" class="btn btn--secondary btn--sm" style="width:100%;justify-content:center;">
+            <span class="lang-block" data-lang="vi">Tham gia ngay →</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Join Now →</span>
+          </a>
         </div>
-      </div>
+      </aside>
 
-      <div class="blog-card animate-in" style="transition-delay:0.15s">
-        <div class="blog-card__image">
-          <img src="https://picsum.photos/seed/blog-vr/800/450" alt="VR in Language Learning" loading="lazy">
-        </div>
-        <div class="blog-card__body">
-          <span class="blog-card__cat" data-i18n="blog.cat_events">Sự kiện</span>
-          <h3>
-            <span class="lang-block" data-lang="vi">Webinar VietCALL: Tích hợp VR vào lớp học</span>
-            <span class="lang-block" data-lang="en" style="display:none;">VietCALL Webinar: Integrating VR in the Classroom</span>
-          </h3>
-          <p>
-            <span class="lang-block" data-lang="vi">Tóm tắt hội thảo trực tuyến của chúng tôi về tiềm năng của Thực tế Ảo trong các trải nghiệm ngôn ngữ nhập vai.</span>
-            <span class="lang-block" data-lang="en" style="display:none;">A summary of our recent webinar on the potential of Virtual Reality for immersive language experiences.</span>
-          </p>
-          <div class="blog-card__footer">
-            <span class="blog-card__author">
-              <span class="lang-block" data-lang="vi">Ban Kỹ thuật</span>
-              <span class="lang-block" data-lang="en" style="display:none;">Tech Committee</span>
-            </span>
-            <span class="blog-card__date">12/08/2025</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="blog-card animate-in" style="transition-delay:0.2s">
-        <div class="blog-card__image">
-          <img src="https://picsum.photos/seed/blog-mobile/800/450" alt="Mobile Learning" loading="lazy">
-        </div>
-        <div class="blog-card__body">
-          <span class="blog-card__cat" data-i18n="blog.cat_research">Nghiên cứu</span>
-          <h3>
-            <span class="lang-block" data-lang="vi">Cơ bản về học ngôn ngữ di động (MALL)</span>
-            <span class="lang-block" data-lang="en" style="display:none;">The Basics of Mobile Language Learning (MALL)</span>
-          </h3>
-          <p>
-            <span class="lang-block" data-lang="vi">Giới thiệu về Học ngôn ngữ hỗ trợ Di động, bao gồm nền tảng lý thuyết và các cơ hội thực tiễn trong giảng dạy.</span>
-            <span class="lang-block" data-lang="en" style="display:none;">An introduction to Mobile-Assisted Language Learning, covering its foundations and practical opportunities in teaching.</span>
-          </p>
-          <div class="blog-card__footer">
-            <span class="blog-card__author">
-              <span class="lang-block" data-lang="vi">Nhóm nghiên cứu VietCALL</span>
-              <span class="lang-block" data-lang="en" style="display:none;">VietCALL Research Team</span>
-            </span>
-            <span class="blog-card__date">10/05/2024</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="blog-card animate-in" style="transition-delay:0.25s">
-        <div class="blog-card__image">
-          <img src="https://picsum.photos/seed/blog-techstandards/800/450" alt="Technology Standards" loading="lazy">
-        </div>
-        <div class="blog-card__body">
-          <span class="blog-card__cat" data-i18n="blog.cat_research">Nghiên cứu</span>
-          <h3>
-            <span class="lang-block" data-lang="vi">Tiêu chuẩn Công nghệ cho Giáo viên EFL: Góc nhìn Toàn cầu</span>
-            <span class="lang-block" data-lang="en" style="display:none;">Technology Standards for EFL Teachers: Global Insights</span>
-          </h3>
-          <p>
-            <span class="lang-block" data-lang="vi">Phân tích các tiêu chuẩn công nghệ cho giáo viên EFL từ góc nhìn quốc tế và hàm ý địa phương đối với giáo viên Việt Nam.</span>
-            <span class="lang-block" data-lang="en" style="display:none;">Analysis of technology standards for EFL teachers from an international perspective and local implications for Vietnamese educators.</span>
-          </p>
-          <div class="blog-card__footer">
-            <span class="blog-card__author">
-              <span class="lang-block" data-lang="vi">Hội đồng chuyên gia</span>
-              <span class="lang-block" data-lang="en" style="display:none;">Expert Panel</span>
-            </span>
-            <span class="blog-card__date">20/03/2024</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
+    </div><!-- /.blog-layout -->
+  </div><!-- /.container -->
 </section>
 
-<!-- ── NEWSLETTER ────────────────────────────────────────────── -->
-<section class="section bg-primary animate-in">
-  <div class="container">
-    <div class="cta-section">
-      <span class="badge" style="background:rgba(255,255,255,0.15);color:#fff;" data-i18n="blog.newsletter_title">Nhận tin tức VietCALL</span>
-      <h2 class="headline-lg mt-4" style="color:#fff;" data-i18n="blog.newsletter_title">Nhận tin tức VietCALL</h2>
-      <p style="color:rgba(255,255,255,0.7);" data-i18n="blog.newsletter_desc">Đăng ký nhận bản tin để cập nhật nghiên cứu và sự kiện mới nhất.</p>
-      <div style="display:flex;gap:0.75rem;max-width:32rem;margin:0 auto;flex-wrap:wrap;justify-content:center;">
-        <input type="email" class="form-control" style="flex:1;min-width:16rem;border-color:rgba(255,255,255,0.2);background:rgba(255,255,255,0.1);color:#fff;"
-               data-i18n-placeholder="blog.newsletter_placeholder" placeholder="Địa chỉ email của bạn">
-        <button class="btn btn--secondary" data-i18n="blog.newsletter_btn">Đăng ký</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-</main>
+</div><!-- /.page-top -->
 
 <footer class="footer">
   <div class="container">
@@ -287,26 +461,43 @@
       <div>
         <span class="footer__brand">VietCALL</span>
         <p class="footer__tagline" data-i18n="footer.tagline">Thúc đẩy Học ngôn ngữ có hỗ trợ Máy tính tại Việt Nam</p>
+        <div class="footer__social-links">
+          <!-- Facebook Page -->
+          <a href="#" class="footer__social-link" target="_blank" rel="noopener" title="Facebook Page">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <!-- Facebook Group -->
+          <a href="#" class="footer__social-link" target="_blank" rel="noopener" title="Facebook Group">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </a>
+          <!-- Zalo Group -->
+          <a href="#" class="footer__social-link" target="_blank" rel="noopener" title="Zalo Group">
+            <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="currentColor" opacity="0"/><text x="12" y="16.5" text-anchor="middle" font-size="11" font-weight="700" font-family="Arial,sans-serif" fill="currentColor">Zalo</text><rect x="1" y="1" width="22" height="22" rx="5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          </a>
+          <!-- YouTube Channel -->
+          <a href="#" class="footer__social-link" target="_blank" rel="noopener" title="YouTube Channel">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+          </a>
+        </div>
       </div>
       <div>
         <p class="footer__col-title" data-i18n="footer.links">Liên kết nhanh</p>
         <nav class="footer__nav-links">
           <a href="about.html" class="footer__nav-link" data-i18n="nav.about">Giới thiệu</a>
-          <a href="committee.html" class="footer__nav-link" data-i18n="nav.committee">Ban Lãnh đạo</a>
-          <a href="conferences.html" class="footer__nav-link" data-i18n="nav.conferences">Hội thảo</a>
-          <a href="resources.html" class="footer__nav-link" data-i18n="nav.resources">Tài nguyên</a>
+          <a href="conferences.html" class="footer__nav-link" data-i18n="nav.events">Sự kiện</a>
           <a href="blog.html" class="footer__nav-link" data-i18n="nav.blog">Tin tức</a>
+          <a href="resources.html" class="footer__nav-link" data-i18n="nav.resources">Tài liệu</a>
           <a href="membership.html" class="footer__nav-link" data-i18n="nav.membership">Thành viên</a>
           <a href="contact.html" class="footer__nav-link" data-i18n="nav.contact">Liên hệ</a>
         </nav>
       </div>
       <div>
-        <p class="footer__col-title" data-i18n="footer.connect">Kết nối</p>
-        <div class="footer__social-links">
-          <a href="https://www.facebook.com/vietcall.edu.vn" class="footer__social-link" target="_blank" rel="noopener">📘 Facebook</a>
-          <a href="mailto:lanhuongnckh@gmail.com" class="footer__social-link">✉️ Email</a>
-          <a href="https://vietcall.edu.vn" class="footer__social-link" target="_blank" rel="noopener">🌐 vietcall.edu.vn</a>
-        </div>
+        <p class="footer__col-title" data-i18n="footer.newsletter">Bản tin</p>
+        <p style="font-size:0.875rem;color:rgba(255,255,255,0.6);margin-bottom:1rem;" data-i18n="footer.newsletter_desc">Cập nhật nghiên cứu và sự kiện mới nhất.</p>
+        <form style="display:flex;gap:0.5rem;" onsubmit="return false;">
+          <input type="email" placeholder="Email" style="flex:1;padding:0.625rem 0.875rem;border-radius:var(--radius-full);border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:#fff;font-size:0.875rem;font-family:inherit;">
+          <button type="submit" class="btn btn--secondary btn--sm">→</button>
+        </form>
       </div>
     </div>
     <div class="footer__bottom">
@@ -319,17 +510,36 @@
   </div>
 </footer>
 
-<style>
-  @media (min-width: 768px) {
-    .featured-post-grid { grid-template-columns: 1fr 1fr; }
-  }
-  @media (min-width: 1024px) {
-    .affiliated-grid { grid-template-columns: 1fr 1fr 1fr; }
-  }
-  input::placeholder { color: rgba(255,255,255,0.5); }
-</style>
-
 <script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
+<script>
+(function(){
+  const searchInput = document.getElementById('blogSearch');
+  const chips = document.querySelectorAll('.cat-chip');
+  const items = document.querySelectorAll('.blog-list-item');
+
+  function filter() {
+    const q = searchInput ? searchInput.value.toLowerCase() : '';
+    const activeChip = document.querySelector('.cat-chip.active');
+    const cat = activeChip ? activeChip.dataset.cat : 'all';
+    items.forEach(function(item) {
+      const title = (item.querySelector('.blog-list-item__title') || {}).textContent || '';
+      const itemCat = (item.dataset.cat || '').toLowerCase();
+      const matchQ = !q || title.toLowerCase().includes(q);
+      const matchCat = cat === 'all' || itemCat === cat;
+      item.style.display = (matchQ && matchCat) ? '' : 'none';
+    });
+  }
+
+  if (searchInput) searchInput.addEventListener('input', filter);
+  chips.forEach(function(chip) {
+    chip.addEventListener('click', function() {
+      chips.forEach(function(c){ c.classList.remove('active'); });
+      chip.classList.add('active');
+      filter();
+    });
+  });
+})();
+</script>
 </body>
 </html>
