@@ -1115,13 +1115,151 @@ textarea.form-control { resize: vertical; min-height: 8rem; }
 }
 
 /* ── CTA section ────────────────────────────────────────────── */
-.cta-section {
-  text-align: center;
-  padding: 5rem 0;
+@keyframes ctaRipple {
+  0%   { box-shadow: 0 0 0 0 rgba(187,4,0,0.5); }
+  70%  { box-shadow: 0 0 0 14px rgba(187,4,0,0); }
+  100% { box-shadow: 0 0 0 0 rgba(187,4,0,0); }
 }
-.cta-section h2 { color: var(--primary); margin-bottom: 1rem; }
-.cta-section p { color: var(--stone-500); font-size: 1.0625rem; margin-bottom: 2rem; max-width: 38rem; margin-left: auto; margin-right: auto; }
-.cta-section .btn-group { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+@keyframes chipFloat {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-3px); }
+}
+
+.cta-section-wrap {
+  position: relative;
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #1a245e 0%, #2d3a8c 45%, #7a1200 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+  overflow: hidden;
+}
+.cta-section-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+.cta-deco {
+  position: absolute;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: rgba(255,255,255,0.04);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.cta-deco--tl { top: -1rem; left: 2rem;  font-size: clamp(8rem,18vw,16rem); }
+.cta-deco--br { bottom: -2rem; right: 2rem; font-size: clamp(6rem,12vw,11rem); font-style: italic; }
+
+.cta-section {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+}
+.cta-section .badge {
+  background: rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.9);
+  border: 1px solid rgba(255,255,255,0.2);
+  letter-spacing: 0.12em;
+  margin-bottom: 1.5rem;
+}
+.cta-section h2 {
+  font-size: clamp(2rem,5vw,3.25rem);
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+.cta-section h2 em {
+  font-style: italic;
+  color: #ff6b5b;
+}
+.cta-section > p {
+  color: rgba(255,255,255,0.72);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  margin-bottom: 2rem;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Social proof row */
+.cta-proof {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.875rem;
+  margin-bottom: 2rem;
+}
+.cta-proof__avatars {
+  display: flex;
+}
+.cta-proof__avatars .avatar {
+  width: 2.5rem; height: 2.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.5);
+  margin-left: -0.5rem;
+}
+.cta-proof__avatars .avatar:first-child { margin-left: 0; }
+.cta-proof__avatars .avatar img { width:100%; height:100%; object-fit:cover; }
+.cta-proof__text strong {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #fff;
+}
+.cta-proof__text span {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.55);
+}
+
+/* Benefit chips */
+.cta-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  justify-content: center;
+  margin-bottom: 2.25rem;
+}
+.cta-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-full);
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.88);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  animation: chipFloat 4s ease-in-out infinite;
+}
+.cta-chip:nth-child(2) { animation-delay: 0.6s; }
+.cta-chip:nth-child(3) { animation-delay: 1.2s; }
+
+/* Buttons */
+.cta-section .btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+.cta-section .btn--secondary {
+  animation: ctaRipple 2.4s ease-out infinite;
+  font-size: 1rem;
+  padding: 0.875rem 2rem;
+}
+.cta-section .btn--outline-ghost {
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.875rem 2rem;
+}
 
 /* ── Footer ─────────────────────────────────────────────────── */
 .footer {
