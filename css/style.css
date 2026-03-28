@@ -1382,7 +1382,7 @@ textarea.form-control { resize: vertical; min-height: 8rem; }
 .pg-title__h {
   font-size: clamp(2rem, 5vw, 3.25rem);
   font-weight: 700;
-  color: var(--stone-900);
+  color: var(--primary);
   margin-bottom: 0.75rem;
   position: relative;
   display: inline-block;
