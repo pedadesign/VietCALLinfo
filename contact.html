@@ -241,10 +241,12 @@
       <div>
         <p class="footer__col-title" data-i18n="footer.newsletter">Bản tin</p>
         <p style="font-size:0.875rem;color:rgba(255,255,255,0.6);margin-bottom:1rem;" data-i18n="footer.newsletter_desc">Cập nhật nghiên cứu và sự kiện mới nhất.</p>
-        <form style="display:flex;gap:0.5rem;" onsubmit="return false;">
-          <input type="email" placeholder="Email" style="flex:1;padding:0.625rem 0.875rem;border-radius:var(--radius-full);border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:#fff;font-size:0.875rem;font-family:inherit;">
+        <form class="footer-newsletter-form" action="https://formspree.io/f/mkopodrj" method="POST" style="display:flex;gap:0.5rem;">
+          <input type="hidden" name="_subject" value="New VietCALL Newsletter Subscription">
+          <input type="email" name="email" placeholder="Email" required style="flex:1;padding:0.625rem 0.875rem;border-radius:var(--radius-full);border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:#fff;font-size:0.875rem;font-family:inherit;">
           <button type="submit" class="btn btn--secondary btn--sm">→</button>
         </form>
+        <p class="footer-newsletter-msg" style="display:none;font-size:0.8rem;color:rgba(255,255,255,0.8);margin-top:0.5rem;">✓ Đăng ký thành công!</p>
       </div>
     </div>
     <div class="footer__bottom">

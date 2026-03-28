@@ -150,6 +150,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ─── Footer newsletter forms → Formspree (all pages) ────────────────────
+  document.querySelectorAll('.footer-newsletter-form').forEach(form => {
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      const msg = form.nextElementSibling;
+      const lang = localStorage.getItem('vc_lang') || 'vi';
+      const emailInput = form.querySelector('input[type="email"]');
+
+      if (!emailInput.value.trim()) { emailInput.style.outline = '2px solid var(--secondary)'; return; }
+      emailInput.style.outline = '';
+
+      btn.disabled = true;
+      const origText = btn.textContent;
+      btn.textContent = '…';
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          form.style.display = 'none';
+          if (msg && msg.classList.contains('footer-newsletter-msg')) {
+            msg.textContent = lang === 'vi' ? '✓ Đăng ký thành công!' : '✓ Subscribed!';
+            msg.style.display = 'block';
+          }
+        } else {
+          btn.disabled = false;
+          btn.textContent = origText;
+          alert(lang === 'vi' ? 'Có lỗi xảy ra. Vui lòng thử lại.' : 'Something went wrong. Please try again.');
+        }
+      } catch {
+        btn.disabled = false;
+        btn.textContent = origText;
+      }
+    });
+  });
+
   // ─── Newsletter form → Formspree ─────────────────────────────────────────
   const newsletterForm = document.getElementById('newsletterForm');
   if (newsletterForm) {
