@@ -74,7 +74,7 @@ const TRANSLATIONS = {
     about: {
       badge: "Về chúng tôi",
       title: "Giới thiệu VietCALL",
-      intro: "VietCALL là cộng đồng học thuật hàng đầu về Học ngôn ngữ có hỗ trợ Máy tính tại Việt Nam.",
+      intro: "VietCALL là cộng đồng chuyên môn hàng đầu về dạy-học ngôn ngữ cùng công nghệ tại Việt Nam.",
       mission_title: "Sứ mệnh",
       vision_title: "Tầm nhìn",
       research_title: "Nghiên cứu & Đổi mới",
