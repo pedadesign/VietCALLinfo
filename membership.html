@@ -325,7 +325,19 @@
       </div>
 
       <div class="contact-form-card">
-        <form id="membershipForm" novalidate>
+        <div id="membershipSuccess" style="display:none;text-align:center;padding:2.5rem 1.5rem;">
+          <div style="font-size:2.5rem;margin-bottom:1rem;">✅</div>
+          <h3 style="color:var(--primary);margin-bottom:0.5rem;">
+            <span class="lang-block" data-lang="vi">Đăng ký thành công!</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Registration received!</span>
+          </h3>
+          <p style="color:var(--stone-600);">
+            <span class="lang-block" data-lang="vi">Cảm ơn bạn đã đăng ký. Chúng tôi sẽ liên hệ qua email trong vòng 2 ngày làm việc.</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Thank you for registering. We will contact you by email within 2 business days.</span>
+          </p>
+        </div>
+        <form id="membershipForm" action="https://formspree.io/f/xreoenpl" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="New VietCALL Membership Registration">
           <div class="form-row">
             <div class="form-group">
               <label for="mem-name">

@@ -114,11 +114,59 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         btn.disabled = false;
         btn.setAttribute('data-i18n', 'contact.send_btn');
-        // Re-apply current language text
         const lang = localStorage.getItem('vc_lang') || 'vi';
         btn.textContent = lang === 'vi' ? 'Gửi tin nhắn' : 'Send Message';
         contactForm.reset();
       }, 3000);
+    });
+  }
+
+  // ─── Membership form → Formspree ─────────────────────────────────────────
+  const membershipForm = document.getElementById('membershipForm');
+  if (membershipForm) {
+    membershipForm.addEventListener('submit', async e => {
+      e.preventDefault();
+      const btn = membershipForm.querySelector('button[type="submit"]');
+      const lang = localStorage.getItem('vc_lang') || 'vi';
+
+      // Basic validation
+      const required = membershipForm.querySelectorAll('[required]');
+      let valid = true;
+      required.forEach(field => {
+        if (!field.value.trim()) { field.classList.add('is-invalid'); valid = false; }
+        else field.classList.remove('is-invalid');
+      });
+      if (!valid) return;
+
+      btn.disabled = true;
+      btn.textContent = lang === 'vi' ? 'Đang gửi…' : 'Sending…';
+
+      try {
+        const res = await fetch(membershipForm.action, {
+          method: 'POST',
+          body: new FormData(membershipForm),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          membershipForm.style.display = 'none';
+          const success = document.getElementById('membershipSuccess');
+          if (success) {
+            success.style.display = 'block';
+            // Apply current language to success message
+            success.querySelectorAll('.lang-block').forEach(el => {
+              el.style.display = el.getAttribute('data-lang') === lang ? '' : 'none';
+            });
+          }
+        } else {
+          btn.disabled = false;
+          btn.textContent = lang === 'vi' ? 'Gửi lại' : 'Try again';
+          alert(lang === 'vi' ? 'Có lỗi xảy ra. Vui lòng thử lại.' : 'Something went wrong. Please try again.');
+        }
+      } catch {
+        btn.disabled = false;
+        btn.textContent = lang === 'vi' ? 'Gửi lại' : 'Try again';
+        alert(lang === 'vi' ? 'Không thể kết nối. Kiểm tra mạng và thử lại.' : 'Could not connect. Check your network and try again.');
+      }
     });
   }
 
