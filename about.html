@@ -68,41 +68,132 @@
 </div>
 
 <!-- ── VietCALL LÀ GÌ? ────────────────────────────────────────── -->
-<section style="padding:4rem 0;background:var(--white);">
+<section class="about-intro-section">
   <div class="container">
-    <div class="section-label" data-i18n="about.title">Giới thiệu VietCALL</div>
-    <div style="display:grid;gap:3rem;align-items:center;" class="about-intro-grid">
-      <!-- Text left -->
-      <div>
-        <h2 style="font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;color:var(--primary);margin-bottom:1.25rem;font-family:'Playfair Display',serif;">
+    <div class="about-intro-grid">
+
+      <!-- Left: text content -->
+      <div class="about-intro-content animate-in">
+        <span class="section-label" data-i18n="about.title">Giới thiệu VietCALL</span>
+        <h2 class="about-intro-heading">
           <span class="lang-block" data-lang="vi">Tiên phong trong lĩnh vực CALL tại Việt Nam</span>
           <span class="lang-block" data-lang="en" style="display:none;">Pioneering CALL Research in Vietnam</span>
         </h2>
-        <p style="color:var(--stone-600);line-height:1.8;margin-bottom:1rem;">
+        <p class="about-intro-body">
           <span class="lang-block" data-lang="vi">VietCALL – Phân hội nghiên cứu ứng dụng CNTT trong dạy-học ngôn ngữ – là tiểu ban chuyên môn trực thuộc Hội Ngôn ngữ học Việt Nam. Hiệp hội quy tụ các giảng viên, nhà nghiên cứu và chuyên gia trong lĩnh vực công nghệ giáo dục ngôn ngữ, với sứ mệnh thúc đẩy và phát triển giảng dạy ngôn ngữ thông qua công nghệ.</span>
           <span class="lang-block" data-lang="en" style="display:none;">VietCALL — the Vietnamese Association of Computer-Assisted Language Learning — is a professional sub-association of the Vietnam Linguistics Association. It brings together lecturers, researchers, and specialists in language education technology, with a mission to advance language teaching and learning through the principled integration of technology.</span>
         </p>
-        <p style="color:var(--stone-600);line-height:1.8;margin-bottom:1.25rem;">
+        <p class="about-intro-body">
           <span class="lang-block" data-lang="vi">VietCALL tạo nền tảng để các học giả và nhà giáo dục chia sẻ kiến thức, hợp tác nghiên cứu và ứng dụng công nghệ mới nhất vào giảng dạy ngôn ngữ. Hiệp hội là thành viên tích cực của mạng lưới CALL quốc tế, hợp tác chặt chẽ với AsiaCALL, APACALL, EUROCALL và các tổ chức uy tín khác trên thế giới.</span>
           <span class="lang-block" data-lang="en" style="display:none;">VietCALL provides a platform for scholars and educators to share knowledge, collaborate on research, and apply the latest technologies to language teaching. The association is an active member of the global CALL network, maintaining close ties with AsiaCALL, APACALL, EUROCALL, and other leading international organisations.</span>
         </p>
+        <div class="about-intro-badges">
+          <span class="badge">AsiaCALL</span>
+          <span class="badge">APACALL</span>
+          <span class="badge">EUROCALL</span>
+        </div>
+      </div>
+
+      <!-- Right: image + floating quote card -->
+      <div class="about-intro-image-wrap animate-in" style="transition-delay:0.15s;">
+        <div class="about-intro-image">
+          <img src="assets/brand/pexels-googledeepmind-18069490.jpg" alt="AI and language education" loading="eager">
+        </div>
         <div class="vision-quote-card">
           <span class="vision-quote-card__mark">"</span>
           <p>
-            <span class="lang-block" data-lang="vi">VietCALL hướng tới tương lai nơi mọi người học ngôn ngữ tại Việt Nam đều được tiếp cận công nghệ tiên tiến và phương pháp giảng dạy đổi mới, nhằm phát huy tối đa tiềm năng học tập của mình.</span>
-            <span class="lang-block" data-lang="en" style="display:none;">VietCALL envisions a future in which every language learner in Vietnam has access to advanced technologies and evidence-informed teaching approaches that unlock their full learning potential.</span>
+            <span class="lang-block" data-lang="vi">VietCALL hướng tới tương lai nơi mọi người học ngôn ngữ tại Việt Nam đều được tiếp cận công nghệ tiên tiến và phương pháp giảng dạy đổi mới.</span>
+            <span class="lang-block" data-lang="en" style="display:none;">VietCALL envisions a future where every language learner in Vietnam has access to advanced technologies and evidence-informed approaches that unlock their full potential.</span>
           </p>
         </div>
       </div>
-      <!-- Image right -->
-      <img src="assets/brand/pexels-googledeepmind-18069490.jpg" alt="AI and language education" style="border-radius:var(--radius-2xl);aspect-ratio:4/3;object-fit:cover;width:100%;display:block;">
+
     </div>
   </div>
 </section>
 
 <style>
-@media (min-width: 768px) {
-  .about-intro-grid { grid-template-columns: 1fr 1fr; }
+.about-intro-section {
+  padding: 5rem 0 4rem;
+  background: var(--white);
+}
+.about-intro-grid {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+@media (min-width: 1024px) {
+  .about-intro-grid { grid-template-columns: 1fr 1fr; gap: 4rem; }
+}
+.about-intro-heading {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  color: var(--primary);
+  font-family: 'Playfair Display', serif;
+  line-height: 1.2;
+  margin: 0.75rem 0 1.25rem;
+}
+.about-intro-heading em { font-style: italic; color: var(--secondary); }
+.about-intro-body {
+  color: var(--stone-600);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+.about-intro-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+/* Image wrap — mirrors hero__image-wrap */
+.about-intro-image-wrap {
+  position: relative;
+}
+.about-intro-image {
+  aspect-ratio: 4/5;
+  border-radius: var(--radius-3xl);
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.14);
+}
+.about-intro-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Floating quote card — mirrors hero__floating-card */
+.about-intro-image-wrap .vision-quote-card {
+  position: absolute;
+  bottom: 2rem;
+  left: -1.5rem;
+  width: min(90%, 22rem);
+  padding: 1.25rem 1.5rem;
+  background: linear-gradient(135deg, #1a245e 0%, #2d3a8c 45%, #bb0400 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 6s ease infinite;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 8px 32px rgba(26,36,94,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.about-intro-image-wrap .vision-quote-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(26,36,94,0.4);
+}
+.about-intro-image-wrap .vision-quote-card__mark {
+  font-size: 3.5rem;
+  line-height: 0.8;
+  margin-bottom: 0.25rem;
+}
+.about-intro-image-wrap .vision-quote-card p {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+@media (max-width: 1023px) {
+  .about-intro-image-wrap .vision-quote-card {
+    position: static;
+    width: 100%;
+    margin-top: 1rem;
+  }
 }
 </style>
 
