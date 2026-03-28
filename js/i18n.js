@@ -25,7 +25,7 @@ const TRANSLATIONS = {
       email_placeholder: "Địa chỉ email của bạn",
       copyright: "© 2026 VietCALL. Bảo lưu mọi quyền.",
       privacy: "Chính sách bảo mật",
-      contact: "Liên hệ"
+      contact: "Liên lạc"
     },
     // ---- Index ----
     home: {
@@ -111,7 +111,7 @@ const TRANSLATIONS = {
       who: "Đối tượng tham dự",
       register: "Đăng ký →",
       submit: "Nộp tóm tắt →",
-      contact_org: "Liên hệ Ban tổ chức",
+      contact_org: "Liên lạc Ban tổ chức",
       vietcall2026_location: "Trường Đại học Ngoại ngữ – Đại học Huế, Huế, Việt Nam",
       vietcall2025_title: "VietCALL 2025",
       vietcall2025_location: "Trường Đại học Công nghiệp TP.HCM (IUH), TP. Hồ Chí Minh",
@@ -178,8 +178,8 @@ const TRANSLATIONS = {
     },
     // ---- Contact ----
     contact: {
-      badge: "Liên hệ",
-      title: "Liên hệ VietCALL",
+      badge: "Liên lạc",
+      title: "Liên lạc VietCALL",
       sub: "Chúng tôi sẵn sàng giải đáp mọi thắc mắc về thành viên, hội thảo hoặc hợp tác nghiên cứu.",
       email_label: "Email",
       phone_label: "Điện thoại",
