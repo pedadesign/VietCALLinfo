@@ -114,9 +114,9 @@ h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; line-height: 1.15;
   background: var(--stone-50);
 }
 .btn--outline-ghost:hover {
-  color: var(--secondary) !important;
-  border-color: var(--secondary) !important;
-  background: transparent;
+  background: #fff !important;
+  color: var(--primary) !important;
+  border-color: #fff !important;
 }
 .btn--secondary {
   background: var(--secondary);
