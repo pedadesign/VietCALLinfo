@@ -1226,6 +1226,65 @@ textarea.form-control { resize: vertical; min-height: 8rem; }
   transform: none;
 }
 
+/* ── Vision Quote Card ──────────────────────────────────────── */
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes floatQuote {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.vision-quote-card {
+  padding: 2rem 2rem 1.75rem;
+  background: linear-gradient(135deg, #1a245e 0%, #2d3a8c 40%, #bb0400 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 6s ease infinite;
+  border-radius: var(--radius-xl);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(26,36,94,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.vision-quote-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(26,36,94,0.35);
+}
+.vision-quote-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.vision-quote-card__mark {
+  display: block;
+  font-size: 6rem;
+  line-height: 0.75;
+  color: rgba(255,255,255,0.15);
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 0.5rem;
+  animation: floatQuote 4s ease-in-out infinite;
+  user-select: none;
+}
+.vision-quote-card p {
+  font-size: 1.0625rem;
+  color: #fff;
+  line-height: 1.85;
+  font-style: italic;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  animation: fadeSlideUp 0.7s ease both;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.2);
+}
+
 /* ── Utility ────────────────────────────────────────────────── */
 .text-primary  { color: var(--primary); }
 .text-secondary{ color: var(--secondary); }
