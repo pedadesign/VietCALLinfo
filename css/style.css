@@ -1580,7 +1580,9 @@ textarea.form-control { resize: vertical; min-height: 8rem; }
   color: var(--stone-500);
   line-height: 1.65;
   margin-bottom: 1.25rem;
+  transition: color 0.2s ease;
 }
+.resource-card:hover p { color: #323e69; }
 .resource-link {
   font-size: 0.875rem;
   font-weight: 600;
