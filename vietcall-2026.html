@@ -129,6 +129,240 @@
       .timeline-item { grid-template-columns: 6rem 1.5rem 1fr; }
     }
 
+    /* ── Sidebar navigation ─────────────────────────────────── */
+    .conf-sidebar {
+      position: fixed;
+      top: 0; left: 0;
+      width: 15rem;
+      height: 100vh;
+      background: var(--white);
+      border-right: 1px solid var(--stone-100);
+      z-index: 90;
+      display: flex;
+      flex-direction: column;
+      padding: 0 0 1.5rem;
+      overflow-y: auto;
+      transition: transform 0.3s ease;
+    }
+    .conf-sidebar__brand {
+      padding: 1.5rem 1.5rem 1rem;
+      border-bottom: 1px solid var(--stone-100);
+      margin-bottom: 1rem;
+    }
+    .conf-sidebar__brand-name {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.125rem;
+      color: var(--primary);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .conf-sidebar__brand-sub {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--stone-400);
+    }
+    .conf-sidebar__nav { flex: 1; padding: 0 0.75rem; }
+    .conf-sidebar__link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 0.875rem;
+      border-radius: var(--radius-lg);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--stone-500);
+      text-decoration: none;
+      transition: all 0.18s ease;
+      margin-bottom: 0.125rem;
+    }
+    .conf-sidebar__link:hover {
+      color: var(--primary);
+      background: var(--stone-50);
+      padding-left: 1.25rem;
+    }
+    .conf-sidebar__link.active {
+      color: var(--white);
+      background: var(--primary);
+    }
+    .conf-sidebar__link svg {
+      width: 1rem; height: 1rem;
+      flex-shrink: 0;
+      stroke: currentColor;
+    }
+    .conf-sidebar__cta {
+      margin: 0 0.75rem;
+      padding: 0.75rem 1rem;
+      background: #f9c74f;
+      color: #1a1a2e;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: var(--radius-lg);
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .conf-sidebar__cta:hover { background: #f3b829; }
+
+    /* Push main content when sidebar is visible */
+    .conf-main { transition: margin-left 0.3s ease; }
+    @media (min-width: 1024px) {
+      .conf-sidebar { top: 4rem; height: calc(100vh - 4rem); }
+      .conf-main { margin-left: 15rem; }
+    }
+    @media (max-width: 1023px) {
+      .conf-sidebar { transform: translateX(-100%); }
+      .conf-sidebar.open { transform: translateX(0); }
+    }
+
+    /* ── Photo gallery ──────────────────────────────────────── */
+    .conf-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: 1rem;
+    }
+    .conf-gallery-item {
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+      position: relative;
+    }
+    .conf-gallery-item--wide {
+      grid-column: span 2;
+    }
+    .conf-gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .conf-gallery-item:hover img { transform: scale(1.05); }
+    .conf-gallery-item__caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1.25rem 1.25rem 1rem;
+      background: linear-gradient(to top, rgba(14,20,54,0.85) 0%, transparent 100%);
+      color: #fff;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .conf-gallery-item:hover .conf-gallery-item__caption { opacity: 1; }
+    @media (max-width: 640px) {
+      .conf-gallery-grid { grid-template-columns: 1fr; }
+      .conf-gallery-item--wide { grid-column: span 1; }
+    }
+
+    /* ── Registration tiers ─────────────────────────────────── */
+    .conf-reg-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 640px) { .conf-reg-grid { grid-template-columns: 1fr; } }
+    .conf-reg-card {
+      border-radius: var(--radius-2xl);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .conf-reg-card--member {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 16px 48px rgba(50,62,105,0.25);
+    }
+    .conf-reg-card--guest {
+      background: var(--white);
+      border: 1px solid var(--stone-200);
+    }
+    .conf-reg-card__badge {
+      display: inline-block;
+      padding: 0.3rem 0.875rem;
+      border-radius: 9999px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      width: fit-content;
+    }
+    .conf-reg-card--member .conf-reg-card__badge {
+      background: rgba(249,199,79,0.2);
+      border: 1px solid rgba(249,199,79,0.5);
+      color: #f9c74f;
+    }
+    .conf-reg-card--guest .conf-reg-card__badge {
+      background: var(--stone-50);
+      color: var(--stone-500);
+      border: 1px solid var(--stone-200);
+    }
+    .conf-reg-card__price {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .conf-reg-card--member .conf-reg-card__price { color: #f9c74f; }
+    .conf-reg-card--guest .conf-reg-card__price { color: var(--primary); }
+    .conf-reg-card__perks {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.625rem;
+      flex: 1;
+    }
+    .conf-reg-card__perks li {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      font-size: 0.9375rem;
+    }
+    .conf-reg-card--member .conf-reg-card__perks li { color: rgba(255,255,255,0.88); }
+    .conf-reg-card--guest .conf-reg-card__perks li { color: var(--stone-600); }
+    .conf-reg-card__check {
+      width: 1.125rem; height: 1.125rem;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .conf-reg-card--member .conf-reg-card__check { background: rgba(249,199,79,0.25); color: #f9c74f; }
+    .conf-reg-card--guest .conf-reg-card__check { background: rgba(50,62,105,0.1); color: var(--primary); }
+    .conf-reg-card__check svg { width: 0.625rem; height: 0.625rem; stroke: currentColor; stroke-width: 3; }
+
+    /* ── FAB ────────────────────────────────────────────────── */
+    .conf-fab {
+      position: fixed;
+      bottom: 2rem; right: 2rem;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      padding: 0.875rem 1.375rem;
+      background: #f9c74f;
+      color: #1a1a2e;
+      font-weight: 700;
+      font-size: 0.8125rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-radius: 9999px;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(249,199,79,0.45);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      animation: goldPulse 2.5s ease-out infinite;
+    }
+    .conf-fab:hover {
+      transform: translateY(-3px) scale(1.04);
+      box-shadow: 0 14px 36px rgba(249,199,79,0.55);
+    }
+    .conf-fab svg { width: 1rem; height: 1rem; stroke: currentColor; stroke-width: 2.5; flex-shrink: 0; }
+
     /* ── Hero Enhancements ──────────────────────────────────── */
     @keyframes heroFadeUp {
       from { opacity: 0; transform: translateY(22px); }
@@ -389,8 +623,62 @@
   </div>
 </div>
 
+<!-- ── SIDEBAR ──────────────────────────────────────────────── -->
+<aside class="conf-sidebar" id="confSidebar">
+  <div class="conf-sidebar__brand">
+    <span class="conf-sidebar__brand-name">VietCALL 2026</span>
+    <span class="conf-sidebar__brand-sub">
+      <span class="lang-block" data-lang="vi">Hội thảo Quốc tế lần 2</span>
+      <span class="lang-block" data-lang="en" style="display:none;">2nd Int'l Convention</span>
+    </span>
+  </div>
+  <nav class="conf-sidebar__nav">
+    <a class="conf-sidebar__link active" href="#overview">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <span class="lang-block" data-lang="vi">Tổng quan</span>
+      <span class="lang-block" data-lang="en" style="display:none;">Overview</span>
+    </a>
+    <a class="conf-sidebar__link" href="#cfp">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      <span class="lang-block" data-lang="vi">Kêu gọi Báo cáo</span>
+      <span class="lang-block" data-lang="en" style="display:none;">Call for Papers</span>
+    </a>
+    <a class="conf-sidebar__link" href="#dates">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <span class="lang-block" data-lang="vi">Ngày quan trọng</span>
+      <span class="lang-block" data-lang="en" style="display:none;">Key Dates</span>
+    </a>
+    <a class="conf-sidebar__link" href="#gallery">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      <span class="lang-block" data-lang="vi">Hội thảo 2025</span>
+      <span class="lang-block" data-lang="en" style="display:none;">2025 Highlights</span>
+    </a>
+    <a class="conf-sidebar__link" href="#registration">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <span class="lang-block" data-lang="vi">Đăng ký</span>
+      <span class="lang-block" data-lang="en" style="display:none;">Registration</span>
+    </a>
+    <a class="conf-sidebar__link" href="#venue">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <span class="lang-block" data-lang="vi">Địa điểm</span>
+      <span class="lang-block" data-lang="en" style="display:none;">Venue</span>
+    </a>
+    <a class="conf-sidebar__link" href="#contact-section">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      <span class="lang-block" data-lang="vi">Liên lạc</span>
+      <span class="lang-block" data-lang="en" style="display:none;">Contact</span>
+    </a>
+  </nav>
+  <a href="https://vietcall.edu.vn/submission" target="_blank" rel="noopener" class="conf-sidebar__cta">
+    <span class="lang-block" data-lang="vi">Nộp Tóm tắt →</span>
+    <span class="lang-block" data-lang="en" style="display:none;">Submit Abstract →</span>
+  </a>
+</aside>
+
+<div class="conf-main" id="confMain">
+
 <!-- ── HERO ───────────────────────────────────────────────────── -->
-<section class="conf-hero">
+<section class="conf-hero" id="overview">
   <div class="conf-hero__bg"></div>
   <div class="conf-hero__body">
     <div class="container">
@@ -1100,8 +1388,168 @@
   </div>
 </section>
 
+<!-- ── PHOTO GALLERY (VietCALL 2025) ─────────────────────────── -->
+<section id="gallery" style="padding:4rem 0;background:var(--stone-50);">
+  <div class="container">
+    <span class="section-pill">
+      <span class="lang-block" data-lang="vi">Nhìn lại 2025</span>
+      <span class="lang-block" data-lang="en" style="display:none;">2025 Highlights</span>
+    </span>
+    <h2 style="font-size:clamp(1.375rem,3vw,2rem);font-weight:700;color:var(--stone-900);margin-bottom:0.5rem;font-family:'Playfair Display',serif;">
+      <span class="lang-block" data-lang="vi">VietCALL 2025 — Những Khoảnh khắc Đáng nhớ</span>
+      <span class="lang-block" data-lang="en" style="display:none;">VietCALL 2025 — Memorable Moments</span>
+    </h2>
+    <p style="color:var(--stone-500);font-size:0.9375rem;margin-bottom:2rem;">
+      <span class="lang-block" data-lang="vi">Hội thảo Quốc tế VietCALL lần thứ nhất, 18/10/2025 — Đại học Công nghiệp TP. HCM</span>
+      <span class="lang-block" data-lang="en" style="display:none;">1st VietCALL International Convention, 18 Oct 2025 — Industrial University of Ho Chi Minh City</span>
+    </p>
+    <div class="conf-gallery-grid">
+      <div class="conf-gallery-item conf-gallery-item--wide" style="aspect-ratio:16/9;">
+        <img src="assets/events/vietcall-2025/conference-2025-group.jpg" alt="VietCALL 2025 group photo" loading="lazy">
+        <div class="conf-gallery-item__caption">
+          <span class="lang-block" data-lang="vi">Ảnh tập thể — VietCALL International Convention 2025</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Group photo — VietCALL International Convention 2025</span>
+        </div>
+      </div>
+      <div class="conf-gallery-item" style="aspect-ratio:4/5;">
+        <img src="assets/events/vietcall-2025/opening-speech.jpg" alt="Opening speech VietCALL 2025" loading="lazy">
+        <div class="conf-gallery-item__caption">
+          <span class="lang-block" data-lang="vi">Phát biểu khai mạc — TS. Bảo Khâm</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Opening speech — Dr. Bao Kham</span>
+        </div>
+      </div>
+      <div class="conf-gallery-item conf-gallery-item--wide" style="aspect-ratio:16/9;">
+        <img src="assets/events/vietcall-2025/pexels-son-tuyen-dinh-1298468817-30853558.jpg" alt="VietCALL 2025 conference venue" loading="lazy">
+        <div class="conf-gallery-item__caption">
+          <span class="lang-block" data-lang="vi">Đại học Công nghiệp TP. Hồ Chí Minh</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Industrial University of Ho Chi Minh City</span>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:1.5rem;">
+      <a href="https://www.facebook.com/media/set/?set=a.122202190910289324&type=3" target="_blank" rel="noopener" class="btn btn--outline" style="font-size:0.875rem;">
+        <span class="lang-block" data-lang="vi">Xem thêm ảnh trên Facebook →</span>
+        <span class="lang-block" data-lang="en" style="display:none;">View more photos on Facebook →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── REGISTRATION ──────────────────────────────────────────── -->
+<section id="registration" style="padding:4rem 0;background:var(--white);">
+  <div class="container">
+    <span class="section-pill">
+      <span class="lang-block" data-lang="vi">Đăng ký</span>
+      <span class="lang-block" data-lang="en" style="display:none;">Registration</span>
+    </span>
+    <h2 style="font-size:clamp(1.375rem,3vw,2rem);font-weight:700;color:var(--stone-900);margin-bottom:0.5rem;font-family:'Playfair Display',serif;">
+      <span class="lang-block" data-lang="vi">Lệ phí Tham dự</span>
+      <span class="lang-block" data-lang="en" style="display:none;">Conference Fees</span>
+    </h2>
+    <p style="color:var(--stone-500);font-size:0.9375rem;margin-bottom:2rem;max-width:36rem;">
+      <span class="lang-block" data-lang="vi">Thành viên VietCALL được tham dự miễn phí. Đăng ký thành viên trước để được hưởng quyền lợi đặc biệt.</span>
+      <span class="lang-block" data-lang="en" style="display:none;">VietCALL members attend at no cost. Register as a member first to access exclusive benefits.</span>
+    </p>
+    <div class="conf-reg-grid" style="max-width:48rem;">
+
+      <!-- Member card -->
+      <div class="conf-reg-card conf-reg-card--member">
+        <div>
+          <span class="conf-reg-card__badge">
+            <span class="lang-block" data-lang="vi">⭐ Thành viên VietCALL</span>
+            <span class="lang-block" data-lang="en" style="display:none;">⭐ VietCALL Member</span>
+          </span>
+        </div>
+        <div>
+          <div class="conf-reg-card__price">
+            <span class="lang-block" data-lang="vi">Miễn phí</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Free</span>
+          </div>
+          <p style="font-size:0.8125rem;color:rgba(255,255,255,0.6);margin-top:0.25rem;">
+            <span class="lang-block" data-lang="vi">Cho thành viên đang hoạt động</span>
+            <span class="lang-block" data-lang="en" style="display:none;">For active members</span>
+          </p>
+        </div>
+        <ul class="conf-reg-card__perks">
+          <li>
+            <span class="conf-reg-card__check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2 6 5 9 10 3"/></svg></span>
+            <span class="lang-block" data-lang="vi">Toàn bộ phiên họp & hội thảo</span>
+            <span class="lang-block" data-lang="en" style="display:none;">All sessions &amp; workshops</span>
+          </li>
+          <li>
+            <span class="conf-reg-card__check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2 6 5 9 10 3"/></svg></span>
+            <span class="lang-block" data-lang="vi">Trình bày báo cáo</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Paper presentation</span>
+          </li>
+          <li>
+            <span class="conf-reg-card__check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2 6 5 9 10 3"/></svg></span>
+            <span class="lang-block" data-lang="vi">Xét đăng kỷ yếu & tạp chí</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Proceedings &amp; journal consideration</span>
+          </li>
+          <li>
+            <span class="conf-reg-card__check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2 6 5 9 10 3"/></svg></span>
+            <span class="lang-block" data-lang="vi">Chứng nhận tham dự</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Certificate of attendance</span>
+          </li>
+        </ul>
+        <a href="membership.html" class="btn btn--gold" style="justify-content:center;font-size:0.875rem;">
+          <span class="lang-block" data-lang="vi">Đăng ký Thành viên →</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Become a Member →</span>
+        </a>
+      </div>
+
+      <!-- Guest card -->
+      <div class="conf-reg-card conf-reg-card--guest">
+        <div>
+          <span class="conf-reg-card__badge">
+            <span class="lang-block" data-lang="vi">Khách / Không phải thành viên</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Guest / Non-member</span>
+          </span>
+        </div>
+        <div>
+          <div class="conf-reg-card__price">
+            <span class="lang-block" data-lang="vi">Liên lạc</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Enquire</span>
+          </div>
+          <p style="font-size:0.8125rem;color:var(--stone-400);margin-top:0.25rem;">
+            <span class="lang-block" data-lang="vi">Lệ phí thể chế / cá nhân</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Institutional / individual rate</span>
+          </p>
+        </div>
+        <ul class="conf-reg-card__perks">
+          <li>
+            <span class="conf-reg-card__check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2 6 5 9 10 3"/></svg></span>
+            <span class="lang-block" data-lang="vi">Tham dự các phiên họp</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Session attendance</span>
+          </li>
+          <li>
+            <span class="conf-reg-card__check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2 6 5 9 10 3"/></svg></span>
+            <span class="lang-block" data-lang="vi">Tài liệu hội thảo</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Conference materials</span>
+          </li>
+          <li>
+            <span class="conf-reg-card__check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2 6 5 9 10 3"/></svg></span>
+            <span class="lang-block" data-lang="vi">Kết nối chuyên môn</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Professional networking</span>
+          </li>
+          <li>
+            <span class="conf-reg-card__check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2 6 5 9 10 3"/></svg></span>
+            <span class="lang-block" data-lang="vi">Chứng nhận tham dự</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Certificate of attendance</span>
+          </li>
+        </ul>
+        <a href="mailto:lanhuongnckh@gmail.com" class="btn btn--outline" style="justify-content:center;font-size:0.875rem;">
+          <span class="lang-block" data-lang="vi">Liên lạc Ban tổ chức →</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Contact Organizers →</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ── VENUE & TRAVEL ─────────────────────────────────────────── -->
-<section style="padding:4rem 0;background:var(--white);">
+<section id="venue" style="padding:4rem 0;background:var(--white);">
   <div class="container">
     <span class="section-pill">
       <span class="lang-block" data-lang="vi">Địa điểm &amp; Di chuyển</span>
@@ -1142,7 +1590,7 @@
 </section>
 
 <!-- ── CONTACT ────────────────────────────────────────────────── -->
-<section class="conf-contact-wrap">
+<section class="conf-contact-wrap" id="contact-section">
   <span class="conf-contact-deco conf-contact-deco--tl">H</span>
   <span class="conf-contact-deco conf-contact-deco--br">uế</span>
   <div class="container">
@@ -1230,6 +1678,8 @@
   </div>
 </section>
 
+</div><!-- /conf-main -->
+
 <footer class="footer">
 
   <div class="container">
@@ -1281,7 +1731,35 @@
   </div>
 </footer>
 
+<!-- ── FAB ──────────────────────────────────────────────────── -->
+<a href="https://vietcall.edu.vn/submission" target="_blank" rel="noopener" class="conf-fab">
+  <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+  <span class="lang-block" data-lang="vi">Nộp Tóm tắt</span>
+  <span class="lang-block" data-lang="en" style="display:none;">Submit Abstract</span>
+</a>
+
 <script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
+<script>
+  // ── Sidebar active link on scroll ──────────────────────────
+  (function() {
+    const links = document.querySelectorAll('.conf-sidebar__link');
+    const sections = Array.from(links)
+      .map(l => document.querySelector(l.getAttribute('href')))
+      .filter(Boolean);
+
+    function onScroll() {
+      let current = sections[0];
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 120) current = s;
+      });
+      links.forEach(l => {
+        l.classList.toggle('active',
+          l.getAttribute('href') === '#' + current.id);
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+  })();
+</script>
 </body>
 </html>
