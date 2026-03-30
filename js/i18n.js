@@ -29,7 +29,7 @@ const TRANSLATIONS = {
     },
     // ---- Index ----
     home: {
-      badge: "Phân hội Nghiên cứu ứng dụng CNTT trong dạy-học ngoại ngữ",
+      badge: "Phân hội nghiên cứu ứng dụng CNTT trong dạy-học ngôn ngữ",
       title: "Thúc đẩy <em>Giáo dục Ngôn ngữ</em> trong Kỷ nguyên Số.",
       desc: "VietCALL kết nối các nhà giáo dục, nhà nghiên cứu và chuyên gia công nghệ giáo dục ngôn ngữ trên cả nước và quốc tế, thúc đẩy đổi mới, sáng tạo trong dạy-học và nghiên cứu nhờ công nghệ.",
       btn_explore: "Dự án của VietCALL",
