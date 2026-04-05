@@ -477,6 +477,11 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.lang-switcher.open').forEach(s => s.classList.remove('open'));
   });
 
+  // Mobile menu standalone lang buttons (outside .lang-switcher wrapper)
+  document.querySelectorAll('.mobile-lang .lang-switcher__option').forEach(btn => {
+    btn.addEventListener('click', () => setLang(btn.getAttribute('data-lang-code')));
+  });
+
   // Legacy pill lang buttons
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => setLang(btn.getAttribute('data-lang-code')));

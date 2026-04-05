@@ -307,7 +307,7 @@ h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; line-height: 1.15;
   overflow-y: auto;
 }
 .navbar__mobile.open { display: block; }
-.navbar__mobile a,
+.navbar__mobile a:not(.btn),
 .navbar__mobile button.navbar__link {
   display: block;
   width: 100%;
@@ -319,7 +319,7 @@ h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; line-height: 1.15;
   border-radius: var(--radius-lg);
   transition: color 0.15s, background 0.15s;
 }
-.navbar__mobile a:hover,
+.navbar__mobile a:not(.btn):hover,
 .navbar__mobile button.navbar__link:hover {
   color: var(--primary);
   background: var(--stone-50);
