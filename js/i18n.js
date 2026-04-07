@@ -10,10 +10,10 @@ const TRANSLATIONS = {
       committee: "Ban Chấp Hành",
       conferences: "Hội thảo",
       events: "Sự kiện",
-      resources: "Tài Nguyên",
-      blog: "Bài Viết",
+      resources: "Tài nguyên",
+      blog: "Bài viết",
       membership: "Thành viên",
-      contact: "Liên Lạc",
+      contact: "Liên lạc",
       join: "Tham gia ngay"
     },
     footer: {
