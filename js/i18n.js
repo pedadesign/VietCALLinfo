@@ -74,7 +74,7 @@ const TRANSLATIONS = {
     about: {
       badge: "Về chúng tôi",
       title: "Giới thiệu VietCALL",
-      intro: "VietCALL là cộng đồng chuyên môn hàng đầu về dạy-học ngôn ngữ cùng công nghệ tại Việt Nam.",
+      intro: "VietCALL là cộng đồng chuyên môn hàng đầu về ứng dụng công nghệ trong dạy-học ngôn ngữ tại Việt Nam.",
       mission_title: "Sứ mệnh",
       vision_title: "Tầm nhìn",
       research_title: "Nghiên cứu & Đổi mới",
@@ -185,7 +185,7 @@ const TRANSLATIONS = {
       phone_label: "Điện thoại",
       whatsapp_label: "WhatsApp",
       address_label: "Địa chỉ",
-      address_val: "Việt Nam",
+      address_val: "Hà Nội, Việt Nam",
       social_label: "Mạng xã hội",
       register_title: "Đăng ký Thành viên",
       register_desc: "Truy cập trang đăng ký chính thức để trở thành thành viên VietCALL.",
