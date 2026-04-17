@@ -81,7 +81,7 @@ Submission Guidelines:
 
 Abstracts: Up to 170 words, including keywords.
 Full Papers: Between 6,000 and 8,000 words, following APA 7th edition formatting.
-Submission Portal: https://vietcall.edu.vn/submission
+Submission Portal: https://vietcall.lcms.vn/login/?next=/event/1/abstracts/%23submit-abstract
 Contact information:
 
 For further information, please visit our website or contact the conference organizers at
