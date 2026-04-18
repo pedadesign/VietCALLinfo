@@ -112,7 +112,7 @@ const TRANSLATIONS = {
       register: "Đăng ký →",
       submit: "Nộp tóm tắt →",
       contact_org: "Liên lạc Ban tổ chức",
-      vietcall2026_location: "Trường Đại học Ngoại ngữ – Đại học Huế, Huế, Việt Nam",
+      vietcall2026_location: "Trường Đại học Ngoại ngữ, Đại học Huế, Huế, Việt Nam",
       vietcall2025_title: "VietCALL 2025",
       vietcall2025_location: "Trường Đại học Công nghiệp TP.HCM (IUH), TP. Hồ Chí Minh",
       vietcall2025_theme: "Công nghệ và Đổi mới trong Giảng dạy Ngôn ngữ"
@@ -303,7 +303,7 @@ const TRANSLATIONS = {
       register: "Register →",
       submit: "Submit Abstract →",
       contact_org: "Contact the Organising Committee",
-      vietcall2026_location: "University of Foreign Languages, Hue University, Hue, Vietnam",
+      vietcall2026_location: "University of Foreign Languages and International Studies, Hue University (HUFLIS), Hue, Vietnam",
       vietcall2025_title: "VietCALL 2025",
       vietcall2025_location: "Industrial University of Ho Chi Minh City (IUH), Ho Chi Minh City",
       vietcall2025_theme: "Technology and Innovation in Language Education"
