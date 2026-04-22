@@ -316,115 +316,61 @@
 
 <!-- ── REGISTRATION FORM ─────────────────────────────────────── -->
 <section class="section bg-stone animate-in" id="register">
+  <style>
+    /* ── Cognito form polish ─────────────────────────────────── */
+    .cognito-form-wrap {
+      background: var(--white);
+      border-radius: var(--radius-xl, 1rem);
+      box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+    /* Hide Cognito's logo image (form title is redundant with page heading) */
+    .cog-header img { display: none !important; }
+    .cog-header {
+      padding: 1.75rem 2.25rem 0 !important;
+      background: transparent !important;
+      border-bottom: none !important;
+    }
+    .cog-heading {
+      font-family: 'Playfair Display', serif !important;
+      font-size: 1.375rem !important;
+      font-weight: 700 !important;
+      color: var(--primary) !important;
+    }
+    /* Form body padding */
+    .cog-body { padding: 1.25rem 2.25rem 2rem !important; }
+    /* Match submit button to site primary style */
+    .cog-button--submit {
+      background: var(--primary) !important;
+      border-color: var(--primary) !important;
+      border-radius: var(--radius-full, 9999px) !important;
+      font-family: inherit !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.01em !important;
+      padding: 0.75rem 2rem !important;
+      transition: background 0.2s, border-color 0.2s !important;
+    }
+    .cog-button--submit:hover {
+      background: #1a2460 !important;
+      border-color: #1a2460 !important;
+    }
+    /* Field focus ring matching site accent */
+    .cog-input:focus, .cog-select:focus, .cog-textarea:focus {
+      outline: 2px solid var(--primary) !important;
+      outline-offset: 1px !important;
+      border-color: var(--primary) !important;
+    }
+  </style>
   <div class="container">
-    <div style="max-width:42rem;margin:0 auto;">
+    <div style="max-width:46rem;margin:0 auto;">
       <div style="text-align:center;margin-bottom:2.5rem;">
         <span class="badge" style="margin-bottom:1rem;" data-i18n="membership.badge">Tham gia cùng chúng tôi</span>
         <h2 class="headline-lg" style="color:var(--primary);" data-i18n="membership.register_title">Đăng ký thành viên</h2>
         <p data-i18n="membership.register_desc">Điền thông tin bên dưới để hoàn tất đăng ký thành viên VietCALL.</p>
       </div>
 
-      <div class="contact-form-card">
-        <div id="membershipSuccess" style="display:none;text-align:center;padding:2.5rem 1.5rem;">
-          <div style="font-size:2.5rem;margin-bottom:1rem;">✅</div>
-          <h3 style="color:var(--primary);margin-bottom:0.5rem;">
-            <span class="lang-block" data-lang="vi">Đăng ký thành công!</span>
-            <span class="lang-block" data-lang="en" style="display:none;">Registration received!</span>
-          </h3>
-          <p style="color:var(--stone-600);">
-            <span class="lang-block" data-lang="vi">Cảm ơn bạn đã đăng ký. Chúng tôi sẽ liên hệ qua email trong vòng 2 ngày làm việc.</span>
-            <span class="lang-block" data-lang="en" style="display:none;">Thank you for registering. We will contact you by email within 2 business days.</span>
-          </p>
-        </div>
-        <form id="membershipForm" action="https://formspree.io/f/xreoenpl" method="POST" novalidate>
-          <input type="hidden" name="_subject" value="New VietCALL Membership Registration">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="mem-name">
-                <span class="lang-block" data-lang="vi">Họ và tên *</span>
-                <span class="lang-block" data-lang="en" style="display:none;">Full Name *</span>
-              </label>
-              <input type="text" id="mem-name" name="name" class="form-control"
-                     placeholder="Họ và tên" required>
-            </div>
-            <div class="form-group">
-              <label for="mem-email">Email *</label>
-              <input type="email" id="mem-email" name="email" class="form-control"
-                     placeholder="Địa chỉ email" required>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="mem-institution">
-                <span class="lang-block" data-lang="vi">Cơ quan / Trường học *</span>
-                <span class="lang-block" data-lang="en" style="display:none;">Institution / University *</span>
-              </label>
-              <input type="text" id="mem-institution" name="institution" class="form-control"
-                     placeholder="Trường Đại học / Cơ quan" required>
-            </div>
-            <div class="form-group">
-              <label for="mem-role">
-                <span class="lang-block" data-lang="vi">Vai trò</span>
-                <span class="lang-block" data-lang="en" style="display:none;">Role</span>
-              </label>
-              <select id="mem-role" name="role" class="form-control">
-                <option value="">
-                  <span class="lang-block" data-lang="vi">-- Chọn --</span>
-                </option>
-                <option value="teacher">
-                  <span class="lang-block" data-lang="vi">Giáo viên / Giảng viên</span>
-                  <span class="lang-block" data-lang="en" style="display:none;">Teacher / Lecturer</span>
-                </option>
-                <option value="researcher">
-                  <span class="lang-block" data-lang="vi">Nhà nghiên cứu</span>
-                  <span class="lang-block" data-lang="en" style="display:none;">Researcher</span>
-                </option>
-                <option value="student">
-                  <span class="lang-block" data-lang="vi">Sinh viên / Nghiên cứu sinh</span>
-                  <span class="lang-block" data-lang="en" style="display:none;">Student / PhD Candidate</span>
-                </option>
-                <option value="other">
-                  <span class="lang-block" data-lang="vi">Khác</span>
-                  <span class="lang-block" data-lang="en" style="display:none;">Other</span>
-                </option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="mem-type">
-              <span class="lang-block" data-lang="vi">Loại thành viên *</span>
-              <span class="lang-block" data-lang="en" style="display:none;">Membership Type *</span>
-            </label>
-            <select id="mem-type" name="type" class="form-control" required>
-              <option value="">-- Chọn --</option>
-              <option value="free">
-                <span class="lang-block" data-lang="vi">Cơ bản (Miễn phí)</span>
-                <span class="lang-block" data-lang="en" style="display:none;">Basic (Free)</span>
-              </option>
-              <option value="student">
-                <span class="lang-block" data-lang="vi">Thành viên chính thức (100.000đ/năm)</span>
-                <span class="lang-block" data-lang="en" style="display:none;">Regular Member (100,000 VND/year)</span>
-              </option>
-              <option value="professional">
-                <span class="lang-block" data-lang="vi">Chuyên nghiệp (200.000đ/năm)</span>
-                <span class="lang-block" data-lang="en" style="display:none;">Professional (200,000 VND/year)</span>
-              </option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="mem-interests">
-              <span class="lang-block" data-lang="vi">Lĩnh vực nghiên cứu / quan tâm</span>
-              <span class="lang-block" data-lang="en" style="display:none;">Research interests</span>
-            </label>
-            <textarea id="mem-interests" name="interests" class="form-control" rows="3"
-                      placeholder="AI trong giảng dạy, học tập di động, trò chơi hóa..."></textarea>
-          </div>
-          <button type="submit" class="btn btn--primary" style="width:100%;justify-content:center;" data-i18n="membership.register_btn">Đăng ký thành viên</button>
-          <p class="form-note">
-            <span class="lang-block" data-lang="vi">Sau khi đăng ký, chúng tôi sẽ liên hệ qua email trong vòng 2 ngày làm việc.</span>
-            <span class="lang-block" data-lang="en" style="display:none;">After registration, we will contact you by email within 2 business days.</span>
-          </p>
-        </form>
+      <div class="cognito-form-wrap">
+        <script src="https://www.cognitoforms.com/f/seamless.js" data-key="nKgmBUhPrkWKTW5wSzEJVw" data-form="5"></script>
       </div>
     </div>
   </div>
