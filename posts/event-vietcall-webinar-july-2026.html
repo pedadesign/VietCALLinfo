@@ -46,10 +46,11 @@
       line-height: 1.8;
       margin-bottom: 1rem;
     }
-    .post-body a {
+    .post-body a:not(.btn) {
       color: var(--secondary);
       text-decoration: underline;
     }
+    .post-body a.btn { text-decoration: none; }
     .post-body blockquote {
       border-left: 4px solid var(--secondary);
       padding-left: 1.25rem;
