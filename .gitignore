@@ -3,3 +3,9 @@ Thumbs.db
 *.log
 .env
 node_modules/
+
+# Agent documentation — local only, do not push
+CLAUDE.md
+MEMORY.md
+SKILLS.md
+SESSION-LOG.md
