@@ -835,6 +835,11 @@
       <span class="lang-block" data-lang="vi">Địa điểm</span>
       <span class="lang-block" data-lang="en" style="display:none;">Venue</span>
     </a>
+    <a class="conf-sidebar__link" href="#faq">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <span class="lang-block" data-lang="vi">Câu hỏi thường gặp</span>
+      <span class="lang-block" data-lang="en" style="display:none;">FAQs</span>
+    </a>
     <a class="conf-sidebar__link" href="#contact-section">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       <span class="lang-block" data-lang="vi">Liên lạc</span>
@@ -2293,6 +2298,584 @@
         </p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ── FAQs ───────────────────────────────────────────────────── -->
+<section id="faq" style="padding:4rem 0;background:var(--stone-50);">
+<style>
+  .faq-cat { margin-bottom:2.25rem; }
+  .faq-cat__label { font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--primary); display:flex; align-items:center; gap:0.75rem; margin-bottom:0.875rem; }
+  .faq-cat__label::after { content:''; flex:1; height:1px; background:var(--primary); opacity:0.15; }
+  details.faq-q { background:var(--white); border:1px solid var(--stone-200); border-radius:var(--radius-lg); margin-bottom:0.5rem; }
+  details.faq-q > summary { display:flex; justify-content:space-between; align-items:flex-start; gap:1rem; padding:1rem 1.25rem; font-weight:600; font-size:0.9375rem; color:var(--stone-900); cursor:pointer; list-style:none; }
+  details.faq-q > summary::-webkit-details-marker { display:none; }
+  details.faq-q > summary .faq-chevron { font-size:1.375rem; font-weight:300; color:var(--primary); flex-shrink:0; line-height:1; margin-top:0.1rem; }
+  details.faq-q[open] > summary .faq-chevron { transform:rotate(45deg); }
+  details.faq-q > summary:hover { background:var(--stone-50); border-radius:var(--radius-lg); }
+  .faq-q__body { padding:0 1.25rem 1.25rem 1.25rem; font-size:0.9375rem; color:var(--stone-600); line-height:1.75; }
+  .faq-q__body p + p { margin-top:0.75rem; }
+</style>
+  <div class="container">
+    <span class="section-pill">
+      <span class="lang-block" data-lang="vi">Câu hỏi thường gặp</span>
+      <span class="lang-block" data-lang="en" style="display:none;">FAQs</span>
+    </span>
+    <h2 style="font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;color:var(--stone-900);margin-bottom:0.5rem;font-family:'Playfair Display',serif;">
+      <span class="lang-block" data-lang="vi">Câu hỏi thường gặp</span>
+      <span class="lang-block" data-lang="en" style="display:none;">Frequently Asked Questions</span>
+    </h2>
+    <p style="color:var(--stone-500);margin-bottom:2.5rem;max-width:44rem;">
+      <span class="lang-block" data-lang="vi">Tổng hợp các câu hỏi phổ biến về VietCALL 2026. Nếu câu hỏi của bạn chưa được đề cập, vui lòng liên hệ Ban Thư ký.</span>
+      <span class="lang-block" data-lang="en" style="display:none;">Answers to the most common questions about VietCALL 2026. If your question is not covered here, please contact the Secretariat.</span>
+    </p>
+
+    <!-- ① Nộp bài -->
+    <div class="faq-cat">
+      <div class="faq-cat__label">
+        <span class="lang-block" data-lang="vi">📄 Nộp bài</span>
+        <span class="lang-block" data-lang="en" style="display:none;">📄 Submission</span>
+      </div>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Tác giả có thể chỉnh sửa bài sau khi đã nộp abstract không?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Can authors edit their submission after submitting an abstract?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi"><p>Có. Tác giả có thể chỉnh sửa abstract đã nộp trước thời hạn đóng cổng nhận abstract bằng cách đăng nhập vào hệ thống và cập nhật bài nộp.</p><p>Sau thời hạn này, nếu bài đã được chuyển sang quá trình phản biện, tác giả không nên tự ý thay đổi nội dung. Trường hợp cần sửa thông tin quan trọng, vui lòng liên hệ Ban Thư ký Hội thảo. Sau khi abstract được chấp nhận, có thể cho phép sửa các lỗi nhỏ về ngôn ngữ hoặc hình thức, nhưng không được thay đổi đáng kể chủ đề, mục tiêu hoặc nội dung nghiên cứu đã được phản biện.</p></span>
+          <span class="lang-block" data-lang="en" style="display:none;"><p>Yes. Authors may edit a submitted abstract before the submission deadline by logging into the system and updating their submission.</p><p>After the deadline, if the submission has entered the review process, authors should not alter the content unilaterally. For important corrections, please contact the Conference Secretariat. Once an abstract is accepted, minor language or formatting corrections may be permitted, but substantive changes to the topic, objectives, or reviewed content are not allowed.</p></span>
+        </div>
+      </details>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Tác giả có thể cập nhật danh sách tác giả sau khi nộp bài không?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Can authors update the author list after submission?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi"><p>Có thể, nhưng cần có điều kiện. Trước khi kết thúc thời hạn nhận bài, tác giả liên hệ có thể cập nhật tên, thứ tự, cơ quan công tác và thông tin của các đồng tác giả trên hệ thống.</p><p>Sau khi bài đã được chấp nhận, việc thêm hoặc xóa tác giả cần có lý do chính đáng và được Ban Tổ chức/Ban Biên tập chấp thuận, nhằm bảo đảm minh bạch về quyền tác giả và trách nhiệm học thuật.</p></span>
+          <span class="lang-block" data-lang="en" style="display:none;"><p>Yes, but under certain conditions. Before the submission deadline, the corresponding author may update names, order, affiliations, and co-author details in the system.</p><p>After acceptance, adding or removing authors requires a valid reason and approval from the Organizing Committee/Editorial Board to ensure transparency in authorship and academic accountability.</p></span>
+        </div>
+      </details>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Bài toàn văn có bắt buộc sử dụng đúng template của hội thảo không?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Is the conference template mandatory for full paper submissions?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Có, nếu tác giả muốn bài được xem xét xuất bản trong kỷ yếu hoặc các ấn phẩm liên kết. Bài toàn văn phải được trình bày theo Full Paper Template của VietCALL 2026. Những bài không đúng template có thể được yêu cầu chỉnh sửa trước khi đưa vào phản biện hoặc biên tập xuất bản.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Yes, if authors wish their paper to be considered for publication in the proceedings or affiliated journals. Full papers must follow the VietCALL 2026 Full Paper Template. Submissions that do not comply may be asked to reformat before entering the review or editorial process.</span>
+        </div>
+      </details>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Độ dài tối đa của bài toàn văn là bao nhiêu?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">What is the maximum length for a full paper?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Bài toàn văn VietCALL 2026 có độ dài từ 4.000–6.000 từ và trình bày theo chuẩn APA lần thứ 7. Nếu tác giả nộp bài cho các ấn phẩm liên kết, cần tuân thủ thêm quy định riêng của từng ấn phẩm đó.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Full papers for VietCALL 2026 should be 4,000–6,000 words and formatted in APA 7th edition. Authors submitting to affiliated journals must also follow that journal's specific guidelines.</span>
+        </div>
+      </details>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Tôi có thể tải Full Paper Template ở đâu?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Where can I download the Full Paper Template?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Tác giả có thể tải Full Paper Template tại mục <em>Submission Guidelines / Author Guidelines</em> trên trang VietCALL 2026. Template cũng được cung cấp trực tiếp trên hệ thống nộp bài.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">The Full Paper Template is available under <em>Submission Guidelines / Author Guidelines</em> on the VietCALL 2026 website and directly within the submission system.</span>
+        </div>
+      </details>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Bài viết có được kiểm tra đạo văn không? Tỷ lệ tương đồng tối đa được chấp nhận là bao nhiêu?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Will papers be checked for plagiarism? What is the maximum similarity threshold?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Có. Các bài toàn văn xem xét xuất bản sẽ được kiểm tra mức độ tương đồng bằng phần mềm chuyên dụng. Thông thường, tổng tỷ lệ tương đồng không vượt quá 20% và không có tỷ lệ quá cao từ một nguồn đơn lẻ. Ban Biên tập sẽ xem xét bản chất của các phần trùng lặp, không chỉ dựa vào con số phần trăm.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Yes. Full papers submitted for publication consideration will be screened with similarity-detection software. As a guideline, overall similarity should not exceed 20% and no single source should account for a disproportionate share. The Editorial Board evaluates the nature of the overlap, not just the percentage figure.</span>
+        </div>
+      </details>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Hội thảo chấp nhận bài viết bằng ngôn ngữ nào?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">What language(s) does the conference accept for submissions?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Ngôn ngữ chính thức của Hội thảo là tiếng Anh. Abstract, bài toàn văn và phần trình bày được thực hiện bằng tiếng Anh. Tuy nhiên, VietCALL 2026 mở rộng thêm tiếng Việt dành cho các tác giả đang nghiên cứu và giảng dạy bằng ngôn ngữ khác tiếng Anh.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">The official language of the conference is English. Abstracts, full papers, and presentations are expected in English. However, VietCALL 2026 also accepts Vietnamese submissions from researchers and educators working in non-English contexts.</span>
+        </div>
+      </details>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Thời hạn nộp abstract đã qua — tôi còn có thể nộp bài toàn văn trực tiếp không?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">The abstract deadline has passed — can I still submit a full paper directly?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi"><p>Có thể, trong một số trường hợp có lý do chính đáng. Tác giả cần chủ động liên hệ Ban Thư ký Hội thảo, trình bày lý do cụ thể để được xem xét theo từng trường hợp.</p><p>Nếu được chấp thuận, bài toàn văn phải kèm abstract và đáp ứng đầy đủ yêu cầu về chủ đề, hình thức và quy định của VietCALL 2026. Bài vẫn phải trải qua quá trình phản biện theo quy định. Việc được phép nộp sau hạn abstract không đồng nghĩa với việc bài chắc chắn được chấp nhận trình bày hoặc xuất bản.</p></span>
+          <span class="lang-block" data-lang="en" style="display:none;"><p>In some cases with valid justification, yes. Authors should proactively contact the Conference Secretariat, explain their situation, and request consideration on a case-by-case basis.</p><p>If approved, the full paper must include an abstract and meet all VietCALL 2026 requirements regarding topic, format, and submission guidelines. The paper will still undergo the standard review process. Permission to submit after the abstract deadline does not guarantee acceptance for presentation or publication.</p></span>
+        </div>
+      </details>
+    </div>
+
+    <!-- ② Lệ phí & Thanh toán -->
+    <div class="faq-cat">
+      <div class="faq-cat__label">
+        <span class="lang-block" data-lang="vi">💰 Lệ phí &amp; Thanh toán</span>
+        <span class="lang-block" data-lang="en" style="display:none;">💰 Fees &amp; Payment</span>
+      </div>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Lệ phí đăng bài có bao gồm lệ phí tham dự hội thảo không?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Does the publication fee include the conference registration fee?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Không. Lệ phí hội thảo và lệ phí đăng bài toàn văn là hai khoản tách biệt nhau.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">No. The conference registration fee and the full paper publication fee are two separate charges.</span>
+        </div>
+      </details>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Lệ phí được tính theo từng bài hay theo từng người?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Is the fee charged per paper or per person?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Lệ phí <strong>tham dự hội thảo</strong> tính theo người tham dự, không tính theo bài. Ví dụ: một tác giả có 2 bài trình bày chỉ cần đóng phí 1 lần; ngược lại, nếu 1 bài có 2 người cùng trình bày thì cả 2 đều cần đóng phí. Lệ phí <strong>đăng bài toàn văn</strong> (nếu có) tính theo bài.</span>
+          <span class="lang-block" data-lang="en" style="display:none;"><strong>Conference attendance fees</strong> are charged per attendee, not per paper. For example, an author presenting two papers pays only once; conversely, if two people co-present a single paper, both must pay. <strong>Full paper publication fees</strong> (if applicable) are charged per paper.</span>
+        </div>
+      </details>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Nếu một tác giả có nhiều bài được chấp nhận, lệ phí tính như thế nào?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">How is the fee calculated if one author has multiple accepted papers?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Lệ phí hội thảo tính theo đầu người, không tính theo số bài. Tác giả có nhiều bài được chấp nhận chỉ cần đóng một lần lệ phí tham dự.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">The conference attendance fee is per person, not per paper. An author with multiple accepted papers pays the attendance fee only once.</span>
+        </div>
+      </details>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Đồng tác giả không trình bày có cần đăng ký và đóng lệ phí không?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Do non-presenting co-authors need to register and pay a fee?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Mỗi người tham dự hội thảo đóng lệ phí riêng — khoản phí này bao gồm tài liệu hội thảo và các chi phí logistics (tiệc trà, ăn trưa, gala dinner, v.v.). Đồng tác giả không tham dự thì không cần đăng ký và đóng phí.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Each person attending the conference pays an individual fee, which covers conference materials and logistics (coffee breaks, lunch, gala dinner, etc.). Co-authors who do not attend do not need to register or pay.</span>
+        </div>
+      </details>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Hội thảo có chính sách ưu đãi lệ phí cho sinh viên hoặc nghiên cứu sinh không?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Are there discounted fees for students or doctoral candidates?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Có. Vui lòng xem thông tin cụ thể về các mức lệ phí ưu đãi trong form đăng ký chính thức.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Yes. Please refer to the official registration form for details on reduced fee tiers for students and doctoral candidates.</span>
+        </div>
+      </details>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Ban Tổ chức có xuất hóa đơn tài chính không?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Does the Organizing Committee issue official financial invoices?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Hội thảo cung cấp <strong>phiếu thu</strong> từ Hội Ngôn ngữ. Phân hội VietCALL là đơn vị trực thuộc và không có tài khoản hay con dấu riêng, do đó không cấp hóa đơn tài chính.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">The conference issues a <strong>payment receipt</strong> from the Vietnam Linguistics Association. As VietCALL is an affiliated sub-association without its own bank account or official seal, financial (VAT) invoices are not available.</span>
+        </div>
+      </details>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Hội thảo chấp nhận những hình thức thanh toán nào?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">What payment methods are accepted?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Hình thức thanh toán hiện tại là chuyển khoản ngân hàng vào tài khoản của Hội Ngôn ngữ (Hội chủ quản của Phân hội VietCALL). Thông tin tài khoản chi tiết sẽ được cung cấp trong form đăng ký.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Payments are currently accepted via bank transfer to the account of the Vietnam Linguistics Association (the parent organization of VietCALL). Full banking details are provided in the registration form.</span>
+        </div>
+      </details>
+    </div>
+
+    <!-- ③ Trình bày -->
+    <div class="faq-cat">
+      <div class="faq-cat__label">
+        <span class="lang-block" data-lang="vi">🎤 Trình bày</span>
+        <span class="lang-block" data-lang="en" style="display:none;">🎤 Presentation</span>
+      </div>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Hội thảo có hỗ trợ hình thức trình bày trực tuyến (online) không?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Does the conference support online presentations?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Hội thảo tổ chức theo hình thức hybrid. Diễn giả quốc tế (người nước ngoài) có thể trình bày trực tiếp hoặc trực tuyến. Diễn giả trong nước (người Việt Nam) được yêu cầu trình bày trực tiếp tại hội trường.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">The conference is organized in hybrid format. International (non-Vietnamese) speakers may present either on-site or online. Vietnamese-based presenters are required to attend and present in person.</span>
+        </div>
+      </details>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Đồng tác giả có thể thay mặt tác giả chính báo cáo không?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Can a co-author present on behalf of the lead author?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Được. Chỉ cần một người đại diện trình bày tại hội thảo. Tuy nhiên, Giấy chứng nhận trình bày (Certificate of Presentation) chỉ được cấp cho người trực tiếp trình bày và đã hoàn tất lệ phí tham dự.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Yes. Only one representative presenter is required per paper. However, the Certificate of Presentation will only be issued to the person who actually presents and has completed the registration fee payment.</span>
+        </div>
+      </details>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Nếu không thể tham dự và báo cáo, bài có vẫn được xem xét đăng kỷ yếu không?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">If the author cannot present, can the paper still appear in the proceedings?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Được. Tuy nhiên, trường hợp không tham gia trình bày, mức lệ phí áp dụng là <strong>$70</strong> thay vì $40.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Yes. However, for papers without an on-site presentation, the applicable fee is <strong>$70</strong> instead of $40.</span>
+        </div>
+      </details>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Không tham gia trình bày, bài có đủ điều kiện đề cử đăng tạp chí đối tác không?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Can a paper without a presentation still be considered for partner journals?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Được. Điều kiện áp dụng tương tự: lệ phí là <strong>$70</strong> thay vì $40 trong trường hợp không có người trình bày tại hội trường.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Yes. The same conditions apply: the fee is <strong>$70</strong> instead of $40 when there is no in-person presentation.</span>
+        </div>
+      </details>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Một tác giả có thể trình bày nhiều hơn một bài không?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Can one author present more than one paper?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Được, với điều kiện các bài đều đã qua vòng phản biện abstract và được chấp nhận chính thức.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Yes, provided each paper has passed the abstract review and been officially accepted.</span>
+        </div>
+      </details>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Thời lượng dành cho mỗi bài báo cáo là bao nhiêu phút?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">How many minutes is each paper presentation?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Mỗi bài báo cáo có thời lượng <strong>20 phút</strong>.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Each paper presentation is allocated <strong>20 minutes</strong>.</span>
+        </div>
+      </details>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Tác giả có cần nộp slide trước khi trình bày không?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Do authors need to submit slides before the presentation?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Có. Tác giả cần gửi slide cho moderator của session mình trình bày trước khi hội thảo diễn ra. Thông tin chi tiết về thời hạn và cách thức gửi sẽ được thông báo sau.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Yes. Authors are required to send their slides to the moderator of their session before the conference. Details on submission deadlines and methods will be communicated in due course.</span>
+        </div>
+      </details>
+    </div>
+
+    <!-- ④ Xuất bản -->
+    <div class="faq-cat">
+      <div class="faq-cat__label">
+        <span class="lang-block" data-lang="vi">📚 Xuất bản</span>
+        <span class="lang-block" data-lang="en" style="display:none;">📚 Publication</span>
+      </div>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Cơ chế lựa chọn ấn phẩm xuất bản (kỷ yếu hoặc tạp chí) như thế nào?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">How is the publication venue (proceedings or journal) determined?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Tác giả tự lựa chọn ấn phẩm phù hợp trong số các lựa chọn được hội thảo hỗ trợ (kỷ yếu hoặc tạp chí đối tác). Ban Tổ chức khuyến nghị tác giả tham khảo ý kiến của Phòng Nghiên cứu Khoa học tại cơ quan mình để đưa ra lựa chọn phù hợp nhất với yêu cầu học thuật và nghề nghiệp của từng cá nhân.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Authors self-select the publication venue from the options supported by the conference (proceedings or partner journals). The Organizing Committee recommends that authors consult their institution's Research Department to make the most suitable choice for their academic and professional needs.</span>
+        </div>
+      </details>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Bài viết được chấp nhận sẽ được xuất bản dưới hình thức nào?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">In what format will accepted papers be published?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Bài đăng trên ICTE Press sẽ được xuất bản dưới dạng <strong>PDF trực tuyến</strong> trên hệ thống tạp chí tương ứng.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Papers published through ICTE Press will appear as <strong>online PDFs</strong> on the corresponding journal platform.</span>
+        </div>
+      </details>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Khi nào tác giả nhận được thông báo chính thức về kết quả xuất bản?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">When will authors receive the official publication decision?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Thời gian thông báo tùy thuộc vào tiến trình phản biện và chỉnh sửa của từng bài. Ban Biên tập sẽ liên hệ trực tiếp với tác giả khi có kết quả.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">The timeline depends on each paper's review and revision process. The Editorial Board will contact authors directly once a decision has been reached.</span>
+        </div>
+      </details>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Tiêu chí lựa chọn bài đăng tạp chí đối tác là gì?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">What are the criteria for selecting papers for partner journals?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Bài được đề cử dựa trên chất lượng học thuật, sự phù hợp với chủ đề của tạp chí và đánh giá của Hội đồng Biên tập. Tác giả nên tham khảo các bài báo đã đăng trên tạp chí đó và tải journal template tương ứng để đảm bảo đúng định dạng trước khi nộp bài.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Papers are nominated based on scholarly quality, relevance to the journal's scope, and the Editorial Board's assessment. Authors should review previously published articles in the target journal and download the relevant journal template to ensure correct formatting before submission.</span>
+        </div>
+      </details>
+    </div>
+
+    <!-- ⑤ Tham dự & Chứng nhận -->
+    <div class="faq-cat">
+      <div class="faq-cat__label">
+        <span class="lang-block" data-lang="vi">🎫 Tham dự &amp; Chứng nhận</span>
+        <span class="lang-block" data-lang="en" style="display:none;">🎫 Attendance &amp; Certificates</span>
+      </div>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Người không có bài báo có thể đăng ký tham dự hội thảo không?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Can people without a paper register to attend the conference?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Có. Hội thảo chào đón các nhà nghiên cứu, giảng viên, giáo viên, học viên sau đại học, sinh viên và những người quan tâm, kể cả khi không có bài trình bày. Người tham dự không có bài cần đăng ký và hoàn thành lệ phí tham dự theo quy định.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Yes. The conference welcomes researchers, lecturers, teachers, postgraduate students, and all interested parties, regardless of whether they have a paper to present. Attendees without a paper are still required to register and pay the attendance fee.</span>
+        </div>
+      </details>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Ban Tổ chức có cấp Giấy chứng nhận tham dự và trình bày không?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Does the Organizing Committee issue certificates of attendance and presentation?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Có. Ban Tổ chức dự kiến cấp <strong>Giấy chứng nhận trình bày</strong> (Certificate of Presentation) cho tác giả trình bày tại hội thảo và <strong>Giấy chứng nhận tham dự</strong> (Certificate of Attendance) cho người đăng ký tham dự và có mặt tại hội thảo.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Yes. The Organizing Committee plans to issue a <strong>Certificate of Presentation</strong> to presenting authors and a <strong>Certificate of Attendance</strong> to registered participants who attend the conference.</span>
+        </div>
+      </details>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Đồng tác giả không trình bày có được cấp Giấy chứng nhận không?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Do non-presenting co-authors receive a certificate?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Người trực tiếp trình bày nhận Certificate of Presentation. Đồng tác giả không trực tiếp trình bày có thể nhận xác nhận tác giả/đồng tác giả theo yêu cầu.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">The presenting author receives the Certificate of Presentation. Non-presenting co-authors may request an authorship/co-authorship confirmation upon request.</span>
+        </div>
+      </details>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Giấy chứng nhận được cấp dưới dạng bản điện tử hay bản in?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Are certificates issued in digital or printed form?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Giấy chứng nhận điện tử là hình thức chính thức được sử dụng.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Digital certificates are the primary and official format used.</span>
+        </div>
+      </details>
+    </div>
+
+    <!-- ⑥ Hỗ trợ kỹ thuật -->
+    <div class="faq-cat">
+      <div class="faq-cat__label">
+        <span class="lang-block" data-lang="vi">🔧 Hỗ trợ kỹ thuật</span>
+        <span class="lang-block" data-lang="en" style="display:none;">🔧 Technical Support</span>
+      </div>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Tác giả gặp lỗi khi nộp bài trên hệ thống cần liên hệ ai?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Who should authors contact if they encounter errors in the submission system?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Vui lòng liên hệ Ban Thư ký/Bộ phận hỗ trợ kỹ thuật VietCALL 2026 qua email được công bố trên website. Khi gửi yêu cầu, vui lòng cung cấp: họ tên, email đăng ký, mã bài (nếu có), mô tả lỗi và ảnh chụp màn hình.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Please contact the VietCALL 2026 Secretariat / Technical Support team via the email address listed on the website. Include your full name, registered email, paper ID (if available), a description of the issue, and a screenshot.</span>
+        </div>
+      </details>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Tôi quên mật khẩu tài khoản nộp bài, phải xử lý như thế nào?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">I forgot my submission account password — what should I do?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Sử dụng chức năng <em>"Forgot password / Quên mật khẩu"</em> trên trang đăng nhập. Nếu không nhận được email đặt lại mật khẩu, hãy kiểm tra thư mục Spam/Junk trước, sau đó liên hệ Bộ phận hỗ trợ kỹ thuật.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Use the <em>"Forgot password"</em> function on the login page. If you do not receive a password-reset email, check your Spam/Junk folder first, then contact Technical Support.</span>
+        </div>
+      </details>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Không nhận được email xác nhận sau khi nộp bài, tôi cần làm gì?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">I did not receive a confirmation email after submitting — what should I do?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Vui lòng kiểm tra thư mục Spam/Junk và đăng nhập lại hệ thống để xác nhận trạng thái bài nộp. Nếu vẫn không thấy xác nhận hoặc không chắc bài đã được nộp thành công, hãy liên hệ Ban Thư ký để được kiểm tra.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Check your Spam/Junk folder and log back into the system to verify your submission status. If you still cannot confirm that your paper was successfully submitted, contact the Secretariat for assistance.</span>
+        </div>
+      </details>
+    </div>
+
+    <!-- ⑦ Lưu trú & Sự kiện bên lề -->
+    <div class="faq-cat">
+      <div class="faq-cat__label">
+        <span class="lang-block" data-lang="vi">🏨 Lưu trú &amp; Sự kiện bên lề</span>
+        <span class="lang-block" data-lang="en" style="display:none;">🏨 Accommodation &amp; Social Events</span>
+      </div>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Ban Tổ chức có gợi ý khách sạn gần địa điểm hội thảo không?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Does the Organizing Committee recommend hotels near the venue?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Có. Ban Tổ chức sẽ cung cấp danh sách một số khách sạn và cơ sở lưu trú thuận tiện gần địa điểm tổ chức để người tham dự tham khảo và tự đặt phòng. Thông tin về khoảng cách, mức giá tham khảo và liên hệ đặt phòng sẽ được cập nhật trên website VietCALL 2026. Chi phí lưu trú do người tham dự tự chi trả, trừ trường hợp có thông báo riêng.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Yes. The Organizing Committee will provide a list of conveniently located hotels and accommodation options near the venue for participants to reference and book independently. Information on distances, indicative rates, and booking contacts will be updated on the VietCALL 2026 website. Accommodation costs are the participants' own responsibility unless stated otherwise.</span>
+        </div>
+      </details>
+
+      <details class="faq-q">
+        <summary>
+          <span>
+            <span class="lang-block" data-lang="vi">Hội thảo có tổ chức gala dinner, city tour hoặc các hoạt động bên lề không?</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Will there be a gala dinner, city tour, or other social activities?</span>
+          </span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-q__body">
+          <span class="lang-block" data-lang="vi">Ban Tổ chức dự kiến tổ chức một số hoạt động kết nối bên lề hội thảo, tùy theo chương trình chính thức và số lượng người đăng ký. Các hoạt động có thể bao gồm gala/networking dinner, tham quan văn hóa – thành phố và các buổi gặp gỡ học thuật. Thông tin cụ thể về thời gian, chi phí và cách đăng ký sẽ được thông báo sau trên website hội thảo.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">The Organizing Committee plans to organize a number of networking and social activities alongside the main programme, subject to the official schedule and number of registrants. Activities may include a gala/networking dinner, cultural city tour, and academic networking sessions. Specific details on timing, costs, and registration will be announced on the conference website.</span>
+        </div>
+      </details>
+    </div>
+
   </div>
 </section>
 
