@@ -2258,7 +2258,47 @@
       <span class="lang-block" data-lang="vi">Form Đăng ký Tham dự</span>
       <span class="lang-block" data-lang="en" style="display:none;">Conference Registration Form</span>
     </h3>
-    <div style="background:var(--stone-50);border-radius:var(--radius-xl);padding:1.5rem;">
+    <style>
+      .cognito-form-wrap {
+        background: var(--white);
+        border-radius: var(--radius-xl, 1rem);
+        box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+        overflow: hidden;
+      }
+      .cog-header img { display: none !important; }
+      .cog-header {
+        padding: 1.75rem 2.25rem 0 !important;
+        background: transparent !important;
+        border-bottom: none !important;
+      }
+      .cog-heading {
+        font-family: 'Playfair Display', serif !important;
+        font-size: 1.375rem !important;
+        font-weight: 700 !important;
+        color: var(--primary) !important;
+      }
+      .cog-body { padding: 1.25rem 2.25rem 2rem !important; }
+      .cog-button--submit {
+        background: var(--primary) !important;
+        border-color: var(--primary) !important;
+        border-radius: var(--radius-full, 9999px) !important;
+        font-family: inherit !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.01em !important;
+        padding: 0.75rem 2rem !important;
+        transition: background 0.2s, border-color 0.2s !important;
+      }
+      .cog-button--submit:hover {
+        background: #1a2460 !important;
+        border-color: #1a2460 !important;
+      }
+      .cog-input:focus, .cog-select:focus, .cog-textarea:focus {
+        outline: 2px solid var(--primary) !important;
+        outline-offset: 1px !important;
+        border-color: var(--primary) !important;
+      }
+    </style>
+    <div class="cognito-form-wrap">
       <script src="https://www.cognitoforms.com/f/seamless.js" data-key="nKgmBUhPrkWKTW5wSzEJVw" data-form="8"></script>
     </div>
   </div>
