@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Workshop 1: AI-Powered Research Kickstart | VietCALL</title>
+  <meta name="description" content="VietCALL tổ chức Online Workshop 1: AI-Powered Research Kickstart – workshop thực hành giúp giảng viên và nhà nghiên cứu ứng dụng AI hiệu quả, có trách nhiệm trong quy trình nghiên cứu. Diễn giả: ThS. Lê Nguyễn Như Anh. 09:30–11:00, ngày 19/09/2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .post-layout {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 3rem;
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .post-layout { grid-template-columns: 1fr; }
+    }
+    .post-body {
+      background: #fff;
+      border-radius: var(--radius-2xl);
+      padding: 2.5rem;
+    }
+    .post-body img {
+      max-width: 100%;
+      border-radius: var(--radius-xl);
+      margin: 1.5rem 0;
+    }
+    .post-body h2, .post-body h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary);
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .post-body p {
+      line-height: 1.8;
+      color: var(--stone-700);
+      margin-bottom: 1rem;
+    }
+    .post-body ul, .post-body ol {
+      padding-left: 1.5rem;
+      color: var(--stone-700);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    .post-body a:not(.btn) {
+      color: var(--secondary);
+      text-decoration: underline;
+    }
+    .post-body a.btn { text-decoration: none; }
+    .post-body blockquote {
+      border-left: 4px solid var(--secondary);
+      padding-left: 1.25rem;
+      color: var(--stone-600);
+      font-style: italic;
+      margin: 1.5rem 0;
+    }
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      font-size: 0.875rem;
+      color: var(--stone-500);
+    }
+    .post-meta .badge { font-size: 0.75rem; }
+    .post-sidebar {
+      position: sticky;
+      top: 100px;
+    }
+    .sidebar-card {
+      background: var(--stone-50);
+      border-radius: var(--radius-2xl);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .sidebar-card h4 {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.9375rem;
+      margin-bottom: 2rem;
+      text-decoration: none;
+    }
+    .back-link:hover { color: var(--secondary); }
+    .topic-pill {
+      display: inline-flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--stone-50);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+      margin-bottom: 0.75rem;
+    }
+    .topic-pill p { margin: 0; font-size: 0.9375rem; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" role="navigation">
+  <div class="navbar__inner">
+    <a href="../index.html" class="navbar__brand">
+      <img src="../assets/brand/VietC@LL-Logo-Transparent.png" alt="VietCALL" class="navbar__logo-img">
+    </a>
+    <ul class="navbar__links">
+      <li><a href="../about.html" class="navbar__link" data-i18n="nav.about">Giới thiệu</a></li>
+      <li><a href="../conferences.html" class="navbar__link" data-i18n="nav.events">Sự kiện</a></li>
+      <li><a href="../blog.html" class="navbar__link navbar__link--active" data-i18n="nav.blog">Bài viết</a></li>
+      <li><a href="../resources.html" class="navbar__link" data-i18n="nav.resources">Tài nguyên</a></li>
+      <li><a href="../membership.html" class="navbar__link" data-i18n="nav.membership">Thành viên</a></li>
+      <li><a href="../contact.html" class="navbar__link" data-i18n="nav.contact">Liên lạc</a></li>
+    </ul>
+    <div class="navbar__right">
+      <div class="lang-switcher">
+        <button class="lang-switcher__btn" aria-label="Chọn ngôn ngữ">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="lang-switcher__current">🇻🇳 VI</span>
+        </button>
+        <div class="lang-switcher__dropdown">
+          <button class="lang-switcher__option active" data-lang-code="vi">🇻🇳 Tiếng Việt</button>
+          <button class="lang-switcher__option" data-lang-code="en">🇺🇸 English</button>
+        </div>
+      </div>
+      <a href="../membership.html" class="btn btn--primary btn--sm" data-i18n="nav.join">Tham gia ngay</a>
+    </div>
+    <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="navbar__mobile" id="mobileMenu">
+  <a href="../about.html" data-i18n="nav.about">Giới thiệu</a>
+  <a href="../conferences.html" data-i18n="nav.events">Sự kiện</a>
+  <a href="../blog.html" data-i18n="nav.blog">Bài viết</a>
+  <a href="../resources.html" data-i18n="nav.resources">Tài nguyên</a>
+  <a href="../membership.html" data-i18n="nav.membership">Thành viên</a>
+  <a href="../contact.html" data-i18n="nav.contact">Liên lạc</a>
+  <div class="mobile-cta"><a href="../membership.html" class="btn btn--primary" style="width:100%;justify-content:center;" data-i18n="nav.join">Tham gia ngay</a></div>
+  <div class="mobile-lang">
+    <button class="lang-switcher__option active" data-lang-code="vi">🇻🇳 VI</button>
+    <button class="lang-switcher__option" data-lang-code="en">🇺🇸 EN</button>
+  </div>
+</div>
+
+<main class="page-top">
+
+<header class="page-hero animate-in">
+  <div class="container">
+    <span class="badge">Online Workshop</span>
+    <h1 class="display-lg" style="max-width:900px;">
+      <span class="lang-block" data-lang="vi">Online Workshop 1: AI-Powered Research Kickstart</span>
+      <span class="lang-block" data-lang="en" style="display:none;">Online Workshop 1: AI-Powered Research Kickstart</span>
+    </h1>
+    <div class="post-meta">
+      <span>📅 <span class="lang-block" data-lang="vi">19 tháng 9, 2026</span><span class="lang-block" data-lang="en" style="display:none;">19 September 2026</span></span>
+      <span>✍️ VietCALL</span>
+      <span class="badge" style="background:rgba(187,4,0,0.1);color:var(--secondary);">Online</span>
+    </div>
+  </div>
+</header>
+
+<section class="section bg-stone animate-in">
+  <div class="container">
+    <a href="../conferences.html" class="back-link">← <span class="lang-block" data-lang="vi">Quay lại Sự kiện</span><span class="lang-block" data-lang="en" style="display:none;">Back to Events</span></a>
+    <div class="post-layout">
+      <article class="post-body">
+
+        <!-- Cover image / poster -->
+        <img src="../assets/events/vietcall-2026-sept19/IMG_1319.JPG" alt="VietCALL Online Workshop 1 – AI-Powered Research Kickstart" style="width:100%;border-radius:0.75rem;margin-bottom:2rem;">
+
+        <!-- Event details grid -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;background:var(--stone-50);border-radius:var(--radius-xl);padding:1.5rem;margin-bottom:2rem;">
+          <div>
+            <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--stone-400);margin-bottom:0.25rem;">
+              <span class="lang-block" data-lang="vi">Thời gian</span><span class="lang-block" data-lang="en" style="display:none;">Date &amp; Time</span>
+            </p>
+            <p style="font-weight:600;color:var(--stone-800);margin:0;">
+              <span class="lang-block" data-lang="vi">Thứ Bảy, 19/09/2026<br>09:30 – 11:00</span>
+              <span class="lang-block" data-lang="en" style="display:none;">Saturday, 19 September 2026<br>09:30 – 11:00</span>
+            </p>
+          </div>
+          <div>
+            <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--stone-400);margin-bottom:0.25rem;">
+              <span class="lang-block" data-lang="vi">Hình thức</span><span class="lang-block" data-lang="en" style="display:none;">Format</span>
+            </p>
+            <p style="font-weight:600;color:var(--stone-800);margin:0;">
+              <span class="lang-block" data-lang="vi">Online</span>
+              <span class="lang-block" data-lang="en" style="display:none;">Online</span>
+            </p>
+          </div>
+          <div>
+            <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--stone-400);margin-bottom:0.25rem;">
+              <span class="lang-block" data-lang="vi">Đối tượng</span><span class="lang-block" data-lang="en" style="display:none;">Audience</span>
+            </p>
+            <p style="font-weight:600;color:var(--stone-800);margin:0;">
+              <span class="lang-block" data-lang="vi">Giảng viên, nhà nghiên cứu,<br>học viên sau đại học, sinh viên</span>
+              <span class="lang-block" data-lang="en" style="display:none;">Lecturers, researchers,<br>postgraduate &amp; undergraduate students</span>
+            </p>
+          </div>
+          <div>
+            <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--stone-400);margin-bottom:0.25rem;">
+              <span class="lang-block" data-lang="vi">Phí tham dự</span><span class="lang-block" data-lang="en" style="display:none;">Fee</span>
+            </p>
+            <p style="font-weight:600;color:var(--stone-800);margin:0;">
+              <span class="lang-block" data-lang="vi">Có phí<br><span style="font-weight:400;font-size:0.875rem;">(hỗ trợ hoạt động VietCALL)</span></span>
+              <span class="lang-block" data-lang="en" style="display:none;">Paid<br><span style="font-weight:400;font-size:0.875rem;">(supports VietCALL activities)</span></span>
+            </p>
+          </div>
+        </div>
+
+        <!-- About -->
+        <h2>
+          <span class="lang-block" data-lang="vi">Giới thiệu workshop</span>
+          <span class="lang-block" data-lang="en" style="display:none;">About the Workshop</span>
+        </h2>
+        <p>
+          <span class="lang-block" data-lang="vi">Sự phát triển nhanh chóng của trí tuệ nhân tạo (AI) đang mở ra nhiều cơ hội mới cho hoạt động nghiên cứu. AI có thể hỗ trợ tìm kiếm tài liệu, tóm tắt bài báo, tổ chức thông tin và phát triển ý tưởng. Tuy nhiên, một câu hỏi quan trọng hơn đang được đặt ra: <strong>AI nên tham gia ở đâu trong quy trình nghiên cứu? Những công việc nào có thể được AI hỗ trợ và những quyết định phương pháp luận, học thuật nào nhất thiết phải thuộc về nhà nghiên cứu?</strong></span>
+          <span class="lang-block" data-lang="en" style="display:none;">AI is rapidly opening new possibilities for research. It can assist with literature searches, article summarisation, information organisation, and idea development. Yet a more important question emerges: <strong>Where should AI participate in the research process? Which tasks can AI support, and which methodological and scholarly decisions must remain with the researcher?</strong></span>
+        </p>
+        <p>
+          <span class="lang-block" data-lang="vi">Xuất phát từ những câu hỏi đó, VietCALL tổ chức <strong>Online Workshop 1: AI-Powered Research Kickstart</strong> — một workshop thực hành nhằm hỗ trợ giảng viên, nghiên cứu viên, học viên và sinh viên khai thác AI hiệu quả, có phương pháp và có trách nhiệm trong toàn bộ quá trình nghiên cứu.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Starting from these questions, VietCALL organises <strong>Online Workshop 1: AI-Powered Research Kickstart</strong> — a hands-on workshop to help lecturers, researchers, students, and postgraduate learners use AI effectively, methodically, and responsibly throughout the entire research process.</span>
+        </p>
+
+        <!-- What you'll get -->
+        <h2>
+          <span class="lang-block" data-lang="vi">Bạn sẽ nhận được gì?</span>
+          <span class="lang-block" data-lang="en" style="display:none;">What You Will Gain</span>
+        </h2>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;margin-bottom:2rem;">
+          <div class="topic-pill">
+            <span style="font-size:1.25rem;">🔍</span>
+            <p>
+              <span class="lang-block" data-lang="vi"><strong>Xác định vai trò phù hợp của AI trong research workflow</strong> — nhận biết những nhiệm vụ AI có thể hỗ trợ và những quyết định cần được kiểm soát bởi nhà nghiên cứu.</span>
+              <span class="lang-block" data-lang="en" style="display:none;"><strong>Identify the right role of AI in your research workflow</strong> — recognise which tasks AI can support and which decisions must remain under the researcher's control.</span>
+            </p>
+          </div>
+          <div class="topic-pill">
+            <span style="font-size:1.25rem;">📚</span>
+            <p>
+              <span class="lang-block" data-lang="vi">Ứng dụng AI để <strong>tìm kiếm và sàng lọc tài liệu nhanh hơn, có hệ thống hơn</strong>.</span>
+              <span class="lang-block" data-lang="en" style="display:none;">Use AI to <strong>search and filter literature faster and more systematically</strong>.</span>
+            </p>
+          </div>
+          <div class="topic-pill">
+            <span style="font-size:1.25rem;">⚖️</span>
+            <p>
+              <span class="lang-block" data-lang="vi"><strong>Đánh giá và lựa chọn AI research tools</strong> dựa trên tính minh bạch, khả năng kiểm chứng và sự phù hợp với phương pháp nghiên cứu — thay vì chỉ dựa vào sự tiện lợi.</span>
+              <span class="lang-block" data-lang="en" style="display:none;"><strong>Evaluate and select AI research tools</strong> based on transparency, verifiability, and methodological fit — not just convenience.</span>
+            </p>
+          </div>
+          <div class="topic-pill">
+            <span style="font-size:1.25rem;">🚀</span>
+            <p>
+              <span class="lang-block" data-lang="vi">Chuyển một ý tưởng nghiên cứu ban đầu thành một <strong>structured research starting pack</strong> — nền tảng để tiếp tục phát triển thành một nghiên cứu thực sự.</span>
+              <span class="lang-block" data-lang="en" style="display:none;">Turn an initial research idea into a <strong>structured research starting pack</strong> — a foundation to develop into a real study.</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Speaker -->
+        <h2>
+          <span class="lang-block" data-lang="vi">Diễn giả</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Speaker</span>
+        </h2>
+        <div style="background:var(--stone-50);border-radius:var(--radius-xl);padding:1.5rem 2rem;margin-bottom:2rem;">
+          <h3 style="margin-top:0;">
+            <span class="lang-block" data-lang="vi">Thầy Lê Nguyễn Như Anh</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Le Nguyen Nhu Anh</span>
+          </h3>
+          <p style="color:var(--secondary);font-weight:600;margin-top:-0.5rem;margin-bottom:1rem;">
+            <span class="lang-block" data-lang="vi">PhD Candidate in Education, Đại học Adelaide · Giảng viên, Trường Đại học Sư phạm TP. HCM · Sáng lập viên, EdTech Corner</span>
+            <span class="lang-block" data-lang="en" style="display:none;">PhD Candidate in Education, University of Adelaide · Lecturer, Ho Chi Minh City University of Education · Founder, EdTech Corner</span>
+          </p>
+          <p>
+            <span class="lang-block" data-lang="vi">Với kinh nghiệm trong lĩnh vực AI, công nghệ giáo dục, đánh giá ngôn ngữ ứng dụng công nghệ và đào tạo giáo viên, diễn giả sẽ cùng người tham dự khám phá cách <strong>làm nghiên cứu tốt hơn với AI</strong> — thay vì đơn thuần sử dụng ngày càng nhiều công cụ AI.</span>
+            <span class="lang-block" data-lang="en" style="display:none;">With expertise in AI, educational technology, technology-mediated language assessment, and teacher education, the speaker will guide participants to explore how to <strong>do better research with AI</strong> — rather than simply using more AI tools.</span>
+          </p>
+        </div>
+
+        <!-- Who should attend -->
+        <h2>
+          <span class="lang-block" data-lang="vi">Dành cho ai?</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Who Should Attend?</span>
+        </h2>
+        <p>
+          <span class="lang-block" data-lang="vi">Workshop phù hợp với <strong>giảng viên, giáo viên, nghiên cứu viên, học viên sau đại học, sinh viên</strong> và những người đang chuẩn bị đề tài, luận văn, bài báo hoặc muốn bắt đầu hành trình nghiên cứu trong thời đại AI một cách bài bản hơn.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">The workshop is designed for <strong>lecturers, teachers, researchers, postgraduate students, and undergraduates</strong> who are preparing a research proposal, thesis, or paper — or anyone who wants to begin their research journey in the AI age more systematically.</span>
+        </p>
+
+        <blockquote>
+          <span class="lang-block" data-lang="vi">Hãy mang theo một ý tưởng nghiên cứu — và cùng VietCALL biến ý tưởng ấy thành một khởi đầu có phương pháp.</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Bring a research idea — and let VietCALL help you turn it into a methodical starting point.</span>
+        </blockquote>
+
+        <!-- Registration -->
+        <h2>
+          <span class="lang-block" data-lang="vi">Đăng ký tham dự</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Register</span>
+        </h2>
+        <p>
+          <span class="lang-block" data-lang="vi">Quý thầy cô, nhà nghiên cứu và học viên vui lòng đăng ký qua đường link bên dưới hoặc quét mã QR trên poster:</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Lecturers, researchers, and students are welcome to register via the link below or scan the QR code on the poster:</span>
+        </p>
+        <a href="https://bit.ly/4gHfOpa" target="_blank" rel="noopener" class="btn btn--primary" style="display:inline-flex;margin-bottom:1.5rem;">
+          <span class="lang-block" data-lang="vi">Đăng ký ngay →</span>
+          <span class="lang-block" data-lang="en" style="display:none;">Register Now →</span>
+        </a>
+        <p style="font-size:0.875rem;color:var(--stone-500);">
+          <span class="lang-block" data-lang="vi"><em>Lưu ý: Kinh phí workshop được sử dụng một phần để chi trả thù lao cho diễn giả; phần còn lại đóng góp cho việc xây dựng, phát triển và duy trì các hoạt động chuyên môn của VietCALL và Hội Ngôn ngữ học Việt Nam.</em></span>
+          <span class="lang-block" data-lang="en" style="display:none;"><em>Note: Workshop fees partially cover the speaker's honorarium; the remainder supports VietCALL and the Vietnam Linguistics Association's professional activities.</em></span>
+        </p>
+
+      </article>
+
+      <aside class="post-sidebar">
+        <div class="sidebar-card">
+          <h4 class="lang-block" data-lang="vi">Thông tin sự kiện</h4>
+          <h4 class="lang-block" data-lang="en" style="display:none;">Event Details</h4>
+          <p style="font-size:0.875rem;color:var(--stone-600);line-height:1.7;">
+            <strong class="lang-block" data-lang="vi">📅 Ngày:</strong>
+            <strong class="lang-block" data-lang="en" style="display:none;">📅 Date:</strong>
+            <br><span class="lang-block" data-lang="vi">Thứ Bảy, 19/09/2026</span><span class="lang-block" data-lang="en" style="display:none;">Saturday, 19 September 2026</span>
+          </p>
+          <p style="font-size:0.875rem;color:var(--stone-600);line-height:1.7;margin-top:0.75rem;">
+            <strong>⏰ 09:30 – 11:00</strong>
+          </p>
+          <p style="font-size:0.875rem;color:var(--stone-600);line-height:1.7;margin-top:0.75rem;">
+            <strong class="lang-block" data-lang="vi">📍 Hình thức:</strong>
+            <strong class="lang-block" data-lang="en" style="display:none;">📍 Format:</strong>
+            <br><span class="lang-block" data-lang="vi">Online</span><span class="lang-block" data-lang="en" style="display:none;">Online</span>
+          </p>
+          <p style="font-size:0.875rem;color:var(--stone-600);line-height:1.7;margin-top:0.75rem;">
+            <strong class="lang-block" data-lang="vi">🤝 Ban tổ chức:</strong>
+            <strong class="lang-block" data-lang="en" style="display:none;">🤝 Organiser:</strong>
+            <br>VietCALL
+          </p>
+        </div>
+        <div class="sidebar-card" style="background:var(--primary);color:#fff;">
+          <h4 style="color:#fff;" class="lang-block" data-lang="vi">Đăng ký ngay</h4>
+          <h4 style="color:#fff;" class="lang-block" data-lang="en" style="display:none;">Register Now</h4>
+          <p style="font-size:0.875rem;color:rgba(255,255,255,0.8);line-height:1.7;margin-bottom:1rem;" class="lang-block" data-lang="vi">Mang theo một ý tưởng nghiên cứu — VietCALL sẽ giúp bạn biến ý tưởng thành khởi đầu có phương pháp.</p>
+          <p style="font-size:0.875rem;color:rgba(255,255,255,0.8);line-height:1.7;margin-bottom:1rem;" class="lang-block" data-lang="en" style="display:none;">Bring a research idea — VietCALL will help you turn it into a methodical starting point.</p>
+          <a href="https://bit.ly/4gHfOpa" target="_blank" rel="noopener" class="btn btn--outline btn--sm" style="border-color:rgba(255,255,255,0.5);color:#fff;">
+            <span class="lang-block" data-lang="vi">Đăng ký →</span>
+            <span class="lang-block" data-lang="en" style="display:none;">Register →</span>
+          </a>
+        </div>
+        <div class="sidebar-card">
+          <h4 class="lang-block" data-lang="vi">Liên kết nhanh</h4>
+          <h4 class="lang-block" data-lang="en" style="display:none;">Quick Links</h4>
+          <nav style="display:flex;flex-direction:column;gap:0.5rem;">
+            <a href="../conferences.html" style="font-size:0.875rem;color:var(--primary);font-weight:500;" class="lang-block" data-lang="vi">📅 Sự kiện sắp tới</a>
+            <a href="../conferences.html" style="font-size:0.875rem;color:var(--primary);font-weight:500;" class="lang-block" data-lang="en" style="display:none;">📅 Upcoming Events</a>
+            <a href="../vietcall-2026.html" style="font-size:0.875rem;color:var(--primary);font-weight:500;" class="lang-block" data-lang="vi">🎓 VietCALL 2026</a>
+            <a href="../vietcall-2026.html" style="font-size:0.875rem;color:var(--primary);font-weight:500;" class="lang-block" data-lang="en" style="display:none;">🎓 VietCALL 2026</a>
+            <a href="../membership.html" style="font-size:0.875rem;color:var(--primary);font-weight:500;" class="lang-block" data-lang="vi">🏅 Thành viên VietCALL</a>
+            <a href="../membership.html" style="font-size:0.875rem;color:var(--primary);font-weight:500;" class="lang-block" data-lang="en" style="display:none;">🏅 VietCALL Membership</a>
+            <a href="../contact.html" style="font-size:0.875rem;color:var(--primary);font-weight:500;" class="lang-block" data-lang="vi">✉️ Liên lạc</a>
+            <a href="../contact.html" style="font-size:0.875rem;color:var(--primary);font-weight:500;" class="lang-block" data-lang="en" style="display:none;">✉️ Contact</a>
+          </nav>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <img src="../assets/brand/VietC@LL-logo-white.png" alt="VietCALL" style="height:2rem;width:auto;display:block;">
+        <p class="footer__tagline" data-i18n="footer.tagline">Thúc đẩy Học ngôn ngữ có hỗ trợ Máy tính tại Việt Nam</p>
+      </div>
+      <div>
+        <p class="footer__col-title" data-i18n="footer.links">Liên kết nhanh</p>
+        <nav class="footer__nav-links">
+          <a href="../about.html" class="footer__nav-link" data-i18n="nav.about">Giới thiệu</a>
+          <a href="../conferences.html" class="footer__nav-link" data-i18n="nav.events">Sự kiện</a>
+          <a href="../resources.html" class="footer__nav-link" data-i18n="nav.resources">Tài nguyên</a>
+          <a href="../blog.html" class="footer__nav-link" data-i18n="nav.blog">Bài viết</a>
+          <a href="../membership.html" class="footer__nav-link" data-i18n="nav.membership">Thành viên</a>
+          <a href="../contact.html" class="footer__nav-link" data-i18n="nav.contact">Liên lạc</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer__col-title" data-i18n="footer.connect">Kết nối</p>
+        <div class="footer__social-links">
+          <a href="https://www.facebook.com/vietnamcall" class="footer__social-link" target="_blank" rel="noopener" title="Facebook Page">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/groups/vcall" class="footer__social-link" target="_blank" rel="noopener" title="Facebook Group">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </a>
+          <a href="https://zalo.me/g/homczv708" class="footer__social-link" target="_blank" rel="noopener" title="Zalo Group">
+            <svg viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="1" width="22" height="22" rx="5" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="12" y="16.5" text-anchor="middle" font-size="11" font-weight="700" font-family="Arial,sans-serif" fill="currentColor">Zalo</text></svg>
+          </a>
+          <a href="https://www.youtube.com/@VietCALLOfficialChannel" class="footer__social-link" target="_blank" rel="noopener" title="YouTube Channel">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright" data-i18n="footer.copyright">© 2026 VietCALL. Bảo lưu mọi quyền.</p>
+      <div class="footer__bottom-links">
+        <a href="#" class="footer__bottom-link" data-i18n="footer.privacy">Chính sách bảo mật</a>
+        <a href="../contact.html" class="footer__bottom-link" data-i18n="footer.contact">Liên lạc hỗ trợ</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/i18n.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>
