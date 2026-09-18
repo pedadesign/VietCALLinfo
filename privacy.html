@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chính sách Bảo mật | VietCALL</title>
+  <meta name="description" content="Chính sách bảo mật của VietCALL – Phân hội nghiên cứu ứng dụng CNTT trong dạy-học ngôn ngữ, trực thuộc Hội Ngôn ngữ học Việt Nam.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .policy-body {
+      background: #fff;
+      border-radius: var(--radius-2xl);
+      padding: 2.5rem 3rem;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .policy-body h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary);
+      margin-top: 2.25rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.25rem;
+    }
+    .policy-body p, .policy-body li {
+      line-height: 1.85;
+      color: var(--stone-700);
+      margin-bottom: 0.75rem;
+    }
+    .policy-body ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .policy-body a { color: var(--secondary); }
+    .lang-toggle {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      font-size: 0.875rem;
+    }
+    .lang-toggle button {
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--primary);
+      background: transparent;
+      color: var(--primary);
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .lang-toggle button.active {
+      background: var(--primary);
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" role="navigation">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__brand">
+      <img src="assets/brand/VietC@LL-Logo-Transparent.png" alt="VietCALL" class="navbar__logo-img">
+    </a>
+    <ul class="navbar__links">
+      <li><a href="about.html" class="navbar__link" data-i18n="nav.about">Giới thiệu</a></li>
+      <li><a href="conferences.html" class="navbar__link" data-i18n="nav.events">Sự kiện</a></li>
+      <li><a href="blog.html" class="navbar__link" data-i18n="nav.blog">Bài viết</a></li>
+      <li><a href="resources.html" class="navbar__link" data-i18n="nav.resources">Tài nguyên</a></li>
+      <li><a href="membership.html" class="navbar__link" data-i18n="nav.membership">Thành viên</a></li>
+      <li><a href="contact.html" class="navbar__link" data-i18n="nav.contact">Liên lạc</a></li>
+    </ul>
+    <div class="navbar__right">
+      <div class="lang-switcher">
+        <button class="lang-switcher__btn" aria-label="Chọn ngôn ngữ">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="lang-switcher__current">🇻🇳 VI</span>
+        </button>
+        <div class="lang-switcher__dropdown">
+          <button class="lang-switcher__option active" data-lang-code="vi">🇻🇳 Tiếng Việt</button>
+          <button class="lang-switcher__option" data-lang-code="en">🇺🇸 English</button>
+        </div>
+      </div>
+      <a href="membership.html" class="btn btn--primary btn--sm" data-i18n="nav.join">Tham gia ngay</a>
+    </div>
+    <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="navbar__mobile" id="mobileMenu">
+  <a href="about.html" data-i18n="nav.about">Giới thiệu</a>
+  <a href="conferences.html" data-i18n="nav.events">Sự kiện</a>
+  <a href="blog.html" data-i18n="nav.blog">Bài viết</a>
+  <a href="resources.html" data-i18n="nav.resources">Tài nguyên</a>
+  <a href="membership.html" data-i18n="nav.membership">Thành viên</a>
+  <a href="contact.html" data-i18n="nav.contact">Liên lạc</a>
+  <div class="mobile-cta"><a href="membership.html" class="btn btn--primary" style="width:100%;justify-content:center;" data-i18n="nav.join">Tham gia ngay</a></div>
+  <div class="mobile-lang">
+    <button class="lang-switcher__option active" data-lang-code="vi">🇻🇳 VI</button>
+    <button class="lang-switcher__option" data-lang-code="en">🇺🇸 EN</button>
+  </div>
+</div>
+
+<main class="page-top">
+
+<header class="page-hero animate-in" style="padding-bottom:2rem;">
+  <div class="container">
+    <span class="badge">
+      <span class="lang-block" data-lang="vi">Chính sách</span>
+      <span class="lang-block" data-lang="en" style="display:none;">Policy</span>
+    </span>
+    <h1 class="display-lg">
+      <span class="lang-block" data-lang="vi">Chính sách Bảo mật</span>
+      <span class="lang-block" data-lang="en" style="display:none;">Privacy Policy</span>
+    </h1>
+    <p style="color:var(--stone-500);font-size:0.9375rem;">
+      <span class="lang-block" data-lang="vi">Cập nhật lần cuối: tháng 9 năm 2026</span>
+      <span class="lang-block" data-lang="en" style="display:none;">Last updated: September 2026</span>
+    </p>
+  </div>
+</header>
+
+<section class="section bg-stone animate-in" style="padding-top:2rem;">
+  <div class="container">
+    <div class="policy-body">
+
+      <!-- VI -->
+      <div class="lang-block" data-lang="vi">
+
+        <h2>1. Thông tin tổ chức</h2>
+        <p>
+          Trang web này được vận hành bởi <strong>VietCALL – Phân hội nghiên cứu ứng dụng Công nghệ thông tin trong dạy-học ngôn ngữ</strong>, trực thuộc Hội Ngôn ngữ học Việt Nam.
+        </p>
+        <p>
+          <strong>Mã số tổ chức:</strong> 0106220774<br>
+          <strong>Địa chỉ:</strong> Nhà C, ngõ 301 đường Nguyễn Trãi, Phường Thanh Xuân, Thành phố Hà Nội, Việt Nam<br>
+          <strong>Email:</strong> <a href="mailto:info@vietcall.org.vn">info@vietcall.org.vn</a><br>
+          <strong>Website:</strong> <a href="https://vietcall.org.vn">https://vietcall.org.vn</a>
+        </p>
+
+        <h2>2. Thông tin chúng tôi thu thập</h2>
+        <p>Chúng tôi thu thập các thông tin sau khi bạn tương tác với trang web hoặc đăng ký dịch vụ của VietCALL:</p>
+        <ul>
+          <li><strong>Thông tin đăng ký thành viên:</strong> họ tên, địa chỉ email, cơ sở công tác, vai trò nghề nghiệp.</li>
+          <li><strong>Thông tin đăng ký sự kiện:</strong> họ tên, email, tổ chức, thông tin thanh toán (nếu có — xử lý qua cổng thanh toán bên thứ ba).</li>
+          <li><strong>Thông tin liên lạc:</strong> nội dung bạn gửi qua biểu mẫu liên lạc.</li>
+          <li><strong>Dữ liệu kỹ thuật:</strong> địa chỉ IP, loại trình duyệt và thiết bị — thu thập tự động khi bạn truy cập trang web.</li>
+        </ul>
+
+        <h2>3. Mục đích sử dụng thông tin</h2>
+        <p>Thông tin được thu thập nhằm mục đích:</p>
+        <ul>
+          <li>Quản lý tư cách thành viên và gửi thông tin hoạt động của VietCALL;</li>
+          <li>Xử lý đăng ký và liên lạc liên quan đến sự kiện, hội thảo;</li>
+          <li>Gửi bản tin định kỳ (nếu bạn đăng ký nhận);</li>
+          <li>Cải thiện nội dung và trải nghiệm trên trang web;</li>
+          <li>Tuân thủ các nghĩa vụ pháp lý liên quan.</li>
+        </ul>
+
+        <h2>4. Chia sẻ thông tin</h2>
+        <p>
+          VietCALL không bán, cho thuê hoặc trao đổi thông tin cá nhân của bạn với bên thứ ba vì mục đích thương mại. Thông tin chỉ được chia sẻ trong các trường hợp:
+        </p>
+        <ul>
+          <li>Với các nhà cung cấp dịch vụ hỗ trợ hoạt động của tổ chức (ví dụ: nền tảng biểu mẫu, cổng đăng ký) theo hợp đồng bảo mật;</li>
+          <li>Khi pháp luật yêu cầu hoặc để bảo vệ quyền lợi hợp pháp của tổ chức;</li>
+          <li>Với sự đồng ý rõ ràng của bạn.</li>
+        </ul>
+
+        <h2>5. Lưu trữ và bảo mật dữ liệu</h2>
+        <p>
+          Chúng tôi áp dụng các biện pháp kỹ thuật và tổ chức phù hợp để bảo vệ thông tin cá nhân khỏi bị truy cập, tiết lộ, sửa đổi hoặc phá hủy trái phép. Dữ liệu được lưu giữ trong thời gian cần thiết để thực hiện các mục đích nêu trên hoặc theo quy định của pháp luật.
+        </p>
+
+        <h2>6. Quyền của bạn</h2>
+        <p>Bạn có quyền:</p>
+        <ul>
+          <li>Yêu cầu truy cập, chỉnh sửa hoặc xóa thông tin cá nhân của bạn;</li>
+          <li>Hủy đăng ký nhận bản tin bất kỳ lúc nào thông qua đường dẫn hủy đăng ký trong email;</li>
+          <li>Liên hệ với chúng tôi để phản ánh bất kỳ lo ngại nào liên quan đến việc xử lý dữ liệu.</li>
+        </ul>
+        <p>Để thực hiện các quyền trên, vui lòng liên hệ: <a href="mailto:info@vietcall.org.vn">info@vietcall.org.vn</a>.</p>
+
+        <h2>7. Cookie</h2>
+        <p>
+          Trang web có thể sử dụng cookie kỹ thuật cần thiết để đảm bảo hoạt động bình thường (ví dụ: ghi nhớ tùy chọn ngôn ngữ). Chúng tôi không sử dụng cookie theo dõi hoặc quảng cáo.
+        </p>
+
+        <h2>8. Liên kết bên ngoài</h2>
+        <p>
+          Trang web có thể chứa liên kết đến các trang web bên ngoài. VietCALL không chịu trách nhiệm về chính sách bảo mật hoặc nội dung của các trang đó.
+        </p>
+
+        <h2>9. Thay đổi chính sách</h2>
+        <p>
+          Chúng tôi có thể cập nhật chính sách bảo mật này theo thời gian. Mọi thay đổi đáng kể sẽ được thông báo trên trang web. Ngày cập nhật cuối cùng được ghi ở đầu trang này.
+        </p>
+
+        <h2>10. Liên lạc</h2>
+        <p>
+          Nếu bạn có câu hỏi hoặc khiếu nại về chính sách bảo mật này, vui lòng liên hệ:<br>
+          <strong>VietCALL</strong><br>
+          Nhà C, ngõ 301 đường Nguyễn Trãi, Phường Thanh Xuân, Thành phố Hà Nội, Việt Nam<br>
+          Email: <a href="mailto:info@vietcall.org.vn">info@vietcall.org.vn</a>
+        </p>
+
+      </div>
+
+      <!-- EN -->
+      <div class="lang-block" data-lang="en" style="display:none;">
+
+        <h2>1. Organisation Information</h2>
+        <p>
+          This website is operated by <strong>VietCALL – Sub-Association for Research on the Application of Information Technology in Language Teaching and Learning</strong>, affiliated with the Vietnam Linguistics Association.
+        </p>
+        <p>
+          <strong>Organisation Registration ID:</strong> 0106220774<br>
+          <strong>Address:</strong> Building C, Lane 301 Nguyen Trai Street, Thanh Xuan Ward, Hanoi, Vietnam<br>
+          <strong>Email:</strong> <a href="mailto:info@vietcall.org.vn">info@vietcall.org.vn</a><br>
+          <strong>Website:</strong> <a href="https://vietcall.org.vn">https://vietcall.org.vn</a>
+        </p>
+
+        <h2>2. Information We Collect</h2>
+        <p>We collect the following information when you interact with our website or register for VietCALL services:</p>
+        <ul>
+          <li><strong>Membership registration:</strong> full name, email address, institutional affiliation, professional role.</li>
+          <li><strong>Event registration:</strong> name, email, organisation, and payment details where applicable (processed via third-party payment providers).</li>
+          <li><strong>Contact enquiries:</strong> content you submit through our contact form.</li>
+          <li><strong>Technical data:</strong> IP address, browser and device type — collected automatically when you visit the website.</li>
+        </ul>
+
+        <h2>3. How We Use Your Information</h2>
+        <p>Information is collected and used to:</p>
+        <ul>
+          <li>Manage membership and send updates about VietCALL activities;</li>
+          <li>Process event and conference registrations and related communications;</li>
+          <li>Send periodic newsletters (if you have subscribed);</li>
+          <li>Improve the content and user experience of our website;</li>
+          <li>Comply with applicable legal obligations.</li>
+        </ul>
+
+        <h2>4. Sharing of Information</h2>
+        <p>
+          VietCALL does not sell, rent, or trade your personal information to third parties for commercial purposes. Information is shared only in the following cases:
+        </p>
+        <ul>
+          <li>With service providers supporting our operations (e.g. form platforms, registration systems) under confidentiality agreements;</li>
+          <li>When required by law or to protect the legitimate interests of the organisation;</li>
+          <li>With your explicit consent.</li>
+        </ul>
+
+        <h2>5. Data Storage and Security</h2>
+        <p>
+          We apply appropriate technical and organisational measures to protect personal information against unauthorised access, disclosure, modification, or destruction. Data is retained for as long as necessary to fulfil the purposes described above or as required by law.
+        </p>
+
+        <h2>6. Your Rights</h2>
+        <p>You have the right to:</p>
+        <ul>
+          <li>Request access to, correction of, or deletion of your personal information;</li>
+          <li>Unsubscribe from newsletters at any time via the unsubscribe link in any email we send;</li>
+          <li>Contact us with any concerns about the handling of your data.</li>
+        </ul>
+        <p>To exercise these rights, please contact: <a href="mailto:info@vietcall.org.vn">info@vietcall.org.vn</a>.</p>
+
+        <h2>7. Cookies</h2>
+        <p>
+          The website may use technically necessary cookies to ensure normal operation (e.g. remembering your language preference). We do not use tracking or advertising cookies.
+        </p>
+
+        <h2>8. External Links</h2>
+        <p>
+          The website may contain links to external websites. VietCALL is not responsible for the privacy practices or content of those sites.
+        </p>
+
+        <h2>9. Changes to This Policy</h2>
+        <p>
+          We may update this privacy policy from time to time. Any significant changes will be announced on the website. The date of the most recent update is shown at the top of this page.
+        </p>
+
+        <h2>10. Contact</h2>
+        <p>
+          If you have questions or complaints about this privacy policy, please contact:<br>
+          <strong>VietCALL</strong><br>
+          Building C, Lane 301 Nguyen Trai Street, Thanh Xuan Ward, Hanoi, Vietnam<br>
+          Email: <a href="mailto:info@vietcall.org.vn">info@vietcall.org.vn</a>
+        </p>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <img src="assets/brand/VietC@LL-logo-white.png" alt="VietCALL" style="height:2rem;width:auto;display:block;">
+        <p class="footer__tagline" data-i18n="footer.tagline">Thúc đẩy Học ngôn ngữ có hỗ trợ Máy tính tại Việt Nam</p>
+      </div>
+      <div>
+        <p class="footer__col-title" data-i18n="footer.links">Liên kết nhanh</p>
+        <nav class="footer__nav-links">
+          <a href="about.html" class="footer__nav-link" data-i18n="nav.about">Giới thiệu</a>
+          <a href="conferences.html" class="footer__nav-link" data-i18n="nav.events">Sự kiện</a>
+          <a href="resources.html" class="footer__nav-link" data-i18n="nav.resources">Tài nguyên</a>
+          <a href="blog.html" class="footer__nav-link" data-i18n="nav.blog">Bài viết</a>
+          <a href="membership.html" class="footer__nav-link" data-i18n="nav.membership">Thành viên</a>
+          <a href="contact.html" class="footer__nav-link" data-i18n="nav.contact">Liên lạc</a>
+        </nav>
+      </div>
+      <div>
+        <p class="footer__col-title" data-i18n="footer.connect">Kết nối</p>
+        <div class="footer__social-links">
+          <a href="https://www.facebook.com/vietnamcall" class="footer__social-link" target="_blank" rel="noopener" title="Facebook Page">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/groups/vcall" class="footer__social-link" target="_blank" rel="noopener" title="Facebook Group">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </a>
+          <a href="https://zalo.me/g/homczv708" class="footer__social-link" target="_blank" rel="noopener" title="Zalo Group">
+            <svg viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="1" width="22" height="22" rx="5" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="12" y="16.5" text-anchor="middle" font-size="11" font-weight="700" font-family="Arial,sans-serif" fill="currentColor">Zalo</text></svg>
+          </a>
+          <a href="https://www.youtube.com/@VietCALLOfficialChannel" class="footer__social-link" target="_blank" rel="noopener" title="YouTube Channel">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright" data-i18n="footer.copyright">© 2026 VietCALL. Bảo lưu mọi quyền.</p>
+      <div class="footer__bottom-links">
+        <a href="privacy.html" class="footer__bottom-link" data-i18n="footer.privacy">Chính sách bảo mật</a>
+        <a href="contact.html" class="footer__bottom-link" data-i18n="footer.contact">Liên lạc hỗ trợ</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
