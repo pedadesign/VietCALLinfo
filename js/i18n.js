@@ -14,7 +14,8 @@ const TRANSLATIONS = {
       blog: "Bài viết",
       membership: "Thành viên",
       contact: "Liên lạc",
-      join: "Tham gia ngay"
+      join: "Tham gia ngay",
+      convention2026: "Hội thảo 2026"
     },
     footer: {
       tagline: "Thúc đẩy đổi mới dạy-học ngôn ngữ cùng công nghệ tại Việt Nam và khu vực.",
@@ -209,7 +210,8 @@ const TRANSLATIONS = {
       blog: "Blog",
       membership: "Membership",
       contact: "Contact",
-      join: "Join Now"
+      join: "Join Now",
+      convention2026: "Convention 2026"
     },
     footer: {
       tagline: "Advancing Computer-Assisted Language Learning in Vietnam",

@@ -198,6 +198,14 @@ h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; line-height: 1.15;
 }
 .navbar__link:hover,
 .navbar__link--active { color: var(--primary); }
+.navbar__link--highlight {
+  background: var(--secondary);
+  color: #fff !important;
+  padding: 0.3rem 0.875rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+}
+.navbar__link--highlight:hover { background: #8f0300; color: #fff !important; }
 
 /* Right side */
 .navbar__right {
